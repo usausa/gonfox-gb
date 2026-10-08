@@ -77,7 +77,7 @@ public sealed class Rtc3TestTests(ITestOutputHelper output)
             RunUntil(() => MenuShows(shown), "the menu again");
             menuIndex++;
         }
-        output.WriteLine($"{passed} tests passed, T={system.TotalTCycles} ({system.TotalTCycles / (double)GameBoySystem.TCyclesPerSecond:F1} s), host {watch.Elapsed.TotalSeconds:F1} s");
+        output.WriteLine($"{passed} tests passed, T={system.TotalTCycles} ({system.TotalTCycles / (double)GameBoySystem.CyclesPerSecond:F1} s), host {watch.Elapsed.TotalSeconds:F1} s");
         Assert.Equal(23, passed);
     }
 

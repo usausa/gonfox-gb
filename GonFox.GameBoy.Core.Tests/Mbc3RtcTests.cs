@@ -8,7 +8,7 @@ using static GonFox.GameBoy.Core.Mbc3Tests;
 [Trait("Category", "Unit")]
 public sealed class Mbc3RtcTests
 {
-    private const int Second = GameBoySystem.TCyclesPerSecond;
+    private const int Second = GameBoySystem.CyclesPerSecond;
 
     private static (ICartridge Cart, Clock Clock) Attached(byte type = 0x10, byte ramCode = 3)
     {

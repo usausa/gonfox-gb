@@ -324,7 +324,7 @@ public sealed class Mbc3Tests
             saved with { Cartridge = saved.Cartridge with { Rtc = rtc with { Current = rtc.Current with { Seconds = 64 } } } },
             saved with { Cartridge = saved.Cartridge with { Rtc = rtc with { Current = rtc.Current with { Hours = 32 } } } },
             saved with { Cartridge = saved.Cartridge with { Rtc = rtc with { Latched = rtc.Latched with { DayHigh = 0x02 } } } },
-            saved with { Cartridge = saved.Cartridge with { Rtc = rtc with { SubSecond = GameBoySystem.TCyclesPerSecond } } },
+            saved with { Cartridge = saved.Cartridge with { Rtc = rtc with { SubSecond = GameBoySystem.CyclesPerSecond } } },
             saved with { Cartridge = saved.Cartridge with { Rtc = rtc with { SubSecond = -1 } } },
             saved with { FormatVersion = 6 }
         })

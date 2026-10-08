@@ -235,7 +235,7 @@ public sealed partial class MegaDemoTests
         // Two loops of the song keep the wave table, as the driver stops CH3 before each bass note.
         var table = Rom("WaveTables", 16);
         var system = Boot(); // MusicInit has loaded the table.
-        while (system.TotalTCycles < 14UL * GameBoySystem.TCyclesPerSecond)
+        while (system.TotalTCycles < 14UL * GameBoySystem.CyclesPerSecond)
         {
             system.RunForTCycles(70_224);
             Assert.Equal(table, system.CaptureState().Apu.WaveRam);
@@ -248,7 +248,7 @@ public sealed partial class MegaDemoTests
         var system = Boot(0);
         var pcm = new List<short>();
         var buffer = new short[AudioOutput.CapacityFrames * 2];
-        while (system.TotalTCycles < 4UL * GameBoySystem.TCyclesPerSecond)
+        while (system.TotalTCycles < 4UL * GameBoySystem.CyclesPerSecond)
         {
             system.RunForTCycles(4096);
             pcm.AddRange(buffer.AsSpan(0, system.Audio.ReadFrames(buffer) * 2));

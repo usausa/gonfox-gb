@@ -7,7 +7,7 @@ using GonFox.GameBoy.Core.Cartridge;
 [Trait("Category", "Unit")]
 public sealed class AudioOutputTests
 {
-    private const int Second = GameBoySystem.TCyclesPerSecond;
+    private const int Second = GameBoySystem.CyclesPerSecond;
 
     // Frames completed by T-cycle t.
     private static int FramesBy(ulong t) => (int)(t * AudioOutput.SampleRate / Second);

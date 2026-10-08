@@ -816,7 +816,7 @@ internal sealed partial class MainWindow : IDisposable
             if (!closed)
             {
                 MessageText.Text = back is { } cycles
-                ? $"Rewound {cycles / (double)GameBoySystem.TCyclesPerSecond:F1} s"
+                ? $"Rewound {cycles / (double)GameBoySystem.CyclesPerSecond:F1} s"
                 : "Nothing to rewind";
             }
 

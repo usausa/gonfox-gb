@@ -7,7 +7,7 @@ using Timer = GonFox.GameBoy.Core.Devices.Timer;
 
 internal sealed class Clock
 {
-    internal const int TCyclesPerSecond = 4_194_304;
+    internal const int CyclesPerSecond = 4_194_304;
     internal ulong TotalTCycles { get; private set; }
     private Timer? timer;
     private Ppu? ppu;

@@ -6,7 +6,7 @@ using GonFox.GameBoy.Core.Cartridge;
 [Trait("Category", "Unit")]
 public sealed class Huc3Tests
 {
-    private const int Second = GameBoySystem.TCyclesPerSecond;
+    private const int Second = GameBoySystem.CyclesPerSecond;
     private const long Minute = 60L * Second;
 
     private static byte[] Image(byte romCode = 1, byte ramCode = 3, params byte[] program) =>

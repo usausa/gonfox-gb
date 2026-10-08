@@ -179,7 +179,7 @@ public sealed class StateSlotTests
     [Fact]
     public async Task RewindGoesBackOneRecordAtATimeAndPauses()
     {
-        var options = new RewindOptions((ulong)GameBoySystem.TCyclesPerSecond / 16, 4);
+        var options = new RewindOptions((ulong)GameBoySystem.CyclesPerSecond / 16, 4);
         using var runner = new EmulationRunner(rewind: options);
         await runner.LoadAsync(Counter(), "counter");
         await runner.PauseAsync();
@@ -216,7 +216,7 @@ public sealed class StateSlotTests
     [Fact]
     public async Task SlotsAndLoadsClearTheRewindRecords()
     {
-        var options = new RewindOptions((ulong)GameBoySystem.TCyclesPerSecond / 16, 4);
+        var options = new RewindOptions((ulong)GameBoySystem.CyclesPerSecond / 16, 4);
         using var runner = new EmulationRunner(rewind: options);
         using var session = new EmulationSession(runner, new BatterySaveStore(new MemoryRecordStore()), states: new StateSlotStore(new MemoryRecordStore()));
         await session.LoadAsync(Counter(), "counter");

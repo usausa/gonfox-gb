@@ -12,7 +12,8 @@ using Timer = GonFox.GameBoy.Core.Devices.Timer;
 // Synchronous and single-owner: the host decides when and where to call it.
 public sealed class GameBoySystem
 {
-    public const int TCyclesPerSecond = Clock.TCyclesPerSecond;
+    // T-cycles per second: the 4.194304 MHz clock.
+    public const int CyclesPerSecond = Clock.CyclesPerSecond;
     private readonly Clock clock = new();
     private readonly MemoryBus bus = new();
     private readonly Sm83Cpu cpu;

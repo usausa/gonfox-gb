@@ -148,7 +148,7 @@ internal sealed record Huc3State(byte[] Memory, int SubMinute, byte Address, byt
 internal sealed class Huc3Mcu
 {
     internal const int MemorySize = 256;
-    internal const int TCyclesPerMinute = 60 * Clock.TCyclesPerSecond;
+    internal const int CyclesPerMinute = 60 * Clock.CyclesPerSecond;
     private const int MinutesPerDay = 1440;
     private const int Days = 0x1000;
 
@@ -236,7 +236,7 @@ internal sealed class Huc3Mcu
     internal Huc3ClockSnapshot Export()
     {
         Update();
-        return new(memory.ToArray(), subMinute / Clock.TCyclesPerSecond);
+        return new(memory.ToArray(), subMinute / Clock.CyclesPerSecond);
     }
 
     internal void Import(Huc3ClockSnapshot clock)
@@ -255,17 +255,17 @@ internal sealed class Huc3Mcu
             memory[i] = (byte)(clock.Memory[i] & 15);
         }
 
-        subMinute = clock.Seconds * Clock.TCyclesPerSecond;
+        subMinute = clock.Seconds * Clock.CyclesPerSecond;
     }
 
     internal void Advance(long seconds)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(seconds);
         Update();
-        long minutes = seconds / 60, part = subMinute + ((seconds % 60) * Clock.TCyclesPerSecond);
-        if (part >= TCyclesPerMinute)
+        long minutes = seconds / 60, part = subMinute + ((seconds % 60) * Clock.CyclesPerSecond);
+        if (part >= CyclesPerMinute)
         {
-            part -= TCyclesPerMinute;
+            part -= CyclesPerMinute;
             minutes++;
         }
         subMinute = (int)part;
@@ -279,7 +279,7 @@ internal sealed class Huc3Mcu
     }
 
     internal static bool IsValid(Huc3State? state) => state is not null && StateValidation.HasLength(state.Memory, MemorySize) &&
-        state.Memory.AsSpan().IndexOfAnyExceptInRange((byte)0, (byte)15) < 0 && state.SubMinute is >= 0 and < TCyclesPerMinute &&
+        state.Memory.AsSpan().IndexOfAnyExceptInRange((byte)0, (byte)15) < 0 && state.SubMinute is >= 0 and < CyclesPerMinute &&
         state.Command <= 7 && state.Argument <= 15 && state.Result <= 15;
 
     // Restores the state while the clock is detached.
@@ -301,12 +301,12 @@ internal sealed class Huc3Mcu
         var now = attachedClock.TotalTCycles;
         Debug.Assert(now >= countedTo, "The console clock jumped back without detaching the cartridge clock.");
         var total = (ulong)subMinute + (now - countedTo);
-        if (total >= TCyclesPerMinute)
+        if (total >= CyclesPerMinute)
         {
-            AdvanceMinutes((long)(total / TCyclesPerMinute));
+            AdvanceMinutes((long)(total / CyclesPerMinute));
         }
 
-        subMinute = (int)(total % TCyclesPerMinute);
+        subMinute = (int)(total % CyclesPerMinute);
         countedTo = now;
     }
 

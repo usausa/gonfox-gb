@@ -72,7 +72,7 @@ Unitカテゴリ（1,870件）が保持する範囲：
 
 ## Mooneye Test Suite
 
-通常のローダーと`GameBoySystem`を使い、B/C/D/E/H/L=`3/5/8/13/21/34`の状態で実際に`LD B,B`を実行したらPASS、すべて42hならFAILとする（先の命令を見つけるだけでは成功にしない）。STOP・CPUの停止（未定義命令）・T上限・実時間上限は別の診断を返し、PC・レジスタ・T・Serial・診断用のHRAMを残す。上限は1ケース50,000,000 T・実時間10秒。PPUを含む通常の描画の経路を通り、ROM名による例外やLY・SCの書き換えはない。固定版の[serial_send_byte.s](https://github.com/Gekkio/mooneye-test-suite/blob/31510e12eea6286d36eea060a6adde755e1067aa/common/lib/serial_send_byte.s)は4,096 Tの転送完了の前にタイムアウトし得るため、全件をレジスタ方式で判定する。Serial送信の完全性はMooneyeからは主張せず、単体テストとSCの完了を待つ自作ROMで確かめる。選定92件はすべてPASSする。
+通常のローダーと`GameBoySystem`を使い、B/C/D/E/H/L=`3/5/8/13/21/34`の状態で実際に`LD B,B`を実行したらPASS、すべて42hならFAILとする（先の命令を見つけるだけでは成功にしない）。STOP・CPUの停止（未定義命令）・T上限・実時間上限は別の診断を返し、PC・レジスタ・T・Serial・診断用のHRAMを残す。上限は1ケース50,000,000 T・実時間60秒。PPUを含む通常の描画の経路を通り、ROM名による例外やLY・SCの書き換えはない。固定版の[serial_send_byte.s](https://github.com/Gekkio/mooneye-test-suite/blob/31510e12eea6286d36eea060a6adde755e1067aa/common/lib/serial_send_byte.s)は4,096 Tの転送完了の前にタイムアウトし得るため、全件をレジスタ方式で判定する。Serial送信の完全性はMooneyeからは主張せず、単体テストとSCの完了を待つ自作ROMで確かめる。選定92件はすべてPASSする。
 
 | 区分 | ケース |
 | --- | --- |
@@ -92,7 +92,7 @@ MBC以外は`acceptance/`以下。容量名はbit単位（16 Mb=2 MiB、256 kb=3
 
 ## gbmicrotest
 
-各ROMはFF80に実測値、FF81に期待値を書き、最後にFF82へ01（成功）かFF（失敗）を書く。命令境界ごとにFF82を見て、01をPASS、FFをFAILとする。上限は1ケース4,000,000 T・実時間10秒で、最長の`is_if_set_during_ime0`でも約157万Tで終わる。選定したケースはLCDを無効→有効にして位相をそろえるか割り込みで同期し、BootBypassの起動の位相に依存しない。
+各ROMはFF80に実測値、FF81に期待値を書き、最後にFF82へ01（成功）かFF（失敗）を書く。命令境界ごとにFF82を見て、01をPASS、FFをFAILとする。上限は1ケース4,000,000 T・実時間60秒で、最長の`is_if_set_during_ime0`でも約157万Tで終わる。選定したケースはLCDを無効→有効にして位相をそろえるか割り込みで同期し、BootBypassの起動の位相に依存しない。
 
 READMEは全ケースを実機（DMG-CPU-08とみられる）で確かめたとするが、ソース先頭の注記は`pass - dmg`・`pass - ags`・空欄に分かれる。LCD・STAT・割り込み・HALT・OAM/VRAMのアクセスの境界に関わるケースのうち、注記にDMGを含むものだけを選んだ。同梱の構築済みROMは、ソースのNOP数・遅延ループの定数・inc列・割り込みベクターの位置・比較する期待値・SCXへ書く値をバイト列で照合してから採用した。選定128件はすべてPASSする。
 
@@ -121,17 +121,17 @@ READMEは全ケースを実機（DMG-CPU-08とみられる）で確かめたと�
 
 ## mealybug-tearoom-tests
 
-Mode 3中にPPUのレジスタを書き換え、それが効く位置を画像で見るテスト集。期待画像は作者（Matt Currie氏）のエミュレーターのもので、作者は21件をDMG-blob、3件をDMG-CPU Bの実機の写真と照らしている（写真のない`m2_win_en_toggle`・`m3_scx_high_5_bits`・`m3_scy_change`も選んだ）。`LD B,B`を実行した時点の最新の完成画像を、期待画像と全画素で比べる。22件はDMG-blobの画像を、DMG-blobとDMG-CPU Bで画像が違う`m3_lcdc_bg_en_change`・`m3_lcdc_win_en_change_multiple_wx`はCPU Bの画像（blobとは境目が1画素ずれ、228画素・3画素が違う）を期待する。上限は1ケース4,000,000 T・実時間10秒で、最長の`m3_wx_4_change_sprites`でも約106万Tで終わる。24件すべてが一致する。
+Mode 3中にPPUのレジスタを書き換え、それが効く位置を画像で見るテスト集。期待画像は作者（Matt Currie氏）のエミュレーターのもので、作者は21件をDMG-blob、3件をDMG-CPU Bの実機の写真と照らしている（写真のない`m2_win_en_toggle`・`m3_scx_high_5_bits`・`m3_scy_change`も選んだ）。`LD B,B`を実行した時点の最新の完成画像を、期待画像と全画素で比べる。22件はDMG-blobの画像を、DMG-blobとDMG-CPU Bで画像が違う`m3_lcdc_bg_en_change`・`m3_lcdc_win_en_change_multiple_wx`はCPU Bの画像（blobとは境目が1画素ずれ、228画素・3画素が違う）を期待する。上限は1ケース4,000,000 T・実時間60秒で、最長の`m3_wx_4_change_sprites`でも約106万Tで終わる。24件すべてが一致する。
 
 期待画像にはDMGのBoot ROMがVRAMに残すもの（ヘッダーのロゴのタイル1〜24、®のタイル25、マップの9904〜990F・9910・9924〜992F）が写るため、テストは最初の命令の前に同じ内容を状態へ書く（BootBypassの起動状態は変えない。実Boot ROMの実行でも同じ内容が残ることはSameBoyのBoot ROMで確かめた）。圧縮ファイルのROMは2019-10-24の構築で、ソースはその後に置き場所だけ変わったため、ROMとソースはハッシュで個別に固定した。ほかの3件（`m3_lcdc_obj_en_change`・`m3_scy_change`・`m3_wx_4_change_sprites`）は、書き込みのあるラインの描画中に各命令境界（CPU自身の書き込みの時刻）で状態を取り、復元した後の2フレームが全ブロックで一致することを確かめる。
 
 ## dmg-acid2
 
-起動後の完成12〜14枚目を、命令ステップと4,096 Tの予算の両方で、公式のDMGの参照PNG（`reference-dmg.png`）と全23,040画素・BGRAの全成分で比べ、Resetの後も同じ比較をして差分0である。上限は1起動5,000,000 T・1ケース実時間10秒。参照PNGは固定のグレースケール形式を.NETだけで展開し、Core.TestsへWPF・Skia・ネイティブのデコーダーを持ち込まない。3件目は、走査の途中からの状態の復元と入力の再実行で同じ画像へ進むことを確かめる。
+起動後の完成12〜14枚目を、命令ステップと4,096 Tの予算の両方で、公式のDMGの参照PNG（`reference-dmg.png`）と全23,040画素・BGRAの全成分で比べ、Resetの後も同じ比較をして差分0である。上限は1起動5,000,000 T・1ケース実時間60秒。参照PNGは固定のグレースケール形式を.NETだけで展開し、Core.TestsへWPF・Skia・ネイティブのデコーダーを持ち込まない。3件目は、走査の途中からの状態の復元と入力の再実行で同じ画像へ進むことを確かめる。
 
 ## game-boy-test-roms
 
-c-sp/game-boy-test-roms v7.0から、DMGの実機で確かめた結果を持つAGE・`firstwhite`・SameSuiteのテストを使う。マニフェストの全ファイルと許諾のSHA-256を照合する（照合の1件）。上限は1ケース実時間10秒。
+c-sp/game-boy-test-roms v7.0から、DMGの実機で確かめた結果を持つAGE・`firstwhite`・SameSuiteのテストを使う。マニフェストの全ファイルと許諾のSHA-256を照合する（照合の1件）。上限は1ケース実時間60秒。
 
 ### AGE
 

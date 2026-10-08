@@ -12,7 +12,7 @@ public sealed class GameBoySystemTests
         var system = new GameBoySystem();
         Assert.False(system.IsRomLoaded);
         Assert.False(system.IsFaulted);
-        Assert.Equal(4_194_304, GameBoySystem.TCyclesPerSecond);
+        Assert.Equal(4_194_304, GameBoySystem.CyclesPerSecond);
         Assert.Equal(new DebugSnapshot(0x01B0, 0x0013, 0x00D8, 0x014D, 0xFFFE, 0x0100, 0)
         { DividerCounter = 0xABCC, InterruptFlags = 0xE1, TimerControl = 0xF8, LcdControl = 0x91, PpuMode = 1, PpuDot = 400, RomBank1 = 1 },
             system.GetDebugSnapshot());

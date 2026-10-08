@@ -108,7 +108,7 @@ internal sealed class Mbc3Rtc
     }
 
     internal static bool IsValid(RtcState? state) => state is not null && Mask(state.Current) == state.Current &&
-        Mask(state.Latched) == state.Latched && state.SubSecond is >= 0 and < Clock.TCyclesPerSecond;
+        Mask(state.Latched) == state.Latched && state.SubSecond is >= 0 and < Clock.CyclesPerSecond;
 
     // Restores the state while the clock is detached.
     internal void RestoreState(RtcState state)
@@ -151,12 +151,12 @@ internal sealed class Mbc3Rtc
         if (!halted)
         {
             var total = (ulong)subSecond + (now - countedTo);
-            if (total >= Clock.TCyclesPerSecond)
+            if (total >= Clock.CyclesPerSecond)
             {
-                AdvanceSeconds((long)(total / Clock.TCyclesPerSecond));
+                AdvanceSeconds((long)(total / Clock.CyclesPerSecond));
             }
 
-            subSecond = (int)(total % Clock.TCyclesPerSecond);
+            subSecond = (int)(total % Clock.CyclesPerSecond);
         }
         countedTo = now;
     }

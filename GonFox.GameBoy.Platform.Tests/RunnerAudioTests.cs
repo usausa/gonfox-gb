@@ -78,7 +78,7 @@ public sealed class RunnerAudioTests
         return [.. pcm];
     }
 
-    private static int Samples(ulong t) => (int)(t * AudioOutput.SampleRate / GameBoySystem.TCyclesPerSecond) * 2;
+    private static int Samples(ulong t) => (int)(t * AudioOutput.SampleRate / GameBoySystem.CyclesPerSecond) * 2;
 
     [Fact]
     public async Task RunningHandsOverTheCorePcmInOrderAndStopsFlush()

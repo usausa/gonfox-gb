@@ -26,7 +26,7 @@ public sealed class SoundCheckTests
         system.InsertCartridge(CartridgeLoader.Load(Image()).Cartridge);
         var pcm = new List<short>();
         var buffer = new short[AudioOutput.CapacityFrames * AudioOutput.ChannelCount];
-        while (system.TotalTCycles < 5UL * GameBoySystem.TCyclesPerSecond / 2)
+        while (system.TotalTCycles < 5UL * GameBoySystem.CyclesPerSecond / 2)
         {
             system.RunForTCycles(4096);
             pcm.AddRange(buffer.AsSpan(0, system.Audio.ReadFrames(buffer) * 2));

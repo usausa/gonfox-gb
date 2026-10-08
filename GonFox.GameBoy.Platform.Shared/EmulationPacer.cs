@@ -10,11 +10,11 @@ internal sealed class EmulationPacer
 
     internal void Accrue(double seconds)
     {
-        var requested = PendingTCycles + (seconds * GameBoySystem.TCyclesPerSecond);
-        var limit = GameBoySystem.TCyclesPerSecond * 0.1;
+        var requested = PendingTCycles + (seconds * GameBoySystem.CyclesPerSecond);
+        var limit = GameBoySystem.CyclesPerSecond * 0.1;
         if (requested > limit)
         {
-            DroppedSeconds += (requested - limit) / GameBoySystem.TCyclesPerSecond;
+            DroppedSeconds += (requested - limit) / GameBoySystem.CyclesPerSecond;
         }
 
         PendingTCycles = Math.Min(requested, limit);

@@ -44,7 +44,7 @@ var pixels = new byte[VideoOutput.BufferSize];                             // 16
 var pcm = new short[AudioOutput.CapacityFrames * AudioOutput.ChannelCount]; // 48 kHz stereo, L/R interleaved
 
 system.Joypad.SetButtonState(JoypadButton.Start, true);
-system.RunForTCycles(GameBoySystem.TCyclesPerSecond / 60);
+system.RunForTCycles(GameBoySystem.CyclesPerSecond / 60);
 var frame = system.Video.CopyLatestFrame(pixels);
 var frames = system.Audio.ReadFrames(pcm);
 
@@ -101,7 +101,7 @@ dotnet run --project GonFox.GameBoy.Platform.Tests -c Release --no-build
 dotnet run --project Example.GameBoy.WpfHost.Tests -c Release --no-build
 ```
 
-Every test ROM is in the repository and the tests never use the network. For the unit tests alone, add `-- --filter-trait "Category=Unit"`. The `Benchmark` project measures the core with BenchmarkDotNet ([docs/Benchmark.md](docs/Benchmark.md)).
+Every test ROM is in the repository and the tests never use the network. For the unit tests alone, add `-- --filter-trait "Category=Unit"`. `GonFox.GameBoy.Ci.slnf` builds every project except the MAUI host, whose Release build compiles the app ahead of time and takes minutes; CI builds and inspects through it. The `Benchmark` project measures the core with BenchmarkDotNet ([docs/Benchmark.md](docs/Benchmark.md)).
 
 ## ROMs
 

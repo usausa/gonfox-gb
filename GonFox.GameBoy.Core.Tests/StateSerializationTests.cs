@@ -59,8 +59,8 @@ public sealed class StateSerializationTests
             cart.Write(0xA123, 0x5A);
             Mbc3Tests.SetClock(cart, new(58, 59, 23, 0xFF, 0x01));
             Mbc3Tests.Latch(cart);
-            s.RunForTCycles(GameBoySystem.TCyclesPerSecond * 7 / 10); // In the middle of a second.
-        }, s => s.RunForTCycles(GameBoySystem.TCyclesPerSecond)),
+            s.RunForTCycles(GameBoySystem.CyclesPerSecond * 7 / 10); // In the middle of a second.
+        }, s => s.RunForTCycles(GameBoySystem.CyclesPerSecond)),
         "mbc5-ram" => new(TestRom.CreateMbc5(0x1B, 2, 4, 0x18, 0xFE), s =>
         {
             var cart = CartridgeOf(s);
@@ -89,7 +89,7 @@ public sealed class StateSerializationTests
             s.RunForTCycles(100_000); // Mid-capture.
         }, s => s.RunForTCycles(200_000)), // Past the capture's end.
         _ => new(File.ReadAllBytes(Path.Combine(AppContext.BaseDirectory, "TestData", "MegaDemo", "megademo.gb")),
-            s => s.RunForTCycles(GameBoySystem.TCyclesPerSecond * 2), s => s.RunForTCycles(300_000)) // Music and queued PCM.
+            s => s.RunForTCycles(GameBoySystem.CyclesPerSecond * 2), s => s.RunForTCycles(300_000)) // Music and queued PCM.
     };
 
     private static readonly Dictionary<GameBoySystem, ICartridge> Inserted = [];

@@ -9,13 +9,13 @@ public sealed class HostLogicTests
     public void FractionAndInstructionOvershootAreCarriedForward()
     {
         var pacer = new EmulationPacer();
-        pacer.Accrue(0.5 / GameBoySystem.TCyclesPerSecond);
+        pacer.Accrue(0.5 / GameBoySystem.CyclesPerSecond);
         Assert.Equal(0, pacer.NextBudget);
-        pacer.Accrue(0.75 / GameBoySystem.TCyclesPerSecond);
+        pacer.Accrue(0.75 / GameBoySystem.CyclesPerSecond);
         Assert.Equal(1, pacer.NextBudget);
         pacer.Consume(4);
         Assert.Equal(-2.75, pacer.PendingTCycles);
-        pacer.Accrue(3.0 / GameBoySystem.TCyclesPerSecond);
+        pacer.Accrue(3.0 / GameBoySystem.CyclesPerSecond);
         Assert.Equal(0.25, pacer.PendingTCycles);
         Assert.Equal(0, pacer.NextBudget);
     }
@@ -27,7 +27,7 @@ public sealed class HostLogicTests
         pacer.Accrue(2);
         Assert.Equal(4096, pacer.NextBudget);
         Assert.Equal(1.9, pacer.DroppedSeconds, 10);
-        Assert.Equal(0.1 * GameBoySystem.TCyclesPerSecond, pacer.PendingTCycles);
+        Assert.Equal(0.1 * GameBoySystem.CyclesPerSecond, pacer.PendingTCycles);
         pacer.Reset();
         Assert.Equal(0, pacer.PendingTCycles);
         Assert.Equal(0, pacer.DroppedSeconds);
@@ -50,7 +50,7 @@ public sealed class HostLogicTests
                 pacer.Consume(cycles);
             }
         }
-        Assert.InRange(consumed, GameBoySystem.TCyclesPerSecond - 4L, GameBoySystem.TCyclesPerSecond + 4L);
+        Assert.InRange(consumed, GameBoySystem.CyclesPerSecond - 4L, GameBoySystem.CyclesPerSecond + 4L);
         Assert.Equal(0, pacer.DroppedSeconds);
     }
 

@@ -729,7 +729,7 @@ public sealed class MainPage : ContentPage, IDisposable
             case "Rewind":
                 ClearInput();
                 var back = await runner.RewindAsync();
-                Show(back is { } cycles ? $"Rewound {cycles / (double)GameBoySystem.TCyclesPerSecond:F1} s" : "Nothing to rewind");
+                Show(back is { } cycles ? $"Rewound {cycles / (double)GameBoySystem.CyclesPerSecond:F1} s" : "Nothing to rewind");
                 break;
         }
     }

@@ -72,7 +72,7 @@ static short[] Render(byte[] rom, double seconds)
 {
     var system = new GameBoySystem();
     system.InsertCartridge(CartridgeLoader.Load(rom).Cartridge);
-    ulong end = (ulong)(seconds * GameBoySystem.TCyclesPerSecond);
+    ulong end = (ulong)(seconds * GameBoySystem.CyclesPerSecond);
     var all = new List<short>();
     short[] buffer = new short[AudioOutput.CapacityFrames * AudioOutput.ChannelCount];
     while (system.TotalTCycles < end)

@@ -6,7 +6,7 @@ internal sealed class AudioMixer(AudioOutput output)
     // PCM units per mixed level step (the loudest level, 480, gives 30,720).
     internal const int Scale = 64;
     private const long Unit = (long)Scale << 16; // One level step in Q16.
-    private const int ClockRate = GameBoySystem.TCyclesPerSecond;
+    private const int ClockRate = GameBoySystem.CyclesPerSecond;
     private const int SampleRate = AudioOutput.SampleRate;
 
     // Capacitor charge kept per 48 kHz sample (0.999958 per T-cycle), in Q16.

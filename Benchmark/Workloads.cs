@@ -33,7 +33,7 @@ public enum PpuCase
 // Runs a scenario from a prepared state; shared with Core.Tests, so no BenchmarkDotNet types.
 internal sealed class ExecutionWorkload
 {
-    internal const int Cycles = 4 * GameBoySystem.TCyclesPerSecond;
+    internal const int Cycles = 4 * GameBoySystem.CyclesPerSecond;
     internal GameBoySystem System { get; } = new();
     internal GameBoyState Initial { get; }
     internal string RomHash { get; }
@@ -51,7 +51,7 @@ internal sealed class ExecutionWorkload
         };
         RomHash = Hash(rom);
         System.InsertCartridge(CartridgeLoader.Load(rom).Cartridge);
-        System.RunForTCycles(GameBoySystem.TCyclesPerSecond); // Boot, outside timing.
+        System.RunForTCycles(GameBoySystem.CyclesPerSecond); // Boot, outside timing.
         if (scenario is ExecutionCase.Background or ExecutionCase.Mbc1Background)
         {
             System.Joypad.SetButtonState(JoypadButton.Right, true);

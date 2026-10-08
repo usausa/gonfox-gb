@@ -45,7 +45,7 @@ public sealed record EmulationStatus(bool RomLoaded, bool Running, bool Stopped,
 // How often the runner records a state while running, and how many records it keeps (rewind).
 public sealed record RewindOptions(ulong IntervalTCycles, int Capacity)
 {
-    public static RewindOptions Default { get; } = new(GameBoySystem.TCyclesPerSecond, 30);
+    public static RewindOptions Default { get; } = new(GameBoySystem.CyclesPerSecond, 30);
 }
 
 public sealed class EmulationRunner : IDisposable
@@ -564,7 +564,7 @@ public sealed class EmulationRunner : IDisposable
             lastStatusTick = now;
             Status = new(system.IsRomLoaded, running, system.IsStopped, system.Fault,
                 title, error, warnings, system.GetDebugSnapshot(), fps.Fps, pacer.DroppedSeconds, batteryCartridge is not null, savedState?.State.TotalTCycles,
-                rewind.Count == 0 ? 0 : (int)((system.TotalTCycles - rewind[0].TotalTCycles) / GameBoySystem.TCyclesPerSecond),
+                rewind.Count == 0 ? 0 : (int)((system.TotalTCycles - rewind[0].TotalTCycles) / GameBoySystem.CyclesPerSecond),
                 rewind.Count != 0 && Old(rewind[0], system), rumble?.MotorOn == true, system.IsBootRomMapped);
         }
     }
