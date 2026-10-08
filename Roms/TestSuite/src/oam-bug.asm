@@ -1,4 +1,4 @@
-; Measures the DMG OAM corruption bug: 16-bit INC/DEC with the register in OAM, LD A,(HL+)/(HL-), PUSH and POP with SP in OAM, at each M-cycle across Mode 2 of line 1.
+; DMG OAM bug: INC/DEC rr, LD A,(HL+/-), PUSH and POP with OAM addresses, at each M-cycle of line 1.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -78,7 +78,7 @@ Main::
     ld h, a
     jr .delay
 
-; Runs the instruction hDelay NOPs after enabling the LCD, then emits the CRC-16 of OAM read back in VBlank.
+; Runs the instruction hDelay NOPs after enabling the LCD; emits the CRC-16 of OAM read in VBlank.
 RunPosition:
     ld hl, OamPattern
     ld de, _OAMRAM
@@ -142,7 +142,7 @@ PositionDone:
     ld l, e
     jp EmitWord
 
-; Instructions under test: opcode, SP in OAM, then NOP delays ending with 0 (delay 104 is line 1 Dot 0).
+; Instructions: opcode, SP in OAM, then NOP delays ending with 0 (delay 104 is line 1 Dot 0).
 Cases:
     db $03, 0 ; INC BC
     delays 104, 124

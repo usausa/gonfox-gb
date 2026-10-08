@@ -1,4 +1,4 @@
-; Interrupt, HALT, timer and serial timing: dispatch latency, IME, IE/IF during dispatch, priority, TIMA reload, DIV/TAC edges and serial.
+; Interrupt, HALT, timer and serial timing: dispatch, IME, priority, TIMA reload, DIV/TAC edges.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -132,7 +132,7 @@ wStub58: ds 16
 wStub60: ds 16
 
 SECTION "Irq common", ROM0
-; Records TIMA (read by the stub), the vector, IF, IE and the pushed word, then restores SP and resumes the case.
+; Records TIMA (read by the stub), vector, IF, IE and the pushed word, then restores SP and resumes.
 IrqCommon:
     ld [wIrqTima], a
     ld a, e
@@ -267,7 +267,7 @@ Main::
     call SerialReadCases
     ret
 
-; Timer overflow (TIMA FD, TAC 05 from W+3, IF set at the end of W+12) to its handler, the stub reading TIMA after 0-3 NOPs.
+; Timer overflow (TIMA FD, TAC 05 from W+3, IF at the end of W+12) to its handler; TIMA 0-3 NOPs in.
 TimerIrqCases:
     FOR K, 4
         ld a, K
@@ -307,7 +307,7 @@ TimerInstrSetup:
     ld hl, wScratch
     ret
 
-; Timer interrupt while a sled of one instruction (the remaining arguments) runs, the sled shifted by \1 NOPs.
+; Timer interrupt during a sled of one instruction (the remaining arguments), shifted by \1 NOPs.
 MACRO INSTRUCTION_CASE
     call TimerInstrSetup
     BEGIN_CASE .done\@
@@ -342,7 +342,7 @@ InstructionCases:
     ENDR
     ret
 
-; A CPU write of IF (serial) dispatches after the writing instruction, the write shifted by \1 NOPs against TIMA.
+; An IF write (serial) dispatches after the writing instruction, the write shifted by \1 NOPs.
 MACRO IF_WRITE_CASE
     call QuietTimer
     ld a, IEF_SERIAL
@@ -405,7 +405,7 @@ IfWriteCases:
     ld a, [wIrqTima]
     jp Emit
 
-; LCD on at W+8 with STAT \1, LYC \2 and IE \3; IF cleared and IME set \4 M-cycles later; NOP sled to the handler.
+; LCD on at W+8 with STAT \1, LYC \2, IE \3; IF cleared and IME set \4 M-cycles later; NOP sled.
 MACRO STAT_CASE
     call QuietTimer
     call LcdOff
@@ -437,7 +437,7 @@ MACRO STAT_CASE
     call Emit
 ENDM
 
-; STAT mode 2 (line 1), mode 0 (line 1), LYC=2, mode 1 and the VBlank interrupt after the LCD is switched on.
+; STAT mode 2 and mode 0 (line 1), LYC=2, mode 1 and VBlank interrupts after the LCD is switched on.
 StatCases:
     STAT_CASE STATF_MODE2, $FF, IEF_STAT, 88
     STAT_CASE STATF_MODE0, $FF, IEF_STAT, 151
@@ -448,7 +448,7 @@ StatCases:
     ldh [rSTAT], a
     ret
 
-; Serial transfer (internal clock) started at W+\1: completion interrupt in a 128-NOP sled from W+1000.
+; Serial transfer (internal clock) started at W+\1: completion interrupt in a NOP sled from W+1000.
 MACRO SERIAL_PHASE_CASE
     call QuietTimer
     call SerialIdle
@@ -467,7 +467,7 @@ MACRO SERIAL_PHASE_CASE
     call EmitOffset
 ENDM
 
-; Completion for starts at W+61 to W+65 (around the DIV bit 7 fall at the end of W+63), then a restart at W+300.
+; Completion for starts at W+61 to W+65 (DIV bit 7 falls at the end of W+63), then a restart at W+300.
 SerialIrqCases:
     FOR START, 61, 66
         SERIAL_PHASE_CASE START
@@ -601,7 +601,7 @@ DiCases:
     ENDR
     ret
 
-; Serial dispatch from an IF write at W+(9+\1) while a timer request becomes visible at W+17: vector and IF.
+; Serial dispatch from an IF write at W+(9+\1) while a timer request shows at W+17: vector and IF.
 MACRO LATE_REQUEST_CASE
     call QuietTimer
     ld a, IEF_TIMER | IEF_SERIAL
@@ -628,7 +628,7 @@ LateRequestCases:
     ENDR
     ret
 
-; Sets SP to HL, enables interrupts and writes A to IF; the return address $xx0C lands where SP points.
+; Sets SP to HL, enables interrupts and writes A to IF; the return address $xx0C lands at SP.
 MACRO PUSH_TRIGGER
     ld sp, hl
     ei
@@ -719,7 +719,7 @@ PriorityCases:
     PRIORITY_CASE $FF, $E0
     ret
 
-; HALT (IME=0) on W+(4+\1) with the timer request at the end of W+12; INC C after it, TIMA read \2 NOPs later.
+; HALT (IME=0) on W+(4+\1), timer request at the end of W+12; INC C after it, TIMA \2 NOPs later.
 MACRO HALT_IME0_CASE
     call TimerInstrSetup
     ld c, 0
@@ -748,7 +748,7 @@ HaltIme0Cases:
     ENDR
     ret
 
-; HALT (IME=1) on W+(5+\1) with the timer request at the end of W+12: offset from the HALT and handler TIMA.
+; HALT (IME=1) on W+(5+\1), timer request at the end of W+12: offset from the HALT and handler TIMA.
 MACRO HALT_IME1_CASE
     call TimerInstrSetup
     BEGIN_CASE .done\@
@@ -780,7 +780,7 @@ HaltIme1Cases:
     xor a
     jp SetStubs
 
-; HALT (IME=0) with STAT \1, LYC \2 and IE \3, the LCD on at W+8 and IF cleared at W+\4: TIMA \5 NOPs after the wake-up (and LY when \5 is 0).
+; HALT (IME=0), STAT \1, LYC \2, IE \3, IF cleared at W+\4: TIMA \5 NOPs after waking (LY if 0).
 MACRO HALT_STAT_IME0_CASE
     call QuietTimer
     call LcdOff
@@ -813,7 +813,7 @@ MACRO HALT_STAT_IME0_CASE
     ENDC
 ENDM
 
-; HALT (IME=1) with STAT \1, LYC \2 and IE \3, the LCD on at W+8 and IF cleared at W+\4: offset from the HALT and handler TIMA.
+; HALT (IME=1), STAT \1, LYC \2, IE \3, LCD on at W+8, IF cleared at W+\4: HALT offset, handler TIMA.
 MACRO HALT_STAT_IME1_CASE
     call QuietTimer
     call LcdOff
@@ -844,7 +844,7 @@ MACRO HALT_STAT_IME1_CASE
     call Emit
 ENDM
 
-; HALT (IME=0) woken by the end of a transfer started at W+10, TIMA (from 80, TMA 00) read \1 NOPs after.
+; HALT (IME=0) woken by a transfer started at W+10; TIMA (from 80, TMA 00) read \1 NOPs after.
 MACRO HALT_SERIAL_CASE
     call QuietTimer
     call SerialIdle
@@ -863,7 +863,7 @@ MACRO HALT_SERIAL_CASE
     call Emit
 ENDM
 
-; Wake-up from HALT by LYC, mode 0 and VBlank (IME=0), LYC and mode 2 (IME=1, stub TIMA after 0-3 NOPs) and serial.
+; Wake-ups from HALT by LYC, mode 0 and VBlank (IME=0), LYC and mode 2 (IME=1), and serial.
 HaltOtherCases:
     FOR WAITED, 4
         HALT_STAT_IME0_CASE STATF_LYC, 2, IEF_STAT, 9, WAITED
@@ -893,7 +893,7 @@ HaltOtherCases:
     ENDR
     ret
 
-; HALT with IME=0 and a pending request: the next byte is read twice (INC C; LD A,$14 becomes LD A,$3E; INC D).
+; HALT bug with IME=0 and a request pending: INC C, and LD A,$14 read as LD A,$3E; INC D.
 HaltBugCases:
     call PendingSetup
     ld c, 0
@@ -933,7 +933,7 @@ TimaReadCases:
     ENDR
     ret
 
-; Writes C to the register at HL on W+\1 around the overflow at the end of W+7, then reads TIMA on W+20 and IF on W+24 (emitted when \2).
+; Writes C to [HL] on W+\1 around the overflow at the end of W+7; TIMA on W+20, IF on W+24 (if \2).
 MACRO WINDOW_WRITE_CASE
     call QuietTimer
     ld a, $FE
@@ -957,7 +957,7 @@ MACRO WINDOW_WRITE_CASE
     ENDC
 ENDM
 
-; TIMA write of 33 on W+5 to W+11: TIMA and IF afterwards (no IF for the write in the reload cycle W+8).
+; TIMA write of 33 on W+5 to W+11: TIMA and IF after (no IF for the reload cycle W+8).
 TimaWriteCases:
     FOR CYCLE, 5, 12
         ld hl, rTIMA

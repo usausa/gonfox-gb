@@ -1,4 +1,4 @@
-; OAM DMA: the OAM blocking window, CPU reads and fetches on the source bus, restarts, source regions, HRAM and other-bus access.
+; OAM DMA: the OAM block, CPU reads and fetches on the source bus, restarts, sources and other buses.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -169,7 +169,7 @@ Setup:
     ld bc, FetchSlideEnd - FetchSlide
     jp Copy
 
-; Starts a transfer from page A and runs 176 NOP slots, in which conflicting fetches execute the source bytes.
+; Starts a transfer from page A and runs 176 NOPs, in which conflicting fetches run the source bytes.
 FetchSlide:
     ldh [rDMA], a
     REPT 176
@@ -195,7 +195,7 @@ MACRO PROBE_CODE
     ret
 ENDM
 
-; HRAM routine: transfer from hPage, restart from hSecond on R=W+\1+4, read of hTarget on R+2+\2 into hValue, wait.
+; HRAM routine: transfer from hPage, restart from hSecond on R=W+\1+4, read hTarget on R+2+\2, wait.
 MACRO RESTART_CODE
     ldh a, [hTarget]
     ld l, a
@@ -318,7 +318,7 @@ MACRO SOURCE_CASE
     call EmitOamDigest
 ENDM
 
-; Digests for ROM (3F, 7F), VRAM (80, 9F), WRAM (D1), echo (F1, FD) and the FE and FF pages (WRAM DE and DF).
+; Digests for ROM (3F, 7F), VRAM (80, 9F), WRAM (D1), echo (F1, FD) and pages FE, FF (WRAM DE, DF).
 SourceCases:
     SOURCE_CASE $3F
     SOURCE_CASE $7F
@@ -331,7 +331,7 @@ SourceCases:
     SOURCE_CASE $FF
     ret
 
-; Reads on W+12 from ROM0, ROMX, VRAM, WRAM, echo, HRAM, TMA, OAM and FEA0 during a transfer from page \1.
+; Reads on W+12 from ROM0, ROMX, VRAM, WRAM, echo, HRAM, TMA, OAM and FEA0 during a transfer from \1.
 MACRO CONFLICT_ROW
     RUN_EMIT \1, Rom0Probe, 0
     RUN_EMIT \1, RomxProbe, 0
@@ -371,7 +371,7 @@ MACRO WINDOW_ROW
     RUN_EMIT \1, \2, 0
 ENDM
 
-; Start and end of the OAM block (VRAM source), of the main-bus conflict (WRAM source) and of the VRAM conflict.
+; Start and end of the OAM block (VRAM source), the main-bus conflict (WRAM) and the VRAM conflict.
 WindowCases:
     call FillOam
     WINDOW_ROW $80, _OAMRAM
@@ -388,7 +388,7 @@ MACRO FETCH_CASE
     call Emit
 ENDM
 
-; Fetches from ROM, WRAM and VRAM during transfers from INC C pages in ROM (3E), WRAM (D3) and VRAM (8D).
+; Fetches from ROM, WRAM and VRAM during transfers from INC C pages in ROM (3E), WRAM (D3), VRAM (8D).
 FetchCases:
     FETCH_CASE FetchSlide, HIGH($3E00)
     FETCH_CASE FetchSlide, HIGH(wIncPage)
@@ -399,7 +399,7 @@ FetchCases:
     FETCH_CASE vSlideCode, HIGH($3E00)
     ret
 
-; Restart 40 M-cycles into a transfer: OAM reads on R+2 and R+160 to R+162, digest, and ROM0 reads on R+2 and R+3.
+; Restart 40 M-cycles in: OAM reads on R+2 and R+160 to R+162, digest, ROM0 reads on R+2 and R+3.
 RestartCases:
     call FillOam
     INSTALL Restart0
@@ -419,7 +419,7 @@ RestartCases:
     RUN_EMIT $D1, Rom0Probe, $3F
     ret
 
-; OAM writes on W+50 and W+161 are ignored, one on W+162 lands: OAM[10], OAM[20] and OAM[20] afterwards.
+; OAM writes on W+50 and W+161 are ignored, one on W+162 lands: OAM[10], OAM[20], OAM[20] after.
 OamWriteCases:
     INSTALL Write48
     RUN $80, _OAMRAM + $10, $5A

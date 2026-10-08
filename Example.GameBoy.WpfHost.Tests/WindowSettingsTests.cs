@@ -18,7 +18,7 @@ public sealed class WindowSettingsTests : IDisposable
         }
     }
 
-    // Checks that the renderer name is kept (up to 32 characters) and unknown names give Skia.
+    // The renderer name is kept (up to 32 characters); unknown names give Skia.
     [Theory]
     [InlineData("{\"Renderer\": \"WriteableBitmap\"}", "WriteableBitmap", "WriteableBitmap")]
     [InlineData("{\"Renderer\": \"Skia\"}", "Skia", "Skia")]

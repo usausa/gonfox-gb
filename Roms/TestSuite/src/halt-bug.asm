@@ -1,4 +1,4 @@
-; Measures HALT: the HALT bug, EI right before HALT, waking by a timer request with IME off and on, and requests that IE does not enable.
+; HALT: the HALT bug, EI before HALT, timer wake-ups with IME off and on, and requests IE masks.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -16,7 +16,7 @@ DEF TIMED_TIMA EQU $FC
 DEF TIMED_STEPS EQU 10
 DEF READ_STEPS EQU 4
 
-; Counts the entry in the list at \1 and keeps the return address on top of the stack, preserving every register.
+; Counts the entry in the list at \1 and keeps the return address on the stack; keeps every register.
 MACRO record_return
     push af
     push hl
@@ -147,7 +147,7 @@ HaltBugCases:
     ld a, b
     jp Emit
 
-; EI right before HALT: interrupt entries with a request pending, with RST $28 after the HALT, and with none pending.
+; EI before HALT: interrupt entries with a request pending, with RST $28 after HALT, and none pending.
 EiHaltCases:
     ld hl, wTimerVector
     ld a, OP_JP
@@ -198,7 +198,7 @@ EiHaltCases:
     ld c, 1
     jp EmitList
 
-; Sweeps the HALT position (hDelay) and the TIMA read delay after waking (hRead) against a timer request; A is NOP or EI.
+; Sweeps HALT's position (hDelay) and the TIMA read delay (hRead) against a timer request; A: NOP/EI.
 TimedSweep:
     ldh [hImeOp], a
     xor a
@@ -252,7 +252,7 @@ TimedSweep:
     jr nz, .delay
     ret
 
-; Writes the timed code for hDelay and hRead, and the IME-on timer handler that reads TIMA after the same read delay.
+; Writes the timed code for hDelay and hRead, and the IME-on handler that reads TIMA after hRead.
 BuildTimed:
     ld hl, wCode
     ldh a, [hImeOp]
@@ -298,7 +298,7 @@ PutNops:
     jr nz, .loop
     ret
 
-; Resets the divider, starts the timer so that TIMA overflows from TIMED_TIMA a fixed time later, and runs the timed code; returns A = TIMA, B = INC B count, HL = interrupt return address.
+; Restarts DIV and the timer and runs the timed code; returns A = TIMA, B = INC B count, HL = return.
 RunTimed:
     di
     xor a
@@ -320,7 +320,7 @@ RunTimed:
     di
     ret
 
-; Ends the IME-on timed code from the timer handler: takes the interrupt return address into HL and returns from the timed code.
+; Ends the IME-on timed code from the timer handler, with the interrupt return address in HL.
 TimedInterrupted:
     pop hl
     ret
@@ -355,7 +355,7 @@ NotEnabledCase:
     ld a, d
     jp Emit
 
-; A second HALT right after waking from HALT with IME off finds the request still pending: INC A runs twice.
+; A second HALT right after an IME-off wake-up finds the request still pending: INC A runs twice.
 HaltAfterWakeCase:
     di
     xor a
@@ -386,7 +386,7 @@ ArmPending:
     ldh [rIF], a
     ret
 
-; Sets IE to the timer, IF to A and IME off, and runs the timer so that the next request comes about 1040 T-cycles later and the one after 4096 T-cycles after that.
+; Sets IE to the timer, IF to A and IME off; the next request comes ~1040 T later, then every 4096 T.
 ArmTimer:
     di
     ld b, a

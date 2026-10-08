@@ -120,6 +120,7 @@ Every test ROM is in the repository and the tests never use the network. For the
 
 ## Documentation (Japanese)
 
+- [Source guide](docs/SourceGuide.md): where each block lives and where to start reading
 - [Specification](docs/Specification.md): blocks, APIs, timing, video, audio, cartridges, state and persistence
 - [Compatibility](docs/Compatibility.md): test ROMs, success criteria, results and known limitations
 - [CPU instructions](docs/CpuInstructions.md): instructions, flags, cycles and interrupts

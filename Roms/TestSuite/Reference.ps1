@@ -1,4 +1,4 @@
-# Runs the test ROMs (all, or -Name) on SameBoy and binjgb and records the bytes each shows in reference/<name>.json; -Show only prints them.
+# Runs the test ROMs on SameBoy and binjgb and records their bytes in reference/<name>.json.
 param([string[]]$Name, [switch]$Offline, [switch]$Show)
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
@@ -47,7 +47,7 @@ function Get-BinjgbTester {
     $tester
 }
 
-# SameBoy's headless tester, built from the pinned source with the clang of Visual Studio, with SameBoy's DMG boot ROM.
+# SameBoy's headless tester, built from the pinned source with Visual Studio's clang.
 function Get-SameBoyTester {
     $cache = Join-Path $root '.cache/sameboy-src'
     $tester = Join-Path $cache 'bin/sameboy_tester.exe'
@@ -113,7 +113,7 @@ function Read-Ppm([string]$Path) {
     , $pixels
 }
 
-# Tiles 0-254 in reading order hold the length word and the results as 2bpp pixels; the bottom row shows colours 0-3.
+# Tiles 0-254 hold the length word and results as 2bpp pixels; the bottom row shows colours 0-3.
 function ConvertFrom-Screen([int[]]$Pixels) {
     $colours = @{}
     for ($c = 0; $c -lt 4; $c++) { $colours[$Pixels[(136 * 160) + ($c * 2)]] = $c }

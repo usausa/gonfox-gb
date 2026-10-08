@@ -87,7 +87,7 @@ public sealed class StatusTextTests
         Assert.Equal("Running · CPU locked", text.State);
     }
 
-    // Checks that opening the debugging section formats all its lines, even when nothing changed.
+    // Opening the debugging section formats all its lines, even when nothing changed.
     [Fact]
     public void DebuggingLinesAreFormattedOnlyWhileShown()
     {
@@ -104,7 +104,7 @@ public sealed class StatusTextTests
         Assert.StartsWith($"T={2_000_000:N0}", text.Snapshot, StringComparison.Ordinal);
         Assert.Equal(StatusLines.None, text.Update(status, details: true));
 
-        // Checks that first opening formats the lines even when all values are zero.
+        // The first opening formats the lines even when all values are zero.
         var zero = new StatusText();
         var blank = Status(fps: 0, running: false, registers: new DebugSnapshot(0, 0, 0, 0, 0, 0, 0));
         zero.Update(blank, details: false);

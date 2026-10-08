@@ -1,6 +1,6 @@
 # Game Boy エミュレーター 現行仕様
 
-対象はGonFox.GameBoy 1.0.0の実装で、機種はDMGだけである（CGB・SGBは別のハードウェアの仕様のため対象外。CGB専用のMBC6・MBC7も扱わない）。保存状態の形式は12である。サンプル（WPF・MAUI）の使い方は[サンプルの使い方](Examples.md)、ROMでの検証・既知の近似・未対応の項目は[互換性と検証](Compatibility.md)、性能の方針と測り方は[ベンチマーク](Benchmark.md)、CPUの命令は[CPU命令表](CpuInstructions.md)にまとめる。
+対象はGonFox.GameBoy 1.0.0の実装で、機種はDMGだけである（CGB・SGBは別のハードウェアの仕様のため対象外。CGB専用のMBC6・MBC7も扱わない）。保存状態の形式は12である。サンプル（WPF・MAUI）の使い方は[サンプルの使い方](Examples.md)、ROMでの検証・既知の近似・未対応の項目は[互換性と検証](Compatibility.md)、性能の方針と測り方は[ベンチマーク](Benchmark.md)、CPUの命令は[CPU命令表](CpuInstructions.md)、ソースの構成と読む順は[ソースの読み方](SourceGuide.md)にまとめる。
 
 ## 構成と所有権
 

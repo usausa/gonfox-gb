@@ -1,4 +1,4 @@
-; APU behaviour the DMG CPU can observe through its registers: read-back, power, length counters, sweep, DACs, Wave RAM and DIV-APU timing.
+; APU behaviour seen through its registers: read-back, power, length, sweep, DAC, Wave RAM and timing.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -39,7 +39,7 @@ MACRO DELAY
     ENDC
 ENDM
 
-; Powers the APU off, writes DIV in cycle W and powers the APU on in W + 5, so DIV-APU step 0 falls in cycle W + 2047.
+; Powers the APU off, writes DIV in cycle W, powers on in W + 5: DIV-APU step 0 falls in W + 2047.
 MACRO APU_RESET
     xor a
     ldh [rNR52], a
@@ -100,7 +100,7 @@ Main::
     ret
 
 SECTION "Helpers", ROM0
-; Waits for the next DIV-APU step (DIV bit 4 falling), then 33 cycles for delayed APU events to settle.
+; Waits for the next DIV-APU step (DIV bit 4 falling), then 33 cycles for delayed events to settle.
 WaitStep:
 .high:
     ldh a, [rDIV]
@@ -116,7 +116,7 @@ WaitStep:
     jr nz, .settle
     ret
 
-; Counts DIV-APU steps until each channel of A reads 0 in NR52, at most BC steps, then emits the 16-bit count of each channel of A.
+; Counts DIV-APU steps (at most BC) until each channel of A clears in NR52; emits each 16-bit count.
 CountSteps:
     ldh [hMask], a
     ldh [hEmitMask], a
@@ -246,7 +246,7 @@ WriteLengths:
     ldh [rNR31], a
     ret
 
-; Returns in A the all-ones value of the read-back test for register C: $7F for NRx4 (no trigger), $FF otherwise.
+; Returns in A the all-ones value written to register C: $7F for NRx4 (no trigger), else $FF.
 AllOnes:
     ld a, c
     cp LOW(rNR14)
@@ -408,7 +408,7 @@ TestRegisters:
     ldh [rNR52], a
     jp EmitApuRegs
 
-; Wave RAM with CH3 stopped: pattern A written with the APU on, read after power-off, pattern B written while off, read after power-on.
+; Wave RAM with CH3 stopped: written on, read after power-off, written while off, read after power-on.
 TestWaveRam:
     APU_RESET
     ld hl, WavePatternA
@@ -424,7 +424,7 @@ TestWaveRam:
     ldh [rNR52], a
     jp EmitWave
 
-; NR52 with all four channels playing, after power-off, after power-on and after triggering the cleared channels again.
+; NR52 with all channels playing, after power-off and power-on, and after retriggering them.
 TestPowerChannels:
     APU_RESET
     call DacsOn
@@ -447,7 +447,7 @@ TestPowerChannels:
     ldh a, [rNR52]
     jp Emit
 
-; NR52 = $80 written again while on keeps the frame sequencer: CH2 with length 2 counting, rewritten after step 0; steps until CH2 stops.
+; NR52 = $80 rewritten while on keeps the frame sequencer: steps until CH2 (length 2) stops.
 TestPowerRewrite:
     APU_RESET
     ld a, $F0
@@ -464,7 +464,7 @@ TestPowerRewrite:
     jp CountSteps
 
 SECTION "Length tests", ROM0
-; Lengths 2, 4, 6, 8 written to NR11-NR41 while the APU is off, two steps waited, power on, trigger with length enabled; steps until each channel stops.
+; Lengths 2, 4, 6, 8 written while off, then power on and trigger: steps until each channel stops.
 TestLengthWhileOff:
     xor a
     ldh [rNR52], a
@@ -486,7 +486,7 @@ TestLengthWhileOff:
     ld bc, 40
     jp CountSteps
 
-; Lengths 4, 6, 8, 10 written with the APU on, power cycled, trigger with length enabled; steps until each channel stops (at most 24).
+; Lengths 4, 6, 8, 10 written while on, power cycled, then trigger: steps until each channel stops.
 TestLengthPowerCycle:
     APU_RESET
     ld a, $3C
@@ -505,7 +505,7 @@ TestLengthPowerCycle:
     ld bc, 24
     jp CountSteps
 
-; Length 2 triggered without length enable runs 6 steps; NRx4 = $40 in the second half of a length period then counts 2 more length steps.
+; Length 2 without enable: after 6 steps, NRx4 = $40 in a period's second half counts 2 more.
 TestLengthDisabled:
     APU_RESET
     ld a, $3E
@@ -523,7 +523,7 @@ TestLengthDisabled:
     ld bc, 8
     jp CountSteps
 
-; Lengths 1, 2, 1, 2 triggered without length enable; NRx4 = $40 right after step 0 (first half) clocks each once at once; NR52, then steps until each stops.
+; Lengths 1, 2, 1, 2 enabled right after step 0 (first half) clock once at once; NR52, then steps.
 TestLengthEnableFirstHalf:
     APU_RESET
     ld a, $3F
@@ -545,7 +545,7 @@ TestLengthEnableFirstHalf:
     ld bc, 8
     jp CountSteps
 
-; Length 4 with length enabled keeps counting while the DACs stop the channels for steps 0-3; NR52 while stopped, then steps after retriggering.
+; Length 4 keeps counting while the DACs stop the channels; NR52, then steps after retriggering.
 TestLengthWhileStopped:
     APU_RESET
     ld a, $3C
@@ -567,7 +567,7 @@ TestLengthWhileStopped:
     ld bc, 12
     jp CountSteps
 
-; Length 63 (255 on CH3) counting for steps 0-3, then length 1 written to NRx1; steps until each stops.
+; Length 63 (255 on CH3) counting for 4 steps, then length 1 written: steps until each stops.
 TestLengthRewrite:
     APU_RESET
     ld a, $01
@@ -586,7 +586,7 @@ TestLengthRewrite:
     ld bc, 8
     jp CountSteps
 
-; Length 1 on every channel stops at step 0; triggering at length 0 right after it (first half) and again after one more step (second half), counting steps each time.
+; Length 1 stops each channel at step 0; steps after retriggering at length 0 in each half.
 TestLengthReload:
     APU_RESET
     ld a, $3F
@@ -611,7 +611,7 @@ TestLengthReload:
     jp CountSteps
 
 SECTION "Timing tests", ROM0
-; DIV written in cycle W + 1020 + k (k = 0-7) while CH2 holds length 1 with length enabled; NR52 two cycles later.
+; DIV written in cycle W + 1020 + k (k = 0-7) with CH2 at length 1 enabled; NR52 two cycles later.
 TestDivWrite:
     ld hl, DivWriteProbe
     ld b, 8
@@ -632,7 +632,7 @@ DivWriteProbe:
     call JumpHl
     jp Emit
 
-; All four channels with length 1 and length enabled after power-on; NR52 read in cycle W + 2045 + k (k = 0-7), around step 0.
+; All channels at length 1 enabled; NR52 read in cycle W + 2045 + k (k = 0-7), around step 0.
 TestLengthEdge:
     ld hl, LengthEdgeProbe
     ld b, 8
@@ -663,7 +663,7 @@ LengthEdgeProbe:
     call JumpHl
     jp Emit
 
-; CH2 playing with length 1 and length disabled; NR24 = $40 written in cycle W + 4092 + k (k = 0-7), around step 1, and NR52 read two cycles later.
+; CH2 at length 1, NR24 = $40 written in cycle W + 4092 + k (around step 1); NR52 two cycles later.
 TestExtraClockEdge:
     ld hl, ExtraClockProbe
     ld b, 8
@@ -685,7 +685,7 @@ ExtraClockProbe:
     call JumpHl
     jp Emit
 
-; DIV written in cycle W with the APU off, power-on in W + 1019-1022 and W + 1024-1027, CH2 then triggered with length 2 enabled; NR52 between the second and third DIV-APU edges.
+; DIV written in W, power-on in W + 1019-1022 or 1024-1027, CH2 length 2: NR52 after the 2nd edge.
 TestPowerOnSkip:
     ld hl, PowerOnProbe
     ld b, 8
@@ -716,7 +716,7 @@ PowerOnProbe:
     ldh a, [rNR52]
     jp Emit
 
-; CH4 triggered an odd (\1 = 0) or even (\1 = 1) number of cycles after power-on; NR52 read 2 (\2 = 0) or 3 (\2 = 1) cycles after the trigger.
+; CH4 triggered an odd (\1 = 0) or even cycle after power-on; NR52 read 2 + \2 cycles later.
 MACRO NOISE_START
     ld hl, rNR44
     ld bc, rNR52
@@ -736,7 +736,7 @@ MACRO NOISE_START
     call Emit
 ENDM
 
-; The channel whose NRx4 is \1 triggered with its DAC register \2 set to \3 an odd number of cycles after power-on; NR52 read 2 cycles later.
+; Channel with NRx4 \1 triggered with DAC register \2 = \3 at an odd cycle; NR52 2 cycles later.
 MACRO TRIGGER_START
     ld hl, \1
     ld bc, rNR52
@@ -749,7 +749,7 @@ MACRO TRIGGER_START
     call Emit
 ENDM
 
-; Trigger delays as seen in NR52: CH1-CH3 right after a trigger, CH4 for both cycle parities after power-on.
+; Trigger delays in NR52: CH1-CH3 right after a trigger, CH4 for both cycle parities.
 TestTriggerStart:
     TRIGGER_START rNR14, rNR12, $F0
     TRIGGER_START rNR24, rNR22, $F0
@@ -789,7 +789,7 @@ TestSweepTrigger:
     SWEEP_TRIGGER $07, $7F0
     ret
 
-; Probe k: CH1 triggered from off with frequency $7FF and sweep register \1; NR52 read 3 + k cycles after the trigger.
+; Probe k: CH1 triggered from off at $7FF with sweep \1; NR52 read 3 + k cycles after the trigger.
 MACRO SWEEP_DELAY_PROBE
     SLIDE_ENTRY ProbeRead
     ld bc, rNR52
@@ -806,7 +806,7 @@ MACRO SWEEP_DELAY_PROBE
     jp Emit
 ENDM
 
-; Probe k: CH1 playing without sweep, sweep register \1 written, then triggered again with frequency $7FF; NR52 read 3 + k cycles after the trigger.
+; Probe k: CH1 playing, sweep \1 written, retriggered at $7FF; NR52 read 3 + k cycles later.
 MACRO SWEEP_RETRIGGER_PROBE
     SLIDE_ENTRY ProbeRead
     ld bc, rNR52
@@ -837,7 +837,7 @@ SweepRetriggerProbe2:
 SweepRetriggerProbe7:
     SWEEP_RETRIGGER_PROBE $07
 
-; How long an overflowing trigger keeps CH1 on, for shifts 1, 2 and 7 from off and shifts 2 and 7 from playing (k = 0-11 each).
+; How long an overflowing trigger keeps CH1 on: shifts 1, 2, 7 from off, 2 and 7 from playing.
 TestSweepTriggerDelay:
     ld hl, SweepDelayProbe1
     ld b, 12
@@ -855,7 +855,7 @@ TestSweepTriggerDelay:
     ld b, 12
     jp Sweep
 
-; CH1 triggered after power-on with sweep register \1 and frequency \2; DIV-APU steps until NR52 bit 0 clears (at most 32).
+; CH1 triggered with sweep \1 and frequency \2: DIV-APU steps until NR52 bit 0 clears (max 32).
 MACRO SWEEP_STEPS
     APU_RESET
     ld a, \1
@@ -871,7 +871,7 @@ MACRO SWEEP_STEPS
     call CountSteps
 ENDM
 
-; Overflow at sweep clocks for several periods, shifts and frequencies, then sweep period 0 and sweep shift 0.
+; Overflow at sweep clocks for several periods, shifts and frequencies, then period 0 and shift 0.
 TestSweepSteps:
     SWEEP_STEPS $11, $500
     SWEEP_STEPS $21, $500
@@ -887,7 +887,7 @@ TestSweepSteps:
     SWEEP_STEPS $18, $400
     ret
 
-; CH1 with sweep register \1 and frequency \2 triggered, \3 DIV-APU steps waited; NR52 emitted before and after writing \4 to NR10.
+; CH1 with sweep \1 at \2 triggered, \3 steps waited: NR52 before and after NR10 = \4.
 MACRO SWEEP_NEGATE
     APU_RESET
     ld a, \1
@@ -910,7 +910,7 @@ MACRO SWEEP_NEGATE
     call Emit
 ENDM
 
-; Leaving negate mode after a negate calculation, without one, after one at a sweep clock, keeping negate, and after add calculations reaching 2047 and 2046.
+; NR10 writes that leave or keep negate after negate calculations, and after adds to 2047 and 2046.
 TestSweepNegate:
     SWEEP_NEGATE $09, $400, 0, $01
     SWEEP_NEGATE $08, $400, 0, $00
@@ -920,7 +920,7 @@ TestSweepNegate:
     SWEEP_NEGATE $01, $554, 0, $01
     ret
 
-; Probe k: CH1 with sweep period 1, shift \1 and frequency \2 triggered after power-on; NR52 read in cycle W + \3 + k, around the first sweep clock (step 2 in W + 6143).
+; Probe k: CH1 sweep period 1, shift \1, frequency \2; NR52 read in W + \3 + k (first sweep clock).
 MACRO SWEEP_CLOCK_PROBE
     SLIDE_ENTRY ProbeRead
     ld bc, rNR52
@@ -945,7 +945,7 @@ SweepClockProbe1:
 SweepClockProbe7:
     SWEEP_CLOCK_PROBE 7, $7F0, 6145
 
-; When an overflow at the first sweep clock stops CH1: shift 0 and 1 from W + 6141, shift 7 from W + 6145 (k = 0-11 each).
+; When an overflow at the first sweep clock stops CH1, for shifts 0 and 1 and for shift 7.
 TestSweepClockTiming:
     ld hl, SweepClockProbe0
     ld b, 12
@@ -989,7 +989,7 @@ TestDac:
     jr nz, .wave
     ret
 
-; For the channel whose NRx2 is at C: trigger with $F0, write each DacValues entry 8 cycles later, emit NR52.
+; For the NRx2 at C: trigger with $F0, write each DacValues entry 8 cycles later, emit NR52.
 DacChannel:
     ld hl, DacValues
     ld b, 8
@@ -1012,7 +1012,7 @@ DacChannel:
     jr nz, .loop
     ret
 
-; Per channel: NR52 after a trigger with the DAC off, and after a trigger followed by DAC off and DAC on again.
+; Per channel: NR52 after a trigger with the DAC off, and after DAC off and on while playing.
 TestDacTrigger:
     ld c, LOW(rNR12)
     call DacTriggerChannel
@@ -1037,7 +1037,7 @@ TestDacTrigger:
     ldh a, [rNR52]
     jp Emit
 
-; For the channel whose NRx2 is at C: trigger with NRx2 = $07, then trigger with $F0 followed by $00 and $F0; NR52 after each.
+; For the NRx2 at C: trigger with $07, then with $F0 followed by $00 and $F0; NR52 after each.
 DacTriggerChannel:
     APU_RESET
     ld a, $07
@@ -1067,7 +1067,7 @@ DacTriggerChannel:
     ldh a, [rNR52]
     jp Emit
 
-; Envelopes ending at volume 0 keep their channels on: NR12 = NR42 = $11, NR22 = $08; steps until NR52 clears (at most 24).
+; Envelopes reaching volume 0 keep their channels on: steps until NR52 clears (at most 24).
 TestEnvelopeZero:
     APU_RESET
     ld a, $11
@@ -1084,7 +1084,7 @@ TestEnvelopeZero:
     jp CountSteps
 
 SECTION "Wave tests", ROM0
-; Probe k: CH3 at frequency $7FB triggered with pattern A in Wave RAM; the byte at \1 read 3 + k cycles after the trigger.
+; Probe k: CH3 at $7FB with pattern A; the Wave RAM byte at \1 read 3 + k cycles after the trigger.
 MACRO WAVE_READ_PROBE
     APU_RESET
     ld hl, WavePatternA
@@ -1117,7 +1117,7 @@ TestWaveRead:
     ld b, 12
     jp Sweep
 
-; Probe k: CH3 at frequency $7FB triggered with pattern A; WAVE_MARK written to $FF30 5 + k cycles after the trigger; index of the byte that took it, or $FF.
+; Probe k: CH3 at $7FB; WAVE_MARK written 5 + k cycles after the trigger; index it reached or $FF.
 WaveWriteProbe:
     APU_RESET
     ld hl, WavePatternA
@@ -1144,7 +1144,7 @@ TestWaveWrite:
     ld b, 16
     jp Sweep
 
-; Probe k: CH3 at frequency $7FC triggered with pattern A and triggered again 3 + k cycles later; Wave RAM bytes 0-3 after stopping it.
+; Probe k: CH3 at $7FC retriggered 3 + k cycles after its trigger; Wave RAM bytes 0-3 after stopping.
 WaveRetriggerProbe:
     APU_RESET
     ld hl, WavePatternA

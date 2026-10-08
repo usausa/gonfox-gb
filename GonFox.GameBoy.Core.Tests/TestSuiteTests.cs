@@ -8,7 +8,7 @@ using System.Text.Json;
 
 using GonFox.GameBoy.Core.Cartridge;
 
-// Runs the homebrew test ROMs and compares their results, case by case, with the bytes SameBoy or binjgb showed for them.
+// Runs the homebrew test ROMs and compares each case with the bytes of the reference emulator.
 [Trait("Category", "Rom")]
 public sealed class TestSuiteTests(ITestOutputHelper output)
 {

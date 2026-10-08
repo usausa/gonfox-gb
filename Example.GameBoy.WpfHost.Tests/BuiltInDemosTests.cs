@@ -4,7 +4,6 @@ using GonFox.GameBoy.Core.Cartridge;
 
 public sealed class BuiltInDemosTests
 {
-    // Checks that the demo list loads the committed ROMs in list order.
     [Fact]
     public void BuiltInDemosAreTheCommittedRomsInListOrder()
     {

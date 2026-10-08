@@ -1,4 +1,4 @@
-; Shared start-up and reporting: results collect in WRAM and end up on screen as the pixels of 255 tiles.
+; Shared start-up and reporting: results collect in WRAM and end up on screen as 255 tiles.
 
 DEF STATUS_DONE EQU $01
 DEF RESULT_CAPACITY EQU 4078 ; The length word and the results fill 255 tiles; tile 255 shows the four colours.

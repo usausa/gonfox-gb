@@ -73,7 +73,7 @@ public sealed class FrameDisplayTests
             Assert.True(skia.Show(Image(1), Frame));
             Assert.Throws<ArgumentException>(() => skia.Show(new byte[100], Frame));
 
-            // Checks that UI Automation sees each display as an image named by the window.
+            // UI Automation sees each display as an image named by the window.
             foreach (var display in new[] { skia, bitmap })
             {
                 AutomationProperties.SetName(display.Element, "Game Boy screen");
@@ -90,7 +90,6 @@ public sealed class FrameDisplayTests
         }
     }
 
-    // Checks that the bitmap holds its image on the whole-multiple layout rectangle shared with Skia.
     [Theory]
     [InlineData(330, 300, 5, 6, 320, 288)]
     [InlineData(480, 432, 0, 0, 480, 432)] // Whole multiple: fills the display.

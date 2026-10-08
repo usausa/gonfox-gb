@@ -1,4 +1,4 @@
-; DMG registers and bits used by the test ROMs, defined here so the build needs no external include files.
+; DMG registers and bits used by the test ROMs, so the build needs no external include files.
 
 DEF rP1   EQU $FF00
 DEF rSB   EQU $FF01

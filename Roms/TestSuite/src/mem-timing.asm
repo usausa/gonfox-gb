@@ -1,4 +1,4 @@
-; Finds the M-cycle of each data access of the memory instructions by aiming it at TIMA, or at IF, across one timer step.
+; Finds the M-cycle of each data access of the memory instructions, aimed at TIMA or IF across a step.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -102,7 +102,7 @@ ENDL
 RunTemplateEnd:
 
 SECTION "Pad template", ROM0
-; Landing code for RET with SP at SP_HIGH: page RET_PAGE adds 2 or 1 to D, page RET_PAGE + 1 leaves D alone.
+; Landing code for RET with SP at SP_HIGH: page RET_PAGE adds 2 or 1 to D, the next page adds none.
 PadHighTemplate:
 LOAD "Pad high", WRAM0[RET_PAGE << 8]
     inc d
@@ -124,7 +124,7 @@ ENDL
 PadTemplateEnd:
 
 SECTION "Main", ROM0
-; Copies the run and landing code, calibrates on LD A,(HL) and on LD (HL),A to TIMA and to IF, then measures every case.
+; Copies the run and landing code, calibrates on LD A,(HL) and LD (HL),A, then measures every case.
 Main::
     ld a, $07
     ldh [rTAC], a
@@ -290,7 +290,7 @@ Sweep:
     jr nz, .run
     ret
 
-; Counts equal observations from the last sweep position down into B, and B plus the next run of equal ones into C.
+; Counts equal observations from the sweep's end into B, and B plus the next equal run into C.
 CountRuns:
     ld hl, wProfile + SWEEP - 1
     ld d, [hl]
@@ -321,7 +321,7 @@ CountRuns:
     jr nz, .second
     ret
 
-; Runs the prepared case once with the timer step A M-cycles earlier relative to the instruction (0-15).
+; Runs the prepared case once with the timer step A (0-15) M-cycles earlier than the instruction.
 RunOnce:
     ld b, a
     ld a, LOW(RunSled + SWEEP - 1)
@@ -343,7 +343,7 @@ RunOnce:
     jr nz, .wait
     jp RunCode
 
-; Saves the registers, TIMA and IF after the instruction, restores the caller's SP and returns to the caller of RunOnce.
+; Saves registers, TIMA and IF after the instruction, restores the caller's SP, returns from RunOnce.
 Post:
     ld sp, POST_STACK
     push af
@@ -389,7 +389,7 @@ CalibrationIf:
 
 ; Measured cases in result order.
 Cases:
-; LD (BC),A, then LD (a16),SP with the low byte of SP to TIMA and with the high byte ($D0) to IF, then LD A,(BC).
+; LD (BC),A, LD (a16),SP with SP's low byte to TIMA and high byte ($D0) to IF, then LD A,(BC).
     Case 1, $02, 0, 0, VALUE << 8, rTIMA, 0, 0, QUIET_STACK, 0, 0, OBS_TIMA, KIND_WRITE
     Case 3, $08, LOW(rTIMA), HIGH(rTIMA), $0000, 0, 0, 0, $D020, 0, 0, OBS_TIMA, KIND_WRITE
     Case 3, $08, LOW(rIF - 1), HIGH(rIF - 1), $0000, 0, 0, 0, $D020, $FF, 0, OBS_IF, KIND_IF
@@ -423,7 +423,7 @@ Cases:
 ; LD (HL),A and LD A,(HL).
     Case 1, $77, 0, 0, VALUE << 8, 0, 0, rTIMA, QUIET_STACK, 0, 0, OBS_TIMA, KIND_WRITE
     Case 1, $7E, 0, 0, $0000, 0, 0, rTIMA, QUIET_STACK, READ_START, 0, OBS_A, KIND_READ
-; ADD, ADC, SUB, SBC, AND, XOR and OR A,(HL) with A chosen so that A shows the byte read; CP (HL) shows it in F.
+; ALU A,(HL) with A chosen so that A shows the byte read; CP (HL) shows it in F.
     Case 1, $86, 0, 0, $0000, 0, 0, rTIMA, QUIET_STACK, READ_START, 0, OBS_A, KIND_READ
     Case 1, $8E, 0, 0, $0000, 0, 0, rTIMA, QUIET_STACK, READ_START, 0, OBS_A, KIND_READ
     Case 1, $96, 0, 0, $0000, 0, 0, rTIMA, QUIET_STACK, READ_START, 0, OBS_A, KIND_READ
@@ -432,7 +432,7 @@ Cases:
     Case 1, $AE, 0, 0, $0000, 0, 0, rTIMA, QUIET_STACK, READ_START, 0, OBS_A, KIND_READ
     Case 1, $B6, 0, 0, $0000, 0, 0, rTIMA, QUIET_STACK, READ_START, 0, OBS_A, KIND_READ
     Case 1, $BE, 0, 0, READ_START << 8, 0, 0, rTIMA, QUIET_STACK, READ_START, 0, OBS_F, KIND_READ
-; RET NZ taken (low byte read, high byte read), POP BC (low, high), CALL NZ taken (high write, low write), PUSH BC, RST 00.
+; RET NZ taken (low, high reads), POP BC, CALL NZ taken (high, low writes), PUSH BC, RST 00.
     Case 1, $C0, 0, 0, $0000, 0, 0, 0, SP_LOW, PAD_LOW, PAD_PAGE, OBS_D, KIND_READ
     Case 1, $C0, 0, 0, $0000, 0, 0, 0, SP_HIGH, RET_PAGE, 0, OBS_D, KIND_READ
     Case 1, $C1, 0, 0, $0000, 0, 0, 0, SP_LOW, READ_START, 0, OBS_C, KIND_READ
@@ -486,7 +486,7 @@ Cases:
     Case 3, $EA, LOW(rTIMA), HIGH(rTIMA), VALUE << 8, 0, 0, 0, QUIET_STACK, 0, 0, OBS_TIMA, KIND_WRITE
     Case 1, $EF, 0, 0, $0000, 0, 0, 0, SP_PUSH_HIGH, 0, 0, OBS_TIMA, KIND_WRITE
     Case 1, $EF, 0, 0, $0000, 0, 0, 0, SP_PUSH_LOW, 0, 0, OBS_TIMA, KIND_WRITE
-; LDH A,(n), POP AF (the low byte shows in F, from $0F to $10), LD A,(C), PUSH AF, RST 30, LD A,(a16), RST 38.
+; LDH A,(n), POP AF (low byte in F, $0F to $10), LD A,(C), PUSH AF, RST 30, LD A,(a16), RST 38.
     Case 2, $F0, LOW(rTIMA), 0, $0000, 0, 0, 0, QUIET_STACK, READ_START, 0, OBS_A, KIND_READ
     Case 1, $F1, 0, 0, $0000, 0, 0, 0, SP_LOW, $0F, 0, OBS_F, KIND_READ
     Case 1, $F1, 0, 0, $0000, 0, 0, 0, SP_HIGH, READ_START, 0, OBS_A, KIND_READ
@@ -502,7 +502,7 @@ Cases:
 FOR OP, $06, $40, 8
     Case 2, $CB, OP, 0, $0000, 0, 0, rTIMA, QUIET_STACK, MODIFY_START, 0, OBS_TIMA, KIND_MODIFY
 ENDR
-; BIT n,(HL): Z shows bit n of the byte read, with TIMA stepping from one below the value that sets bit n.
+; BIT n,(HL): Z shows bit n of the byte read, TIMA stepping from just below the value setting bit n.
 FOR N, 8
     Case 2, $CB, $46 | (N << 3), 0, $0000, 0, 0, rTIMA, QUIET_STACK, (1 << N) - 1, 0, OBS_F, KIND_READ
 ENDR

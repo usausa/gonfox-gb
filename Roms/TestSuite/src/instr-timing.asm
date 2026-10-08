@@ -1,4 +1,4 @@
-; Measures how many M-cycles each documented opcode takes, with TIMA stepping every 4 M-cycles as the clock.
+; Measures the M-cycles of each documented opcode, using TIMA stepping every 4 M-cycles as the clock.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -65,7 +65,7 @@ SECTION "Rst 38", ROM0[$38]
     jp Post
 
 SECTION "Run template", ROM0
-; Run code: loads the registers, restarts DIV and TIMA, runs 0-3 NOPs and the instruction, then reads TIMA.
+; Run code: loads registers, restarts DIV and TIMA, runs 0-3 NOPs and the instruction, reads TIMA.
 RunTemplate:
 LOAD "Run code", WRAM0[$D200]
 RunCode:
@@ -88,7 +88,7 @@ ENDL
 RunTemplateEnd:
 
 SECTION "Main", ROM0
-; Measures the run without an instruction, then emits each base opcode in order (conditional ones not taken, then taken) and each CB opcode.
+; Measures an empty run, then emits each base opcode (conditional: not taken, taken) and CB opcode.
 Main::
     ld a, $05
     ldh [rTAC], a
@@ -218,7 +218,7 @@ SetHl:
     ld [RunHl + 2], a
     ret
 
-; Writes the instruction, the TIMA read and the jump to Post into the run code, and the stack word and F.
+; Writes the instruction, TIMA read and jump to Post into the run code, and the stack word and F.
 Build:
     ld hl, wBytes
     ld de, RunInstruction
@@ -280,7 +280,7 @@ RunOnce:
     ld [wSavedSp], sp
     jp RunCode
 
-; Keeps the TIMA read, restores the caller's SP and interrupt state, and returns to the caller of RunOnce.
+; Keeps the TIMA read, restores the caller's SP and interrupt state, and returns from RunOnce.
 Post:
     ld [wTimaRead], a
     ld hl, wSavedSp

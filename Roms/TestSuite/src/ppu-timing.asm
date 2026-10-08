@@ -1,4 +1,4 @@
-; PPU timing on DMG: LY, STAT modes, LY=LYC, STAT and VBlank interrupts and VRAM/OAM reads, in M-cycles after switching the LCD on.
+; DMG PPU timing in M-cycles after LCD on: LY, STAT modes, LY=LYC, STAT/VBlank interrupts, VRAM/OAM.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -26,7 +26,7 @@ DEF END_OAM EQU $20 ; End pass flag: OAM is read instead of STAT.
 DEF F_OAM EQU 1 ; Profile flag: the first slider reads OAM and its changes are emitted.
 DEF F_RAW EQU 2 ; Profile flag: the three profiles are also emitted raw.
 
-DEF TT = 0 ; Timed position: M-cycle, counted from the LCD-enable write, at which the next timed instruction starts.
+DEF TT = 0 ; Timed position: M-cycle from the LCD-enable write at which the next timed instruction starts.
 
 ; Moves the timed position by \1 M-cycles.
 MACRO t_add
@@ -67,7 +67,7 @@ MACRO t_until
     t_wait (\1) - TT
 ENDM
 
-; Switches the LCD on with LCDC = A, starts the timed position and shifts everything after it by \1 M-cycles (the phase).
+; Switches the LCD on with LCDC = A and starts the timed position, shifted by \1 M-cycles (the phase).
 MACRO t_start
     ldh [rLCDC], a
     DEF TT = 1
@@ -86,7 +86,7 @@ MACRO t_window
     t_add 4 * (\2)
 ENDM
 
-; Reads [BC] into [HL+] at 114 successive M-cycles from \1 on: six reads 19 M-cycles apart in each of 19 lines, each line one M-cycle later.
+; Reads [BC] into [HL+] at 114 successive M-cycles from \1: six per line, 19 lines, each 1 later.
 MACRO t_slider
     t_until (\1) - 3
     ld d, 19
@@ -105,7 +105,7 @@ MACRO t_slider
     t_add 19 * 115 - 1
 ENDM
 
-; Writes STAT = 0 (C = $41) at 114 successive M-cycles from \1 on, as t_slider, clearing IF before and storing IF 3 M-cycles after each write.
+; Writes STAT = 0 at 114 successive M-cycles from \1 as t_slider, storing IF 3 M-cycles after each.
 MACRO t_glitch_slider
     t_until (\1) - 7
     ld d, 19
@@ -130,7 +130,7 @@ MACRO t_glitch_slider
     t_add 19 * 115 - 1
 ENDM
 
-; Writes LYC = D at M-cycles \1 + 115k (k = 0-15, D counting up) and stores STAT (C = $41) read 2 M-cycles after each write.
+; Writes LYC = D (counting up) at M-cycles \1 + 115k (k = 0-15), storing STAT 2 M-cycles after each.
 MACRO t_lyc_sweep
     t_until (\1) - 5
     ld b, 16
@@ -147,7 +147,7 @@ MACRO t_lyc_sweep
     t_add 16 * 115 - 1
 ENDM
 
-; Writes STAT = \2 (C = $41) at M-cycle \1, 4 M-cycles after clearing IF, and stores IF read 3 M-cycles after the write.
+; Writes STAT = \2 at M-cycle \1, 4 M-cycles after clearing IF; stores IF 3 M-cycles after the write.
 MACRO t_glitch
     t_until (\1) - 7
     xor a
@@ -243,7 +243,7 @@ IrqEntry:
     ld l, a
     jp hl
 
-; Resets scroll, window, LYC, STAT, interrupts, palettes and OAM ($A5 everywhere, so no object is on a visible line); keeps HL; LCD off.
+; Resets scroll, window, LYC, STAT, interrupts, palettes and OAM ($A5: no visible objects); LCD off.
 SetupDefaults:
     xor a
     ldh [rSCX], a
@@ -273,7 +273,7 @@ SetupDefaults:
     ldh [rIF], a
     ret
 
-; Clears OAM and places B groups of the objects listed at DE (count, then X values), group 0 at Y = C and each next one hStep lines lower.
+; Clears OAM and places B groups of the objects at DE, group 0 at Y = C, each next hStep lines lower.
 PlaceGroups:
     push bc
     ld hl, _OAMRAM
@@ -311,7 +311,7 @@ PlaceGroups:
     jr nz, .group
     ret
 
-; Emits the samples of the four phase buffers in time order, window by window; HL = window sizes (samples per phase) ending with 0.
+; Emits the four phase buffers' samples in time order, window by window; HL = window sizes, 0-ended.
 EmitWindows:
     ld de, wPhase0
 .window:
@@ -356,7 +356,7 @@ Interleave:
     jr nz, .sample
     ret
 
-; Copies C interleaved groups of B samples from HL to DE (group g: HL[g], HL[g + C], ...), turning slider loop order into time order.
+; Copies C interleaved groups of B samples from HL to DE, turning slider loop order into time order.
 Reorder:
     ld a, c
     ldh [hStride], a
@@ -404,7 +404,7 @@ EmitStrided:
     jr nz, EmitStrided
     ret
 
-; Finds where the B samples at HL change under mask C: wChange gets the first three positions ($FF if missing), wChangeCount the number of changes.
+; Finds where the B samples at HL change under mask C: first three positions and the change count.
 FindChanges:
     ld a, $FF
     ld [wChange], a
@@ -443,14 +443,14 @@ FindChanges:
     jr nz, .loop
     ret
 
-; Emits the first three change positions of the B samples at HL under mask C and the number of changes.
+; Emits the first three change positions of the B samples at HL under mask C and the change count.
 EmitChanges:
     call FindChanges
     ld hl, wChange
     ld b, 4
     jr EmitBytes
 
-; LY around the line changes 0-1 after LCD enable, 1-2, 143-144 and 152-153-0, OAM and VRAM around the start of the next line 0, then LY at its end.
+; LY at lines 0-1 after LCD on, 1-2, 143-144 and 152-153-0; OAM and VRAM at the next line 0.
 MACRO ly_pass
     ld bc, rLY
     ld hl, wPhase0 + (\1) * 256
@@ -609,7 +609,7 @@ SetupLine0Oam:
     ld bc, _OAMRAM
     ret
 
-; STAT windows: LYC = 1 at lines 0-2, LYC = 144 at 143-144, LYC = 153 and LYC = 0 at 152-153-0 and the next 0-1.
+; STAT windows: LYC = 1 at lines 0-2, 144 at 143-144, 153 and 0 at 152-153-0 and the next 0-1.
 LycWindows:
     run_phases EarlyStatPass, SetupLyc1
     ld hl, .early
@@ -661,7 +661,7 @@ SetupLyc0:
     ret
 
 SECTION "Profile pass", ROM0
-; Reads OAM (or STAT), STAT and VRAM over whole lines with t_slider and times the mode 0 interrupt of line 68, for the configuration set up.
+; Reads OAM (or STAT), STAT and VRAM over whole lines and times line 68's mode 0 interrupt.
 ProfilePass:
     ld a, [wProbe]
     ld c, a
@@ -747,7 +747,7 @@ ApplyProfile:
     pop hl
     ret
 
-; Emits the profile results: raw profiles if flagged, changes of STAT (mode bits), VRAM and (if flagged) OAM, then the line offset of the interrupt.
+; Emits the profile: raw if flagged, changes of STAT, VRAM and (if flagged) OAM, then the interrupt.
 EmitProfile:
     ld hl, wSlider
     ld de, wOrdered
@@ -821,7 +821,7 @@ MACRO profile
 ENDM
 
 SECTION "Profile table", ROM0
-; Whole-line profiles: no window or objects (also raw), SCX = 7, window WX = 7, one object and ten objects.
+; Whole-line profiles: plain (also raw), SCX = 7, window WX = 7, one object and ten objects.
 ProfileTable:
     profile LCDC_BASE, 0, 0, F_OAM | F_RAW, 0
     profile LCDC_BASE, 7, 0, F_OAM, 0
@@ -831,7 +831,7 @@ ProfileTable:
     db 0
 
 SECTION "End pass", ROM0
-; For each region (SCX, WX) at wTable, 16 lines each from line 1: [wEndProbe] at line offsets 58-101 of 11 lines, stored in time order, and the mode 0 interrupt of the next line.
+; Per region (SCX, WX) at wTable: [wEndProbe] at line offsets 58-101 and the next mode 0 interrupt.
 EndPass:
     ld a, [wEndProbe]
     ld c, a
@@ -940,7 +940,7 @@ EndPass:
     jp nz, .region
     ret
 
-; Emits per region the line offset of the first mode change ($80 added if more follow) and of the interrupt ($FF if none).
+; Emits per region the first mode change ($80 added if more follow) and the interrupt ($FF: none).
 EmitEnd:
     ld hl, wRegions
     ld a, [wRegionCount]
@@ -1057,7 +1057,7 @@ EndPasses:
     ld h, a
     jr .next
 
-; End pass record: LCDC \1, object list \2 (0 = none) with \3 objects, flags \4, then (SCX, WX) per region (1-8 regions).
+; End pass record: LCDC \1, object list \2 (0: none) of \3 objects, flags \4, then (SCX, WX) pairs.
 MACRO end_pass
     db \1
     dw \2
@@ -1102,7 +1102,7 @@ ENDR
     end_scx LCDC_WIN, 0, 0, 165
     end_scx LCDC_WIN, 0, 0, 166
     end_scx LCDC_WIN, 0, 0, 167
-; One object at X = 0-9 and near the right edge (X = 167 without the interrupt bytes, where SameBoy differs from DMG hardware).
+; One object at X = 0-9 and near the right edge; X = 167 leaves out the interrupt (SameBoy differs).
 FOR X, 0, 10
     end_scx LCDC_OBJ, ObjX{d:X}, 1, 0
 ENDR
@@ -1219,7 +1219,7 @@ ObjReverse3:
     objects 30, 20, 10
 
 SECTION "Glitch probes", ROM0
-; STAT writes on DMG: a line profile with STAT = 0 written (changes of IF bit 1), then IF after single writes with LYC and HBlank sources.
+; STAT writes on DMG: a line profile with STAT = 0 written (IF bit 1), then single writes' IF.
 GlitchProbes:
     call LcdOff
     call SetupDefaults
@@ -1237,7 +1237,7 @@ GlitchProbes:
     ld b, 6
     jp EmitBytes
 
-; Timed body of GlitchProbes: the slider, then STAT written in mode 3 of lines 50 (LYC = 50) and 51, and in mode 0 of line 60 with and without the HBlank source on before.
+; Timed body of GlitchProbes: the slider, then STAT writes in lines 50-51 (mode 3) and 60 (mode 0).
 GlitchPass:
     ld c, LOW(rSTAT)
     ld hl, wSlider
@@ -1258,7 +1258,7 @@ GlitchPass:
     ret
 
 SECTION "Frame probes", ROM0
-; Over 12 frames, each one M-cycle later: STAT written around the starts of lines 144 and 0, LYC = 153 written around the start of line 153.
+; Over 12 frames, each 1 M-cycle later: STAT at lines 144 and 0, LYC = 153 at line 153's start.
 FrameProbes:
     call LcdOff
     call SetupDefaults
@@ -1296,7 +1296,7 @@ FramePass:
     ret
 
 SECTION "LYC sweeps", ROM0
-; LYC written around the start of lines 10-25 (LYC = the new line) and 30-45 (LYC = the old line), STAT read 2 M-cycles after.
+; LYC written around lines 10-25 (new line) and 30-45 (old line) starting; STAT 2 M-cycles after.
 LycSweeps:
     call LcdOff
     call SetupDefaults
@@ -1330,7 +1330,7 @@ MACRO set_cont
     ld [wIrqCont + 1], a
 ENDM
 
-; A NOP sled of \2 labelled with suffix \1; then emits the sled index of the dispatch (pushed address - sled start), or $FF if none.
+; A NOP sled of \2 with label suffix \1; emits the dispatch's sled index, or $FF if none.
 MACRO sled_body
 .sled\1:
     REPT \2
@@ -1346,7 +1346,7 @@ MACRO sled_body
     call Emit
 ENDM
 
-; One interrupt case (registers already reset): LCDC \1, STAT \2, LYC \3, IE \4, SCX \5, WX \6; the sled starts at M-cycle \7 with \8 NOPs.
+; One interrupt case: LCDC \1, STAT \2, LYC \3, IE \4, SCX \5, WX \6; sled at M-cycle \7 of \8 NOPs.
 MACRO irq_case
     ld a, \5
     ldh [rSCX], a
@@ -1406,7 +1406,7 @@ MACRO irq_at_enable
     sled_body \@, \3
 ENDM
 
-; Register \2 written with \3 at M-cycle \1 (STAT \4, LYC \5, IE = STAT) with interrupts on, sled of \6 right after the write.
+; Register \2 = \3 written at M-cycle \1 (STAT \4, LYC \5, IE = STAT) with IME on; sled of \6 after.
 MACRO irq_after_write
     call LcdOff
     call SetupDefaults

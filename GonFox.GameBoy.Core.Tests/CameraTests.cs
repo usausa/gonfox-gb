@@ -505,7 +505,6 @@ public sealed class CameraTests
         Assert.Equal(0xFF, memory[0]);
     }
 
-    // State keeps the banks, RAM, registers and capture; invalid fields are rejected.
     [Fact]
     public void StateKeepsTheCaptureAndRejectsInvalidCameraFields()
     {

@@ -1,4 +1,4 @@
-; Runs every CPU instruction except HALT, STOP and the undefined opcodes over fixed input states and emits a CRC-16 of the results per opcode.
+; Runs every CPU instruction but HALT, STOP and undefined ones over fixed states; a CRC-16 per opcode.
 
 INCLUDE "hardware.inc"
 INCLUDE "report.inc"
@@ -50,7 +50,7 @@ ENDM
 
 SECTION "Capture", HRAM[$FF80]
 hCap: ds 10 ; F, A, C, B, E, D, L, H and SP after the instruction.
-hTestMem: ds 4 ; Two test bytes (the path code is XORed into the second after the run) and the stack word; SP starts at hTestMem + 2.
+hTestMem: ds 4 ; Two test bytes (the path code XORed into the second) and the stack word; SP = hTestMem + 2.
 
 SECTION "Harness HRAM", HRAM
 hStatePtr: ds 2
@@ -161,7 +161,7 @@ InitExec:
     ld [hl], a
     ret
 
-; Writes the register override, the test stack pointer, the fixed operands and the fall-through jump for the opcode at wExec + 10.
+; Writes the register override, test SP, fixed operands and fall-through jump at wExec + 10.
 BuildExec:
     ldh a, [hAttr1]
     and OVR_MASK
@@ -231,7 +231,7 @@ Overrides:
     db $0E, LOW(hTestMem), $00
     db $21, LOW(wPadTaken), HIGH(wPadTaken)
 
-; Runs the first hStateCount input states through the RAM code; CaptureCommon continues the loop and emits the CRC-16, low byte first.
+; Runs the first hStateCount input states; CaptureCommon loops and emits the CRC-16, low byte first.
 RunStates:
     ld [hHarnessSp], sp
     ld a, $FF
@@ -304,7 +304,7 @@ RunStates:
     ld sp, hl
     jp wExec
 
-; Folds the captured results into a CRC-8, folds that into the CRC-16, then runs the next state or emits the CRC-16.
+; Folds the results into a CRC-8 and that into the CRC-16, then runs the next state or emits.
 CaptureCommon:
     di
     ld b, a
@@ -350,7 +350,7 @@ CaptureCommon:
     ld l, e
     jp EmitWord
 
-; Runs DAA on every A and flag combination and emits the CRC-16 of the resulting A and F, low byte first.
+; Runs DAA on every A and flag combination; emits the CRC-16 of the results, low byte first.
 DaaSweep:
     ld de, $FFFF
     ld bc, 0
@@ -420,7 +420,7 @@ FOR I, 256
     db CRC
 ENDR
 
-; Input states, 16 bytes each: SP, test bytes 0 and 1, operand bytes 1 and 2, stack word, then F, A, C, B, E, D, L and H.
+; Input states (16 bytes): SP, test bytes, operand bytes 1-2, stack word, then F, A, C, B, E, D, L, H.
 SECTION "States", ROM0, ALIGN[8]
 States:
     db $FF, $FF, $81, $62, $F0, $17, $B6, $10, $00, $00, $0F, $01, $1F, $10, $80, $7F
@@ -456,7 +456,7 @@ States:
     db $FF, $7F, $FF, $E1, $0F, $78, $B1, $3A, $50, $42, $F0, $C3, $0F, $7F, $5A, $F8
     db $F0, $00, $F0, $47, $B9, $73, $11, $91, $C0, $BD, $A5, $08, $C3, $5A, $FF, $3C
 
-; Per base opcode: length and operand kind (bits 2-4), then register override (bits 0-2), SP from the state (bit 3) and a stack word holding the taken pad (bit 4).
+; Two bytes per base opcode: length, kind (2-4); override (0-2), SP from state (3), taken pad (4).
 SECTION "Base attributes", ROM0
 BaseAttributes:
     db $01, $00 ; $00 NOP
