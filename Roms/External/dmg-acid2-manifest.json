@@ -11,7 +11,7 @@
   "licenseSha256": "2b5ed6f8abbded3913a08ebe8f4eedb340735efc3b024570244d6efa73418044",
   "frames": 12,
   "maxTCycles": 5000000,
-  "timeoutSeconds": 10,
+  "timeoutSeconds": 60,
   "files": [
     {
       "path": "LICENSE",

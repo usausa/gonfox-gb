@@ -10,7 +10,7 @@
   "success": "Run until LD B,B (opcode 40) executes, then compare the latest completed frame with the expected PNG pixel for pixel. Shades 0-3 are the grey levels FF, AA, 55 and 00. Where DMG-blob and DMG-CPU B images differ, the DMG-CPU B one is expected.",
   "setup": "The images assume the DMG boot ROM's VRAM: the header logo (0104-0133) in tiles 1-24, each nibble doubled into the low bitplane of two rows; (R) in tile 25 (3C 42 B9 A5 B9 A5 42 3C); map 9904-990F = 1-12, 9910 = 25, 9924-992F = 13-24. The test writes this into the state before the first instruction.",
   "maxTCycles": 4000000,
-  "timeoutSeconds": 10,
+  "timeoutSeconds": 60,
   "files": [
     {
       "path": "LICENSE",

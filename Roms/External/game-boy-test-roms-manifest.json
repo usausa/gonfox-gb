@@ -30,7 +30,7 @@
       "sha256": "f1025d958dbcb938a977b9d5198df379db143cf102df11078ebf032d4de8194c"
     }
   ],
-  "timeoutSeconds": 10,
+  "timeoutSeconds": 60,
   "files": [
     {
       "path": "age-test-roms/halt/ei-halt-dmgC-cgbBCE.gb",

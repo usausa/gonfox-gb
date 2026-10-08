@@ -437,3 +437,6 @@ __*
 
 # Caches of the ROM tools
 /.cache/
+
+# Test ROMs that their suites keep in bin folders
+!/Roms/**/[Bb]in/*

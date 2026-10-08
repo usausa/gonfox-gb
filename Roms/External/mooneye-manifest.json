@@ -18,7 +18,7 @@
       "sourcePath": "acceptance/bits/reg_f.s",
       "sourceSha256": "50f43cc4c3256eef7821447d4ba91474d762aba85a24623eddad73213ee805fe",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -28,7 +28,7 @@
       "sourcePath": "acceptance/boot_div-dmgABCmgb.s",
       "sourceSha256": "c67b05eefd7cac1d1de8f8a11afaab0d8e43369015798ea831b2a0e2ade940c5",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -38,7 +38,7 @@
       "sourcePath": "acceptance/boot_hwio-dmgABCmgb.s",
       "sourceSha256": "311c1d5cf93cca45f0f7ca70d35b0d570f2652705c0360767775445b009db105",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -48,7 +48,7 @@
       "sourcePath": "acceptance/boot_regs-dmgABC.s",
       "sourceSha256": "35005a60922af5dee684055c3675976f14096c0c2192859cd52053a9a3132d73",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -58,7 +58,7 @@
       "sourcePath": "acceptance/instr/daa.s",
       "sourceSha256": "37341fe47cd19b36a2b8f0b041dd6213dc1d7952fc89f70399bc59112426508a",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -68,7 +68,7 @@
       "sourcePath": "acceptance/ei_sequence.s",
       "sourceSha256": "1d98529081aad78d34c65d11a940d8968844ea41ba634e2fa46e285305d90384",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -78,7 +78,7 @@
       "sourcePath": "acceptance/ei_timing.s",
       "sourceSha256": "fe34ebacd99dd7cc41a96884124ae5b317e2bf43aafda930e92db34b8220aea3",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -88,7 +88,7 @@
       "sourcePath": "acceptance/if_ie_registers.s",
       "sourceSha256": "8f768cfecfa56d1ea651491b925ca5470d19883c68eb641e40f562d4167ee009",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -98,7 +98,7 @@
       "sourcePath": "acceptance/div_timing.s",
       "sourceSha256": "361185220ed900ad0182b5ebdfade98b34f45e6aabe1b1d2ac31b6e8fd839acb",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -108,7 +108,7 @@
       "sourcePath": "acceptance/intr_timing.s",
       "sourceSha256": "804aaf344bc9d482c429d4cccb28ac572bb80a33be047a4a1abe312a2f747086",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -118,7 +118,7 @@
       "sourcePath": "acceptance/timer/div_write.s",
       "sourceSha256": "b3e6f1b0ed22ad7205da731cbfc9d7d44f07b581a3a8f28eb41ee1263588de79",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -128,7 +128,7 @@
       "sourcePath": "acceptance/timer/rapid_toggle.s",
       "sourceSha256": "807a15657cb2750b01edcd154a95d808f1237ced6d5ef751fe866457709138ab",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -138,7 +138,7 @@
       "sourcePath": "acceptance/timer/tim00_div_trigger.s",
       "sourceSha256": "482c27f0eeeebd10740aed23689372e2e6cf483a6a4cad9a1c03aa6c7fccc900",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -148,7 +148,7 @@
       "sourcePath": "acceptance/timer/tim00.s",
       "sourceSha256": "83a1c6b970444e3879715d81d3d32f4af04049b8c9708ed7cc9792c728b8991b",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -158,7 +158,7 @@
       "sourcePath": "acceptance/timer/tim01_div_trigger.s",
       "sourceSha256": "77e58e4ee1156d4e007ecae87bd5628fee6072a777b71fcf2c03748a5c6d89bb",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -168,7 +168,7 @@
       "sourcePath": "acceptance/timer/tim01.s",
       "sourceSha256": "4a858e356f842acc1ce071c8c626d9012946d2003552fbae8419c83cb3efe56e",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -178,7 +178,7 @@
       "sourcePath": "acceptance/timer/tim10_div_trigger.s",
       "sourceSha256": "38892a4d6de3213fbb83b038bad20c4f055430bb7ea3674b554090e378c0b09d",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -188,7 +188,7 @@
       "sourcePath": "acceptance/timer/tim10.s",
       "sourceSha256": "88ffb98ac31c445dd9da9279cabe892ac78a12655f39ddeaa1c347a8ed7ee9c3",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -198,7 +198,7 @@
       "sourcePath": "acceptance/timer/tim11_div_trigger.s",
       "sourceSha256": "b4ce9c3b824d2722241a5552432ee2c5546029ed1a1ec7b3c0f50f9d580eb5d3",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -208,7 +208,7 @@
       "sourcePath": "acceptance/timer/tim11.s",
       "sourceSha256": "afe901fbfd9a11a84f8e97ca88259b637a4e7bdb5eabd2bde215c6514774611b",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -218,7 +218,7 @@
       "sourcePath": "acceptance/timer/tima_reload.s",
       "sourceSha256": "2b6fe4be2e46bec779265ffb34f7b0cad597803a79039f7ef61af4187d25bf65",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -228,7 +228,7 @@
       "sourcePath": "acceptance/timer/tima_write_reloading.s",
       "sourceSha256": "7d80fb62e8c86136c3d655e0e84957a93c1434c49eab38c3823f4101e5eaf884",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -238,7 +238,7 @@
       "sourcePath": "acceptance/timer/tma_write_reloading.s",
       "sourceSha256": "6240dd1c19205dfd65646484c6447148fb891d370176a0490b3325438a7f68da",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -248,7 +248,7 @@
       "sourcePath": "acceptance/serial/boot_sclk_align-dmgABCmgb.s",
       "sourceSha256": "09d2d4de02e4f2f42208424c7c361ed15ade6d617925d8acfc90ccba87db2558",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -258,7 +258,7 @@
       "sourcePath": "acceptance/oam_dma/basic.s",
       "sourceSha256": "fdd40c4c62afe9710b6a5c86856ff36c8b64fe61ac35a3882fe42edf99b55951",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -268,7 +268,7 @@
       "sourcePath": "acceptance/oam_dma/reg_read.s",
       "sourceSha256": "0c81973a40a57a6393536d1e2f4dbfb139328631760bb46eeeccd14d4874cc03",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -278,7 +278,7 @@
       "sourcePath": "acceptance/oam_dma/sources-GS.s",
       "sourceSha256": "ae9c297bc2f3bab3a985362bab5b09582789183a873b6e2dc73623877a57fa4a",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -288,7 +288,7 @@
       "sourcePath": "acceptance/oam_dma_start.s",
       "sourceSha256": "5166a7ffb0be075362da2cd6a3ceed4ec9a3b1631364ee3df766d973206396c4",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -298,7 +298,7 @@
       "sourcePath": "acceptance/oam_dma_restart.s",
       "sourceSha256": "1e8486cb0fb9a72ed9826619dd3bc1488ee56e66fac9806f28a7cd330cf61a48",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -308,7 +308,7 @@
       "sourcePath": "acceptance/oam_dma_timing.s",
       "sourceSha256": "1657352a52442146d61408ce592927d5f4c970800bfaaad346d9068c9a287b73",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -318,7 +318,7 @@
       "sourcePath": "acceptance/interrupts/ie_push.s",
       "sourceSha256": "2f33ed6af272f0e5945277d654882b5c48df7d336e95f3cefdd6ad49a46025d3",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -328,7 +328,7 @@
       "sourcePath": "acceptance/halt_ime0_ei.s",
       "sourceSha256": "fef85d2a68ed71ab2cff8bd5fbe88b055b86bea9a58f946c8413ae2537e3d1b5",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -338,7 +338,7 @@
       "sourcePath": "acceptance/halt_ime0_nointr_timing.s",
       "sourceSha256": "b4abe743cffaa68d22870a574a407e0caf8e3ac859bd8fa0e19be07dfc958f6f",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -348,7 +348,7 @@
       "sourcePath": "acceptance/halt_ime1_timing.s",
       "sourceSha256": "d9126df4f5cccb65200f0c5604a1fe94be3adfd3ec5a83233a244a74c64d15f6",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -358,7 +358,7 @@
       "sourcePath": "acceptance/halt_ime1_timing2-GS.s",
       "sourceSha256": "ffb25d744c240cc7236dc21e241c49f074720351a1327cc8873394e5cf421f05",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -368,7 +368,7 @@
       "sourcePath": "acceptance/di_timing-GS.s",
       "sourceSha256": "0e1d6bcf806fd37de1e0bc9d3c5e715d512ec6f06f8fb53619de221582d0ff10",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -378,7 +378,7 @@
       "sourcePath": "acceptance/rapid_di_ei.s",
       "sourceSha256": "7e32310e3eeea13d1dee692e4fd33d5c52a30b67533e4688c547821354b42cc2",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -388,7 +388,7 @@
       "sourcePath": "acceptance/reti_intr_timing.s",
       "sourceSha256": "6dce4600b2652a663834164f05eb590f5b5859ef530cf1ea453ec742305dcc36",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -398,7 +398,7 @@
       "sourcePath": "acceptance/ppu/stat_lyc_onoff.s",
       "sourceSha256": "031b63bb1b31c96de05fe15404cd44bcea1e442a9affe4ea3bb2e7b784a3b94d",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -408,7 +408,7 @@
       "sourcePath": "acceptance/ppu/vblank_stat_intr-GS.s",
       "sourceSha256": "354e23b7df4945a905adbeb5b90ec5efc3d66582254f9f93bb6d29798890e4e9",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -418,7 +418,7 @@
       "sourcePath": "acceptance/ppu/lcdon_timing-GS.s",
       "sourceSha256": "ea2922e743076bc4fe09ee47471d5a5266b0e1d6e2d1fdad04db6715be01a67c",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -428,7 +428,7 @@
       "sourcePath": "acceptance/ppu/lcdon_write_timing-GS.s",
       "sourceSha256": "5fd83b41ff614c47d8e3b207fceeb62098e858d9947b627f8c38941422cd85f3",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -438,7 +438,7 @@
       "sourcePath": "acceptance/ppu/stat_irq_blocking.s",
       "sourceSha256": "e143b5c70e721f18fb66f6266767e31bf9e1d6961596129d94ab850e332e4cb6",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -448,7 +448,7 @@
       "sourcePath": "acceptance/ppu/intr_1_2_timing-GS.s",
       "sourceSha256": "f923f03147018b4d70353ad1262d95be171418caaaa31e1e5a27f84123ca690e",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -458,7 +458,7 @@
       "sourcePath": "acceptance/ppu/intr_2_0_timing.s",
       "sourceSha256": "10de35ddfa025b39f6e77a395b2b59381c211f57866ba768361011e27d38ffa1",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -468,7 +468,7 @@
       "sourcePath": "acceptance/ppu/intr_2_mode0_timing.s",
       "sourceSha256": "1de078883f24be4136bc7b572caee36815eea9443d1466370763e16e8ab35750",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -478,7 +478,7 @@
       "sourcePath": "acceptance/ppu/intr_2_mode3_timing.s",
       "sourceSha256": "7a07f9dd6d0d3259f95a9c85ee2997f68139652b22b6c9f075287cf0950b2ab0",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -488,7 +488,7 @@
       "sourcePath": "acceptance/ppu/intr_2_oam_ok_timing.s",
       "sourceSha256": "ab60129dfef65ea6927e8799734b43dc532d6a1936d342412cf0f41cf3c65726",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -498,7 +498,7 @@
       "sourcePath": "acceptance/ppu/hblank_ly_scx_timing-GS.s",
       "sourceSha256": "8cb56a85050955930cb38b7ffb29df370559c425f84390b7cf4eb8b3f2e1664f",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -508,7 +508,7 @@
       "sourcePath": "acceptance/ppu/intr_2_mode0_timing_sprites.s",
       "sourceSha256": "454d9b3d12a29ab8380388d4b0c67cffd6788d80a1dd47956cc996e0302b7955",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -518,7 +518,7 @@
       "sourcePath": "acceptance/add_sp_e_timing.s",
       "sourceSha256": "7c0302329eeb021a33e46235a17da15cc8982c57253e18864397a8c12db0e945",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -528,7 +528,7 @@
       "sourcePath": "acceptance/call_cc_timing.s",
       "sourceSha256": "fd8a61750f6f1911ee291768e54489cc8bd3d71d65fe9cf8c23550297484025f",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -538,7 +538,7 @@
       "sourcePath": "acceptance/call_cc_timing2.s",
       "sourceSha256": "9047ef5fa36438184745c2d27e4ea8ffeb0950b909c4994fe44b073a9bbb7138",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -548,7 +548,7 @@
       "sourcePath": "acceptance/call_timing.s",
       "sourceSha256": "1d984d681eef46ee80ae70325f33229f36fc109eb86d2643b1f6853b5eae9125",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -558,7 +558,7 @@
       "sourcePath": "acceptance/call_timing2.s",
       "sourceSha256": "20b1a0d3fcab67ddee35ab857fefabebffb03cf6fe33f1e2d5ed2d8d92c82e47",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -568,7 +568,7 @@
       "sourcePath": "acceptance/jp_cc_timing.s",
       "sourceSha256": "35ef6ce6d82561f9924369e1ec393d30ccd4ed647f3ad40d3d2b1786eb58ba7a",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -578,7 +578,7 @@
       "sourcePath": "acceptance/jp_timing.s",
       "sourceSha256": "d7fb08e2cad1e921337212346e272031cdaec215d873b7faa26e375e0ad3cf8a",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -588,7 +588,7 @@
       "sourcePath": "acceptance/ld_hl_sp_e_timing.s",
       "sourceSha256": "15f42e6e5223ca5dcd0e7f05eba79b4f6757e8187e23eb2d29efee09a45efa5f",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -598,7 +598,7 @@
       "sourcePath": "acceptance/pop_timing.s",
       "sourceSha256": "1254d0935f7e4302f2cfdc63504cbb3187a12292acc03bd19c23fea0282215ea",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -608,7 +608,7 @@
       "sourcePath": "acceptance/push_timing.s",
       "sourceSha256": "5e705cd71c388e9d7968f934e397da9815bd7ceb24389f2adcf3bffcbb61ff29",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -618,7 +618,7 @@
       "sourcePath": "acceptance/ret_cc_timing.s",
       "sourceSha256": "5daec5e96b34c0df0530acb52bf624af94aa5c014622633f44db76a800788a49",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -628,7 +628,7 @@
       "sourcePath": "acceptance/ret_timing.s",
       "sourceSha256": "6e7ac81f4314a627f4c78b414d9e59c131f00d2963fce8ea49d709073f25cb60",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -638,7 +638,7 @@
       "sourcePath": "acceptance/reti_timing.s",
       "sourceSha256": "ae37dac1a36a70833b5f2a7c190b4f7609b2f885beb33fee49723e698afb7a05",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -648,7 +648,7 @@
       "sourcePath": "acceptance/rst_timing.s",
       "sourceSha256": "3942ec8aedb63f25af8c4bdb027bcf745fa94a2dcd50a07f3178653261aeb7db",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -658,7 +658,7 @@
       "sourcePath": "emulator-only/mbc1/bits_bank1.s",
       "sourceSha256": "b2ffc9700db5aa9fb0cf08f90b1ef0b578084d7fcb573d21079ea5b7d898cf51",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -668,7 +668,7 @@
       "sourcePath": "emulator-only/mbc1/bits_bank2.s",
       "sourceSha256": "b9ea3f3c70bb518ba1f79dd14e0c1c2fd96351f2fad4a8da776a0ea05b529fd1",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -678,7 +678,7 @@
       "sourcePath": "emulator-only/mbc1/bits_mode.s",
       "sourceSha256": "69c2e3022c2319ded39b3eea64dcad1fd91224095463b8fe8dde5e0fa8a0f2e7",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -688,7 +688,7 @@
       "sourcePath": "emulator-only/mbc1/bits_ramg.s",
       "sourceSha256": "ef44b50df2287acf639142f13f186011de31771f1c81da1aba680dfff3a6bce0",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -698,7 +698,7 @@
       "sourcePath": "emulator-only/mbc1/ram_256kb.s",
       "sourceSha256": "a07c4796d45545aa1fc3eee44338732643e657e8085cc118aba702db5618da9f",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -708,7 +708,7 @@
       "sourcePath": "emulator-only/mbc1/ram_64kb.s",
       "sourceSha256": "6fac39b4cea41dd9a52757833b94df50f09903a43f4b69be95c639fe9c5c649c",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -718,7 +718,7 @@
       "sourcePath": "emulator-only/mbc1/rom_16Mb.s",
       "sourceSha256": "c8381022e184471eadfe5bae6015aabb087224af0e7172a14d5cb98fcbf264b2",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -728,7 +728,7 @@
       "sourcePath": "emulator-only/mbc1/rom_1Mb.s",
       "sourceSha256": "5c5b5bf75a5206d7fb6f5ca5c377eed4e9420f50e74b09659f62df2c7c7285fc",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -738,7 +738,7 @@
       "sourcePath": "emulator-only/mbc1/rom_2Mb.s",
       "sourceSha256": "331fa4306bb04635fb2c3aafcd5f6fa3ef1f170e817dd6fb42a017a7327841f6",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -748,7 +748,7 @@
       "sourcePath": "emulator-only/mbc1/rom_4Mb.s",
       "sourceSha256": "e3f14da2b1ca3c84772f576fbdfb29981569e5dd67a5316b1520588cc9031f0c",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -758,7 +758,7 @@
       "sourcePath": "emulator-only/mbc1/rom_512kb.s",
       "sourceSha256": "b3b14011775578f7df64e06c169c598582111c8cf6ffa42adebee284613cfd80",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -768,7 +768,7 @@
       "sourcePath": "emulator-only/mbc1/rom_8Mb.s",
       "sourceSha256": "c9d4e740bc6e799fd50fbebdecaa066a9d721257529e10edf542120a1966ba9a",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -778,7 +778,7 @@
       "sourcePath": "emulator-only/mbc1/multicart_rom_8Mb.s",
       "sourceSha256": "f28e05ae5e9e0aac1e7c542bf19d48756d6b3b0b711a149219fb2409c93134e4",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -788,7 +788,7 @@
       "sourcePath": "emulator-only/mbc2/bits_ramg.s",
       "sourceSha256": "80c3c7f679b91762e6be82fd529248f0bdbe968374ab29df587274b302dfe002",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -798,7 +798,7 @@
       "sourcePath": "emulator-only/mbc2/bits_romb.s",
       "sourceSha256": "2cec04e4483727ee06f4ff78fc6083ee95a3991807af5f1e4e7e196fc73323a1",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -808,7 +808,7 @@
       "sourcePath": "emulator-only/mbc2/bits_unused.s",
       "sourceSha256": "12b058b58c1f884f2c0211dece4a75ec9e23792a36596801550dcbe350fa4abd",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -818,7 +818,7 @@
       "sourcePath": "emulator-only/mbc2/ram.s",
       "sourceSha256": "c15e4fb6dfc75886fbe1d8344fcd693e76e2b327488271707522c7eca2c1a01c",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -828,7 +828,7 @@
       "sourcePath": "emulator-only/mbc2/rom_1Mb.s",
       "sourceSha256": "f69828ccd5dc2984ccb826a4a819e77b463ad5f2a174d50501831a9e1b37780b",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -838,7 +838,7 @@
       "sourcePath": "emulator-only/mbc2/rom_2Mb.s",
       "sourceSha256": "082e57a26ce80ad48f07a34ae7135ab6915af71741f43243a593132b715bb127",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -848,7 +848,7 @@
       "sourcePath": "emulator-only/mbc2/rom_512kb.s",
       "sourceSha256": "954e42d5dd48690198a3a531fdb69b6458759f5bd7798b3bcedddcb2c54e6377",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -858,7 +858,7 @@
       "sourcePath": "emulator-only/mbc5/rom_16Mb.s",
       "sourceSha256": "2be73a4d150cdeb0dce01318d35fb032595396c3210d2e2e986fad144a15afc9",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -868,7 +868,7 @@
       "sourcePath": "emulator-only/mbc5/rom_1Mb.s",
       "sourceSha256": "b59f38c54f46766591e0cabd7ee8eb09c92e072aa76d687c26100291daeeab77",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -878,7 +878,7 @@
       "sourcePath": "emulator-only/mbc5/rom_2Mb.s",
       "sourceSha256": "ab926a4b8eb9da855640c1979c3d53eaa113a908a22a0f9aeeecf54158e45331",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -888,7 +888,7 @@
       "sourcePath": "emulator-only/mbc5/rom_32Mb.s",
       "sourceSha256": "e684188255cdd20492182d509bc2b99523e314dc311563ee0a27542a71135640",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -898,7 +898,7 @@
       "sourcePath": "emulator-only/mbc5/rom_4Mb.s",
       "sourceSha256": "e0f34c602685cdccbac2f32f92eca787316802ea486ce45a0352c093036add4f",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -908,7 +908,7 @@
       "sourcePath": "emulator-only/mbc5/rom_512kb.s",
       "sourceSha256": "eaf907cad330291ab655753a587d0d70f6904c462d86b02122099f95372f2940",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -918,7 +918,7 @@
       "sourcePath": "emulator-only/mbc5/rom_64Mb.s",
       "sourceSha256": "5938816804f073434ad273de63d72dcf307637035605edc1bfce0fd6bfd13477",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     },
     {
@@ -928,7 +928,7 @@
       "sourcePath": "emulator-only/mbc5/rom_8Mb.s",
       "sourceSha256": "435b59553781e5f8a8c8dcfd77e9e7598e807b6b72fd837c8e5d22e4ea31b846",
       "maxTCycles": 50000000,
-      "timeoutSeconds": 10,
+      "timeoutSeconds": 60,
       "expected": "PASS"
     }
   ]

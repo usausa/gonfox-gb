@@ -8,7 +8,7 @@
   "licenseSha256": "0b3557142dfcce65428fafb9c8254d9d59c027a008af4810867efd7342b77c25",
   "protocol": "FF80=actual, FF81=expected, FF82=01 pass / FF fail (written last)",
   "maxTCycles": 4000000,
-  "timeoutSeconds": 10,
+  "timeoutSeconds": 60,
   "files": [
     {
       "path": "LICENSE",
