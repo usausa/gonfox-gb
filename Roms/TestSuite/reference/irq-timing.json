@@ -1,0 +1,1101 @@
+{
+  "rom": "irq-timing.gb",
+  "sha256": "a6c1a7a387c8b7a667d69bdad951505a587e2bff7cf56cec118e381ab867e673",
+  "reference": "sameboy",
+  "frames": 120,
+  "maxTCycles": 200000000,
+  "cases": [
+    {
+      "name": "timer IRQ: sled offset, TIMA 0 NOPs into the handler",
+      "offset": 0,
+      "length": 2
+    },
+    {
+      "name": "timer IRQ: sled offset, TIMA 1 NOPs into the handler",
+      "offset": 2,
+      "length": 2
+    },
+    {
+      "name": "timer IRQ: sled offset, TIMA 2 NOPs into the handler",
+      "offset": 4,
+      "length": 2
+    },
+    {
+      "name": "timer IRQ: sled offset, TIMA 3 NOPs into the handler",
+      "offset": 6,
+      "length": 2
+    },
+    {
+      "name": "timer IRQ during LD A,(HL) 2M sled shifted 0: offset",
+      "offset": 8,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD A,(HL) 2M sled shifted 1: offset",
+      "offset": 9,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD A,(HL) 2M sled shifted 2: offset",
+      "offset": 10,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD A,(HL) 2M sled shifted 3: offset",
+      "offset": 11,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD A,(HL) 2M sled shifted 4: offset",
+      "offset": 12,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD BC,n16 3M sled shifted 0: offset",
+      "offset": 13,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD BC,n16 3M sled shifted 1: offset",
+      "offset": 14,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD BC,n16 3M sled shifted 2: offset",
+      "offset": 15,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD BC,n16 3M sled shifted 3: offset",
+      "offset": 16,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD BC,n16 3M sled shifted 4: offset",
+      "offset": 17,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during JP 4M sled shifted 0: offset",
+      "offset": 18,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during JP 4M sled shifted 1: offset",
+      "offset": 19,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during JP 4M sled shifted 2: offset",
+      "offset": 20,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during JP 4M sled shifted 3: offset",
+      "offset": 21,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during JP 4M sled shifted 4: offset",
+      "offset": 22,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD (a16),SP 5M sled shifted 0: offset",
+      "offset": 23,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD (a16),SP 5M sled shifted 1: offset",
+      "offset": 24,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD (a16),SP 5M sled shifted 2: offset",
+      "offset": 25,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD (a16),SP 5M sled shifted 3: offset",
+      "offset": 26,
+      "length": 1
+    },
+    {
+      "name": "timer IRQ during LD (a16),SP 5M sled shifted 4: offset",
+      "offset": 27,
+      "length": 1
+    },
+    {
+      "name": "IF write by LDH shifted 0: offset, handler TIMA",
+      "offset": 28,
+      "length": 2
+    },
+    {
+      "name": "IF write by LDH shifted 1: offset, handler TIMA",
+      "offset": 30,
+      "length": 2
+    },
+    {
+      "name": "IF write by LDH shifted 2: offset, handler TIMA",
+      "offset": 32,
+      "length": 2
+    },
+    {
+      "name": "IF write by LDH shifted 3: offset, handler TIMA",
+      "offset": 34,
+      "length": 2
+    },
+    {
+      "name": "IF write by LD (HL),A: offset, handler TIMA",
+      "offset": 36,
+      "length": 2
+    },
+    {
+      "name": "IF write by LD (a16),A: offset, handler TIMA",
+      "offset": 38,
+      "length": 2
+    },
+    {
+      "name": "STAT mode 2 line 1 after LCD on: offset, IF, TIMA",
+      "offset": 40,
+      "length": 3
+    },
+    {
+      "name": "STAT mode 0 line 1 after LCD on: offset, IF, TIMA",
+      "offset": 43,
+      "length": 3
+    },
+    {
+      "name": "STAT LYC=2 after LCD on: offset, IF, TIMA",
+      "offset": 46,
+      "length": 3
+    },
+    {
+      "name": "STAT mode 1 after LCD on: offset, IF, TIMA",
+      "offset": 49,
+      "length": 3
+    },
+    {
+      "name": "VBlank after LCD on: offset, IF, TIMA",
+      "offset": 52,
+      "length": 3
+    },
+    {
+      "name": "serial started W+61: completion offset",
+      "offset": 55,
+      "length": 1
+    },
+    {
+      "name": "serial started W+62: completion offset",
+      "offset": 56,
+      "length": 1
+    },
+    {
+      "name": "serial started W+63: completion offset",
+      "offset": 57,
+      "length": 1
+    },
+    {
+      "name": "serial started W+64: completion offset",
+      "offset": 58,
+      "length": 1
+    },
+    {
+      "name": "serial started W+65: completion offset",
+      "offset": 59,
+      "length": 1
+    },
+    {
+      "name": "serial restarted W+300: completion offset",
+      "offset": 60,
+      "length": 1
+    },
+    {
+      "name": "serial external clock: IF, SC, SB",
+      "offset": 61,
+      "length": 3
+    },
+    {
+      "name": "EI on W+9, request W+13: offset from EI",
+      "offset": 64,
+      "length": 1
+    },
+    {
+      "name": "EI on W+10, request W+13: offset from EI",
+      "offset": 65,
+      "length": 1
+    },
+    {
+      "name": "EI on W+11, request W+13: offset from EI",
+      "offset": 66,
+      "length": 1
+    },
+    {
+      "name": "EI on W+12, request W+13: offset from EI",
+      "offset": 67,
+      "length": 1
+    },
+    {
+      "name": "EI on W+13, request W+13: offset from EI",
+      "offset": 68,
+      "length": 1
+    },
+    {
+      "name": "EI on W+14, request W+13: offset from EI",
+      "offset": 69,
+      "length": 1
+    },
+    {
+      "name": "pending request, EI;NOP: offset from EI",
+      "offset": 70,
+      "length": 1
+    },
+    {
+      "name": "pending request, EI;DI: offset from EI",
+      "offset": 71,
+      "length": 1
+    },
+    {
+      "name": "pending request, EI;EI: offset from EI",
+      "offset": 72,
+      "length": 1
+    },
+    {
+      "name": "pending request, EI;HALT: offset from EI",
+      "offset": 73,
+      "length": 1
+    },
+    {
+      "name": "pending request, RETI: offset from target",
+      "offset": 74,
+      "length": 1
+    },
+    {
+      "name": "DI on W+10, request W+13: vector, offset from DI",
+      "offset": 75,
+      "length": 2
+    },
+    {
+      "name": "DI on W+11, request W+13: vector, offset from DI",
+      "offset": 77,
+      "length": 2
+    },
+    {
+      "name": "DI on W+12, request W+13: vector, offset from DI",
+      "offset": 79,
+      "length": 2
+    },
+    {
+      "name": "DI on W+13, request W+13: vector, offset from DI",
+      "offset": 81,
+      "length": 2
+    },
+    {
+      "name": "DI on W+14, request W+13: vector, offset from DI",
+      "offset": 83,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+9, timer request W+17: vector, IF",
+      "offset": 85,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+10, timer request W+17: vector, IF",
+      "offset": 87,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+11, timer request W+17: vector, IF",
+      "offset": 89,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+12, timer request W+17: vector, IF",
+      "offset": 91,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+13, timer request W+17: vector, IF",
+      "offset": 93,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+14, timer request W+17: vector, IF",
+      "offset": 95,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+15, timer request W+17: vector, IF",
+      "offset": 97,
+      "length": 2
+    },
+    {
+      "name": "serial dispatch from IF write W+16, timer request W+17: vector, IF",
+      "offset": 99,
+      "length": 2
+    },
+    {
+      "name": "push during dispatch, SP 0000 page 02 (IE=02): vector, IF, IE",
+      "offset": 101,
+      "length": 3
+    },
+    {
+      "name": "push during dispatch, SP 0000 page 04 (IE=04): vector, IF, IE",
+      "offset": 104,
+      "length": 3
+    },
+    {
+      "name": "push during dispatch, SP 0000 page 08 (IE=08): vector, IF, IE",
+      "offset": 107,
+      "length": 3
+    },
+    {
+      "name": "push during dispatch, SP 0001 page 02 (IE=PCl): vector, IF, IE",
+      "offset": 110,
+      "length": 3
+    },
+    {
+      "name": "push during dispatch, SP FF10 page 02 (IF=02): vector, IF, IE",
+      "offset": 113,
+      "length": 3
+    },
+    {
+      "name": "push during dispatch, SP FF10 page 04 (IF=04): vector, IF, IE",
+      "offset": 116,
+      "length": 3
+    },
+    {
+      "name": "push during dispatch, SP FF11 page 04 (IF=PCl): vector, IF, IE",
+      "offset": 119,
+      "length": 3
+    },
+    {
+      "name": "priority IE 1F IF 1F: vector, IF",
+      "offset": 122,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 1E: vector, IF",
+      "offset": 124,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 1C: vector, IF",
+      "offset": 126,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 18: vector, IF",
+      "offset": 128,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 10: vector, IF",
+      "offset": 130,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1E IF 1F: vector, IF",
+      "offset": 132,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1C IF 1F: vector, IF",
+      "offset": 134,
+      "length": 2
+    },
+    {
+      "name": "priority IE 18 IF 1F: vector, IF",
+      "offset": 136,
+      "length": 2
+    },
+    {
+      "name": "priority IE 10 IF 1F: vector, IF",
+      "offset": 138,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 0A: vector, IF",
+      "offset": 140,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 14: vector, IF",
+      "offset": 142,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 12: vector, IF",
+      "offset": 144,
+      "length": 2
+    },
+    {
+      "name": "priority IE 1F IF 05: vector, IF",
+      "offset": 146,
+      "length": 2
+    },
+    {
+      "name": "priority IE 0A IF 15: vector, IF",
+      "offset": 148,
+      "length": 2
+    },
+    {
+      "name": "priority IE E4 IF 04: vector, IF",
+      "offset": 150,
+      "length": 2
+    },
+    {
+      "name": "priority IE FF IF E0: vector, IF",
+      "offset": 152,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+8, request end of W+12: INC count, TIMA",
+      "offset": 154,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+9, request end of W+12: INC count, TIMA",
+      "offset": 156,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+10, request end of W+12: INC count, TIMA",
+      "offset": 158,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+11, request end of W+12: INC count, TIMA",
+      "offset": 160,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+12, request end of W+12: INC count, TIMA",
+      "offset": 162,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+13, request end of W+12: INC count, TIMA",
+      "offset": 164,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+14, request end of W+12: INC count, TIMA",
+      "offset": 166,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 on W+15, request end of W+12: INC count, TIMA",
+      "offset": 168,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 wake-up, TIMA 1 NOPs later: INC count, TIMA",
+      "offset": 170,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 wake-up, TIMA 2 NOPs later: INC count, TIMA",
+      "offset": 172,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 wake-up, TIMA 3 NOPs later: INC count, TIMA",
+      "offset": 174,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 on W+8, request end of W+12: offset from HALT, TIMA",
+      "offset": 176,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 on W+9, request end of W+12: offset from HALT, TIMA",
+      "offset": 178,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 on W+10, request end of W+12: offset from HALT, TIMA",
+      "offset": 180,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 on W+11, request end of W+12: offset from HALT, TIMA",
+      "offset": 182,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 on W+12, request end of W+12: offset from HALT, TIMA",
+      "offset": 184,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 on W+13, request end of W+12: offset from HALT, TIMA",
+      "offset": 186,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 wake-up, TIMA 1 NOPs into the handler: offset, TIMA",
+      "offset": 188,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 wake-up, TIMA 2 NOPs into the handler: offset, TIMA",
+      "offset": 190,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 wake-up, TIMA 3 NOPs into the handler: offset, TIMA",
+      "offset": 192,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 woken by LYC=2: TIMA, LY",
+      "offset": 194,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 woken by LYC=2: TIMA 1 NOPs later",
+      "offset": 196,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by LYC=2: TIMA 2 NOPs later",
+      "offset": 197,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by LYC=2: TIMA 3 NOPs later",
+      "offset": 198,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by STAT mode 0 line 1: TIMA, LY",
+      "offset": 199,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 woken by STAT mode 0 line 1: TIMA 1 NOPs later",
+      "offset": 201,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by STAT mode 0 line 1: TIMA 2 NOPs later",
+      "offset": 202,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by STAT mode 0 line 1: TIMA 3 NOPs later",
+      "offset": 203,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by VBlank: TIMA, LY",
+      "offset": 204,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 woken by VBlank: TIMA 1 NOPs later",
+      "offset": 206,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by VBlank: TIMA 2 NOPs later",
+      "offset": 207,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by VBlank: TIMA 3 NOPs later",
+      "offset": 208,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=1 woken by LYC=2: offset from HALT, TIMA 0 NOPs into the handler",
+      "offset": 209,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 woken by LYC=2: offset from HALT, TIMA 1 NOPs into the handler",
+      "offset": 211,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 woken by LYC=2: offset from HALT, TIMA 2 NOPs into the handler",
+      "offset": 213,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 woken by LYC=2: offset from HALT, TIMA 3 NOPs into the handler",
+      "offset": 215,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 woken by STAT mode 2 line 1: offset from HALT, TIMA 0 NOPs into the handler",
+      "offset": 217,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 woken by STAT mode 2 line 1: offset from HALT, TIMA 1 NOPs into the handler",
+      "offset": 219,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 woken by STAT mode 2 line 1: offset from HALT, TIMA 2 NOPs into the handler",
+      "offset": 221,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=1 woken by STAT mode 2 line 1: offset from HALT, TIMA 3 NOPs into the handler",
+      "offset": 223,
+      "length": 2
+    },
+    {
+      "name": "HALT IME=0 woken by serial: TIMA 0 NOPs later",
+      "offset": 225,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by serial: TIMA 1 NOPs later",
+      "offset": 226,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by serial: TIMA 2 NOPs later",
+      "offset": 227,
+      "length": 1
+    },
+    {
+      "name": "HALT IME=0 woken by serial: TIMA 3 NOPs later",
+      "offset": 228,
+      "length": 1
+    },
+    {
+      "name": "HALT bug: INC C count",
+      "offset": 229,
+      "length": 1
+    },
+    {
+      "name": "HALT bug: LD A,$14 gives A, D",
+      "offset": 230,
+      "length": 2
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+6",
+      "offset": 232,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+7",
+      "offset": 233,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+8",
+      "offset": 234,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+9",
+      "offset": 235,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+10",
+      "offset": 236,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+11",
+      "offset": 237,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+12",
+      "offset": 238,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: TIMA on W+13",
+      "offset": 239,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+6",
+      "offset": 240,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+7",
+      "offset": 241,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+8",
+      "offset": 242,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+9",
+      "offset": 243,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+10",
+      "offset": 244,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+11",
+      "offset": 245,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+12",
+      "offset": 246,
+      "length": 1
+    },
+    {
+      "name": "TIMA FE overflow at end of W+7: IF on W+13",
+      "offset": 247,
+      "length": 1
+    },
+    {
+      "name": "TIMA write 33 on W+5: TIMA, IF",
+      "offset": 248,
+      "length": 2
+    },
+    {
+      "name": "TIMA write 33 on W+6: TIMA, IF",
+      "offset": 250,
+      "length": 2
+    },
+    {
+      "name": "TIMA write 33 on W+7: TIMA, IF",
+      "offset": 252,
+      "length": 2
+    },
+    {
+      "name": "TIMA write 33 on W+8 (reload cycle): TIMA",
+      "offset": 254,
+      "length": 1
+    },
+    {
+      "name": "TIMA write 33 on W+9: TIMA, IF",
+      "offset": 255,
+      "length": 2
+    },
+    {
+      "name": "TIMA write 33 on W+10: TIMA, IF",
+      "offset": 257,
+      "length": 2
+    },
+    {
+      "name": "TIMA write 33 on W+11: TIMA, IF",
+      "offset": 259,
+      "length": 2
+    },
+    {
+      "name": "TMA write 5A on W+5: TIMA, IF",
+      "offset": 261,
+      "length": 2
+    },
+    {
+      "name": "TMA write 5A on W+6: TIMA, IF",
+      "offset": 263,
+      "length": 2
+    },
+    {
+      "name": "TMA write 5A on W+7: TIMA, IF",
+      "offset": 265,
+      "length": 2
+    },
+    {
+      "name": "TMA write 5A on W+8: TIMA, IF",
+      "offset": 267,
+      "length": 2
+    },
+    {
+      "name": "TMA write 5A on W+9: TIMA, IF",
+      "offset": 269,
+      "length": 2
+    },
+    {
+      "name": "TMA write 5A on W+10: TIMA, IF",
+      "offset": 271,
+      "length": 2
+    },
+    {
+      "name": "TMA write 5A on W+11: TIMA, IF",
+      "offset": 273,
+      "length": 2
+    },
+    {
+      "name": "IF write 00 on W+5, timer request end of W+8: TIMA, IF",
+      "offset": 275,
+      "length": 2
+    },
+    {
+      "name": "IF write 00 on W+6, timer request end of W+8: TIMA, IF",
+      "offset": 277,
+      "length": 2
+    },
+    {
+      "name": "IF write 00 on W+7, timer request end of W+8: TIMA, IF",
+      "offset": 279,
+      "length": 2
+    },
+    {
+      "name": "IF write 00 on W+8, timer request end of W+8: TIMA, IF",
+      "offset": 281,
+      "length": 2
+    },
+    {
+      "name": "IF write 00 on W+9, timer request end of W+8: TIMA, IF",
+      "offset": 283,
+      "length": 2
+    },
+    {
+      "name": "IF write 00 on W+10, timer request end of W+8: TIMA, IF",
+      "offset": 285,
+      "length": 2
+    },
+    {
+      "name": "IF write 00 on W+11, timer request end of W+8: TIMA, IF",
+      "offset": 287,
+      "length": 2
+    },
+    {
+      "name": "DIV write on W+8, TAC 05: TIMA",
+      "offset": 289,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+9, TAC 05: TIMA",
+      "offset": 290,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+10, TAC 05: TIMA",
+      "offset": 291,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+11, TAC 05: TIMA",
+      "offset": 292,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+12, TAC 05: TIMA",
+      "offset": 293,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+13, TAC 05: TIMA",
+      "offset": 294,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+14, TAC 05: TIMA",
+      "offset": 295,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+15, TAC 05: TIMA",
+      "offset": 296,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+200, TAC 04: TIMA",
+      "offset": 297,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+100, TAC 04: TIMA",
+      "offset": 298,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+26, TAC 06: TIMA",
+      "offset": 299,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+20, TAC 06: TIMA",
+      "offset": 300,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+40, TAC 07: TIMA",
+      "offset": 301,
+      "length": 1
+    },
+    {
+      "name": "DIV write on W+20, TAC 07: TIMA",
+      "offset": 302,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+8: TIMA",
+      "offset": 303,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+9: TIMA",
+      "offset": 304,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+10: TIMA",
+      "offset": 305,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+11: TIMA",
+      "offset": 306,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+12: TIMA",
+      "offset": 307,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+13: TIMA",
+      "offset": 308,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+14: TIMA",
+      "offset": 309,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 01 on W+15: TIMA",
+      "offset": 310,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+12: TIMA",
+      "offset": 311,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+13: TIMA",
+      "offset": 312,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+14: TIMA",
+      "offset": 313,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+15: TIMA",
+      "offset": 314,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+16: TIMA",
+      "offset": 315,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+17: TIMA",
+      "offset": 316,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+18: TIMA",
+      "offset": 317,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 06 on W+19: TIMA",
+      "offset": 318,
+      "length": 1
+    },
+    {
+      "name": "TAC 01 to 05 on W+10: TIMA",
+      "offset": 319,
+      "length": 1
+    },
+    {
+      "name": "TAC 01 to 05 on W+12: TIMA",
+      "offset": 320,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 04 on W+10: TIMA",
+      "offset": 321,
+      "length": 1
+    },
+    {
+      "name": "TAC 05 to 04 on W+12: TIMA",
+      "offset": 322,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SB on W+254",
+      "offset": 323,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SB on W+255",
+      "offset": 324,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SB on W+256",
+      "offset": 325,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SB on W+257",
+      "offset": 326,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SC on W+1022",
+      "offset": 327,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SC on W+1023",
+      "offset": 328,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SC on W+1024",
+      "offset": 329,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: SC on W+1025",
+      "offset": 330,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: IF on W+1022",
+      "offset": 331,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: IF on W+1023",
+      "offset": 332,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: IF on W+1024",
+      "offset": 333,
+      "length": 1
+    },
+    {
+      "name": "serial started W+10: IF on W+1025",
+      "offset": 334,
+      "length": 1
+    }
+  ],
+  "sameboy": "0803080308030803040403030209090606060606060603060606030300050005000500060005000513e02114e03114e03d14e10c14e00c181818585818e0fe0004030202020202ff020100ffffffffffff500050ff58e458e458e450e850e850e850e850e800e40250e00458e40850e00c00e20450e00450e80440fe48fc50f858f060e048fd50fb58f760ef48e850f048f040e4fff550e0ffe0010101010101010102010201020102020101010101020103010301030103000300030103010301043b023b3c3c2e012f2f2f0a900a0b0b013d013e013e013e012101210121012280818181023e01ffff00a5a5a5a6a6e0e0e0e4e4e4e4e437e037e037e036a8e436e436e45de45de45de45de45de4a8e4a8e4a8e4a8e4a8e4a8e4a8e0a8e0a8e00202030303030404010002010100020203030303040403040404040405050100030301010303ffff7f7fe0e0e8e8",
+  "binjgb": "0803080308030803040403030209090606060606060603060606030300050005000500060005000514e02114e03114e03d14e10c14e00c565758595a02e0fe0004030202020202ff020200ffffffffffff500050ff58e458e458e458e458e458e450e858e000e40250e00458e40850e00c00e20450e00450ec0440fe48fc50f858f060e048fd50fb58f760ef48e850f048f040e4fff550e0ffe0010101010101010101010201020102010101010101010103010301030103010300030103010301043b023b3c3c2e012f2f2f0a900a0b0b013d013e013e013e012101210121012283838384023e01ffff00a5a5a5a6a6e0e0e0e4e4e4e4e437e037e037e036a8e4a8e436e45de45de45de45de45de45de4a8e4a8e4a8e4a8e4a8e0a8e0a8e0a8e00202030303030404010002010100020202020303030303040404040404040200020301010101ffffffffe0e0e0e0"
+}

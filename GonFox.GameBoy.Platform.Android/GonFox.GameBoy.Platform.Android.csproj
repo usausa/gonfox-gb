@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0-android</TargetFrameworks>
+    <SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
+    <IsTrimmable>true</IsTrimmable>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>GonFox.GameBoy.Platform.Android</PackageId>
+    <Title>GonFox.GameBoy.Platform.Android</Title>
+    <Description>Android host support for GonFox.GameBoy (AudioTrack output, storage, haptics, rumble)</Description>
+    <PackageTags>gameboy dmg emulator android</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GonFox.GameBoy.Platform.Shared\GonFox.GameBoy.Platform.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,1312 @@
+{
+  "suite": "gbmicrotest",
+  "version": "463eb6bc0fe31d61781ef63060ad6d74090c0255",
+  "sourceUrl": "https://codeload.github.com/aappleby/gbmicrotest/zip/463eb6bc0fe31d61781ef63060ad6d74090c0255",
+  "sourceSha256": "dc4b3bb1196d724bac19d754a4c09445eac0c58a9a7004f867aeb09c50ed6585",
+  "sourceRoot": "gbmicrotest-463eb6bc0fe31d61781ef63060ad6d74090c0255",
+  "license": "MIT",
+  "licenseSha256": "0b3557142dfcce65428fafb9c8254d9d59c027a008af4810867efd7342b77c25",
+  "protocol": "FF80=actual, FF81=expected, FF82=01 pass / FF fail (written last)",
+  "maxTCycles": 4000000,
+  "timeoutSeconds": 10,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "0b3557142dfcce65428fafb9c8254d9d59c027a008af4810867efd7342b77c25"
+    },
+    {
+      "path": "README.md",
+      "sha256": "15610d3e922658503b5250f1e9e0106d3ad6bdee7ff43003147f5871a81a3b92"
+    },
+    {
+      "path": "tests/header.inc",
+      "sha256": "380ab2e41fee82c23881b13650e6301b79809e7baa1d3c828363156a70ba9afd"
+    },
+    {
+      "path": "tests/macros.inc",
+      "sha256": "d3964ffc94d5ef110b3536b7bb9448840ef88d718ebca1ee662670680164c3a3"
+    }
+  ],
+  "tests": [
+    {
+      "name": "line_153_lyc0_stat_timing_a",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_a.gb",
+      "sha256": "c0fc008aa442e86dd8ee44269d823f0522f54abe5dace3b1ac07b29c09f7c877",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_a.s",
+      "sourceSha256": "65da36ae35e70ce887594b63b5c67a6f78317807b8c37553ad7e0e11d883ae16",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_b",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_b.gb",
+      "sha256": "486558c877a01a70c8ad13992a0d6efa571416b699d65e0aea543f9556752332",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_b.s",
+      "sourceSha256": "ee8cc496b8df3e527c974f87c81f344172ce61df5524a4b37b156940aecb383c",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_c",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_c.gb",
+      "sha256": "2bf266d4ef713b05dab1e4fbe4501eff5cf578d10ac2ed4724ab784f735e838a",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_c.s",
+      "sourceSha256": "432e08a63888765cc8821adb61de356cdcc196b0aa67f8690d3b47c8a144a219",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_d",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_d.gb",
+      "sha256": "0212c19e3b56b675d45c907e8745b745779905f169c39a02af5d21b729b58e6b",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_d.s",
+      "sourceSha256": "7cbf2f4e8f16def119e18e2c084b8776f3f41abc1e08c6090ea88ab11184dc40",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_e",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_e.gb",
+      "sha256": "dd80a2dcfece9838d282034fa8845b64109743cc4645759da4cb1b920689b71b",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_e.s",
+      "sourceSha256": "b70d0c6fbc760c2d6ae20876de7f21e3e4ab41478ba3247737b8cb2a42a4d66d",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_f",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_f.gb",
+      "sha256": "42f11f69e438caf68404febb207cf05d2a2d6023a977598939db48c81c704bb8",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_f.s",
+      "sourceSha256": "80dd1c3bcdac4c1b7a972e3b228fa810a1b68bdaa81701a0cc29d3f26a1ccae4",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_g",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_g.gb",
+      "sha256": "7a2056d6b0a62aaf7ebf1e4320e9d9d6ed8506707b00eb2a5f89bd73fd65a54c",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_g.s",
+      "sourceSha256": "91e6b46feb598e0b0a483d3b0ce8cb49df343a3c7700b18fce64b3ccaf06c1dd",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_h",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_h.gb",
+      "sha256": "d94b377d9d4a62bfbd97ab5f8c86cf1e2a9450f4077c2f0cd7d2aa369b8125ea",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_h.s",
+      "sourceSha256": "83a469634489b15096d6d24599ea626f494c51a64739a35506996ce51e70b00a",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_i",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_i.gb",
+      "sha256": "fd4ff9dce3af92a66ffb7a8ce2c4b919f6fe73011359b9350450ed04d6818d92",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_i.s",
+      "sourceSha256": "721f6bb0f43565dc1f5242fde4b05242c0da489bc8997b0cd655a82b17460bcf",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_j",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_j.gb",
+      "sha256": "bc126fcc5dcb35a49111aca1185cebf60383d735793b94024548ecaa4ea7aa0c",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_j.s",
+      "sourceSha256": "6d61f3ef06c5fb0fe15664115add23d8431ebf1c74efe0059bc47e8389935de7",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_k",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_k.gb",
+      "sha256": "a483d07021a14228fb5812fb9ed5906b426d74e6711f31d88c46be0a83571190",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_k.s",
+      "sourceSha256": "faf9be7b376702654f0e8d8f36b915935a857e5e26ebd66f2974b66192f9a790",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_l",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_l.gb",
+      "sha256": "806b8249159249dca5505f4652b15995e6bfd1cf199c9013e15cdb03d26c0b59",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_l.s",
+      "sourceSha256": "23419dace97204b821776a7f5301dc7bc8381a68241320a9b31f1fa47b575fdd",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_m",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_m.gb",
+      "sha256": "53803ea5bf68afeec5e81ec62011ee05dc6725cdd8e4ecabdbe0398564cd2884",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_m.s",
+      "sourceSha256": "e1378e2df519c3e31074fc8ddf0d47b69193df38f4db69abcbdd49ac1a434c07",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_stat_timing_n",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc0_stat_timing_n.gb",
+      "sha256": "370382c71ef0c7a3c8081ab6bd7a72b47c5a5b1a83c716b6d7e56e5355a504b1",
+      "sourcePath": "tests/line_153_lyc0_stat_timing_n.s",
+      "sourceSha256": "b6c7bd7486063e932c1cb578ec1375b7c2c51303d5601f5b9d9f521b35c3f53e",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc153_stat_timing_a",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc153_stat_timing_a.gb",
+      "sha256": "8790f0927ab0a46d670603eb8fa15db7e38ce626d39f048be2fa1b8c73002c0b",
+      "sourcePath": "tests/line_153_lyc153_stat_timing_a.s",
+      "sourceSha256": "a6490eaafadaa5fb4eec339bd9f6a03f0a216c201de8c849067f8651591d54aa",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc153_stat_timing_b",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc153_stat_timing_b.gb",
+      "sha256": "d1af77b61692bbef0eac31043cb6d95539e4eb3aaba271517e01485e3ff69d9b",
+      "sourcePath": "tests/line_153_lyc153_stat_timing_b.s",
+      "sourceSha256": "5d88d7a15e3c7c7c78ab38236d07eb2834abadf9e4529a67efaebf729cd59c99",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc153_stat_timing_c",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc153_stat_timing_c.gb",
+      "sha256": "4f7bc17b4bc6a51ab28b206a14fa2ae0d2294e55c1a987804df589596416369b",
+      "sourcePath": "tests/line_153_lyc153_stat_timing_c.s",
+      "sourceSha256": "1b5c5b4ea6e3d79e7a9c5402180315ca99d37010c7f5f00f181381ce9458f069",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc153_stat_timing_d",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc153_stat_timing_d.gb",
+      "sha256": "90147e53a8734b8cdfc51dab7d729389ab82cd0f3755436c7d4b56627057c557",
+      "sourcePath": "tests/line_153_lyc153_stat_timing_d.s",
+      "sourceSha256": "f4ba908685f1c2755f475d30a53ec8ff1dc78efa2b5a4491cf00fd0a03b27145",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc153_stat_timing_e",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc153_stat_timing_e.gb",
+      "sha256": "3b9169f8d0150231d5f5389138ba643a9466d2f89a1b00221803e2d344ad9f3a",
+      "sourcePath": "tests/line_153_lyc153_stat_timing_e.s",
+      "sourceSha256": "cfe8c86104ec26010eb03a738f479967e923e789333a26d92d1654c465a529c1",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc153_stat_timing_f",
+      "group": "line153",
+      "hardware": "pass - dmg",
+      "path": "bin/line_153_lyc153_stat_timing_f.gb",
+      "sha256": "a91be3ea194cbe332c54643316bac9868382d8f6377ead4e7dde3ca3983a4357",
+      "sourcePath": "tests/line_153_lyc153_stat_timing_f.s",
+      "sourceSha256": "12d242271f694766f57c0c1eb46b69a54bc8a22f6531dbdb47863b615bb02527",
+      "expected": "PASS"
+    },
+    {
+      "name": "line_153_lyc0_int_inc_sled",
+      "group": "line153",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/line_153_lyc0_int_inc_sled.gb",
+      "sha256": "b352e11eb2b77068d985ba55e4a215c173c1dac671017077daf4c09cc37ab11e",
+      "sourcePath": "tests/line_153_lyc0_int_inc_sled.s",
+      "sourceSha256": "1c4d123aa59417543355e62040ebda45d97bc6b3f3b5bc8d77ea580a59513d31",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l0_a",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l0_a.gb",
+      "sha256": "325fd231a0852ba71aa03275479e91f8f039cc5a40761a9cb328754ec23fa23f",
+      "sourcePath": "tests/stat_write_glitch_l0_a.s",
+      "sourceSha256": "384f71cdd3c20aa7975475b93f487374dc10e5ebbd18be892316736bbda64cf5",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l0_b",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l0_b.gb",
+      "sha256": "b522d709d74843721d262264655a14f0ab8903918222c0390a0ce159398dbcb5",
+      "sourcePath": "tests/stat_write_glitch_l0_b.s",
+      "sourceSha256": "76bef91d2190b5a33285c24a5459dc6479a04370f9e4414d899bf380b1c611b6",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l0_c",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l0_c.gb",
+      "sha256": "053705da8651e991218fe81eff7399e9efb749f695ef236e7693a60c96f745ce",
+      "sourcePath": "tests/stat_write_glitch_l0_c.s",
+      "sourceSha256": "175bf2f5936a61ea89eac55bab210b6fcd21a4fa586e1316ca653f9eae38e789",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l1_a",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l1_a.gb",
+      "sha256": "cfab38a68f3ae5a4cf5b64a590a4e0b568c805b0ae3d456456379c91374d2a15",
+      "sourcePath": "tests/stat_write_glitch_l1_a.s",
+      "sourceSha256": "4ac94e9ee7e70f42f081ffb985dec907848bb798f1086d00650749407a07e311",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l1_b",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l1_b.gb",
+      "sha256": "a8d4895848d34b8ada0904cfd4cc1801e9f4bec4e220dd1042ff7fa3f500f404",
+      "sourcePath": "tests/stat_write_glitch_l1_b.s",
+      "sourceSha256": "16c3300daebe84f74587635f44ce332b0cf13d73728369c168d843b1fbea2841",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l1_c",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l1_c.gb",
+      "sha256": "d8f743fe3be31452e0b00a9ee6323e733f137a92be65897a2d1ea166179da6f7",
+      "sourcePath": "tests/stat_write_glitch_l1_c.s",
+      "sourceSha256": "c5d59256cdc4c44c28954ad7c2817bf45c7afe73e918cdce0b201f4437ba5a90",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l1_d",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l1_d.gb",
+      "sha256": "993459b1cb9dd87ede044bc0fa4ac1b2499b8e53d4de7116f1a0e62618726c6c",
+      "sourcePath": "tests/stat_write_glitch_l1_d.s",
+      "sourceSha256": "5ab5afb21fb1c9372a458a12282e5b205a06757e2809de0750b06197d696b1e5",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l143_a",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l143_a.gb",
+      "sha256": "f066ed6145a8fb57052f76517b4194646045583123b0aa2e48eedb468d76b3f7",
+      "sourcePath": "tests/stat_write_glitch_l143_a.s",
+      "sourceSha256": "e9eca78efc72a7ef0cee2b02685099deff03eccfad6e3c8c5c6722056c133d93",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l143_b",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l143_b.gb",
+      "sha256": "7d9374054bca9631573c60b4885147e830e86262f598e8a6a376cd004ab0bcc0",
+      "sourcePath": "tests/stat_write_glitch_l143_b.s",
+      "sourceSha256": "04d13717ea5a27debe2afb50083626456e35951a4353bd8d1b29281c9925bab7",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l143_c",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l143_c.gb",
+      "sha256": "6de2ec44a274a9a444d1968bcaa59890c9630aec24affc9113b09cb3b80faa33",
+      "sourcePath": "tests/stat_write_glitch_l143_c.s",
+      "sourceSha256": "6eec4b48c4beb8745427afd94221b20e1ecb7597f3734d9ea2839b47f91559f9",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l143_d",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l143_d.gb",
+      "sha256": "15eb5c64d35e2bc7da86e945b609fed277285ade6bcc30f16e822eedd4e130cd",
+      "sourcePath": "tests/stat_write_glitch_l143_d.s",
+      "sourceSha256": "72d027eddb86e4bfeceb2dccab91eee8cc1b8f73a45ffda4d0aa3af72e183881",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l154_a",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l154_a.gb",
+      "sha256": "f77eea20854a8038e5c698e74a122fc959db8e21d47b94f34e4c6bf138dca7eb",
+      "sourcePath": "tests/stat_write_glitch_l154_a.s",
+      "sourceSha256": "0e64eb0780c0f65f2182484d7b21a5751e34eb808d1525cc7e6e81e71b29b60e",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l154_b",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l154_b.gb",
+      "sha256": "50d62de025dbf04b4dc01db47e10b0a635aa8b2a6d69ece1d4102346408c2b5f",
+      "sourcePath": "tests/stat_write_glitch_l154_b.s",
+      "sourceSha256": "8a5cf37f167a43fb734c8a053f3e1c1c38acc6a3c960020e1b4f2e4b78254bd1",
+      "expected": "PASS"
+    },
+    {
+      "name": "stat_write_glitch_l154_c",
+      "group": "stat-write",
+      "hardware": "pass - dmg",
+      "path": "bin/stat_write_glitch_l154_c.gb",
+      "sha256": "e6d2e11c73920f0312a4e410f123d081823e3e55ee03a7448926b8e48cc4d22b",
+      "sourcePath": "tests/stat_write_glitch_l154_c.s",
+      "sourceSha256": "8ce1596799cb3f384cbb490d67476d2fccf191ca0112481c5a51379e115f2319",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_ly1_a",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_ly1_a.gb",
+      "sha256": "ed8ce0485ccedbc7b044a5effc4c5a9b257cc54239716b81a4e6d8c824547319",
+      "sourcePath": "tests/lcdon_to_ly1_a.s",
+      "sourceSha256": "bd3c19a56e06a025148d0785ec2534582765a50a1a51f7b9c5633c8499f22b45",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_ly1_b",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_ly1_b.gb",
+      "sha256": "f7511da96bdbeda9dcfec50d4e5e09e9627984ad2953d35508180794952ee9a3",
+      "sourcePath": "tests/lcdon_to_ly1_b.s",
+      "sourceSha256": "7f5fcc70cc6e6d0968b4551e36e07d4016ed3ed293355ab5e8da39eb1c0832c8",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_ly2_a",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_ly2_a.gb",
+      "sha256": "ad53e9feb68cfe8d0cff6374d606eaea7cb49297f8e5284825ac42e32192be91",
+      "sourcePath": "tests/lcdon_to_ly2_a.s",
+      "sourceSha256": "f6e80076ee2b1fe89c961c7dc82ed7152b7e03c2d0620700ed02a29f3fd359e7",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_ly2_b",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_ly2_b.gb",
+      "sha256": "d73b0558d2db127a58261294b777e90a3759a9fcc53514e99a965d45a28e8f30",
+      "sourcePath": "tests/lcdon_to_ly2_b.s",
+      "sourceSha256": "a636dd039e73fdc305c6fad92f958b5aee76e4f01c49cfa3e3b05eb19fcc08d8",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_ly3_a",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_ly3_a.gb",
+      "sha256": "2722525d7f171529867937fd8cd24c88448968e80cb5f417301607262604ee54",
+      "sourcePath": "tests/lcdon_to_ly3_a.s",
+      "sourceSha256": "0b4fddacae759d502d430a186a63361112d6e1ce6a93120dceee774e0f9c3643",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_ly3_b",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_ly3_b.gb",
+      "sha256": "3369f9221b79c976bec6b781e2304f752c05ef87d32b6739346169446f671849",
+      "sourcePath": "tests/lcdon_to_ly3_b.s",
+      "sourceSha256": "2f65cd96e83c54874d84e862a0c879fcd94aa2d223afbc171a8c36508ff0d690",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_lyc1_int",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_lyc1_int.gb",
+      "sha256": "404911dda9f8c33365d30c2d8e35a49e746920deb174045539f20099883b75c1",
+      "sourcePath": "tests/lcdon_to_lyc1_int.s",
+      "sourceSha256": "688302f6e2651d69fed262f590d4e20b37a06bf6f9614b4e7e8b0dbc59e5782a",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_lyc2_int",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_lyc2_int.gb",
+      "sha256": "74d62b2c17b0c3747e45248e107b2dc5a77a7198db95147b20c79dee8c5f6281",
+      "sourcePath": "tests/lcdon_to_lyc2_int.s",
+      "sourceSha256": "deeec3689f94b4a32b80342430cda7a03f7ce1ff90bfc26a327a4057f4c8d013",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_lyc3_int",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_lyc3_int.gb",
+      "sha256": "b8d0bae315ba3b1e3f4b035bf54806c54797dd07d937f9121809d4e48c33aa4a",
+      "sourcePath": "tests/lcdon_to_lyc3_int.s",
+      "sourceSha256": "cd0602aa8b923247b20353e27d706dd9d2fd7f7aa135399942a1531b82e9a20c",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_oam_int_l1",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_oam_int_l1.gb",
+      "sha256": "42f86a32f57e614f3c366515f3eccc15abfd8a836373d85d0529cf764cf9e43f",
+      "sourcePath": "tests/lcdon_to_oam_int_l1.s",
+      "sourceSha256": "e83aa16671031f6c36b7a1dfbdfce03d374b9e8064f05e4075c4e2662e89ec2a",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_to_oam_int_l2",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_to_oam_int_l2.gb",
+      "sha256": "813e8cacd20fafd7dbfe11b58a4f88bd5a482b7f6555f2c1492e9433da6b0e39",
+      "sourcePath": "tests/lcdon_to_oam_int_l2.s",
+      "sourceSha256": "4a20c4318e285b89a4e3378c33e8ce49643b7d760bfcedaa8308277f40b14372",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_halt_to_vblank_int_a",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_halt_to_vblank_int_a.gb",
+      "sha256": "2b0f57a6d3d93d203593af93a4b6ca7838435d6ffdbd7b43172f3b5a0aeccc18",
+      "sourcePath": "tests/lcdon_halt_to_vblank_int_a.s",
+      "sourceSha256": "624de8784ba9fc305a938512c0d97b495031e8e89db8ceedc51600fa9ca16de6",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_halt_to_vblank_int_b",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_halt_to_vblank_int_b.gb",
+      "sha256": "f0bffff6b16e1aeb641acd673fe8073e0ca54c69f1d505b9c56e0fb0095b2a33",
+      "sourcePath": "tests/lcdon_halt_to_vblank_int_b.s",
+      "sourceSha256": "8eea4f49c222cb6e0115b45648354e88778df8275a95587e0fa8c0435e70079b",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_nops_to_vblank_int_a",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_nops_to_vblank_int_a.gb",
+      "sha256": "c990ce0b97004ebe288adf7afb600734232732aba07262d5a32a5641f3cdf490",
+      "sourcePath": "tests/lcdon_nops_to_vblank_int_a.s",
+      "sourceSha256": "5fd9fc6832fc67ec071181deb92e7b45d900f17d826126104c6090504f75ff3c",
+      "expected": "PASS"
+    },
+    {
+      "name": "lcdon_nops_to_vblank_int_b",
+      "group": "lcd-on",
+      "hardware": "pass - dmg",
+      "path": "bin/lcdon_nops_to_vblank_int_b.gb",
+      "sha256": "c144985cd64dac320d85b6a07f381e1a426010a21272a3858f67a18c0a391308",
+      "sourcePath": "tests/lcdon_nops_to_vblank_int_b.s",
+      "sourceSha256": "35978f7fac1840f47179b4ce4364e79942c9d6184c0b7084516369eeb04a85d3",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_halt_a",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_halt_a.gb",
+      "sha256": "59eec42130d3bd7043630b6e36e6bda37013c660d3bc06f35ef726eeaa821226",
+      "sourcePath": "tests/oam_int_halt_a.s",
+      "sourceSha256": "5e2de361625741e1fd9948edab0463a2d07e6f3f3eb60420df49c19d46e0d1d8",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_halt_b",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_halt_b.gb",
+      "sha256": "afe2593218c13fd870e1c7057e5fae44d23205f3ba2059e01914b3b3318b6f20",
+      "sourcePath": "tests/oam_int_halt_b.s",
+      "sourceSha256": "36609e66edaca3a1d1776ade0d766cba20a59d465a4e7299876a233cd25dced3",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_if_edge_a",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_if_edge_a.gb",
+      "sha256": "19534c8b07749418254a731f152ece43a1f87ffbc845e00f9457afa724a27498",
+      "sourcePath": "tests/oam_int_if_edge_a.s",
+      "sourceSha256": "d26a706c0bf8ebb042a7f08d19b1c2bdf78ec9b2f647ddec5ef37f439059427f",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_if_edge_b",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_if_edge_b.gb",
+      "sha256": "501e99f1d696f58eaa4fdf6610b4aa173ddd7da17e3611f634917e313542fe70",
+      "sourcePath": "tests/oam_int_if_edge_b.s",
+      "sourceSha256": "bf60a28ef404a8de236f8494cc3dca214883631b7b18a7b9edc14aa1c1e2fbaa",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_if_edge_c",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_if_edge_c.gb",
+      "sha256": "17bc44c9ebed5e984ae8d890d8b4ecd8bbb5cbfca390b151a9021160b87baa95",
+      "sourcePath": "tests/oam_int_if_edge_c.s",
+      "sourceSha256": "2c289af6e9bd25e69a4c53ca25ea803f2a82b6248f7b591b74e6f2dc6a417f09",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_if_edge_d",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_if_edge_d.gb",
+      "sha256": "131d37202a7b84a292d2416c4bbde88b3466871a2d7f6b5695023fa2484f3732",
+      "sourcePath": "tests/oam_int_if_edge_d.s",
+      "sourceSha256": "d1e1264eae2c520182a18f278a2e4d867e025497855ccb8521def42543bd31c7",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_inc_sled",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_inc_sled.gb",
+      "sha256": "307c4cf42ec67fa21075324d60bf25c7e5b9d2ffc4a0ffccc68a47fcaeeba03c",
+      "sourcePath": "tests/oam_int_inc_sled.s",
+      "sourceSha256": "641756c6e7821c8257fe461d0ec4f3c0b0bf6aa9e1757a134466b0b7f682be54",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_nops_a",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_nops_a.gb",
+      "sha256": "b3124de0176fd7a594cf6b38f2ac3f5c1a4eba023c6f189fecc2596ac4a2a0d8",
+      "sourcePath": "tests/oam_int_nops_a.s",
+      "sourceSha256": "2330c9c6488b4f5db20c6360c09ba5a7ac147a19168113314fbde659ec0dc13e",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_int_nops_b",
+      "group": "stat-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/oam_int_nops_b.gb",
+      "sha256": "fadf3fa0c8039315388e3924cc4488dcbc261b72fa0cedf638e11052e6898760",
+      "sourcePath": "tests/oam_int_nops_b.s",
+      "sourceSha256": "79236b34ea4819cebc012f06c302116c3e2f920793da88826f6946feb7dab748",
+      "expected": "PASS"
+    },
+    {
+      "name": "lyc1_int_if_edge_a",
+      "group": "stat-irq",
+      "hardware": "pass - dmg, ags",
+      "path": "bin/lyc1_int_if_edge_a.gb",
+      "sha256": "3c51c14262b5d7fab42a6039bd95d6c962b99237a63ef487fce3b5f3ef595856",
+      "sourcePath": "tests/lyc1_int_if_edge_a.s",
+      "sourceSha256": "87e26ca9afabf8f41fae33c6630803a42e28616c8c5877ddf2b57c24223337e7",
+      "expected": "PASS"
+    },
+    {
+      "name": "lyc1_int_if_edge_b",
+      "group": "stat-irq",
+      "hardware": "pass - dmg, ags",
+      "path": "bin/lyc1_int_if_edge_b.gb",
+      "sha256": "21bede3a18a21cbee709a8e6709103bcc3cde0d14cb76d787997bb468d6274e3",
+      "sourcePath": "tests/lyc1_int_if_edge_b.s",
+      "sourceSha256": "da491550af8e4ec5fefd45a67584a96086939d4ef256e3e659ab5d12b828f723",
+      "expected": "PASS"
+    },
+    {
+      "name": "lyc1_int_if_edge_c",
+      "group": "stat-irq",
+      "hardware": "pass - dmg, ags",
+      "path": "bin/lyc1_int_if_edge_c.gb",
+      "sha256": "498cb2302ae460c80bfdbdf99517158f41c62f7cfc572519cd1c4f93b98ec983",
+      "sourcePath": "tests/lyc1_int_if_edge_c.s",
+      "sourceSha256": "92b86a136230c7754db0548557954ba22b4d4cc2b0e1c5899d1e40b3770aa54a",
+      "expected": "PASS"
+    },
+    {
+      "name": "lyc1_int_if_edge_d",
+      "group": "stat-irq",
+      "hardware": "pass - dmg, ags",
+      "path": "bin/lyc1_int_if_edge_d.gb",
+      "sha256": "ef9705bfba9dbf3a8ae2e1945c8f5f967c119944633d0b653608f2645451bd7e",
+      "sourcePath": "tests/lyc1_int_if_edge_d.s",
+      "sourceSha256": "183b9b24f2a32d9cefa91f37f8ba8bf33820d2556fd2e76093ae92ff160b1405",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_l1",
+      "group": "stat-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_l1.gb",
+      "sha256": "cce1f694c43dad387b24109ff582f47da69a53649b5c5e7d5a778308274afde3",
+      "sourcePath": "tests/hblank_int_l1.s",
+      "sourceSha256": "ecd6d95870919f4aea0142408206483b3bfbd67531ce03eddf127551c13719e2",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_l2",
+      "group": "stat-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_l2.gb",
+      "sha256": "286bf7ccb6aafad6d19c39453752a3c58be8528839bd58d8495e784d93e99b1d",
+      "sourcePath": "tests/hblank_int_l2.s",
+      "sourceSha256": "7f53886257490e252b8e3e1c52800d4ba7c2e6fb5615f6f5463480496c9a6bf4",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx0",
+      "group": "stat-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx0.gb",
+      "sha256": "fa1ca036b2c9c4a9814929bc242ad3c2e15f15e09fc9792ae58e88f3b0be4867",
+      "sourcePath": "tests/hblank_int_scx0.s",
+      "sourceSha256": "0733862460b41f57ef8da9f5b9bc5c57577a4a120c0fedbaca071eb4ef0744b2",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_di_timing_a",
+      "group": "stat-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_di_timing_a.gb",
+      "sha256": "81a655488433c11920753785a91630de18333a41ae1b08f8d732d28f417db1f1",
+      "sourcePath": "tests/hblank_int_di_timing_a.s",
+      "sourceSha256": "ee15680be48be5983314459d2071bdf49dc29f049d85b7cad003c6afac9410f2",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_di_timing_b",
+      "group": "stat-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_di_timing_b.gb",
+      "sha256": "efcaa232023598fc0e5a84df4d311efcc1d4cd6fb7b26600ebb7f2095a6f86ad",
+      "sourcePath": "tests/hblank_int_di_timing_b.s",
+      "sourceSha256": "666724ae11b6466d714943f4faa522fa06a34c2833648e0c086658109b099085",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank_int_if_a",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank_int_if_a.gb",
+      "sha256": "e9697dc0e51a765707022c64385c14b739a02b649ce0d7ddc5c97f5a1909ef96",
+      "sourcePath": "tests/vblank_int_if_a.s",
+      "sourceSha256": "b1a0dc36b65b4ff72cdff4d02e28249ad6cdbad3074f3ad60b138cff430fe32f",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank_int_if_b",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank_int_if_b.gb",
+      "sha256": "68e8cadceaa43868cf694eb2bd177617527fe28310850d6123fecabcbeaf45de",
+      "sourcePath": "tests/vblank_int_if_b.s",
+      "sourceSha256": "aaadf9cd36f35025376f0cabb78eca71b60ecdd9c878c95e3847ba95cb99925b",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank_int_if_c",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank_int_if_c.gb",
+      "sha256": "7604527f5bf2828f88634fec48de32d778bb7d1610fe9ec347cd7dc247c41811",
+      "sourcePath": "tests/vblank_int_if_c.s",
+      "sourceSha256": "1dfa8780343ed87b9a9252edc90bc7cf087f5806c06217e94b827d8dc7b2faee",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank_int_if_d",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank_int_if_d.gb",
+      "sha256": "944b11582db2babf989b5ca06d3217d401f0754d54a55b5ace4275bb7784b628",
+      "sourcePath": "tests/vblank_int_if_d.s",
+      "sourceSha256": "95ae6e9c2e3c3d8da4a131ae0c360082bcc4bb8ae9548dc4214ebf571c6ff6c8",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank_int_inc_sled",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank_int_inc_sled.gb",
+      "sha256": "503943033577751ed2681de8dae9d3e92fc8ce3a4dc36c2b4dea1129e2859cc7",
+      "sourcePath": "tests/vblank_int_inc_sled.s",
+      "sourceSha256": "d316b6d70f4ff95d317d17d21c9ad1089e7be1bf824314f7e0c6abbe225ebd51",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank_int_nops_a",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank_int_nops_a.gb",
+      "sha256": "943976458a1b1766c46d073c5d10f6f80abad3b73127448f2ee1ec65aa1f0583",
+      "sourcePath": "tests/vblank_int_nops_a.s",
+      "sourceSha256": "488531d73736e56f5cc383c2867d6c898e92f5b5dbeb352a655b12b7450fecf0",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank_int_nops_b",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank_int_nops_b.gb",
+      "sha256": "49963fa1d27a7faa6efa7f77367b54fbc2ddc6df8d51c48a01f125b91c485fde",
+      "sourcePath": "tests/vblank_int_nops_b.s",
+      "sourceSha256": "3f401f016500698351cfcd4ce608fda6b84891f9611485b3559f62c4d90209ff",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank2_int_if_a",
+      "group": "vblank-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/vblank2_int_if_a.gb",
+      "sha256": "08fad5b8398acca64218fffe7148a3b33f94c22ebe9ed0bda4f11f04c4cfc677",
+      "sourcePath": "tests/vblank2_int_if_a.s",
+      "sourceSha256": "4bb78ff44d7b6ca11bf17258014a9ca004deb0a886e8d4a7016a5d3a0b98b863",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank2_int_if_b",
+      "group": "vblank-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/vblank2_int_if_b.gb",
+      "sha256": "79be8a605e0ee307cad6913b5694a7098941e67156406e11df20fd80504496b5",
+      "sourcePath": "tests/vblank2_int_if_b.s",
+      "sourceSha256": "f2abf2cdb40a290c2419c4dec4c8eb6d2de7bd26502fad9f61d5b2a61fde196e",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank2_int_if_c",
+      "group": "vblank-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/vblank2_int_if_c.gb",
+      "sha256": "6c61fb60e90ca2d93b2dde5baae397a969b693c6bad2d0b0f3e20f7acf54caa6",
+      "sourcePath": "tests/vblank2_int_if_c.s",
+      "sourceSha256": "15e2e2dbcbf5269df6ff4bc17f6a5910c2b44a9f777bc6019e44ab0dea6ec893",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank2_int_if_d",
+      "group": "vblank-irq",
+      "hardware": "pass - dmg",
+      "path": "bin/vblank2_int_if_d.gb",
+      "sha256": "aca6ea277e4262ab14f34a8c116c69468b21095fdbc7c7e7e59ddbda19b0ba2f",
+      "sourcePath": "tests/vblank2_int_if_d.s",
+      "sourceSha256": "62b89ecf86c989caa39b250afc22a088a6b8d12bdba947ba6e1d94d21b840d63",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank2_int_inc_sled",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank2_int_inc_sled.gb",
+      "sha256": "bdcfb060f237227f5085d9b548cbcdfb78e44af129d85bfce00ff3ec64c06935",
+      "sourcePath": "tests/vblank2_int_inc_sled.s",
+      "sourceSha256": "73b3ac0ce7d605ae2a725d2b28e8c39688b3c8234c714d852ab063e4c232788c",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank2_int_nops_a",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank2_int_nops_a.gb",
+      "sha256": "039bef9c484fe26122d7f4a7df0246efc93f0f85e05223a4c7bcb6aa2e057a00",
+      "sourcePath": "tests/vblank2_int_nops_a.s",
+      "sourceSha256": "03fc6e0d89c691ea8fa49c869cdb58ffd1b982a5eb73696465ec3fb4dc1bd330",
+      "expected": "PASS"
+    },
+    {
+      "name": "vblank2_int_nops_b",
+      "group": "vblank-irq",
+      "hardware": "pass - ags, dmg",
+      "path": "bin/vblank2_int_nops_b.gb",
+      "sha256": "5f65be838b0f225e0c6019b414e856e3d58df3f9940c92d70e4d444b4c335c27",
+      "sourcePath": "tests/vblank2_int_nops_b.s",
+      "sourceSha256": "d3036f2c8caf231fea64252bd7b0244f3a51544ab2391e9da5d02301d9de152f",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_read_l1_b",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_read_l1_b.gb",
+      "sha256": "f58716e2d2bdb2f07963ceaccdddf9755e1e3baa689f612572934482db247fd9",
+      "sourcePath": "tests/oam_read_l1_b.s",
+      "sourceSha256": "84fbaca1b8c69e80bc722a53eb5964ee2c568f1acf150e79d0efa4576cdfb73f",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_read_l1_c",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_read_l1_c.gb",
+      "sha256": "266b90c681fc51048ad95dbad4e39ff5a5d01914becdda5ec71e78f0d1442940",
+      "sourcePath": "tests/oam_read_l1_c.s",
+      "sourceSha256": "ce2713447ff971151a6e42fc7051ec2d0dff5d605eb80bbe05923ba09a1dd52a",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_read_l1_d",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_read_l1_d.gb",
+      "sha256": "03ef5dd58f46cdd14412f4e6e4c99938ecdf386a2f68e3666bd56731b7e93286",
+      "sourcePath": "tests/oam_read_l1_d.s",
+      "sourceSha256": "3b402a19aed0451db642fe7c11be79ce68415948b6ec3a82c3671b98df935233",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_read_l1_e",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_read_l1_e.gb",
+      "sha256": "9ef1905bbc06f89f038c7efdf07c901ccf8a754bda8306d3bb1d000aac556869",
+      "sourcePath": "tests/oam_read_l1_e.s",
+      "sourceSha256": "093145fe9109d0198d894a661c959b8d61629d8151cb1c2750649d53e67154a1",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_read_l1_f",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_read_l1_f.gb",
+      "sha256": "a9b2788d63292991bb9179b4e7eb910f0ad10702c5a6b0ad7c8f38181e247896",
+      "sourcePath": "tests/oam_read_l1_f.s",
+      "sourceSha256": "3bbb5fe6976c2ee6ec973ddbcd3aec59217eb11ca199a68f0994bcd2ddef028e",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l0_a",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l0_a.gb",
+      "sha256": "de897dbcbcb2e038ed63c3eb2d8ba0fd4d34add698c2b29eb05b1a67d6009f4f",
+      "sourcePath": "tests/oam_write_l0_a.s",
+      "sourceSha256": "38cb3adf8acf9bc31b18b3eebeade64ae03c82e5a3a5621ef6fba3d2df78bb5f",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l0_c",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l0_c.gb",
+      "sha256": "c42ffaa838eba8b5a8baf69e7d0e080fc27b0729df122354df6afa57e6d006db",
+      "sourcePath": "tests/oam_write_l0_c.s",
+      "sourceSha256": "0ee52318bd5fe4b92a0ac0f17142055aa5ca9dd9b43ba21cc0b7e6f1c337c98f",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l0_d",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l0_d.gb",
+      "sha256": "ea5450e94729793b58b155caf5c23c2f3156fe9fe2a01080e8a4eaa3be488d82",
+      "sourcePath": "tests/oam_write_l0_d.s",
+      "sourceSha256": "d1e039d5fc1e7b547f59af50dfde66760e233346c9b37d9c7212b02a322a9023",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l0_e",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l0_e.gb",
+      "sha256": "9169f4c5cc8923f800b1569c8e9fd1ded005deef7c5bbb7c1f7a196df8a3d84d",
+      "sourcePath": "tests/oam_write_l0_e.s",
+      "sourceSha256": "705c286c1e2f80c9e8b4477f9663a57f5d04ec83f345d44904c9ac84134a4f79",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l1_a",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l1_a.gb",
+      "sha256": "8fb1352aff17951b9eacaf1a700e67e1755a5e08a4697cffee29ee916dbb0819",
+      "sourcePath": "tests/oam_write_l1_a.s",
+      "sourceSha256": "da57ec90a90e2ed629e8e5d48cb105a49a40f6eabfe5ce2e5a9970b0b7196935",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l1_b",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l1_b.gb",
+      "sha256": "980a7aa1b9a1eceed57c02ca6f3e391699c789599643990c6caa4603e4b0659b",
+      "sourcePath": "tests/oam_write_l1_b.s",
+      "sourceSha256": "cfc90d2fdbe0e7d63e43c39682d63facc2e7fa818f626e7f1521582818fe6304",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l1_d",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l1_d.gb",
+      "sha256": "3a5fcea0caac52c2856a4a0415c34ee972175d43e2d1ffb08d8327f407b5f71a",
+      "sourcePath": "tests/oam_write_l1_d.s",
+      "sourceSha256": "3adaa6c054d4118276ad043d03d0a52a0d0480613606081daf004034d39fac68",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l1_e",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l1_e.gb",
+      "sha256": "77d6618407e84d2a6e6611b71a29e2dc64ad5dca2edc0b98175c82cdb52d8b8e",
+      "sourcePath": "tests/oam_write_l1_e.s",
+      "sourceSha256": "6b72e14852f82ca6c203222f593636cccddd4df332a8329a7fa493cb706edf2b",
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_write_l1_f",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/oam_write_l1_f.gb",
+      "sha256": "9fef45a58fced3240d6e98672ffdd68e42d55850b31f72dba8e4826fb207d9ce",
+      "sourcePath": "tests/oam_write_l1_f.s",
+      "sourceSha256": "7b5d0279d203d7460d3f0accc5abe17885a17f7193adc7fa08a32a652c2a66a6",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l0_a",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l0_a.gb",
+      "sha256": "5a93cf5a2517505acb16e2ebacb9d13290026b9bdfe4cf276b972e2c94c98b29",
+      "sourcePath": "tests/vram_read_l0_a.s",
+      "sourceSha256": "6e85fbbf464d960f9ab087bf8d453dcb252c072c5682e70abeb510c5a3d74676",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l0_b",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l0_b.gb",
+      "sha256": "64b8361a6117bf44af432e3552e2079bfb5a4547bdfa4c3bcb667bfcbbbc7dd2",
+      "sourcePath": "tests/vram_read_l0_b.s",
+      "sourceSha256": "7da30869cbf98b0b2dfd3164b214982ceb41c5adc4a3e580ed622bb0c1c213a8",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l0_c",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l0_c.gb",
+      "sha256": "e94e30ea8f3d0f345acfd7cab6c89ade6fc9edb80133134610ed3edb29f1a3d6",
+      "sourcePath": "tests/vram_read_l0_c.s",
+      "sourceSha256": "22a6f294c4d2b08b112fe84fbe63b217044d7a2581d3c205cfabc6b218c12164",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l0_d",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l0_d.gb",
+      "sha256": "db976b8ec978e25874e2850afa99dddc1c35a58de15eea5ab2c0ce07d43ce889",
+      "sourcePath": "tests/vram_read_l0_d.s",
+      "sourceSha256": "0551cdc78d0b90b7253f93b62e8467c1dd94c07e182f57b63d6451c2cd6ff5ae",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l1_a",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l1_a.gb",
+      "sha256": "60496dd226f82148fd7815c3fd534d224bc0f12fe4ce74059f72de5709496da3",
+      "sourcePath": "tests/vram_read_l1_a.s",
+      "sourceSha256": "b137e673dd3aacf2d7044ef2a0e4086c96e574b451af04cabe3e6f74de7236d9",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l1_b",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l1_b.gb",
+      "sha256": "b4f0322878f2e36062afd6e5962c90428227eb8b557265500ad96b11287472e2",
+      "sourcePath": "tests/vram_read_l1_b.s",
+      "sourceSha256": "63d152710577bce9f3cd2162c7174c825f05cb53bc60e4c17506fda909c78afe",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l1_c",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l1_c.gb",
+      "sha256": "66a6ddf97f60c3c3223a6d7d57817bcdc3cf9920408fe3972e8a8444b0e93556",
+      "sourcePath": "tests/vram_read_l1_c.s",
+      "sourceSha256": "888aba27e4c51aba435f4c77f8a463a9504ad6f1b693dad75ed983f5b5a6ad34",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_read_l1_d",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_read_l1_d.gb",
+      "sha256": "1bbee9a5ce2bc72abf9b31eb6f6c95df920e0e5c5f1f7ebe84d4eee27618c319",
+      "sourcePath": "tests/vram_read_l1_d.s",
+      "sourceSha256": "426387529ee79d5f5d90c0d5d3d299be3cf099755fdb205a44e07d05d2a66bab",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l0_a",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l0_a.gb",
+      "sha256": "e313e3e016f39237d0a8e0c09995a2b6f35a474b3c0f1505be155ac0cef1eeed",
+      "sourcePath": "tests/vram_write_l0_a.s",
+      "sourceSha256": "e0cfbd95668c68b775df9055011fc4221eac85cfae3083ff7e4e8c56402a73bc",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l0_b",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l0_b.gb",
+      "sha256": "90862f2bed7e6534735db8d074283b37c1f6b4dc9988eb7f6fe56336cd0558ee",
+      "sourcePath": "tests/vram_write_l0_b.s",
+      "sourceSha256": "03570f36e8d08b7d96a1d9a8a5079fd9b14e2c72f0597988399e0e17496d45be",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l0_c",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l0_c.gb",
+      "sha256": "6f8a4877a9606b199d9fbdaf496969c0ed6c25fcd83bab77b83d0835e7a8ce84",
+      "sourcePath": "tests/vram_write_l0_c.s",
+      "sourceSha256": "c5a18d38576ca05b6d140fa2dfa75131d740ef64f250a804f017fa1e4552b033",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l0_d",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l0_d.gb",
+      "sha256": "f9a69c093d7336a39de4a588e9e73e46f312d8cfba5c07c0f02987ce69b7e88f",
+      "sourcePath": "tests/vram_write_l0_d.s",
+      "sourceSha256": "d188e8724d261ac4b37d70e898a4fe7f250f5a6484f33efd65ffc3908f9af366",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l1_a",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l1_a.gb",
+      "sha256": "6a6890f5438d620f60da014c7fde25d4deaf3628e9d7449a58ffec61df0275e8",
+      "sourcePath": "tests/vram_write_l1_a.s",
+      "sourceSha256": "ff34a90bb9b9c747b699e3a55c6adb39f86519c2825b1706a44439c0f12d9afe",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l1_b",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l1_b.gb",
+      "sha256": "7c20a1148746bbf6718ec639c91fc979dabe6917b716827d76379422ee5dd690",
+      "sourcePath": "tests/vram_write_l1_b.s",
+      "sourceSha256": "52ff3c4d84b934666bf4b76dda50545ea733faa89cf71f7b1ee65bfc8571c83a",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l1_c",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l1_c.gb",
+      "sha256": "561ca3a400cd8d32724230eb8fc82c8c295403048b1567b0bf726a6d8140bb97",
+      "sourcePath": "tests/vram_write_l1_c.s",
+      "sourceSha256": "fb7a5c6332de04a0e5219080f80031ab7039e81dfc2cd89b373a123f138993ef",
+      "expected": "PASS"
+    },
+    {
+      "name": "vram_write_l1_d",
+      "group": "access",
+      "hardware": "pass - dmg",
+      "path": "bin/vram_write_l1_d.gb",
+      "sha256": "f1f20a437f3440a528cf12b27ca43705967d98349c7c3afafd8efc3ab809a654",
+      "sourcePath": "tests/vram_write_l1_d.s",
+      "sourceSha256": "a9a7f190f19cfddf1726d897259ac2572551765776e954082508edd551c14c84",
+      "expected": "PASS"
+    },
+    {
+      "name": "halt_op_dupe",
+      "group": "halt",
+      "hardware": "pass - dmg",
+      "path": "bin/halt_op_dupe.gb",
+      "sha256": "63515961dd7791f6cbef67b902329c869ee21c66e9d0828462fd230050ae4a6b",
+      "sourcePath": "tests/halt_op_dupe.s",
+      "sourceSha256": "0dbdec94a748394ca9dab1ffa22b97bb0479435352093f4d0119c7d0dc71a5e2",
+      "expected": "PASS"
+    },
+    {
+      "name": "is_if_set_during_ime0",
+      "group": "halt",
+      "hardware": "pass - dmg, ags",
+      "path": "bin/is_if_set_during_ime0.gb",
+      "sha256": "01a92b7dc90f00a3934758f238b23fd47a63cb6360504f22a9ecb58b60519bbf",
+      "sourcePath": "tests/is_if_set_during_ime0.s",
+      "sourceSha256": "16a57cb9699de24353c580b3b8e6bc776a9a53809895fb39d443603b63862bed",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx1",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx1.gb",
+      "sha256": "38008ba00c1efa761bbe03ad18efb0700ac73aa589b14bc3f9177a466ba5cb05",
+      "sourcePath": "tests/hblank_int_scx1.s",
+      "sourceSha256": "57292d564d4e9447920bd3b9802d6d98864d881cd90795507bb7d64c1da0ccc6",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx2",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx2.gb",
+      "sha256": "d37c196fd8f8197022d1d5c441d06fc1cb7cb5b66f37502443be9c909b8379dd",
+      "sourcePath": "tests/hblank_int_scx2.s",
+      "sourceSha256": "3927a135f60f66b806dec9b959827c4ed2119db4b6b32a211e2d5a6874be055d",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx3",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx3.gb",
+      "sha256": "bf2791bdaa9968d172d5809591749a8a4aaf88cf2b7299e64a95c52fd21c1683",
+      "sourcePath": "tests/hblank_int_scx3.s",
+      "sourceSha256": "5652617faffdba9efccffdb37370bdf6f765f5c13bf3928e42370e87bf2177ed",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx4",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx4.gb",
+      "sha256": "dde1b394a4515e7f049c4cbb297af88018ef2a6281db935c616aa3e425676372",
+      "sourcePath": "tests/hblank_int_scx4.s",
+      "sourceSha256": "4217674852f43ce6a4e5ea2ab0f06a56bedba97496e2d7ad77f1fa68a58e689a",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx5",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx5.gb",
+      "sha256": "2547b5f58646b8f55d1b5c78fcf3127923e98a5b0af21048723ecfbafbc1d6f7",
+      "sourcePath": "tests/hblank_int_scx5.s",
+      "sourceSha256": "2cd520b51ce9e7acdb898d8f3a456364f8c49c2c2dfb0a3f0ce01115e0ad10ef",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx6",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx6.gb",
+      "sha256": "cc2d9bf09f0888da2603a1915ef0d97a08bbae9fa27d8ab7f619b44aba047f68",
+      "sourcePath": "tests/hblank_int_scx6.s",
+      "sourceSha256": "e5a1097042fc5c0b251d799ed69e7540fbb5364bcb8004b101044c11cbdb44e2",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_int_scx7",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_int_scx7.gb",
+      "sha256": "9d00b9af5969df82c7dd9c2441199be786a2feaec0da0102be0b5aae17d2a691",
+      "sourcePath": "tests/hblank_int_scx7.s",
+      "sourceSha256": "3f6214db9f836ddb328f6e797fb7eb2ba220a73744b9f63ae585b80fa01daf4b",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_scx2_if_a",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_scx2_if_a.gb",
+      "sha256": "7b674cebe3f507439f0886acc878e2b06d1dd96d79f16f1e6f4747cf890ee805",
+      "sourcePath": "tests/hblank_scx2_if_a.s",
+      "sourceSha256": "f76a6ecccaf37c1cc6bc5e92e864126484f41cf4740c4d0cc1e9ac7f7e338790",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_scx3_if_a",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_scx3_if_a.gb",
+      "sha256": "49191be71451bd95f85113538c314144fb52e39eb56a97184e9d89374f5d0e2b",
+      "sourcePath": "tests/hblank_scx3_if_a.s",
+      "sourceSha256": "ba72512159b006b0b6982bc327395f3fbcd2de9e9b93cf33645b5c38c5af7d16",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_scx3_if_b",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_scx3_if_b.gb",
+      "sha256": "82b63a8bedf4cdf79021b4fb14125bce7c9fd5e7c789df111a2fff9428e801a1",
+      "sourcePath": "tests/hblank_scx3_if_b.s",
+      "sourceSha256": "ac0eab5989bf9326646afed78b55f09e69684ac3b0bab10e89ea5b72f92f796c",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_scx3_if_c",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_scx3_if_c.gb",
+      "sha256": "dc255243314c15ecc4c339c669e0668de39400905bbf15f56cd1326b32059fdc",
+      "sourcePath": "tests/hblank_scx3_if_c.s",
+      "sourceSha256": "b15467d3754497612ec999b5c0213738eb8e02bd145f0c7d8591ade9fea1c2c0",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_scx3_if_d",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_scx3_if_d.gb",
+      "sha256": "63fb4b33cbb2d6f4b1c9c8138f167dcd120a72df4fcf934b043eb489f809fc42",
+      "sourcePath": "tests/hblank_scx3_if_d.s",
+      "sourceSha256": "9b0f4c470bb585fa66a1f45d64218997bb74b402fe57506f387dd436f7a06a8d",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_scx3_int_a",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_scx3_int_a.gb",
+      "sha256": "9e964f55721af177a4152f61c53da003dd79af89c7cdbddf4e3cd46a7da3fb8b",
+      "sourcePath": "tests/hblank_scx3_int_a.s",
+      "sourceSha256": "fdd15ecf796d0c172a636372bdaa47af21535616d9e1336c0355e36994463e8b",
+      "expected": "PASS"
+    },
+    {
+      "name": "hblank_scx3_int_b",
+      "group": "mode3-scx",
+      "hardware": "pass - dmg",
+      "path": "bin/hblank_scx3_int_b.gb",
+      "sha256": "b87921b05660d7642e05e9094d0a75aea4fe621879d3f90b23be99ad005d795d",
+      "sourcePath": "tests/hblank_scx3_int_b.s",
+      "sourceSha256": "2923e87397e59aaa6ad107206cd38830619b7615583adee1b1d9ac8fc6a70b49",
+      "expected": "PASS"
+    }
+  ]
+}

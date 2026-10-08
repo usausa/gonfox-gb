@@ -21,15 +21,15 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>2.20.0</Version>
+    <Version>1.0.0</Version>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Authors>machi_pon</Authors>
-    <Copyright>Copyright (c) 2022 machi_pon</Copyright>
+    <Copyright>Copyright (c) 2026 machi_pon</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/usausa/Smart-Net</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/usausa/gonfox-gb</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 

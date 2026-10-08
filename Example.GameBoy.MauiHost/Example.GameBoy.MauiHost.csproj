@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-android</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <IsPackable>false</IsPackable>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+    <ApplicationTitle>GonFox GameBoy</ApplicationTitle>
+    <ApplicationId>com.gonfox.gameboy</ApplicationId>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <!-- Release compiles every method ahead of time with LLVM for a lighter run thread. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <EnableLLVM>true</EnableLLVM>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#C9CBC4" />
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#2B2E35" BaseSize="128,128" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="4.153.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GonFox.GameBoy.Core\GonFox.GameBoy.Core.csproj" />
+    <ProjectReference Include="..\GonFox.GameBoy.Platform.Shared\GonFox.GameBoy.Platform.Shared.csproj" />
+    <ProjectReference Include="..\GonFox.GameBoy.Platform.Android\GonFox.GameBoy.Platform.Android.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="GonFox.GameBoy.Platform" />
+    <Using Include="GonFox.GameBoy.Platform.Audio" />
+    <Using Include="GonFox.GameBoy.Platform.Android" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Roms\BackgroundDemo\background-demo.gb" LogicalName="BackgroundDemo.gb" />
+    <EmbeddedResource Include="..\Roms\MegaDemo\megademo.gb" LogicalName="MegaDemo.gb" />
+    <EmbeddedResource Include="..\Roms\SoundCheck\sound-check.gb" LogicalName="SoundCheck.gb" />
+    <EmbeddedResource Include="..\Roms\RpgDemo\rpgdemo.gb" LogicalName="RpgDemo.gb" />
+  </ItemGroup>
+
+</Project>

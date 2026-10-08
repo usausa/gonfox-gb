@@ -1,0 +1,2581 @@
+{
+  "rom": "instr-timing.gb",
+  "sha256": "90e46c2deefbd5697d28b751edf9653d76b020252b8664a63404960cbbcc99de",
+  "reference": "sameboy",
+  "frames": 300,
+  "maxTCycles": 200000000,
+  "cases": [
+    {
+      "name": "00 NOP",
+      "offset": 0,
+      "length": 1
+    },
+    {
+      "name": "01 LD BC,d16",
+      "offset": 1,
+      "length": 1
+    },
+    {
+      "name": "02 LD (BC),A",
+      "offset": 2,
+      "length": 1
+    },
+    {
+      "name": "03 INC BC",
+      "offset": 3,
+      "length": 1
+    },
+    {
+      "name": "04 INC B",
+      "offset": 4,
+      "length": 1
+    },
+    {
+      "name": "05 DEC B",
+      "offset": 5,
+      "length": 1
+    },
+    {
+      "name": "06 LD B,d8",
+      "offset": 6,
+      "length": 1
+    },
+    {
+      "name": "07 RLCA",
+      "offset": 7,
+      "length": 1
+    },
+    {
+      "name": "08 LD (a16),SP",
+      "offset": 8,
+      "length": 1
+    },
+    {
+      "name": "09 ADD HL,BC",
+      "offset": 9,
+      "length": 1
+    },
+    {
+      "name": "0A LD A,(BC)",
+      "offset": 10,
+      "length": 1
+    },
+    {
+      "name": "0B DEC BC",
+      "offset": 11,
+      "length": 1
+    },
+    {
+      "name": "0C INC C",
+      "offset": 12,
+      "length": 1
+    },
+    {
+      "name": "0D DEC C",
+      "offset": 13,
+      "length": 1
+    },
+    {
+      "name": "0E LD C,d8",
+      "offset": 14,
+      "length": 1
+    },
+    {
+      "name": "0F RRCA",
+      "offset": 15,
+      "length": 1
+    },
+    {
+      "name": "11 LD DE,d16",
+      "offset": 16,
+      "length": 1
+    },
+    {
+      "name": "12 LD (DE),A",
+      "offset": 17,
+      "length": 1
+    },
+    {
+      "name": "13 INC DE",
+      "offset": 18,
+      "length": 1
+    },
+    {
+      "name": "14 INC D",
+      "offset": 19,
+      "length": 1
+    },
+    {
+      "name": "15 DEC D",
+      "offset": 20,
+      "length": 1
+    },
+    {
+      "name": "16 LD D,d8",
+      "offset": 21,
+      "length": 1
+    },
+    {
+      "name": "17 RLA",
+      "offset": 22,
+      "length": 1
+    },
+    {
+      "name": "18 JR e8",
+      "offset": 23,
+      "length": 1
+    },
+    {
+      "name": "19 ADD HL,DE",
+      "offset": 24,
+      "length": 1
+    },
+    {
+      "name": "1A LD A,(DE)",
+      "offset": 25,
+      "length": 1
+    },
+    {
+      "name": "1B DEC DE",
+      "offset": 26,
+      "length": 1
+    },
+    {
+      "name": "1C INC E",
+      "offset": 27,
+      "length": 1
+    },
+    {
+      "name": "1D DEC E",
+      "offset": 28,
+      "length": 1
+    },
+    {
+      "name": "1E LD E,d8",
+      "offset": 29,
+      "length": 1
+    },
+    {
+      "name": "1F RRA",
+      "offset": 30,
+      "length": 1
+    },
+    {
+      "name": "20 JR NZ,e8 not taken",
+      "offset": 31,
+      "length": 1
+    },
+    {
+      "name": "20 JR NZ,e8 taken",
+      "offset": 32,
+      "length": 1
+    },
+    {
+      "name": "21 LD HL,d16",
+      "offset": 33,
+      "length": 1
+    },
+    {
+      "name": "22 LD (HL+),A",
+      "offset": 34,
+      "length": 1
+    },
+    {
+      "name": "23 INC HL",
+      "offset": 35,
+      "length": 1
+    },
+    {
+      "name": "24 INC H",
+      "offset": 36,
+      "length": 1
+    },
+    {
+      "name": "25 DEC H",
+      "offset": 37,
+      "length": 1
+    },
+    {
+      "name": "26 LD H,d8",
+      "offset": 38,
+      "length": 1
+    },
+    {
+      "name": "27 DAA",
+      "offset": 39,
+      "length": 1
+    },
+    {
+      "name": "28 JR Z,e8 not taken",
+      "offset": 40,
+      "length": 1
+    },
+    {
+      "name": "28 JR Z,e8 taken",
+      "offset": 41,
+      "length": 1
+    },
+    {
+      "name": "29 ADD HL,HL",
+      "offset": 42,
+      "length": 1
+    },
+    {
+      "name": "2A LD A,(HL+)",
+      "offset": 43,
+      "length": 1
+    },
+    {
+      "name": "2B DEC HL",
+      "offset": 44,
+      "length": 1
+    },
+    {
+      "name": "2C INC L",
+      "offset": 45,
+      "length": 1
+    },
+    {
+      "name": "2D DEC L",
+      "offset": 46,
+      "length": 1
+    },
+    {
+      "name": "2E LD L,d8",
+      "offset": 47,
+      "length": 1
+    },
+    {
+      "name": "2F CPL",
+      "offset": 48,
+      "length": 1
+    },
+    {
+      "name": "30 JR NC,e8 not taken",
+      "offset": 49,
+      "length": 1
+    },
+    {
+      "name": "30 JR NC,e8 taken",
+      "offset": 50,
+      "length": 1
+    },
+    {
+      "name": "31 LD SP,d16",
+      "offset": 51,
+      "length": 1
+    },
+    {
+      "name": "32 LD (HL-),A",
+      "offset": 52,
+      "length": 1
+    },
+    {
+      "name": "33 INC SP",
+      "offset": 53,
+      "length": 1
+    },
+    {
+      "name": "34 INC (HL)",
+      "offset": 54,
+      "length": 1
+    },
+    {
+      "name": "35 DEC (HL)",
+      "offset": 55,
+      "length": 1
+    },
+    {
+      "name": "36 LD (HL),d8",
+      "offset": 56,
+      "length": 1
+    },
+    {
+      "name": "37 SCF",
+      "offset": 57,
+      "length": 1
+    },
+    {
+      "name": "38 JR C,e8 not taken",
+      "offset": 58,
+      "length": 1
+    },
+    {
+      "name": "38 JR C,e8 taken",
+      "offset": 59,
+      "length": 1
+    },
+    {
+      "name": "39 ADD HL,SP",
+      "offset": 60,
+      "length": 1
+    },
+    {
+      "name": "3A LD A,(HL-)",
+      "offset": 61,
+      "length": 1
+    },
+    {
+      "name": "3B DEC SP",
+      "offset": 62,
+      "length": 1
+    },
+    {
+      "name": "3C INC A",
+      "offset": 63,
+      "length": 1
+    },
+    {
+      "name": "3D DEC A",
+      "offset": 64,
+      "length": 1
+    },
+    {
+      "name": "3E LD A,d8",
+      "offset": 65,
+      "length": 1
+    },
+    {
+      "name": "3F CCF",
+      "offset": 66,
+      "length": 1
+    },
+    {
+      "name": "40 LD B,B",
+      "offset": 67,
+      "length": 1
+    },
+    {
+      "name": "41 LD B,C",
+      "offset": 68,
+      "length": 1
+    },
+    {
+      "name": "42 LD B,D",
+      "offset": 69,
+      "length": 1
+    },
+    {
+      "name": "43 LD B,E",
+      "offset": 70,
+      "length": 1
+    },
+    {
+      "name": "44 LD B,H",
+      "offset": 71,
+      "length": 1
+    },
+    {
+      "name": "45 LD B,L",
+      "offset": 72,
+      "length": 1
+    },
+    {
+      "name": "46 LD B,(HL)",
+      "offset": 73,
+      "length": 1
+    },
+    {
+      "name": "47 LD B,A",
+      "offset": 74,
+      "length": 1
+    },
+    {
+      "name": "48 LD C,B",
+      "offset": 75,
+      "length": 1
+    },
+    {
+      "name": "49 LD C,C",
+      "offset": 76,
+      "length": 1
+    },
+    {
+      "name": "4A LD C,D",
+      "offset": 77,
+      "length": 1
+    },
+    {
+      "name": "4B LD C,E",
+      "offset": 78,
+      "length": 1
+    },
+    {
+      "name": "4C LD C,H",
+      "offset": 79,
+      "length": 1
+    },
+    {
+      "name": "4D LD C,L",
+      "offset": 80,
+      "length": 1
+    },
+    {
+      "name": "4E LD C,(HL)",
+      "offset": 81,
+      "length": 1
+    },
+    {
+      "name": "4F LD C,A",
+      "offset": 82,
+      "length": 1
+    },
+    {
+      "name": "50 LD D,B",
+      "offset": 83,
+      "length": 1
+    },
+    {
+      "name": "51 LD D,C",
+      "offset": 84,
+      "length": 1
+    },
+    {
+      "name": "52 LD D,D",
+      "offset": 85,
+      "length": 1
+    },
+    {
+      "name": "53 LD D,E",
+      "offset": 86,
+      "length": 1
+    },
+    {
+      "name": "54 LD D,H",
+      "offset": 87,
+      "length": 1
+    },
+    {
+      "name": "55 LD D,L",
+      "offset": 88,
+      "length": 1
+    },
+    {
+      "name": "56 LD D,(HL)",
+      "offset": 89,
+      "length": 1
+    },
+    {
+      "name": "57 LD D,A",
+      "offset": 90,
+      "length": 1
+    },
+    {
+      "name": "58 LD E,B",
+      "offset": 91,
+      "length": 1
+    },
+    {
+      "name": "59 LD E,C",
+      "offset": 92,
+      "length": 1
+    },
+    {
+      "name": "5A LD E,D",
+      "offset": 93,
+      "length": 1
+    },
+    {
+      "name": "5B LD E,E",
+      "offset": 94,
+      "length": 1
+    },
+    {
+      "name": "5C LD E,H",
+      "offset": 95,
+      "length": 1
+    },
+    {
+      "name": "5D LD E,L",
+      "offset": 96,
+      "length": 1
+    },
+    {
+      "name": "5E LD E,(HL)",
+      "offset": 97,
+      "length": 1
+    },
+    {
+      "name": "5F LD E,A",
+      "offset": 98,
+      "length": 1
+    },
+    {
+      "name": "60 LD H,B",
+      "offset": 99,
+      "length": 1
+    },
+    {
+      "name": "61 LD H,C",
+      "offset": 100,
+      "length": 1
+    },
+    {
+      "name": "62 LD H,D",
+      "offset": 101,
+      "length": 1
+    },
+    {
+      "name": "63 LD H,E",
+      "offset": 102,
+      "length": 1
+    },
+    {
+      "name": "64 LD H,H",
+      "offset": 103,
+      "length": 1
+    },
+    {
+      "name": "65 LD H,L",
+      "offset": 104,
+      "length": 1
+    },
+    {
+      "name": "66 LD H,(HL)",
+      "offset": 105,
+      "length": 1
+    },
+    {
+      "name": "67 LD H,A",
+      "offset": 106,
+      "length": 1
+    },
+    {
+      "name": "68 LD L,B",
+      "offset": 107,
+      "length": 1
+    },
+    {
+      "name": "69 LD L,C",
+      "offset": 108,
+      "length": 1
+    },
+    {
+      "name": "6A LD L,D",
+      "offset": 109,
+      "length": 1
+    },
+    {
+      "name": "6B LD L,E",
+      "offset": 110,
+      "length": 1
+    },
+    {
+      "name": "6C LD L,H",
+      "offset": 111,
+      "length": 1
+    },
+    {
+      "name": "6D LD L,L",
+      "offset": 112,
+      "length": 1
+    },
+    {
+      "name": "6E LD L,(HL)",
+      "offset": 113,
+      "length": 1
+    },
+    {
+      "name": "6F LD L,A",
+      "offset": 114,
+      "length": 1
+    },
+    {
+      "name": "70 LD (HL),B",
+      "offset": 115,
+      "length": 1
+    },
+    {
+      "name": "71 LD (HL),C",
+      "offset": 116,
+      "length": 1
+    },
+    {
+      "name": "72 LD (HL),D",
+      "offset": 117,
+      "length": 1
+    },
+    {
+      "name": "73 LD (HL),E",
+      "offset": 118,
+      "length": 1
+    },
+    {
+      "name": "74 LD (HL),H",
+      "offset": 119,
+      "length": 1
+    },
+    {
+      "name": "75 LD (HL),L",
+      "offset": 120,
+      "length": 1
+    },
+    {
+      "name": "77 LD (HL),A",
+      "offset": 121,
+      "length": 1
+    },
+    {
+      "name": "78 LD A,B",
+      "offset": 122,
+      "length": 1
+    },
+    {
+      "name": "79 LD A,C",
+      "offset": 123,
+      "length": 1
+    },
+    {
+      "name": "7A LD A,D",
+      "offset": 124,
+      "length": 1
+    },
+    {
+      "name": "7B LD A,E",
+      "offset": 125,
+      "length": 1
+    },
+    {
+      "name": "7C LD A,H",
+      "offset": 126,
+      "length": 1
+    },
+    {
+      "name": "7D LD A,L",
+      "offset": 127,
+      "length": 1
+    },
+    {
+      "name": "7E LD A,(HL)",
+      "offset": 128,
+      "length": 1
+    },
+    {
+      "name": "7F LD A,A",
+      "offset": 129,
+      "length": 1
+    },
+    {
+      "name": "80 ADD A,B",
+      "offset": 130,
+      "length": 1
+    },
+    {
+      "name": "81 ADD A,C",
+      "offset": 131,
+      "length": 1
+    },
+    {
+      "name": "82 ADD A,D",
+      "offset": 132,
+      "length": 1
+    },
+    {
+      "name": "83 ADD A,E",
+      "offset": 133,
+      "length": 1
+    },
+    {
+      "name": "84 ADD A,H",
+      "offset": 134,
+      "length": 1
+    },
+    {
+      "name": "85 ADD A,L",
+      "offset": 135,
+      "length": 1
+    },
+    {
+      "name": "86 ADD A,(HL)",
+      "offset": 136,
+      "length": 1
+    },
+    {
+      "name": "87 ADD A,A",
+      "offset": 137,
+      "length": 1
+    },
+    {
+      "name": "88 ADC A,B",
+      "offset": 138,
+      "length": 1
+    },
+    {
+      "name": "89 ADC A,C",
+      "offset": 139,
+      "length": 1
+    },
+    {
+      "name": "8A ADC A,D",
+      "offset": 140,
+      "length": 1
+    },
+    {
+      "name": "8B ADC A,E",
+      "offset": 141,
+      "length": 1
+    },
+    {
+      "name": "8C ADC A,H",
+      "offset": 142,
+      "length": 1
+    },
+    {
+      "name": "8D ADC A,L",
+      "offset": 143,
+      "length": 1
+    },
+    {
+      "name": "8E ADC A,(HL)",
+      "offset": 144,
+      "length": 1
+    },
+    {
+      "name": "8F ADC A,A",
+      "offset": 145,
+      "length": 1
+    },
+    {
+      "name": "90 SUB A,B",
+      "offset": 146,
+      "length": 1
+    },
+    {
+      "name": "91 SUB A,C",
+      "offset": 147,
+      "length": 1
+    },
+    {
+      "name": "92 SUB A,D",
+      "offset": 148,
+      "length": 1
+    },
+    {
+      "name": "93 SUB A,E",
+      "offset": 149,
+      "length": 1
+    },
+    {
+      "name": "94 SUB A,H",
+      "offset": 150,
+      "length": 1
+    },
+    {
+      "name": "95 SUB A,L",
+      "offset": 151,
+      "length": 1
+    },
+    {
+      "name": "96 SUB A,(HL)",
+      "offset": 152,
+      "length": 1
+    },
+    {
+      "name": "97 SUB A,A",
+      "offset": 153,
+      "length": 1
+    },
+    {
+      "name": "98 SBC A,B",
+      "offset": 154,
+      "length": 1
+    },
+    {
+      "name": "99 SBC A,C",
+      "offset": 155,
+      "length": 1
+    },
+    {
+      "name": "9A SBC A,D",
+      "offset": 156,
+      "length": 1
+    },
+    {
+      "name": "9B SBC A,E",
+      "offset": 157,
+      "length": 1
+    },
+    {
+      "name": "9C SBC A,H",
+      "offset": 158,
+      "length": 1
+    },
+    {
+      "name": "9D SBC A,L",
+      "offset": 159,
+      "length": 1
+    },
+    {
+      "name": "9E SBC A,(HL)",
+      "offset": 160,
+      "length": 1
+    },
+    {
+      "name": "9F SBC A,A",
+      "offset": 161,
+      "length": 1
+    },
+    {
+      "name": "A0 AND A,B",
+      "offset": 162,
+      "length": 1
+    },
+    {
+      "name": "A1 AND A,C",
+      "offset": 163,
+      "length": 1
+    },
+    {
+      "name": "A2 AND A,D",
+      "offset": 164,
+      "length": 1
+    },
+    {
+      "name": "A3 AND A,E",
+      "offset": 165,
+      "length": 1
+    },
+    {
+      "name": "A4 AND A,H",
+      "offset": 166,
+      "length": 1
+    },
+    {
+      "name": "A5 AND A,L",
+      "offset": 167,
+      "length": 1
+    },
+    {
+      "name": "A6 AND A,(HL)",
+      "offset": 168,
+      "length": 1
+    },
+    {
+      "name": "A7 AND A,A",
+      "offset": 169,
+      "length": 1
+    },
+    {
+      "name": "A8 XOR A,B",
+      "offset": 170,
+      "length": 1
+    },
+    {
+      "name": "A9 XOR A,C",
+      "offset": 171,
+      "length": 1
+    },
+    {
+      "name": "AA XOR A,D",
+      "offset": 172,
+      "length": 1
+    },
+    {
+      "name": "AB XOR A,E",
+      "offset": 173,
+      "length": 1
+    },
+    {
+      "name": "AC XOR A,H",
+      "offset": 174,
+      "length": 1
+    },
+    {
+      "name": "AD XOR A,L",
+      "offset": 175,
+      "length": 1
+    },
+    {
+      "name": "AE XOR A,(HL)",
+      "offset": 176,
+      "length": 1
+    },
+    {
+      "name": "AF XOR A,A",
+      "offset": 177,
+      "length": 1
+    },
+    {
+      "name": "B0 OR A,B",
+      "offset": 178,
+      "length": 1
+    },
+    {
+      "name": "B1 OR A,C",
+      "offset": 179,
+      "length": 1
+    },
+    {
+      "name": "B2 OR A,D",
+      "offset": 180,
+      "length": 1
+    },
+    {
+      "name": "B3 OR A,E",
+      "offset": 181,
+      "length": 1
+    },
+    {
+      "name": "B4 OR A,H",
+      "offset": 182,
+      "length": 1
+    },
+    {
+      "name": "B5 OR A,L",
+      "offset": 183,
+      "length": 1
+    },
+    {
+      "name": "B6 OR A,(HL)",
+      "offset": 184,
+      "length": 1
+    },
+    {
+      "name": "B7 OR A,A",
+      "offset": 185,
+      "length": 1
+    },
+    {
+      "name": "B8 CP A,B",
+      "offset": 186,
+      "length": 1
+    },
+    {
+      "name": "B9 CP A,C",
+      "offset": 187,
+      "length": 1
+    },
+    {
+      "name": "BA CP A,D",
+      "offset": 188,
+      "length": 1
+    },
+    {
+      "name": "BB CP A,E",
+      "offset": 189,
+      "length": 1
+    },
+    {
+      "name": "BC CP A,H",
+      "offset": 190,
+      "length": 1
+    },
+    {
+      "name": "BD CP A,L",
+      "offset": 191,
+      "length": 1
+    },
+    {
+      "name": "BE CP A,(HL)",
+      "offset": 192,
+      "length": 1
+    },
+    {
+      "name": "BF CP A,A",
+      "offset": 193,
+      "length": 1
+    },
+    {
+      "name": "C0 RET NZ not taken",
+      "offset": 194,
+      "length": 1
+    },
+    {
+      "name": "C0 RET NZ taken",
+      "offset": 195,
+      "length": 1
+    },
+    {
+      "name": "C1 POP BC",
+      "offset": 196,
+      "length": 1
+    },
+    {
+      "name": "C2 JP NZ,a16 not taken",
+      "offset": 197,
+      "length": 1
+    },
+    {
+      "name": "C2 JP NZ,a16 taken",
+      "offset": 198,
+      "length": 1
+    },
+    {
+      "name": "C3 JP a16",
+      "offset": 199,
+      "length": 1
+    },
+    {
+      "name": "C4 CALL NZ,a16 not taken",
+      "offset": 200,
+      "length": 1
+    },
+    {
+      "name": "C4 CALL NZ,a16 taken",
+      "offset": 201,
+      "length": 1
+    },
+    {
+      "name": "C5 PUSH BC",
+      "offset": 202,
+      "length": 1
+    },
+    {
+      "name": "C6 ADD A,d8",
+      "offset": 203,
+      "length": 1
+    },
+    {
+      "name": "C7 RST 00h",
+      "offset": 204,
+      "length": 1
+    },
+    {
+      "name": "C8 RET Z not taken",
+      "offset": 205,
+      "length": 1
+    },
+    {
+      "name": "C8 RET Z taken",
+      "offset": 206,
+      "length": 1
+    },
+    {
+      "name": "C9 RET",
+      "offset": 207,
+      "length": 1
+    },
+    {
+      "name": "CA JP Z,a16 not taken",
+      "offset": 208,
+      "length": 1
+    },
+    {
+      "name": "CA JP Z,a16 taken",
+      "offset": 209,
+      "length": 1
+    },
+    {
+      "name": "CC CALL Z,a16 not taken",
+      "offset": 210,
+      "length": 1
+    },
+    {
+      "name": "CC CALL Z,a16 taken",
+      "offset": 211,
+      "length": 1
+    },
+    {
+      "name": "CD CALL a16",
+      "offset": 212,
+      "length": 1
+    },
+    {
+      "name": "CE ADC A,d8",
+      "offset": 213,
+      "length": 1
+    },
+    {
+      "name": "CF RST 08h",
+      "offset": 214,
+      "length": 1
+    },
+    {
+      "name": "D0 RET NC not taken",
+      "offset": 215,
+      "length": 1
+    },
+    {
+      "name": "D0 RET NC taken",
+      "offset": 216,
+      "length": 1
+    },
+    {
+      "name": "D1 POP DE",
+      "offset": 217,
+      "length": 1
+    },
+    {
+      "name": "D2 JP NC,a16 not taken",
+      "offset": 218,
+      "length": 1
+    },
+    {
+      "name": "D2 JP NC,a16 taken",
+      "offset": 219,
+      "length": 1
+    },
+    {
+      "name": "D4 CALL NC,a16 not taken",
+      "offset": 220,
+      "length": 1
+    },
+    {
+      "name": "D4 CALL NC,a16 taken",
+      "offset": 221,
+      "length": 1
+    },
+    {
+      "name": "D5 PUSH DE",
+      "offset": 222,
+      "length": 1
+    },
+    {
+      "name": "D6 SUB A,d8",
+      "offset": 223,
+      "length": 1
+    },
+    {
+      "name": "D7 RST 10h",
+      "offset": 224,
+      "length": 1
+    },
+    {
+      "name": "D8 RET C not taken",
+      "offset": 225,
+      "length": 1
+    },
+    {
+      "name": "D8 RET C taken",
+      "offset": 226,
+      "length": 1
+    },
+    {
+      "name": "D9 RETI",
+      "offset": 227,
+      "length": 1
+    },
+    {
+      "name": "DA JP C,a16 not taken",
+      "offset": 228,
+      "length": 1
+    },
+    {
+      "name": "DA JP C,a16 taken",
+      "offset": 229,
+      "length": 1
+    },
+    {
+      "name": "DC CALL C,a16 not taken",
+      "offset": 230,
+      "length": 1
+    },
+    {
+      "name": "DC CALL C,a16 taken",
+      "offset": 231,
+      "length": 1
+    },
+    {
+      "name": "DE SBC A,d8",
+      "offset": 232,
+      "length": 1
+    },
+    {
+      "name": "DF RST 18h",
+      "offset": 233,
+      "length": 1
+    },
+    {
+      "name": "E0 LDH (a8),A",
+      "offset": 234,
+      "length": 1
+    },
+    {
+      "name": "E1 POP HL",
+      "offset": 235,
+      "length": 1
+    },
+    {
+      "name": "E2 LD (C),A",
+      "offset": 236,
+      "length": 1
+    },
+    {
+      "name": "E5 PUSH HL",
+      "offset": 237,
+      "length": 1
+    },
+    {
+      "name": "E6 AND A,d8",
+      "offset": 238,
+      "length": 1
+    },
+    {
+      "name": "E7 RST 20h",
+      "offset": 239,
+      "length": 1
+    },
+    {
+      "name": "E8 ADD SP,e8",
+      "offset": 240,
+      "length": 1
+    },
+    {
+      "name": "E9 JP HL",
+      "offset": 241,
+      "length": 1
+    },
+    {
+      "name": "EA LD (a16),A",
+      "offset": 242,
+      "length": 1
+    },
+    {
+      "name": "EE XOR A,d8",
+      "offset": 243,
+      "length": 1
+    },
+    {
+      "name": "EF RST 28h",
+      "offset": 244,
+      "length": 1
+    },
+    {
+      "name": "F0 LDH A,(a8)",
+      "offset": 245,
+      "length": 1
+    },
+    {
+      "name": "F1 POP AF",
+      "offset": 246,
+      "length": 1
+    },
+    {
+      "name": "F2 LD A,(C)",
+      "offset": 247,
+      "length": 1
+    },
+    {
+      "name": "F3 DI",
+      "offset": 248,
+      "length": 1
+    },
+    {
+      "name": "F5 PUSH AF",
+      "offset": 249,
+      "length": 1
+    },
+    {
+      "name": "F6 OR A,d8",
+      "offset": 250,
+      "length": 1
+    },
+    {
+      "name": "F7 RST 30h",
+      "offset": 251,
+      "length": 1
+    },
+    {
+      "name": "F8 LD HL,SP+e8",
+      "offset": 252,
+      "length": 1
+    },
+    {
+      "name": "F9 LD SP,HL",
+      "offset": 253,
+      "length": 1
+    },
+    {
+      "name": "FA LD A,(a16)",
+      "offset": 254,
+      "length": 1
+    },
+    {
+      "name": "FB EI",
+      "offset": 255,
+      "length": 1
+    },
+    {
+      "name": "FE CP A,d8",
+      "offset": 256,
+      "length": 1
+    },
+    {
+      "name": "FF RST 38h",
+      "offset": 257,
+      "length": 1
+    },
+    {
+      "name": "CB 00 RLC B",
+      "offset": 258,
+      "length": 1
+    },
+    {
+      "name": "CB 01 RLC C",
+      "offset": 259,
+      "length": 1
+    },
+    {
+      "name": "CB 02 RLC D",
+      "offset": 260,
+      "length": 1
+    },
+    {
+      "name": "CB 03 RLC E",
+      "offset": 261,
+      "length": 1
+    },
+    {
+      "name": "CB 04 RLC H",
+      "offset": 262,
+      "length": 1
+    },
+    {
+      "name": "CB 05 RLC L",
+      "offset": 263,
+      "length": 1
+    },
+    {
+      "name": "CB 06 RLC (HL)",
+      "offset": 264,
+      "length": 1
+    },
+    {
+      "name": "CB 07 RLC A",
+      "offset": 265,
+      "length": 1
+    },
+    {
+      "name": "CB 08 RRC B",
+      "offset": 266,
+      "length": 1
+    },
+    {
+      "name": "CB 09 RRC C",
+      "offset": 267,
+      "length": 1
+    },
+    {
+      "name": "CB 0A RRC D",
+      "offset": 268,
+      "length": 1
+    },
+    {
+      "name": "CB 0B RRC E",
+      "offset": 269,
+      "length": 1
+    },
+    {
+      "name": "CB 0C RRC H",
+      "offset": 270,
+      "length": 1
+    },
+    {
+      "name": "CB 0D RRC L",
+      "offset": 271,
+      "length": 1
+    },
+    {
+      "name": "CB 0E RRC (HL)",
+      "offset": 272,
+      "length": 1
+    },
+    {
+      "name": "CB 0F RRC A",
+      "offset": 273,
+      "length": 1
+    },
+    {
+      "name": "CB 10 RL B",
+      "offset": 274,
+      "length": 1
+    },
+    {
+      "name": "CB 11 RL C",
+      "offset": 275,
+      "length": 1
+    },
+    {
+      "name": "CB 12 RL D",
+      "offset": 276,
+      "length": 1
+    },
+    {
+      "name": "CB 13 RL E",
+      "offset": 277,
+      "length": 1
+    },
+    {
+      "name": "CB 14 RL H",
+      "offset": 278,
+      "length": 1
+    },
+    {
+      "name": "CB 15 RL L",
+      "offset": 279,
+      "length": 1
+    },
+    {
+      "name": "CB 16 RL (HL)",
+      "offset": 280,
+      "length": 1
+    },
+    {
+      "name": "CB 17 RL A",
+      "offset": 281,
+      "length": 1
+    },
+    {
+      "name": "CB 18 RR B",
+      "offset": 282,
+      "length": 1
+    },
+    {
+      "name": "CB 19 RR C",
+      "offset": 283,
+      "length": 1
+    },
+    {
+      "name": "CB 1A RR D",
+      "offset": 284,
+      "length": 1
+    },
+    {
+      "name": "CB 1B RR E",
+      "offset": 285,
+      "length": 1
+    },
+    {
+      "name": "CB 1C RR H",
+      "offset": 286,
+      "length": 1
+    },
+    {
+      "name": "CB 1D RR L",
+      "offset": 287,
+      "length": 1
+    },
+    {
+      "name": "CB 1E RR (HL)",
+      "offset": 288,
+      "length": 1
+    },
+    {
+      "name": "CB 1F RR A",
+      "offset": 289,
+      "length": 1
+    },
+    {
+      "name": "CB 20 SLA B",
+      "offset": 290,
+      "length": 1
+    },
+    {
+      "name": "CB 21 SLA C",
+      "offset": 291,
+      "length": 1
+    },
+    {
+      "name": "CB 22 SLA D",
+      "offset": 292,
+      "length": 1
+    },
+    {
+      "name": "CB 23 SLA E",
+      "offset": 293,
+      "length": 1
+    },
+    {
+      "name": "CB 24 SLA H",
+      "offset": 294,
+      "length": 1
+    },
+    {
+      "name": "CB 25 SLA L",
+      "offset": 295,
+      "length": 1
+    },
+    {
+      "name": "CB 26 SLA (HL)",
+      "offset": 296,
+      "length": 1
+    },
+    {
+      "name": "CB 27 SLA A",
+      "offset": 297,
+      "length": 1
+    },
+    {
+      "name": "CB 28 SRA B",
+      "offset": 298,
+      "length": 1
+    },
+    {
+      "name": "CB 29 SRA C",
+      "offset": 299,
+      "length": 1
+    },
+    {
+      "name": "CB 2A SRA D",
+      "offset": 300,
+      "length": 1
+    },
+    {
+      "name": "CB 2B SRA E",
+      "offset": 301,
+      "length": 1
+    },
+    {
+      "name": "CB 2C SRA H",
+      "offset": 302,
+      "length": 1
+    },
+    {
+      "name": "CB 2D SRA L",
+      "offset": 303,
+      "length": 1
+    },
+    {
+      "name": "CB 2E SRA (HL)",
+      "offset": 304,
+      "length": 1
+    },
+    {
+      "name": "CB 2F SRA A",
+      "offset": 305,
+      "length": 1
+    },
+    {
+      "name": "CB 30 SWAP B",
+      "offset": 306,
+      "length": 1
+    },
+    {
+      "name": "CB 31 SWAP C",
+      "offset": 307,
+      "length": 1
+    },
+    {
+      "name": "CB 32 SWAP D",
+      "offset": 308,
+      "length": 1
+    },
+    {
+      "name": "CB 33 SWAP E",
+      "offset": 309,
+      "length": 1
+    },
+    {
+      "name": "CB 34 SWAP H",
+      "offset": 310,
+      "length": 1
+    },
+    {
+      "name": "CB 35 SWAP L",
+      "offset": 311,
+      "length": 1
+    },
+    {
+      "name": "CB 36 SWAP (HL)",
+      "offset": 312,
+      "length": 1
+    },
+    {
+      "name": "CB 37 SWAP A",
+      "offset": 313,
+      "length": 1
+    },
+    {
+      "name": "CB 38 SRL B",
+      "offset": 314,
+      "length": 1
+    },
+    {
+      "name": "CB 39 SRL C",
+      "offset": 315,
+      "length": 1
+    },
+    {
+      "name": "CB 3A SRL D",
+      "offset": 316,
+      "length": 1
+    },
+    {
+      "name": "CB 3B SRL E",
+      "offset": 317,
+      "length": 1
+    },
+    {
+      "name": "CB 3C SRL H",
+      "offset": 318,
+      "length": 1
+    },
+    {
+      "name": "CB 3D SRL L",
+      "offset": 319,
+      "length": 1
+    },
+    {
+      "name": "CB 3E SRL (HL)",
+      "offset": 320,
+      "length": 1
+    },
+    {
+      "name": "CB 3F SRL A",
+      "offset": 321,
+      "length": 1
+    },
+    {
+      "name": "CB 40 BIT 0,B",
+      "offset": 322,
+      "length": 1
+    },
+    {
+      "name": "CB 41 BIT 0,C",
+      "offset": 323,
+      "length": 1
+    },
+    {
+      "name": "CB 42 BIT 0,D",
+      "offset": 324,
+      "length": 1
+    },
+    {
+      "name": "CB 43 BIT 0,E",
+      "offset": 325,
+      "length": 1
+    },
+    {
+      "name": "CB 44 BIT 0,H",
+      "offset": 326,
+      "length": 1
+    },
+    {
+      "name": "CB 45 BIT 0,L",
+      "offset": 327,
+      "length": 1
+    },
+    {
+      "name": "CB 46 BIT 0,(HL)",
+      "offset": 328,
+      "length": 1
+    },
+    {
+      "name": "CB 47 BIT 0,A",
+      "offset": 329,
+      "length": 1
+    },
+    {
+      "name": "CB 48 BIT 1,B",
+      "offset": 330,
+      "length": 1
+    },
+    {
+      "name": "CB 49 BIT 1,C",
+      "offset": 331,
+      "length": 1
+    },
+    {
+      "name": "CB 4A BIT 1,D",
+      "offset": 332,
+      "length": 1
+    },
+    {
+      "name": "CB 4B BIT 1,E",
+      "offset": 333,
+      "length": 1
+    },
+    {
+      "name": "CB 4C BIT 1,H",
+      "offset": 334,
+      "length": 1
+    },
+    {
+      "name": "CB 4D BIT 1,L",
+      "offset": 335,
+      "length": 1
+    },
+    {
+      "name": "CB 4E BIT 1,(HL)",
+      "offset": 336,
+      "length": 1
+    },
+    {
+      "name": "CB 4F BIT 1,A",
+      "offset": 337,
+      "length": 1
+    },
+    {
+      "name": "CB 50 BIT 2,B",
+      "offset": 338,
+      "length": 1
+    },
+    {
+      "name": "CB 51 BIT 2,C",
+      "offset": 339,
+      "length": 1
+    },
+    {
+      "name": "CB 52 BIT 2,D",
+      "offset": 340,
+      "length": 1
+    },
+    {
+      "name": "CB 53 BIT 2,E",
+      "offset": 341,
+      "length": 1
+    },
+    {
+      "name": "CB 54 BIT 2,H",
+      "offset": 342,
+      "length": 1
+    },
+    {
+      "name": "CB 55 BIT 2,L",
+      "offset": 343,
+      "length": 1
+    },
+    {
+      "name": "CB 56 BIT 2,(HL)",
+      "offset": 344,
+      "length": 1
+    },
+    {
+      "name": "CB 57 BIT 2,A",
+      "offset": 345,
+      "length": 1
+    },
+    {
+      "name": "CB 58 BIT 3,B",
+      "offset": 346,
+      "length": 1
+    },
+    {
+      "name": "CB 59 BIT 3,C",
+      "offset": 347,
+      "length": 1
+    },
+    {
+      "name": "CB 5A BIT 3,D",
+      "offset": 348,
+      "length": 1
+    },
+    {
+      "name": "CB 5B BIT 3,E",
+      "offset": 349,
+      "length": 1
+    },
+    {
+      "name": "CB 5C BIT 3,H",
+      "offset": 350,
+      "length": 1
+    },
+    {
+      "name": "CB 5D BIT 3,L",
+      "offset": 351,
+      "length": 1
+    },
+    {
+      "name": "CB 5E BIT 3,(HL)",
+      "offset": 352,
+      "length": 1
+    },
+    {
+      "name": "CB 5F BIT 3,A",
+      "offset": 353,
+      "length": 1
+    },
+    {
+      "name": "CB 60 BIT 4,B",
+      "offset": 354,
+      "length": 1
+    },
+    {
+      "name": "CB 61 BIT 4,C",
+      "offset": 355,
+      "length": 1
+    },
+    {
+      "name": "CB 62 BIT 4,D",
+      "offset": 356,
+      "length": 1
+    },
+    {
+      "name": "CB 63 BIT 4,E",
+      "offset": 357,
+      "length": 1
+    },
+    {
+      "name": "CB 64 BIT 4,H",
+      "offset": 358,
+      "length": 1
+    },
+    {
+      "name": "CB 65 BIT 4,L",
+      "offset": 359,
+      "length": 1
+    },
+    {
+      "name": "CB 66 BIT 4,(HL)",
+      "offset": 360,
+      "length": 1
+    },
+    {
+      "name": "CB 67 BIT 4,A",
+      "offset": 361,
+      "length": 1
+    },
+    {
+      "name": "CB 68 BIT 5,B",
+      "offset": 362,
+      "length": 1
+    },
+    {
+      "name": "CB 69 BIT 5,C",
+      "offset": 363,
+      "length": 1
+    },
+    {
+      "name": "CB 6A BIT 5,D",
+      "offset": 364,
+      "length": 1
+    },
+    {
+      "name": "CB 6B BIT 5,E",
+      "offset": 365,
+      "length": 1
+    },
+    {
+      "name": "CB 6C BIT 5,H",
+      "offset": 366,
+      "length": 1
+    },
+    {
+      "name": "CB 6D BIT 5,L",
+      "offset": 367,
+      "length": 1
+    },
+    {
+      "name": "CB 6E BIT 5,(HL)",
+      "offset": 368,
+      "length": 1
+    },
+    {
+      "name": "CB 6F BIT 5,A",
+      "offset": 369,
+      "length": 1
+    },
+    {
+      "name": "CB 70 BIT 6,B",
+      "offset": 370,
+      "length": 1
+    },
+    {
+      "name": "CB 71 BIT 6,C",
+      "offset": 371,
+      "length": 1
+    },
+    {
+      "name": "CB 72 BIT 6,D",
+      "offset": 372,
+      "length": 1
+    },
+    {
+      "name": "CB 73 BIT 6,E",
+      "offset": 373,
+      "length": 1
+    },
+    {
+      "name": "CB 74 BIT 6,H",
+      "offset": 374,
+      "length": 1
+    },
+    {
+      "name": "CB 75 BIT 6,L",
+      "offset": 375,
+      "length": 1
+    },
+    {
+      "name": "CB 76 BIT 6,(HL)",
+      "offset": 376,
+      "length": 1
+    },
+    {
+      "name": "CB 77 BIT 6,A",
+      "offset": 377,
+      "length": 1
+    },
+    {
+      "name": "CB 78 BIT 7,B",
+      "offset": 378,
+      "length": 1
+    },
+    {
+      "name": "CB 79 BIT 7,C",
+      "offset": 379,
+      "length": 1
+    },
+    {
+      "name": "CB 7A BIT 7,D",
+      "offset": 380,
+      "length": 1
+    },
+    {
+      "name": "CB 7B BIT 7,E",
+      "offset": 381,
+      "length": 1
+    },
+    {
+      "name": "CB 7C BIT 7,H",
+      "offset": 382,
+      "length": 1
+    },
+    {
+      "name": "CB 7D BIT 7,L",
+      "offset": 383,
+      "length": 1
+    },
+    {
+      "name": "CB 7E BIT 7,(HL)",
+      "offset": 384,
+      "length": 1
+    },
+    {
+      "name": "CB 7F BIT 7,A",
+      "offset": 385,
+      "length": 1
+    },
+    {
+      "name": "CB 80 RES 0,B",
+      "offset": 386,
+      "length": 1
+    },
+    {
+      "name": "CB 81 RES 0,C",
+      "offset": 387,
+      "length": 1
+    },
+    {
+      "name": "CB 82 RES 0,D",
+      "offset": 388,
+      "length": 1
+    },
+    {
+      "name": "CB 83 RES 0,E",
+      "offset": 389,
+      "length": 1
+    },
+    {
+      "name": "CB 84 RES 0,H",
+      "offset": 390,
+      "length": 1
+    },
+    {
+      "name": "CB 85 RES 0,L",
+      "offset": 391,
+      "length": 1
+    },
+    {
+      "name": "CB 86 RES 0,(HL)",
+      "offset": 392,
+      "length": 1
+    },
+    {
+      "name": "CB 87 RES 0,A",
+      "offset": 393,
+      "length": 1
+    },
+    {
+      "name": "CB 88 RES 1,B",
+      "offset": 394,
+      "length": 1
+    },
+    {
+      "name": "CB 89 RES 1,C",
+      "offset": 395,
+      "length": 1
+    },
+    {
+      "name": "CB 8A RES 1,D",
+      "offset": 396,
+      "length": 1
+    },
+    {
+      "name": "CB 8B RES 1,E",
+      "offset": 397,
+      "length": 1
+    },
+    {
+      "name": "CB 8C RES 1,H",
+      "offset": 398,
+      "length": 1
+    },
+    {
+      "name": "CB 8D RES 1,L",
+      "offset": 399,
+      "length": 1
+    },
+    {
+      "name": "CB 8E RES 1,(HL)",
+      "offset": 400,
+      "length": 1
+    },
+    {
+      "name": "CB 8F RES 1,A",
+      "offset": 401,
+      "length": 1
+    },
+    {
+      "name": "CB 90 RES 2,B",
+      "offset": 402,
+      "length": 1
+    },
+    {
+      "name": "CB 91 RES 2,C",
+      "offset": 403,
+      "length": 1
+    },
+    {
+      "name": "CB 92 RES 2,D",
+      "offset": 404,
+      "length": 1
+    },
+    {
+      "name": "CB 93 RES 2,E",
+      "offset": 405,
+      "length": 1
+    },
+    {
+      "name": "CB 94 RES 2,H",
+      "offset": 406,
+      "length": 1
+    },
+    {
+      "name": "CB 95 RES 2,L",
+      "offset": 407,
+      "length": 1
+    },
+    {
+      "name": "CB 96 RES 2,(HL)",
+      "offset": 408,
+      "length": 1
+    },
+    {
+      "name": "CB 97 RES 2,A",
+      "offset": 409,
+      "length": 1
+    },
+    {
+      "name": "CB 98 RES 3,B",
+      "offset": 410,
+      "length": 1
+    },
+    {
+      "name": "CB 99 RES 3,C",
+      "offset": 411,
+      "length": 1
+    },
+    {
+      "name": "CB 9A RES 3,D",
+      "offset": 412,
+      "length": 1
+    },
+    {
+      "name": "CB 9B RES 3,E",
+      "offset": 413,
+      "length": 1
+    },
+    {
+      "name": "CB 9C RES 3,H",
+      "offset": 414,
+      "length": 1
+    },
+    {
+      "name": "CB 9D RES 3,L",
+      "offset": 415,
+      "length": 1
+    },
+    {
+      "name": "CB 9E RES 3,(HL)",
+      "offset": 416,
+      "length": 1
+    },
+    {
+      "name": "CB 9F RES 3,A",
+      "offset": 417,
+      "length": 1
+    },
+    {
+      "name": "CB A0 RES 4,B",
+      "offset": 418,
+      "length": 1
+    },
+    {
+      "name": "CB A1 RES 4,C",
+      "offset": 419,
+      "length": 1
+    },
+    {
+      "name": "CB A2 RES 4,D",
+      "offset": 420,
+      "length": 1
+    },
+    {
+      "name": "CB A3 RES 4,E",
+      "offset": 421,
+      "length": 1
+    },
+    {
+      "name": "CB A4 RES 4,H",
+      "offset": 422,
+      "length": 1
+    },
+    {
+      "name": "CB A5 RES 4,L",
+      "offset": 423,
+      "length": 1
+    },
+    {
+      "name": "CB A6 RES 4,(HL)",
+      "offset": 424,
+      "length": 1
+    },
+    {
+      "name": "CB A7 RES 4,A",
+      "offset": 425,
+      "length": 1
+    },
+    {
+      "name": "CB A8 RES 5,B",
+      "offset": 426,
+      "length": 1
+    },
+    {
+      "name": "CB A9 RES 5,C",
+      "offset": 427,
+      "length": 1
+    },
+    {
+      "name": "CB AA RES 5,D",
+      "offset": 428,
+      "length": 1
+    },
+    {
+      "name": "CB AB RES 5,E",
+      "offset": 429,
+      "length": 1
+    },
+    {
+      "name": "CB AC RES 5,H",
+      "offset": 430,
+      "length": 1
+    },
+    {
+      "name": "CB AD RES 5,L",
+      "offset": 431,
+      "length": 1
+    },
+    {
+      "name": "CB AE RES 5,(HL)",
+      "offset": 432,
+      "length": 1
+    },
+    {
+      "name": "CB AF RES 5,A",
+      "offset": 433,
+      "length": 1
+    },
+    {
+      "name": "CB B0 RES 6,B",
+      "offset": 434,
+      "length": 1
+    },
+    {
+      "name": "CB B1 RES 6,C",
+      "offset": 435,
+      "length": 1
+    },
+    {
+      "name": "CB B2 RES 6,D",
+      "offset": 436,
+      "length": 1
+    },
+    {
+      "name": "CB B3 RES 6,E",
+      "offset": 437,
+      "length": 1
+    },
+    {
+      "name": "CB B4 RES 6,H",
+      "offset": 438,
+      "length": 1
+    },
+    {
+      "name": "CB B5 RES 6,L",
+      "offset": 439,
+      "length": 1
+    },
+    {
+      "name": "CB B6 RES 6,(HL)",
+      "offset": 440,
+      "length": 1
+    },
+    {
+      "name": "CB B7 RES 6,A",
+      "offset": 441,
+      "length": 1
+    },
+    {
+      "name": "CB B8 RES 7,B",
+      "offset": 442,
+      "length": 1
+    },
+    {
+      "name": "CB B9 RES 7,C",
+      "offset": 443,
+      "length": 1
+    },
+    {
+      "name": "CB BA RES 7,D",
+      "offset": 444,
+      "length": 1
+    },
+    {
+      "name": "CB BB RES 7,E",
+      "offset": 445,
+      "length": 1
+    },
+    {
+      "name": "CB BC RES 7,H",
+      "offset": 446,
+      "length": 1
+    },
+    {
+      "name": "CB BD RES 7,L",
+      "offset": 447,
+      "length": 1
+    },
+    {
+      "name": "CB BE RES 7,(HL)",
+      "offset": 448,
+      "length": 1
+    },
+    {
+      "name": "CB BF RES 7,A",
+      "offset": 449,
+      "length": 1
+    },
+    {
+      "name": "CB C0 SET 0,B",
+      "offset": 450,
+      "length": 1
+    },
+    {
+      "name": "CB C1 SET 0,C",
+      "offset": 451,
+      "length": 1
+    },
+    {
+      "name": "CB C2 SET 0,D",
+      "offset": 452,
+      "length": 1
+    },
+    {
+      "name": "CB C3 SET 0,E",
+      "offset": 453,
+      "length": 1
+    },
+    {
+      "name": "CB C4 SET 0,H",
+      "offset": 454,
+      "length": 1
+    },
+    {
+      "name": "CB C5 SET 0,L",
+      "offset": 455,
+      "length": 1
+    },
+    {
+      "name": "CB C6 SET 0,(HL)",
+      "offset": 456,
+      "length": 1
+    },
+    {
+      "name": "CB C7 SET 0,A",
+      "offset": 457,
+      "length": 1
+    },
+    {
+      "name": "CB C8 SET 1,B",
+      "offset": 458,
+      "length": 1
+    },
+    {
+      "name": "CB C9 SET 1,C",
+      "offset": 459,
+      "length": 1
+    },
+    {
+      "name": "CB CA SET 1,D",
+      "offset": 460,
+      "length": 1
+    },
+    {
+      "name": "CB CB SET 1,E",
+      "offset": 461,
+      "length": 1
+    },
+    {
+      "name": "CB CC SET 1,H",
+      "offset": 462,
+      "length": 1
+    },
+    {
+      "name": "CB CD SET 1,L",
+      "offset": 463,
+      "length": 1
+    },
+    {
+      "name": "CB CE SET 1,(HL)",
+      "offset": 464,
+      "length": 1
+    },
+    {
+      "name": "CB CF SET 1,A",
+      "offset": 465,
+      "length": 1
+    },
+    {
+      "name": "CB D0 SET 2,B",
+      "offset": 466,
+      "length": 1
+    },
+    {
+      "name": "CB D1 SET 2,C",
+      "offset": 467,
+      "length": 1
+    },
+    {
+      "name": "CB D2 SET 2,D",
+      "offset": 468,
+      "length": 1
+    },
+    {
+      "name": "CB D3 SET 2,E",
+      "offset": 469,
+      "length": 1
+    },
+    {
+      "name": "CB D4 SET 2,H",
+      "offset": 470,
+      "length": 1
+    },
+    {
+      "name": "CB D5 SET 2,L",
+      "offset": 471,
+      "length": 1
+    },
+    {
+      "name": "CB D6 SET 2,(HL)",
+      "offset": 472,
+      "length": 1
+    },
+    {
+      "name": "CB D7 SET 2,A",
+      "offset": 473,
+      "length": 1
+    },
+    {
+      "name": "CB D8 SET 3,B",
+      "offset": 474,
+      "length": 1
+    },
+    {
+      "name": "CB D9 SET 3,C",
+      "offset": 475,
+      "length": 1
+    },
+    {
+      "name": "CB DA SET 3,D",
+      "offset": 476,
+      "length": 1
+    },
+    {
+      "name": "CB DB SET 3,E",
+      "offset": 477,
+      "length": 1
+    },
+    {
+      "name": "CB DC SET 3,H",
+      "offset": 478,
+      "length": 1
+    },
+    {
+      "name": "CB DD SET 3,L",
+      "offset": 479,
+      "length": 1
+    },
+    {
+      "name": "CB DE SET 3,(HL)",
+      "offset": 480,
+      "length": 1
+    },
+    {
+      "name": "CB DF SET 3,A",
+      "offset": 481,
+      "length": 1
+    },
+    {
+      "name": "CB E0 SET 4,B",
+      "offset": 482,
+      "length": 1
+    },
+    {
+      "name": "CB E1 SET 4,C",
+      "offset": 483,
+      "length": 1
+    },
+    {
+      "name": "CB E2 SET 4,D",
+      "offset": 484,
+      "length": 1
+    },
+    {
+      "name": "CB E3 SET 4,E",
+      "offset": 485,
+      "length": 1
+    },
+    {
+      "name": "CB E4 SET 4,H",
+      "offset": 486,
+      "length": 1
+    },
+    {
+      "name": "CB E5 SET 4,L",
+      "offset": 487,
+      "length": 1
+    },
+    {
+      "name": "CB E6 SET 4,(HL)",
+      "offset": 488,
+      "length": 1
+    },
+    {
+      "name": "CB E7 SET 4,A",
+      "offset": 489,
+      "length": 1
+    },
+    {
+      "name": "CB E8 SET 5,B",
+      "offset": 490,
+      "length": 1
+    },
+    {
+      "name": "CB E9 SET 5,C",
+      "offset": 491,
+      "length": 1
+    },
+    {
+      "name": "CB EA SET 5,D",
+      "offset": 492,
+      "length": 1
+    },
+    {
+      "name": "CB EB SET 5,E",
+      "offset": 493,
+      "length": 1
+    },
+    {
+      "name": "CB EC SET 5,H",
+      "offset": 494,
+      "length": 1
+    },
+    {
+      "name": "CB ED SET 5,L",
+      "offset": 495,
+      "length": 1
+    },
+    {
+      "name": "CB EE SET 5,(HL)",
+      "offset": 496,
+      "length": 1
+    },
+    {
+      "name": "CB EF SET 5,A",
+      "offset": 497,
+      "length": 1
+    },
+    {
+      "name": "CB F0 SET 6,B",
+      "offset": 498,
+      "length": 1
+    },
+    {
+      "name": "CB F1 SET 6,C",
+      "offset": 499,
+      "length": 1
+    },
+    {
+      "name": "CB F2 SET 6,D",
+      "offset": 500,
+      "length": 1
+    },
+    {
+      "name": "CB F3 SET 6,E",
+      "offset": 501,
+      "length": 1
+    },
+    {
+      "name": "CB F4 SET 6,H",
+      "offset": 502,
+      "length": 1
+    },
+    {
+      "name": "CB F5 SET 6,L",
+      "offset": 503,
+      "length": 1
+    },
+    {
+      "name": "CB F6 SET 6,(HL)",
+      "offset": 504,
+      "length": 1
+    },
+    {
+      "name": "CB F7 SET 6,A",
+      "offset": 505,
+      "length": 1
+    },
+    {
+      "name": "CB F8 SET 7,B",
+      "offset": 506,
+      "length": 1
+    },
+    {
+      "name": "CB F9 SET 7,C",
+      "offset": 507,
+      "length": 1
+    },
+    {
+      "name": "CB FA SET 7,D",
+      "offset": 508,
+      "length": 1
+    },
+    {
+      "name": "CB FB SET 7,E",
+      "offset": 509,
+      "length": 1
+    },
+    {
+      "name": "CB FC SET 7,H",
+      "offset": 510,
+      "length": 1
+    },
+    {
+      "name": "CB FD SET 7,L",
+      "offset": 511,
+      "length": 1
+    },
+    {
+      "name": "CB FE SET 7,(HL)",
+      "offset": 512,
+      "length": 1
+    },
+    {
+      "name": "CB FF SET 7,A",
+      "offset": 513,
+      "length": 1
+    }
+  ],
+  "sameboy": "01030202010102010502020201010201030202010102010302020201010201020303020201010201020302020201010201020303020203030301020302020201010201010101010101020101010101010102010101010101010201010101010101020101010101010102010101010101010201020202020202020101010101010201010101010101020101010101010102010101010101010201010101010101020101010101010102010101010101010201010101010101020101010101010102010205030304040306040204020504030403060602040205030304030604020402050403040306020403030204020404010402040303020104020403020401020402020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202030202020202020203020202020202020302020202020202030202020202020203020202020202020302020202020202030202020202020203020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402",
+  "binjgb": "01030202010102010502020201010201030202010102010302020201010201020303020201010201020302020201010201020303020203030301020302020201010201010101010101020101010101010102010101010101010201010101010101020101010101010102010101010101010201020202020202020101010101010201010101010101020101010101010102010101010101010201010101010101020101010101010102010101010101010201010101010101020101010101010102010205030304040306040204020504030403060602040205030304030604020402050403040306020403030204020404010402040303020104020403020401020402020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202030202020202020203020202020202020302020202020202030202020202020203020202020202020302020202020202030202020202020203020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402020202020202040202020202020204020202020202020402"
+}

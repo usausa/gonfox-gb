@@ -1,0 +1,16 @@
+{
+  "suite": "SameBoy DMG boot ROM",
+  "version": "v1.0.3",
+  "archiveUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_winsdl_v1.0.3.zip",
+  "archive": "sameboy_winsdl_v1.0.3.zip",
+  "archiveSha256": "66fb05acc075abba860f2c5fa31af2198fef9767573d28834c78d0dfc15746b2",
+  "bootRom": "dmg_boot.bin",
+  "bootRomSha256": "6f64da4cecd7e54e2f928eb3e3ba7810a7a567d0d247cc71737d1771e073a916",
+  "source": "BootROMs/dmg_boot.asm (with sameboot.inc and hardware.inc) at c458e7c5d2d350fb37a1931c40da9f758d28d240, unchanged since 77b7f861f3; RGBDS v1.0.4 builds the same bytes from it",
+  "license": "MIT (Expat)",
+  "licenseEntry": "LICENSE",
+  "licenseSha256": "625e39d02285f37b6b89a60ec6fabd8afc780a052b179442ce0676eed299858a",
+  "success": "From power-on the boot ROM unmaps itself with FF50 at 00FE and the CPU reaches 0100 within maxTCycles with AF 01B0, BC 0013, DE 00D8, HL 014D, SP FFFE; LCDC 91, BGP FC, SCY 00, NR50 77, NR51 F3, NR52 F1; FF50 reads FF and 0000-00FF read the cartridge; LY 144 in mode 1 (just after the VBlank flag of its last frame wait); tiles 1-24 hold the header logo (0104-0133) with every bit doubled, tile 25 the (R), and the map 9904-990F = 01-0C, 9910 = 19, 9924-992F = 0D-18 with the rest of 9800-9BFF zero. Mooneye boot_regs-dmgABC then passes (the boot ROM sets the DMG registers).",
+  "maxTCycles": 7022400,
+  "timeoutSeconds": 60
+}

@@ -1,0 +1,500 @@
+{
+  "rom": "apu.gb",
+  "sha256": "3878b8f14cf86d5b91cff88fa7aab91c46417dbc3b5459f05c6f6247873bcd47",
+  "reference": "sameboy",
+  "frames": 300,
+  "maxTCycles": 200000000,
+  "cases": [
+    {
+      "name": "read-back on: NR10-NR14 after writing 00, then FF (7F to NR14)",
+      "offset": 0,
+      "length": 10
+    },
+    {
+      "name": "read-back on: FF15, NR21-NR24 after writing 00, then FF (7F to NR24)",
+      "offset": 10,
+      "length": 10
+    },
+    {
+      "name": "read-back on: NR30-NR34 after writing 00, then FF (7F to NR34)",
+      "offset": 20,
+      "length": 10
+    },
+    {
+      "name": "read-back on: FF1F, NR41-NR44 after writing 00, then FF (7F to NR44)",
+      "offset": 30,
+      "length": 10
+    },
+    {
+      "name": "read-back on: NR50, NR51 after writing 00, then FF",
+      "offset": 40,
+      "length": 4
+    },
+    {
+      "name": "read-back on: FF27-FF2F after writing 00, then FF",
+      "offset": 44,
+      "length": 18
+    },
+    {
+      "name": "read-back on: NR52 after the writes",
+      "offset": 62,
+      "length": 1
+    },
+    {
+      "name": "read-back on: NR52 after writing FF",
+      "offset": 63,
+      "length": 1
+    },
+    {
+      "name": "read-back after power-off: FF10-FF2F",
+      "offset": 64,
+      "length": 32
+    },
+    {
+      "name": "read-back while off after writing FF to FF10-FF2F and 7F to NR52: FF10-FF2F",
+      "offset": 96,
+      "length": 32
+    },
+    {
+      "name": "read-back after power-on: FF10-FF2F",
+      "offset": 128,
+      "length": 32
+    },
+    {
+      "name": "wave RAM: pattern written with the APU on",
+      "offset": 160,
+      "length": 16
+    },
+    {
+      "name": "wave RAM: kept through power-off",
+      "offset": 176,
+      "length": 16
+    },
+    {
+      "name": "wave RAM: pattern written while off",
+      "offset": 192,
+      "length": 16
+    },
+    {
+      "name": "wave RAM: kept through power-on",
+      "offset": 208,
+      "length": 16
+    },
+    {
+      "name": "power: NR52 with all four channels playing",
+      "offset": 224,
+      "length": 1
+    },
+    {
+      "name": "power: NR52 after power-off",
+      "offset": 225,
+      "length": 1
+    },
+    {
+      "name": "power: NR52 after power-on",
+      "offset": 226,
+      "length": 1
+    },
+    {
+      "name": "power: NR52 after triggering the cleared channels",
+      "offset": 227,
+      "length": 1
+    },
+    {
+      "name": "power: NR52=80 written again while on, DIV-APU steps until CH2 (length 2) stops",
+      "offset": 228,
+      "length": 2
+    },
+    {
+      "name": "length: written while off (2, 4, 6, 8), DIV-APU steps until CH1-CH4 stop",
+      "offset": 230,
+      "length": 8
+    },
+    {
+      "name": "length: loaded before a power cycle, DIV-APU steps until CH1-CH4 stop (max 24)",
+      "offset": 238,
+      "length": 8
+    },
+    {
+      "name": "length: disabled (length 2), DIV-APU steps CH1-CH4 stay on (max 6)",
+      "offset": 246,
+      "length": 8
+    },
+    {
+      "name": "length: enabled in the second half, DIV-APU steps until CH1-CH4 stop",
+      "offset": 254,
+      "length": 8
+    },
+    {
+      "name": "length: enabled in the first half (1, 2, 1, 2), NR52 at once",
+      "offset": 262,
+      "length": 1
+    },
+    {
+      "name": "length: enabled in the first half (1, 2, 1, 2), DIV-APU steps until CH1-CH4 stop",
+      "offset": 263,
+      "length": 8
+    },
+    {
+      "name": "length: NR52 with the DACs off after a trigger",
+      "offset": 271,
+      "length": 1
+    },
+    {
+      "name": "length: counted while stopped by the DACs (4, steps 0-3), DIV-APU steps until CH1-CH4 stop",
+      "offset": 272,
+      "length": 8
+    },
+    {
+      "name": "length: NRx1 rewritten to 1 while counting, DIV-APU steps until CH1-CH4 stop",
+      "offset": 280,
+      "length": 8
+    },
+    {
+      "name": "length: length 1 after power-on, DIV-APU steps until CH1-CH4 stop",
+      "offset": 288,
+      "length": 8
+    },
+    {
+      "name": "length: trigger at 0 in the first half (63/255), DIV-APU steps until CH1-CH4 stop",
+      "offset": 296,
+      "length": 8
+    },
+    {
+      "name": "length: trigger at 0 in the second half (64/256), DIV-APU steps until CH1-CH4 stop",
+      "offset": 304,
+      "length": 8
+    },
+    {
+      "name": "timing: DIV write at W+1020..1027 with CH2 length 1, NR52 2 cycles later",
+      "offset": 312,
+      "length": 8
+    },
+    {
+      "name": "timing: length 1 on CH1-CH4, NR52 at W+2045..2052 (step 0 in W+2047)",
+      "offset": 320,
+      "length": 8
+    },
+    {
+      "name": "timing: CH2 length enable at W+4092..4099 (step 1 in W+4095), NR52 2 cycles later",
+      "offset": 328,
+      "length": 8
+    },
+    {
+      "name": "timing: power-on at W+1019..1022 and W+1024..1027, CH2 length 2, NR52 after the 2nd DIV-APU edge",
+      "offset": 336,
+      "length": 8
+    },
+    {
+      "name": "timing: CH1 trigger, NR52 2 cycles later",
+      "offset": 344,
+      "length": 1
+    },
+    {
+      "name": "timing: CH2 trigger, NR52 2 cycles later",
+      "offset": 345,
+      "length": 1
+    },
+    {
+      "name": "timing: CH3 trigger, NR52 2 cycles later",
+      "offset": 346,
+      "length": 1
+    },
+    {
+      "name": "timing: CH4 trigger at an odd cycle after power-on, NR52 2 cycles later",
+      "offset": 347,
+      "length": 1,
+      "known": "CH4 starts at once; SameBoy delays a start at an odd cycle (clock phase not modelled)"
+    },
+    {
+      "name": "timing: CH4 trigger at an odd cycle after power-on, NR52 3 cycles later",
+      "offset": 348,
+      "length": 1
+    },
+    {
+      "name": "timing: CH4 trigger at an even cycle after power-on, NR52 2 cycles later",
+      "offset": 349,
+      "length": 1
+    },
+    {
+      "name": "timing: CH4 trigger at an even cycle after power-on, NR52 3 cycles later",
+      "offset": 350,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=01, frequency 7FF (overflow), NR52",
+      "offset": 351,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=07, frequency 7FF (overflow), NR52",
+      "offset": 352,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=01, frequency 555 (reaches 2047), NR52",
+      "offset": 353,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=01, frequency 556 (overflow), NR52",
+      "offset": 354,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=0F, frequency 7FF (negate), NR52",
+      "offset": 355,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=00, frequency 7FF (no check), NR52",
+      "offset": 356,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=70, frequency 7FF (no check), NR52",
+      "offset": 357,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger: NR10=07, frequency 7F0 (reaches 2047), NR52",
+      "offset": 358,
+      "length": 1
+    },
+    {
+      "name": "sweep trigger delay: shift 1 from off, frequency 7FF, NR52 3..14 cycles after the trigger",
+      "offset": 359,
+      "length": 12,
+      "known": "the overflow check runs at the trigger; SameBoy delays it by the sweep calculation time"
+    },
+    {
+      "name": "sweep trigger delay: shift 2 from off, frequency 7FF, NR52 3..14 cycles after the trigger",
+      "offset": 371,
+      "length": 12,
+      "known": "the overflow check runs at the trigger; SameBoy delays it by the sweep calculation time"
+    },
+    {
+      "name": "sweep trigger delay: shift 7 from off, frequency 7FF, NR52 3..14 cycles after the trigger",
+      "offset": 383,
+      "length": 12,
+      "known": "the overflow check runs at the trigger; SameBoy delays it by the sweep calculation time"
+    },
+    {
+      "name": "sweep trigger delay: shift 2 retriggered, frequency 7FF, NR52 3..14 cycles after the trigger",
+      "offset": 395,
+      "length": 12,
+      "known": "the overflow check runs at the trigger; SameBoy delays it by the sweep calculation time"
+    },
+    {
+      "name": "sweep trigger delay: shift 7 retriggered, frequency 7FF, NR52 3..14 cycles after the trigger",
+      "offset": 407,
+      "length": 12,
+      "known": "the overflow check runs at the trigger; SameBoy delays it by the sweep calculation time"
+    },
+    {
+      "name": "sweep steps: NR10=11, frequency 500 (overflow at clock 1), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 419,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=21, frequency 500 (period 2), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 421,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=11, frequency 200 (overflow at clock 3), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 423,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=12, frequency 555 (shift 2), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 425,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=17, frequency 7F0 (shift 7), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 427,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=19, frequency 400 (negate), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 429,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=71, frequency 500 (period 7), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 431,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=01, frequency 500 (period 0), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 433,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=00, frequency 7FF (off), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 435,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=10, frequency 400 (shift 0 overflow), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 437,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=10, frequency 3FF (shift 0 no overflow), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 439,
+      "length": 2
+    },
+    {
+      "name": "sweep steps: NR10=18, frequency 400 (shift 0 negate), DIV-APU steps until CH1 stops (max 32)",
+      "offset": 441,
+      "length": 2
+    },
+    {
+      "name": "sweep negate: NR10=09, frequency 400, 0 steps, NR52 before and after NR10=01 (after a negate calculation)",
+      "offset": 443,
+      "length": 2
+    },
+    {
+      "name": "sweep negate: NR10=08, frequency 400, 0 steps, NR52 before and after NR10=00 (without a calculation)",
+      "offset": 445,
+      "length": 2
+    },
+    {
+      "name": "sweep negate: NR10=18, frequency 400, 3 steps, NR52 before and after NR10=10 (after a negate calculation at a sweep clock)",
+      "offset": 447,
+      "length": 2
+    },
+    {
+      "name": "sweep negate: NR10=19, frequency 400, 0 steps, NR52 before and after NR10=1A (negate kept)",
+      "offset": 449,
+      "length": 2
+    },
+    {
+      "name": "sweep negate: NR10=01, frequency 555, 0 steps, NR52 before and after NR10=01 (after an add calculation reaching 2047)",
+      "offset": 451,
+      "length": 2,
+      "known": "leaving negate stops CH1 only after a negate calculation; SameBoy also stops it after an add"
+    },
+    {
+      "name": "sweep negate: NR10=01, frequency 554, 0 steps, NR52 before and after NR10=01 (after an add calculation reaching 2046)",
+      "offset": 453,
+      "length": 2
+    },
+    {
+      "name": "sweep clock: shift 0, frequency 400, NR52 at W+6141..6152 (step 2 in W+6143)",
+      "offset": 455,
+      "length": 12
+    },
+    {
+      "name": "sweep clock: shift 1, frequency 500, NR52 at W+6141..6152 (step 2 in W+6143)",
+      "offset": 467,
+      "length": 12,
+      "known": "the overflow check runs 4 T after the step; SameBoy delays it by the sweep calculation time"
+    },
+    {
+      "name": "sweep clock: shift 7, frequency 7F0, NR52 at W+6145..6156 (step 2 in W+6143)",
+      "offset": 479,
+      "length": 12,
+      "known": "the overflow check runs 4 T after the step; SameBoy delays it by the sweep calculation time"
+    },
+    {
+      "name": "DAC: CH1 NR12=00, 01, 07, 08, 0F, 10, 80, F8 after a trigger, NR52",
+      "offset": 491,
+      "length": 8
+    },
+    {
+      "name": "DAC: CH2 NR22=00, 01, 07, 08, 0F, 10, 80, F8 after a trigger, NR52",
+      "offset": 499,
+      "length": 8
+    },
+    {
+      "name": "DAC: CH4 NR42=00, 01, 07, 08, 0F, 10, 80, F8 after a trigger, NR52",
+      "offset": 507,
+      "length": 8
+    },
+    {
+      "name": "DAC: CH3 NR30=00, 7F, 80, FF after a trigger, NR52",
+      "offset": 515,
+      "length": 4
+    },
+    {
+      "name": "DAC: CH1 triggered with the DAC off, NR52",
+      "offset": 519,
+      "length": 1
+    },
+    {
+      "name": "DAC: CH1 DAC switched off and on again after a trigger, NR52",
+      "offset": 520,
+      "length": 1
+    },
+    {
+      "name": "DAC: CH2 triggered with the DAC off, NR52",
+      "offset": 521,
+      "length": 1
+    },
+    {
+      "name": "DAC: CH2 DAC switched off and on again after a trigger, NR52",
+      "offset": 522,
+      "length": 1
+    },
+    {
+      "name": "DAC: CH4 triggered with the DAC off, NR52",
+      "offset": 523,
+      "length": 1
+    },
+    {
+      "name": "DAC: CH4 DAC switched off and on again after a trigger, NR52",
+      "offset": 524,
+      "length": 1
+    },
+    {
+      "name": "DAC: CH3 triggered with the DAC off, NR52",
+      "offset": 525,
+      "length": 1
+    },
+    {
+      "name": "DAC: CH3 DAC switched off and on again after a trigger, NR52",
+      "offset": 526,
+      "length": 1
+    },
+    {
+      "name": "envelope: volume reaching 0 (NR12=11, NR22=08, NR42=11), DIV-APU steps CH1, CH2, CH4 stay on (max 24)",
+      "offset": 527,
+      "length": 6
+    },
+    {
+      "name": "wave read while playing: FF30 3..26 cycles after the trigger (frequency 7FB)",
+      "offset": 533,
+      "length": 24
+    },
+    {
+      "name": "wave read while playing: FF3F 3..14 cycles after the trigger (frequency 7FB)",
+      "offset": 557,
+      "length": 12
+    },
+    {
+      "name": "wave write while playing: FF30 5..20 cycles after the trigger, index of the byte written (FF none)",
+      "offset": 569,
+      "length": 16
+    },
+    {
+      "name": "wave retrigger: second trigger 3..16 cycles after the first (frequency 7FC), wave RAM 0-3 each",
+      "offset": 585,
+      "length": 56
+    },
+    {
+      "name": "wave retrigger: second trigger 17..32 cycles after the first (frequency 7FC), wave RAM 0-3 each",
+      "offset": 641,
+      "length": 64
+    },
+    {
+      "name": "wave retrigger: second trigger 33..50 cycles after the first (frequency 7FC), wave RAM 0-3 each",
+      "offset": 705,
+      "length": 72
+    }
+  ],
+  "sameboy": "80ff3fff00ffffffbfffffff3fff00ffffffbfff7fffffff9fffffffbfffffffffff00ff00ffbfff00ff00fffffffffffffffffffffffffffffffffffffff0f0803f00ffbfff3f00ffbf7fff9fffbfffff0000bf000070ffffffffffffffffff803f00ffbfff3f00ffbf7fff9fffbfffff0000bf000070ffffffffffffffffff803f00ffbfff3f00ffbf7fff9fffbfffff0000bf0000f0ffffffffffffffffff0f1e2d3c4b5a69788796a5b4c3d2e1f10f1e2d3c4b5a69788796a5b4c3d2e1f1f0e1d2c3b4a5968778695a4b3c2d1e0ef0e1d2c3b4a5968778695a4b3c2d1e0eff70f0f00200030007000b000f00180018001800180006000600060006000300030003000300fa0000020000000200f00300030003000300010001000100010001000100010001007e007e00fe017e007f007f00ff017f00f2f2f2f2f0f0f0f0fffffff0f0f0f0f0f0f0f0f0f2f2f2f2f2f2f2f2f0f0f0f0f1f2f4f0f8f8f8f0f0f1f0f1f1f1f1f1f0f0f0f0f0f0f0f0f0f0f0f1f1f0f0f0f0f0f0f0f0f0f0f1f1f1f1f1f1f1f0f0f0f0f0f1f0f0f0f0f0f0f0f0f0f0f0f1f1f1f1f1f1f0f0f0f0f0f0030007000b000300030020001b0020002000030020002000f1f0f1f1f1f0f1f1f1f0f1f1f1f1f1f1f0f0f0f0f0f0f0f0f1f1f1f1f1f0f0f0f0f0f0f0f1f1f1f1f1f1f1f0f0f0f0f0f0f0f0f1f1f1f1f1f0f0f0f2f2f2f2f2f0f0f0f8f8f8f8f8f0f0f4f4f0f0f0f0f0f0f0f0180018001800ff0fffffffff1effffffff2dffffffff3cffffffff4bffffff0fffffffff1effffffff2dffffffff01ffffffff02ffffffff03ff0f1e2d3c0f1e2d3c1e1e2d3c0f1e2d3c1e1e2d3c0f1e2d3c2d1e2d3c0f1e2d3c2d1e2d3c0f1e2d3c3c1e2d3c0f1e2d3c3c1e2d3c0f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3cc3d2e1f10f1e2d3c",
+  "binjgb": "80ff3fff00ffffffbfffffff3fff00ffffffbfff7fffffff9fffffffbfffffffffff00ff00ffbfff00ff00fffffffffffffffffffffffffffffffffffffff0f0803f00ffbfff3f00ffbf7fff9fffbfffff0000bf000070ffffffffffffffffff803f00ffbfff3f00ffbf7fff9fffbfffff0000bf000070ffffffffffffffffff803f00ffbfff3f00ffbf7fff9fffbfffff0000bf0000f0ffffffffffffffffff0f1e2d3c4b5a69788796a5b4c3d2e1f10f1e2d3c4b5a69788796a5b4c3d2e1f1f0e1d2c3b4a5968778695a4b3c2d1e0ef0e1d2c3b4a5968778695a4b3c2d1e0eff70f0f00200030007000b000f00180018001800180006000600060006000300030003000300fa0000020000000200f00300030003000300010001000100010001000100010001007e007e00fe017e007f007f00ff017f00f0f2f0f2f0f2f0f2f0f0f0f0f0f0f0f0f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f1f2f4f8f8f8f8f0f0f1f0f1f1f1f1f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0030007000b000300030020001b0020002000030020002000f1f0f1f1f1f0f1f1f1f1f1f1f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f1f1f1f1f1f0f0f0f2f2f2f2f2f0f0f0f8f8f8f8f8f0f0f4f4f0f0f0f0f0f0f0f0180018001800ff0fffffffff1effffffff2dffffffff3cffffffff4bffffff0fffffffff1effffffff2dffffffff01ffffffff02ffffffff03ff0f1e2d3c0f1e2d3c1e1e2d3c0f1e2d3c1e1e2d3c0f1e2d3c2d1e2d3c0f1e2d3c2d1e2d3c0f1e2d3c3c1e2d3c0f1e2d3c3c1e2d3c0f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c4b5a69780f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3c8796a5b40f1e2d3cc3d2e1f10f1e2d3c"
+}

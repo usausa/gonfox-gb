@@ -61,3 +61,7 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+# Files whose SHA-256 is pinned (the external test ROMs with their sources and licenses, symbol files): byte for byte
+Roms/External/** -text
+*.sym -text

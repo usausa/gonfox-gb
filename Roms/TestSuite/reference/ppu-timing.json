@@ -1,0 +1,671 @@
+{
+  "rom": "ppu-timing.gb",
+  "sha256": "2c1f736017ac3c7f60c67b8c007e01663e2a07816db8ab2d1e9a628802c74b1e",
+  "reference": "sameboy",
+  "frames": 300,
+  "maxTCycles": 40000000,
+  "cases": [
+    {
+      "name": "LY at M-cycles 104-119 after LCD on (line 0 to 1)",
+      "offset": 0,
+      "length": 16
+    },
+    {
+      "name": "LY at M-cycles 218-233 after LCD on (line 1 to 2)",
+      "offset": 16,
+      "length": 16
+    },
+    {
+      "name": "LY at M-cycles 16406-16421 after LCD on (line 143 to 144)",
+      "offset": 32,
+      "length": 16
+    },
+    {
+      "name": "LY at M-cycles 17434-17449 after LCD on (line 152 to 153 to 0)",
+      "offset": 48,
+      "length": 16
+    },
+    {
+      "name": "OAM reads at M-cycles 17548-17563 after LCD on (line 153 to the next line 0)",
+      "offset": 64,
+      "length": 16
+    },
+    {
+      "name": "VRAM reads at M-cycles 17568-17583 after LCD on (start of the next line 0)",
+      "offset": 80,
+      "length": 16
+    },
+    {
+      "name": "LY at M-cycles 17660-17675 after LCD on (line 0 to 1 of the next frame)",
+      "offset": 96,
+      "length": 16
+    },
+    {
+      "name": "STAT with LYC=0 at M-cycles 2-121 after LCD on (first line)",
+      "offset": 112,
+      "length": 120
+    },
+    {
+      "name": "First line, SCX=7: STAT mode change positions from M-cycle 2, change count",
+      "offset": 232,
+      "length": 4
+    },
+    {
+      "name": "First line: VRAM read change positions from M-cycle 2, change count",
+      "offset": 236,
+      "length": 4
+    },
+    {
+      "name": "First line: OAM read change positions from M-cycle 2, change count",
+      "offset": 240,
+      "length": 4
+    },
+    {
+      "name": "STAT with LYC=1 at M-cycles 104-119 (line 0 to 1)",
+      "offset": 244,
+      "length": 16
+    },
+    {
+      "name": "STAT with LYC=1 at M-cycles 218-233 (line 1 to 2)",
+      "offset": 260,
+      "length": 16
+    },
+    {
+      "name": "STAT with LYC=144 at M-cycles 16406-16421 (line 143 to 144)",
+      "offset": 276,
+      "length": 16
+    },
+    {
+      "name": "STAT with LYC=153 at M-cycles 17434-17465 (line 152 to 153 to 0)",
+      "offset": 292,
+      "length": 32
+    },
+    {
+      "name": "STAT with LYC=0 at M-cycles 17434-17465 (line 152 to 153 to 0)",
+      "offset": 324,
+      "length": 32
+    },
+    {
+      "name": "STAT with LYC=0 at M-cycles 17660-17675 (line 0 to 1 of the next frame)",
+      "offset": 356,
+      "length": 16
+    },
+    {
+      "name": "Line, SCX=0: STAT at line offsets -4 to 109",
+      "offset": 372,
+      "length": 114
+    },
+    {
+      "name": "Line, SCX=0: VRAM reads at line offsets -4 to 109",
+      "offset": 486,
+      "length": 114
+    },
+    {
+      "name": "Line, SCX=0: OAM reads at line offsets -4 to 109",
+      "offset": 600,
+      "length": 114
+    },
+    {
+      "name": "Line, SCX=0: STAT mode change positions (line offset + 4), change count",
+      "offset": 714,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0: VRAM read change positions (line offset + 4), change count",
+      "offset": 718,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0: OAM read change positions (line offset + 4), change count",
+      "offset": 722,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0: line offset of the mode 0 interrupt",
+      "offset": 726,
+      "length": 1
+    },
+    {
+      "name": "Line, SCX=7: STAT mode change positions (line offset + 4), change count",
+      "offset": 727,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=7: VRAM read change positions (line offset + 4), change count",
+      "offset": 731,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=7: OAM read change positions (line offset + 4), change count",
+      "offset": 735,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=7: line offset of the mode 0 interrupt",
+      "offset": 739,
+      "length": 1
+    },
+    {
+      "name": "Line, SCX=0, window WX=7: STAT mode change positions (line offset + 4), change count",
+      "offset": 740,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0, window WX=7: VRAM read change positions (line offset + 4), change count",
+      "offset": 744,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0, window WX=7: OAM read change positions (line offset + 4), change count",
+      "offset": 748,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0, window WX=7: line offset of the mode 0 interrupt",
+      "offset": 752,
+      "length": 1
+    },
+    {
+      "name": "Line, SCX=0, 1 object X=8: STAT mode change positions (line offset + 4), change count",
+      "offset": 753,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0, 1 object X=8: VRAM read change positions (line offset + 4), change count",
+      "offset": 757,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=0, 1 object X=8: line offset of the mode 0 interrupt",
+      "offset": 761,
+      "length": 1
+    },
+    {
+      "name": "Line, SCX=3, 10 objects X=8: STAT mode change positions (line offset + 4), change count",
+      "offset": 762,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=3, 10 objects X=8: VRAM read change positions (line offset + 4), change count",
+      "offset": 766,
+      "length": 4
+    },
+    {
+      "name": "Line, SCX=3, 10 objects X=8: line offset of the mode 0 interrupt",
+      "offset": 770,
+      "length": 1
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: no window or objects",
+      "offset": 771,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the VRAM read change at the end of mode 3, SCX 0-7: no window or objects",
+      "offset": 787,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the OAM read change at the end of mode 3, SCX 0-7: no window or objects",
+      "offset": 795,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the VRAM read change at the end of mode 3, SCX 0-7: window WX=7",
+      "offset": 803,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the VRAM read change at the end of mode 3, SCX 0-7: 1 object X=8",
+      "offset": 811,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=0",
+      "offset": 819,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=1",
+      "offset": 835,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=2",
+      "offset": 851,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=6",
+      "offset": 867,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=7",
+      "offset": 883,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=8",
+      "offset": 899,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=15",
+      "offset": 915,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=87",
+      "offset": 931,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=160",
+      "offset": 947,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=165",
+      "offset": 963,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=166",
+      "offset": 979,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: window WX=167",
+      "offset": 995,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=0",
+      "offset": 1011,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=1",
+      "offset": 1027,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=2",
+      "offset": 1043,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=3",
+      "offset": 1059,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=4",
+      "offset": 1075,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=5",
+      "offset": 1091,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=6",
+      "offset": 1107,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=7",
+      "offset": 1123,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=8",
+      "offset": 1139,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=9",
+      "offset": 1155,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=159",
+      "offset": 1171,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=160",
+      "offset": 1187,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=164",
+      "offset": 1203,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=166",
+      "offset": 1219,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3, SCX 0-7: 1 object X=167",
+      "offset": 1235,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 1 object X=168",
+      "offset": 1243,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 2 objects X=8",
+      "offset": 1259,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 3 objects X=8",
+      "offset": 1275,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 4 objects X=8",
+      "offset": 1291,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 5 objects X=8",
+      "offset": 1307,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,1,2,4,5,7: 6 objects X=8",
+      "offset": 1323,
+      "length": 12
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,1,3,5,7: 7 objects X=8",
+      "offset": 1335,
+      "length": 10
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,2,3,4,6: 8 objects X=8",
+      "offset": 1345,
+      "length": 10
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,3,5,7: 9 objects X=8",
+      "offset": 1355,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,2,5,7: 10 objects X=8",
+      "offset": 1363,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 2 objects X=8,24",
+      "offset": 1371,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 5 objects X=8,24,..,72",
+      "offset": 1387,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,2,5,7: 10 objects X=8,24,..,152",
+      "offset": 1403,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,3,4,7: 10 objects X=0",
+      "offset": 1411,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3, SCX 0,3,4,7: 10 objects X=167",
+      "offset": 1419,
+      "length": 4
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,5,7: 10 objects X=168 then 1 X=8",
+      "offset": 1423,
+      "length": 6
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,5,7: 11 objects X=8",
+      "offset": 1429,
+      "length": 6
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0,3,4,7: 10 objects X=8 (objects off)",
+      "offset": 1435,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 2 objects X=0,8",
+      "offset": 1443,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 2 objects X=8,9",
+      "offset": 1459,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 2 objects X=8,15",
+      "offset": 1475,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 2 objects X=1,9",
+      "offset": 1491,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, SCX 0-7: 3 objects X=30,20,10 in OAM order",
+      "offset": 1507,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, (SCX, WX) (0,7) (1,7) (2,7) (3,7) (0,8) (0,9) (0,10) (0,16): window, 1 object X=8",
+      "offset": 1523,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, (SCX, WX) (0,50) (0,51) (0,52) (0,53) (0,54) (0,55) (0,56) (0,57): window, 1 object X=50",
+      "offset": 1539,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, (SCX, WX) (0,0) (3,0) (0,7) (5,7) (0,1) (0,8) (7,8) (0,166): window, 1 object X=0",
+      "offset": 1555,
+      "length": 16
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, (SCX, WX) (0,7) (2,7) (5,7) (7,7): window, 10 objects X=8",
+      "offset": 1571,
+      "length": 8
+    },
+    {
+      "name": "Line offset of the STAT mode change at the end of mode 3 and of the mode 0 interrupt, (SCX, WX) (0,165) (0,166) (3,166) (0,167) (0,159) (7,160) (0,7) (0,0): window, 1 object X=166",
+      "offset": 1579,
+      "length": 16
+    },
+    {
+      "name": "STAT=0 written (DMG) at line offsets -4 to 109: IF bit 1 change positions (line offset + 4), change count",
+      "offset": 1595,
+      "length": 4
+    },
+    {
+      "name": "IF after STAT writes: mode 3 of the LYC line, of another line, then with the HBlank source (0 to $08 in mode 0, $08 to $08 in modes 3 and 0, $08 to 0 in mode 0)",
+      "offset": 1599,
+      "length": 6
+    },
+    {
+      "name": "IF after STAT=0 written at offsets -6 to 5 of line 144, one frame each",
+      "offset": 1605,
+      "length": 12
+    },
+    {
+      "name": "STAT 2 M-cycles after LYC=153 written at offsets -6 to 5 of line 153, one frame each",
+      "offset": 1617,
+      "length": 12
+    },
+    {
+      "name": "IF after STAT=0 written at offsets -6 to 5 of line 0, one frame each",
+      "offset": 1629,
+      "length": 12
+    },
+    {
+      "name": "STAT 2 M-cycles after LYC=new line written at line offsets -8 to 7",
+      "offset": 1641,
+      "length": 16
+    },
+    {
+      "name": "STAT 2 M-cycles after LYC=old line written at line offsets -8 to 7",
+      "offset": 1657,
+      "length": 16
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line: sled index from M-cycle 40 after LCD on",
+      "offset": 1673,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=1): sled index from M-cycle 40 after LCD on",
+      "offset": 1674,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=2): sled index from M-cycle 40 after LCD on",
+      "offset": 1675,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=3): sled index from M-cycle 40 after LCD on",
+      "offset": 1676,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=4): sled index from M-cycle 40 after LCD on",
+      "offset": 1677,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=5): sled index from M-cycle 40 after LCD on",
+      "offset": 1678,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=6): sled index from M-cycle 40 after LCD on",
+      "offset": 1679,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=7): sled index from M-cycle 40 after LCD on",
+      "offset": 1680,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (window WX=7): sled index from M-cycle 40 after LCD on",
+      "offset": 1681,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (SCX=3, window WX=0): sled index from M-cycle 40 after LCD on",
+      "offset": 1682,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 STAT interrupt on the first line (10 objects X=8 on lines 0-15): sled index from M-cycle 40 after LCD on",
+      "offset": 1683,
+      "length": 1
+    },
+    {
+      "name": "Mode 2 STAT interrupt on line 1: sled index from M-cycle 100 after LCD on",
+      "offset": 1684,
+      "length": 1
+    },
+    {
+      "name": "Mode 2 STAT interrupt on line 2: sled index from M-cycle 214 after LCD on",
+      "offset": 1685,
+      "length": 1
+    },
+    {
+      "name": "Mode 2 STAT interrupt on line 144: sled index from M-cycle 16400 after LCD on",
+      "offset": 1686,
+      "length": 1
+    },
+    {
+      "name": "Mode 2 STAT interrupt on line 0 of the next frame: sled index from M-cycle 17540 after LCD on",
+      "offset": 1687,
+      "length": 1
+    },
+    {
+      "name": "Mode 1 STAT interrupt on line 144: sled index from M-cycle 16400 after LCD on",
+      "offset": 1688,
+      "length": 1
+    },
+    {
+      "name": "VBlank interrupt on line 144: sled index from M-cycle 16400 after LCD on",
+      "offset": 1689,
+      "length": 1
+    },
+    {
+      "name": "LYC STAT interrupt on line 1 (LYC=1): sled index from M-cycle 100 after LCD on",
+      "offset": 1690,
+      "length": 1
+    },
+    {
+      "name": "LYC STAT interrupt on line 2 (LYC=2): sled index from M-cycle 214 after LCD on",
+      "offset": 1691,
+      "length": 1
+    },
+    {
+      "name": "LYC STAT interrupt on line 144 (LYC=144): sled index from M-cycle 16400 after LCD on",
+      "offset": 1692,
+      "length": 1
+    },
+    {
+      "name": "LYC STAT interrupt on line 153 (LYC=153): sled index from M-cycle 17428 after LCD on",
+      "offset": 1693,
+      "length": 1
+    },
+    {
+      "name": "LYC STAT interrupt on line 153 (LYC=0): sled index from M-cycle 17428 after LCD on",
+      "offset": 1694,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 and mode 2 STAT interrupt on line 2: sled index from M-cycle 214 after LCD on",
+      "offset": 1695,
+      "length": 1
+    },
+    {
+      "name": "Mode 0 and LYC STAT interrupt on line 2 (LYC=2): sled index from M-cycle 214 after LCD on",
+      "offset": 1696,
+      "length": 1
+    },
+    {
+      "name": "LYC STAT interrupt (LYC=0) enabled before LCD on: sled index from M-cycle 1",
+      "offset": 1697,
+      "length": 1
+    },
+    {
+      "name": "STAT interrupt after LYC=10 written in mode 3 of line 10 (LYC source): sled index from the M-cycle after the write",
+      "offset": 1698,
+      "length": 1
+    },
+    {
+      "name": "STAT interrupt after STAT=0 written in mode 0 of line 10 (DMG write): sled index from the M-cycle after the write",
+      "offset": 1699,
+      "length": 1
+    }
+  ],
+  "sameboy": "00000000000000000001010101010101010101010101010101020202020202028f8f8f8f8f8f8f8f8f9090909090909098989898989898990000000000000000a5a5a5a5a5a5a5ffffffffffffffffff5a5a5a5a5a5a5affffffffffffffffff00000000000000000001010101010101848484848484848484848484848484848484878787878787878787878787878787878787878787878787878787878787878787878787878787878787878484848484848484848484848484848484848484848484848484848484848484848484848484848484848484848484848484808282828282828282123f7003123dff02123d6f03808080808080808080808686868686868484848484848484848082828282828280808080808080808080858585858585818181818181818185818181818181818181818181818181818181818181818181818181818181818181858585858585858585858585858585858585858585858484848484848484848082828282828288888888888a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888885a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5aa5a5a5a5ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffa5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5051944031844ff020444ff0240051945031845ff020445ff0242051945031845ff020445ff0241051946031846ff0243051954031854ff02504040404040404041414141414141414240404040414141414040404041414141414142424242434342424242424243434141424242424242424343434343434341414142424242424242424343434343414141424242424242424243434343434141414242424242424242434343434341414142424242424242424343434343414141424242424242424243434343434141414242424242424242434343434341414142424242424242424343434343414141424242424242424243434343434141414242424242424242434343434340404040404040414141414141414142404040404040404141414141414141424243434343434343434444444444444442424242424242424242424343434444424242424242424242424243444444444242424242424242424244444444444441424142424242424344434443444344414141424242434343434343434343434141414243434343434343434343434341414343434343434343434343434343424342434243424342434243434343434242424242424242424242434343444441414343434343434343434343434343424342434243424342434243434343434142414242424242434443444344434441414142434343434343434343434343414343434343434340404040404040414141414141414142444444444444444444444444444444454546454645464546454645464646464647474747474747474747474747474748484948494849484948494849494949494a4a4a4a4a4a4a4a4a4a4a4b4b4c4b4c4b4c4b4c4c4c4d4d4d4d4d4d4d4d4d4d4e4f4e4f4e4f4f4f5050505050505051454545454545444544444444444444454d4e4c4d4b4c4a4b494a4849494949495b5b57575050505150505151515152524f505050404041414142505050505051404040414141414245454545454545454545454545464646444444444444444444444444444446464444454545454545444544444444444545454445444444444444444444444747454545454646464647474747484847484444444444454545444444444444444443444344434443444344434443444344444445454444454544444444464642435152525253535353444441414343414143434445434343430544ff02e2e0e2e0e0e0e2e2e2e2e3e3e3e3e3e3e3e2818181818181858181818181e2e2e2e2e2e2e2e0e0e0e0e080808080808080868686868686868686848484848484808282828282828282821718181818191919191a170d0d0f1010100e0e100e104d0e000000",
+  "binjgb": "00000000000000000001010101010101010101010101010101020202020202028f8f8f8f8f8f8f8f8f9090909090909098989898989898990000000000000000a5a5a5a5a5a5a5ffffffffffffffffff5a5a5a5a5a5a5affffffffffffffffff00000000000000000001010101010101848484848484848484848484848484848484878787878787878787878787878787878787878787878787878787878787878787878787878787878787878484848484848484848484848484848484848484848484848484848484848484848484848484848484848484848484848484808282828282828282123e7003123dff02123d6f03808080808080808080808686868686868484848484848484848082828282828280808080808080808080858585858585818181818181818185818181818181818181818181818181818181818181818181818181818181818181858585858585858585858585858585858585858585858484848484848484848082828282828288888888888a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888885a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5aa5a5a5a5ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffa5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5051944031844ff020444ff0240051945031845ff020445ff0242051944031844ff020444ff0240051946031846ff0243051954031854ff025140404041404140414141414241424142404040404141414140404040414141414040404041414141424242424242434340404041404140414141414241424142404040414041404141414142414241424040404140414041414141424142414240404041404140414141414241424142404040414041404141414142414241424040404140414041414141424142414240404041404140414141414241424142404040414041404141414142414241424040404140414041414141424142414240404041404140414141414241424142404040414041404141414142414241424040404140414041414141424142414242434343434443444344444444454545424342434243424342434243434344454243424342434243424342434445444542424242424242434243444444444444414241424242424343444344434443444142414242424344434443444344434441424142434443444344434443444344414243434343434343434343434343444243424342434243424342434343434442434243424342434243424343434445414243434343434343434343434343444243424342434243424342434343434441424142424242434344434443444344414241424344434443444344434443444143434343434343404040414041404141414142414241424445444544454445444544454445444545464546454645464546454646464647474847484748474847484748474847484849484948494849484948494949494a4a4b4a4b4a4b4a4b4a4b4a4b4b4c4b4c4b4c4b4c4c4d4d4e4d4e4d4e4d4e4d4e4e4f4e4f4e4f4f505051505150515051454645464545444544454445444544454d4e4c4d4b4c4a4b494a48494949494a5b5c57575051505150515151515252534f5050504040414241425051505150514040404141414142454645464546454645464546464646474445444544454445444544454445464644454546454645454445444544454445454544454445444544444445444547484546454646474647474847484849474842434243424342434243424342434243424342434243424342434243424342434243434442434444424342434545424350515051505150514142414243444142414243444142414201435703e2e0e2e0e0e0e2e2e2e2e3e3e3e3e3e3e2e2818181818181858181818181e2e2e2e2e2e2e0e0e0e0e0e0808080808080808686868686868686868484848484848082828282828282828218181818191919191818180e0e101010100e0e100e104dffff0000"
+}

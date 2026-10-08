@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GonFox.GameBoy.Core</RootNamespace>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" Version="18.11.2" />
+    <PackageReference Include="xunit.v3" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GonFox.GameBoy.Core\GonFox.GameBoy.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Benchmark\Workloads.cs" Link="Benchmark\Workloads.cs" />
+  </ItemGroup>
+
+  <!-- Copies the in-repo test ROMs to TestData in the output. -->
+  <ItemGroup>
+    <None Include="..\Roms\BackgroundDemo\background-demo.gb" Link="TestData\background-demo.gb" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\BackgroundDemo\mbc1-demo.gb" Link="TestData\mbc1-demo.gb" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\SoundCheck\sound-check.gb" Link="TestData\sound-check.gb" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\MegaDemo\megademo.gb;..\Roms\MegaDemo\megademo.sym;..\Roms\MegaDemo\reference.json" Link="TestData\MegaDemo\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\MegaDemo\reference\*.png" Link="TestData\MegaDemo\reference\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\RpgDemo\rpgdemo.gb;..\Roms\RpgDemo\rpgdemo.sym;..\Roms\RpgDemo\reference.json" Link="TestData\RpgDemo\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\RpgDemo\reference\*.png" Link="TestData\RpgDemo\reference\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\TestSuite\*.gb" Link="TestData\TestSuite\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\TestSuite\reference\*.json" Link="TestData\TestSuite\reference\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Copies the external test ROMs after the build, so IDEs do not list their sources. -->
+  <Target Name="CopyExternalTestRoms" AfterTargets="Build">
+    <ItemGroup>
+      <ExternalTestRom Include="..\Roms\External\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ExternalTestRom)" DestinationFiles="@(ExternalTestRom->'$(OutDir)TestData\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

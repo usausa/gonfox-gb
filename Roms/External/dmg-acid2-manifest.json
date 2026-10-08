@@ -1,0 +1,49 @@
+{
+  "suite": "dmg-acid2",
+  "version": "v1.0",
+  "sourceCommit": "dc2295408f881637ff69f784d8d93f3d2db30181",
+  "binaryUrl": "https://github.com/mattcurrie/dmg-acid2/releases/download/v1.0/dmg-acid2.gb",
+  "binarySha256": "464e14b7d42e7feea0b7ede42be7071dc88913f75b9ffa444299424b63d1dff1",
+  "sourceUrl": "https://codeload.github.com/mattcurrie/dmg-acid2/zip/dc2295408f881637ff69f784d8d93f3d2db30181",
+  "sourceSha256": "5d23dfcf4b12ae4844575dad3d44ebb8744567d7b87f22acd5ca8474c555126e",
+  "sourceRoot": "dmg-acid2-dc2295408f881637ff69f784d8d93f3d2db30181",
+  "license": "MIT",
+  "licenseSha256": "2b5ed6f8abbded3913a08ebe8f4eedb340735efc3b024570244d6efa73418044",
+  "frames": 12,
+  "maxTCycles": 5000000,
+  "timeoutSeconds": 10,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "2b5ed6f8abbded3913a08ebe8f4eedb340735efc3b024570244d6efa73418044"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0837d50ac1c686b61d7b86bc7d9a0fb5a0539bf9f65805ee11f3eeea66ad377a"
+    },
+    {
+      "path": "img/reference-dmg.png",
+      "sha256": "ca966d50895c7efef05838590d148c2cbfd7fba57dab986f25b35b4da71abb57"
+    },
+    {
+      "path": "src/dmg-acid2.asm",
+      "sha256": "5f8ac7e1fb69476af82f1686849f22713da6df9b6e5015bd16e72cf1853992fd"
+    },
+    {
+      "path": "inc/background.asm",
+      "sha256": "ac5c54dce93f8b8b27fe3d1e797163bcb40aa3546d447f19d884a9155a99d672"
+    },
+    {
+      "path": "inc/oam.asm",
+      "sha256": "b1cfc3a380e3ba374fab868c68daa3f7637a5aba76d6fb4e39266c83bf0b8674"
+    },
+    {
+      "path": "inc/tiles.asm",
+      "sha256": "1c5bacdb9f4d24ce8d101ee16f2e20c237b21af722335d0941a59168bbdfe2bb"
+    },
+    {
+      "path": "inc/window.asm",
+      "sha256": "c76980b4cc1514a842093f4f16931e9564aec27509597010be27fb746fe8e449"
+    }
+  ]
+}

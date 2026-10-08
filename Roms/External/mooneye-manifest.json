@@ -1,0 +1,935 @@
+{
+  "suite": "Mooneye Test Suite",
+  "version": "mts-20260714-0944-31510e1",
+  "sourceCommit": "31510e12eea6286d36eea060a6adde755e1067aa",
+  "binaryUrl": "https://gekkio.fi/files/mooneye-test-suite/mts-20260714-0944-31510e1/mts-20260714-0944-31510e1.zip",
+  "binarySha256": "18aa29462dfe1fcd32a2cb3621733abdc72410074918b9245aa99a6920f7d3f2",
+  "binaryRoot": "mts-20260714-0944-31510e1",
+  "sourceUrl": "https://codeload.github.com/Gekkio/mooneye-test-suite/zip/31510e12eea6286d36eea060a6adde755e1067aa",
+  "sourceSha256": "05cd9d7891a2a9b806e2838a99bb243be5ed629044fa580010aa8205bfbdd097",
+  "sourceRoot": "mooneye-test-suite-31510e12eea6286d36eea060a6adde755e1067aa",
+  "license": "MIT",
+  "licenseSha256": "8a9a9fe1603b7566d56978c89a6442ae1db2dd96042fb94c20b9647c47afae88",
+  "tests": [
+    {
+      "name": "bits/reg_f",
+      "path": "acceptance/bits/reg_f.gb",
+      "sha256": "4b193e887ee3ac82b38b796729e1503e9a78da3e1140f8bd5600d0884f2e2627",
+      "sourcePath": "acceptance/bits/reg_f.s",
+      "sourceSha256": "50f43cc4c3256eef7821447d4ba91474d762aba85a24623eddad73213ee805fe",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "boot_div-dmgABCmgb",
+      "path": "acceptance/boot_div-dmgABCmgb.gb",
+      "sha256": "ef2cd0ac53dd2f656461e9b29e95aaef44a843379a2337c168f1832c488242d3",
+      "sourcePath": "acceptance/boot_div-dmgABCmgb.s",
+      "sourceSha256": "c67b05eefd7cac1d1de8f8a11afaab0d8e43369015798ea831b2a0e2ade940c5",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "boot_hwio-dmgABCmgb",
+      "path": "acceptance/boot_hwio-dmgABCmgb.gb",
+      "sha256": "39f29e27e803bab7ae789bd7dfd556a9df9bc65a825206745aca3f30e4887456",
+      "sourcePath": "acceptance/boot_hwio-dmgABCmgb.s",
+      "sourceSha256": "311c1d5cf93cca45f0f7ca70d35b0d570f2652705c0360767775445b009db105",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "boot_regs-dmgABC",
+      "path": "acceptance/boot_regs-dmgABC.gb",
+      "sha256": "50b4869bfdf6f69e14f82ac4d673c1983b29439157cf84bb422268069766c3c5",
+      "sourcePath": "acceptance/boot_regs-dmgABC.s",
+      "sourceSha256": "35005a60922af5dee684055c3675976f14096c0c2192859cd52053a9a3132d73",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "instr/daa",
+      "path": "acceptance/instr/daa.gb",
+      "sha256": "1498d92d70592a07a2493ef764609916616f0b023b21408189e277201e6c14c1",
+      "sourcePath": "acceptance/instr/daa.s",
+      "sourceSha256": "37341fe47cd19b36a2b8f0b041dd6213dc1d7952fc89f70399bc59112426508a",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ei_sequence",
+      "path": "acceptance/ei_sequence.gb",
+      "sha256": "dcd7f37e8fe7d8eb38cab6732a5826e0bb0278fd1e1d9e297c28d205da1b69e1",
+      "sourcePath": "acceptance/ei_sequence.s",
+      "sourceSha256": "1d98529081aad78d34c65d11a940d8968844ea41ba634e2fa46e285305d90384",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ei_timing",
+      "path": "acceptance/ei_timing.gb",
+      "sha256": "e5fa88f83727e79912f2c69b91b8e3c1351c0b50ac26203a60c7a6c21e825dbc",
+      "sourcePath": "acceptance/ei_timing.s",
+      "sourceSha256": "fe34ebacd99dd7cc41a96884124ae5b317e2bf43aafda930e92db34b8220aea3",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "if_ie_registers",
+      "path": "acceptance/if_ie_registers.gb",
+      "sha256": "d055b2b4c44902cf827296a06b17cea4f2c84f6b7d540c777cb1d1049ef35e61",
+      "sourcePath": "acceptance/if_ie_registers.s",
+      "sourceSha256": "8f768cfecfa56d1ea651491b925ca5470d19883c68eb641e40f562d4167ee009",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "div_timing",
+      "path": "acceptance/div_timing.gb",
+      "sha256": "382a9cd42a60ef0a3f03ef834d476a32907f1b3a42b40de5bd3d9705ae9a9734",
+      "sourcePath": "acceptance/div_timing.s",
+      "sourceSha256": "361185220ed900ad0182b5ebdfade98b34f45e6aabe1b1d2ac31b6e8fd839acb",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "intr_timing",
+      "path": "acceptance/intr_timing.gb",
+      "sha256": "a795a190830104a4a231935d3bd16e64a1088bb79084f80bf7d9946ca93d873d",
+      "sourcePath": "acceptance/intr_timing.s",
+      "sourceSha256": "804aaf344bc9d482c429d4cccb28ac572bb80a33be047a4a1abe312a2f747086",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/div_write",
+      "path": "acceptance/timer/div_write.gb",
+      "sha256": "2be1e4da6fa24b9123d2a8bae47dd0d6f5e97e1855186c0c0f49e6d213eebfff",
+      "sourcePath": "acceptance/timer/div_write.s",
+      "sourceSha256": "b3e6f1b0ed22ad7205da731cbfc9d7d44f07b581a3a8f28eb41ee1263588de79",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/rapid_toggle",
+      "path": "acceptance/timer/rapid_toggle.gb",
+      "sha256": "59fe311058895c39475f74bcffb7d4f29272edb74e75d2cfe860c1a9d033b68a",
+      "sourcePath": "acceptance/timer/rapid_toggle.s",
+      "sourceSha256": "807a15657cb2750b01edcd154a95d808f1237ced6d5ef751fe866457709138ab",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim00_div_trigger",
+      "path": "acceptance/timer/tim00_div_trigger.gb",
+      "sha256": "5cafdf474dfa7507b0db596118ad7bc65a6d5d652ee4232263dd028e7f2462b7",
+      "sourcePath": "acceptance/timer/tim00_div_trigger.s",
+      "sourceSha256": "482c27f0eeeebd10740aed23689372e2e6cf483a6a4cad9a1c03aa6c7fccc900",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim00",
+      "path": "acceptance/timer/tim00.gb",
+      "sha256": "2193036c1628efd9ba86e5729292ef716d6ff3178cfa2abb9797709cd40252e8",
+      "sourcePath": "acceptance/timer/tim00.s",
+      "sourceSha256": "83a1c6b970444e3879715d81d3d32f4af04049b8c9708ed7cc9792c728b8991b",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim01_div_trigger",
+      "path": "acceptance/timer/tim01_div_trigger.gb",
+      "sha256": "73c1e2677a2a122a285aa052e232153b133873c68cbcbf1cf41aa3d0a1b80a96",
+      "sourcePath": "acceptance/timer/tim01_div_trigger.s",
+      "sourceSha256": "77e58e4ee1156d4e007ecae87bd5628fee6072a777b71fcf2c03748a5c6d89bb",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim01",
+      "path": "acceptance/timer/tim01.gb",
+      "sha256": "b6f5043eae7fd2b2c3dc098ff16f664c8eb5699523616d84274669cf90c17fe7",
+      "sourcePath": "acceptance/timer/tim01.s",
+      "sourceSha256": "4a858e356f842acc1ce071c8c626d9012946d2003552fbae8419c83cb3efe56e",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim10_div_trigger",
+      "path": "acceptance/timer/tim10_div_trigger.gb",
+      "sha256": "d83c7acf20a0315486ed77db4f873db40fff6099564f8e250df66274a304b1b9",
+      "sourcePath": "acceptance/timer/tim10_div_trigger.s",
+      "sourceSha256": "38892a4d6de3213fbb83b038bad20c4f055430bb7ea3674b554090e378c0b09d",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim10",
+      "path": "acceptance/timer/tim10.gb",
+      "sha256": "fe3b0b292341d5ff26c9db3f6c9f3ba8a3d6e8b63977c61767a457962bd1faed",
+      "sourcePath": "acceptance/timer/tim10.s",
+      "sourceSha256": "88ffb98ac31c445dd9da9279cabe892ac78a12655f39ddeaa1c347a8ed7ee9c3",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim11_div_trigger",
+      "path": "acceptance/timer/tim11_div_trigger.gb",
+      "sha256": "3f60bc3d2ba63bd9209706332dd6d0ef59ad09ada8dede0caa9e2e5132ed102e",
+      "sourcePath": "acceptance/timer/tim11_div_trigger.s",
+      "sourceSha256": "b4ce9c3b824d2722241a5552432ee2c5546029ed1a1ec7b3c0f50f9d580eb5d3",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tim11",
+      "path": "acceptance/timer/tim11.gb",
+      "sha256": "624fd3ad3ede2790095162cfa212e488825072a0ecc287ff0e88da6c5d7040f1",
+      "sourcePath": "acceptance/timer/tim11.s",
+      "sourceSha256": "afe901fbfd9a11a84f8e97ca88259b637a4e7bdb5eabd2bde215c6514774611b",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tima_reload",
+      "path": "acceptance/timer/tima_reload.gb",
+      "sha256": "1ca70c725bd1e027b07d3058839bd140eccddd9f4ca41305c4f8ab3acaff8a98",
+      "sourcePath": "acceptance/timer/tima_reload.s",
+      "sourceSha256": "2b6fe4be2e46bec779265ffb34f7b0cad597803a79039f7ef61af4187d25bf65",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tima_write_reloading",
+      "path": "acceptance/timer/tima_write_reloading.gb",
+      "sha256": "7d9a6d5ada792596621f8bfdf257112887b2dd01d98e0f91a253afd6e05d0540",
+      "sourcePath": "acceptance/timer/tima_write_reloading.s",
+      "sourceSha256": "7d80fb62e8c86136c3d655e0e84957a93c1434c49eab38c3823f4101e5eaf884",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "timer/tma_write_reloading",
+      "path": "acceptance/timer/tma_write_reloading.gb",
+      "sha256": "e48ff98d4f363b92e92bdabe86253fcf63f648964e3a61e73d52aedcba3e5ab2",
+      "sourcePath": "acceptance/timer/tma_write_reloading.s",
+      "sourceSha256": "6240dd1c19205dfd65646484c6447148fb891d370176a0490b3325438a7f68da",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "serial/boot_sclk_align-dmgABCmgb",
+      "path": "acceptance/serial/boot_sclk_align-dmgABCmgb.gb",
+      "sha256": "14c48977ddf9c734d53c23ad435a21d2db7fbd90411f99d2c7713b2335e55778",
+      "sourcePath": "acceptance/serial/boot_sclk_align-dmgABCmgb.s",
+      "sourceSha256": "09d2d4de02e4f2f42208424c7c361ed15ade6d617925d8acfc90ccba87db2558",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_dma/basic",
+      "path": "acceptance/oam_dma/basic.gb",
+      "sha256": "326b747cac8cc96b62d6ee508e73b87eda24bfe29553d3d32e719f3b6d76c97c",
+      "sourcePath": "acceptance/oam_dma/basic.s",
+      "sourceSha256": "fdd40c4c62afe9710b6a5c86856ff36c8b64fe61ac35a3882fe42edf99b55951",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_dma/reg_read",
+      "path": "acceptance/oam_dma/reg_read.gb",
+      "sha256": "006516fcb302867a2848b47529208ef530669c6445e41d4f3d2dbd33995154a3",
+      "sourcePath": "acceptance/oam_dma/reg_read.s",
+      "sourceSha256": "0c81973a40a57a6393536d1e2f4dbfb139328631760bb46eeeccd14d4874cc03",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_dma/sources-GS",
+      "path": "acceptance/oam_dma/sources-GS.gb",
+      "sha256": "35a38c640047c38b63da0b929f9d744914ee53555e7ccc6853bcc0e82185f11e",
+      "sourcePath": "acceptance/oam_dma/sources-GS.s",
+      "sourceSha256": "ae9c297bc2f3bab3a985362bab5b09582789183a873b6e2dc73623877a57fa4a",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_dma_start",
+      "path": "acceptance/oam_dma_start.gb",
+      "sha256": "7c39f8f6f8043fe0ea289d8015b3e72c125ac302a22159b49514dd4e78d89dd3",
+      "sourcePath": "acceptance/oam_dma_start.s",
+      "sourceSha256": "5166a7ffb0be075362da2cd6a3ceed4ec9a3b1631364ee3df766d973206396c4",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_dma_restart",
+      "path": "acceptance/oam_dma_restart.gb",
+      "sha256": "5234eaaa78fcf722a4c8d32bb4f108c65c24e327d062315c6b61f60e535e25de",
+      "sourcePath": "acceptance/oam_dma_restart.s",
+      "sourceSha256": "1e8486cb0fb9a72ed9826619dd3bc1488ee56e66fac9806f28a7cd330cf61a48",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "oam_dma_timing",
+      "path": "acceptance/oam_dma_timing.gb",
+      "sha256": "e8477c5da80e4fb7999da08abf01ad2438d65fb308a8f0c36b0c7e464c0ad0e0",
+      "sourcePath": "acceptance/oam_dma_timing.s",
+      "sourceSha256": "1657352a52442146d61408ce592927d5f4c970800bfaaad346d9068c9a287b73",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "interrupts/ie_push",
+      "path": "acceptance/interrupts/ie_push.gb",
+      "sha256": "f80df1b48ca2f81d4ec43b9c66be5f0b30f0d409603d256cc5c7cfc6241c0120",
+      "sourcePath": "acceptance/interrupts/ie_push.s",
+      "sourceSha256": "2f33ed6af272f0e5945277d654882b5c48df7d336e95f3cefdd6ad49a46025d3",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "halt_ime0_ei",
+      "path": "acceptance/halt_ime0_ei.gb",
+      "sha256": "0768fd3e698047f5ec2631b5a830558f0ac14bd9cb0ef0ebcc409b00d69adb4d",
+      "sourcePath": "acceptance/halt_ime0_ei.s",
+      "sourceSha256": "fef85d2a68ed71ab2cff8bd5fbe88b055b86bea9a58f946c8413ae2537e3d1b5",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "halt_ime0_nointr_timing",
+      "path": "acceptance/halt_ime0_nointr_timing.gb",
+      "sha256": "40a1e614d77a881672b7c20420aed6b121ad9d3977d71a08fd9bb92ee8f010cf",
+      "sourcePath": "acceptance/halt_ime0_nointr_timing.s",
+      "sourceSha256": "b4abe743cffaa68d22870a574a407e0caf8e3ac859bd8fa0e19be07dfc958f6f",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "halt_ime1_timing",
+      "path": "acceptance/halt_ime1_timing.gb",
+      "sha256": "09d9be4ebdd7645a6b208f18b1354f4b75420ae567dcf27ac404ed6f934d2efa",
+      "sourcePath": "acceptance/halt_ime1_timing.s",
+      "sourceSha256": "d9126df4f5cccb65200f0c5604a1fe94be3adfd3ec5a83233a244a74c64d15f6",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "halt_ime1_timing2-GS",
+      "path": "acceptance/halt_ime1_timing2-GS.gb",
+      "sha256": "10f0f35025d9d648831eaa7b1bfc42251fe26cf130ee483e6baac88d20c01581",
+      "sourcePath": "acceptance/halt_ime1_timing2-GS.s",
+      "sourceSha256": "ffb25d744c240cc7236dc21e241c49f074720351a1327cc8873394e5cf421f05",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "di_timing-GS",
+      "path": "acceptance/di_timing-GS.gb",
+      "sha256": "618dd8f765c71c0f299cd124d8596d12da9ef987e800a45ac5c4b98fd240c54d",
+      "sourcePath": "acceptance/di_timing-GS.s",
+      "sourceSha256": "0e1d6bcf806fd37de1e0bc9d3c5e715d512ec6f06f8fb53619de221582d0ff10",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "rapid_di_ei",
+      "path": "acceptance/rapid_di_ei.gb",
+      "sha256": "4bcfbee2dcdca7895afff7947742ec942166aeb4899f07995863149ef360f7f0",
+      "sourcePath": "acceptance/rapid_di_ei.s",
+      "sourceSha256": "7e32310e3eeea13d1dee692e4fd33d5c52a30b67533e4688c547821354b42cc2",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "reti_intr_timing",
+      "path": "acceptance/reti_intr_timing.gb",
+      "sha256": "a98440bfb0e4f29ef762515e4b842e2777bc35445a30903ed86799cf18dc5c55",
+      "sourcePath": "acceptance/reti_intr_timing.s",
+      "sourceSha256": "6dce4600b2652a663834164f05eb590f5b5859ef530cf1ea453ec742305dcc36",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/stat_lyc_onoff",
+      "path": "acceptance/ppu/stat_lyc_onoff.gb",
+      "sha256": "29f04aaf6b26085bca1dccfab648fb44fbf57d4aa923bca75a30167e45d8670e",
+      "sourcePath": "acceptance/ppu/stat_lyc_onoff.s",
+      "sourceSha256": "031b63bb1b31c96de05fe15404cd44bcea1e442a9affe4ea3bb2e7b784a3b94d",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/vblank_stat_intr-GS",
+      "path": "acceptance/ppu/vblank_stat_intr-GS.gb",
+      "sha256": "f7de9a3ef1399f73ad16ef23dccf05d38cbd62373215608ee5da53a35850436e",
+      "sourcePath": "acceptance/ppu/vblank_stat_intr-GS.s",
+      "sourceSha256": "354e23b7df4945a905adbeb5b90ec5efc3d66582254f9f93bb6d29798890e4e9",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/lcdon_timing-GS",
+      "path": "acceptance/ppu/lcdon_timing-GS.gb",
+      "sha256": "2a9d46b61935ae1a2332abd419bd6d63c2c48697b96ad547c859c207cf531e2f",
+      "sourcePath": "acceptance/ppu/lcdon_timing-GS.s",
+      "sourceSha256": "ea2922e743076bc4fe09ee47471d5a5266b0e1d6e2d1fdad04db6715be01a67c",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/lcdon_write_timing-GS",
+      "path": "acceptance/ppu/lcdon_write_timing-GS.gb",
+      "sha256": "e28b34cef8b5d58bf19e058be2206309129a5896568e918b6b11b6c61dce2a51",
+      "sourcePath": "acceptance/ppu/lcdon_write_timing-GS.s",
+      "sourceSha256": "5fd83b41ff614c47d8e3b207fceeb62098e858d9947b627f8c38941422cd85f3",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/stat_irq_blocking",
+      "path": "acceptance/ppu/stat_irq_blocking.gb",
+      "sha256": "604436aeb6a37badd71be0fafa526307345f1de6af757193f11fc77e09a01fc7",
+      "sourcePath": "acceptance/ppu/stat_irq_blocking.s",
+      "sourceSha256": "e143b5c70e721f18fb66f6266767e31bf9e1d6961596129d94ab850e332e4cb6",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/intr_1_2_timing-GS",
+      "path": "acceptance/ppu/intr_1_2_timing-GS.gb",
+      "sha256": "3bac47fc79ce514fd7f6bbe0d87f1160b91a5292be27fee7bc3bcea6bc171ee9",
+      "sourcePath": "acceptance/ppu/intr_1_2_timing-GS.s",
+      "sourceSha256": "f923f03147018b4d70353ad1262d95be171418caaaa31e1e5a27f84123ca690e",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/intr_2_0_timing",
+      "path": "acceptance/ppu/intr_2_0_timing.gb",
+      "sha256": "6ea58d6940ad2dde6d20ef1fc63f1da83bdff842672d757a7a2377a3d0cfb7ff",
+      "sourcePath": "acceptance/ppu/intr_2_0_timing.s",
+      "sourceSha256": "10de35ddfa025b39f6e77a395b2b59381c211f57866ba768361011e27d38ffa1",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/intr_2_mode0_timing",
+      "path": "acceptance/ppu/intr_2_mode0_timing.gb",
+      "sha256": "be1555d577506073ba1ec4717060aa24075c02b9c787b874623a98bf2ac2da6e",
+      "sourcePath": "acceptance/ppu/intr_2_mode0_timing.s",
+      "sourceSha256": "1de078883f24be4136bc7b572caee36815eea9443d1466370763e16e8ab35750",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/intr_2_mode3_timing",
+      "path": "acceptance/ppu/intr_2_mode3_timing.gb",
+      "sha256": "b5cb7d22162e3ed6fa2dafeaa487cf1d1c042b5e8a3a9877823c33b578b9c31e",
+      "sourcePath": "acceptance/ppu/intr_2_mode3_timing.s",
+      "sourceSha256": "7a07f9dd6d0d3259f95a9c85ee2997f68139652b22b6c9f075287cf0950b2ab0",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/intr_2_oam_ok_timing",
+      "path": "acceptance/ppu/intr_2_oam_ok_timing.gb",
+      "sha256": "38d7acfddce357c8b084f9bb647d6ffc99d1fb85d7a312c2db2c348ba888f7ff",
+      "sourcePath": "acceptance/ppu/intr_2_oam_ok_timing.s",
+      "sourceSha256": "ab60129dfef65ea6927e8799734b43dc532d6a1936d342412cf0f41cf3c65726",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/hblank_ly_scx_timing-GS",
+      "path": "acceptance/ppu/hblank_ly_scx_timing-GS.gb",
+      "sha256": "3adec9174d16b7a4cece42e5525e4363ff956c19070600aa9344de68b0885449",
+      "sourcePath": "acceptance/ppu/hblank_ly_scx_timing-GS.s",
+      "sourceSha256": "8cb56a85050955930cb38b7ffb29df370559c425f84390b7cf4eb8b3f2e1664f",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ppu/intr_2_mode0_timing_sprites",
+      "path": "acceptance/ppu/intr_2_mode0_timing_sprites.gb",
+      "sha256": "52b10bb0d3073ec35d6bc4f0129fcabb788e4d11ea765163a49d519121d5169e",
+      "sourcePath": "acceptance/ppu/intr_2_mode0_timing_sprites.s",
+      "sourceSha256": "454d9b3d12a29ab8380388d4b0c67cffd6788d80a1dd47956cc996e0302b7955",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "add_sp_e_timing",
+      "path": "acceptance/add_sp_e_timing.gb",
+      "sha256": "bf736cb8fc06949ba2b16d68ab831e9e6a726a8521ff25ea4257d7cb3499839e",
+      "sourcePath": "acceptance/add_sp_e_timing.s",
+      "sourceSha256": "7c0302329eeb021a33e46235a17da15cc8982c57253e18864397a8c12db0e945",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "call_cc_timing",
+      "path": "acceptance/call_cc_timing.gb",
+      "sha256": "2ef47505ed501128071b490174dccb6904ee6037f88723ed98a23382eee7b4d1",
+      "sourcePath": "acceptance/call_cc_timing.s",
+      "sourceSha256": "fd8a61750f6f1911ee291768e54489cc8bd3d71d65fe9cf8c23550297484025f",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "call_cc_timing2",
+      "path": "acceptance/call_cc_timing2.gb",
+      "sha256": "67d84fc4d97c64399118ef3483a455fe7269d6fdf7f9840f6a00a9596d838a8c",
+      "sourcePath": "acceptance/call_cc_timing2.s",
+      "sourceSha256": "9047ef5fa36438184745c2d27e4ea8ffeb0950b909c4994fe44b073a9bbb7138",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "call_timing",
+      "path": "acceptance/call_timing.gb",
+      "sha256": "249f524368b8b9bbaa7e05b36f29a5210137d61d59889b596ea505d42e6b749b",
+      "sourcePath": "acceptance/call_timing.s",
+      "sourceSha256": "1d984d681eef46ee80ae70325f33229f36fc109eb86d2643b1f6853b5eae9125",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "call_timing2",
+      "path": "acceptance/call_timing2.gb",
+      "sha256": "d7ee4ceae48ef630c43a8e960c923b951f492250d9f5e28c1795705692051b47",
+      "sourcePath": "acceptance/call_timing2.s",
+      "sourceSha256": "20b1a0d3fcab67ddee35ab857fefabebffb03cf6fe33f1e2d5ed2d8d92c82e47",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "jp_cc_timing",
+      "path": "acceptance/jp_cc_timing.gb",
+      "sha256": "8747fa6f969c8ac153a79b37abd2abac5ea98dbe142d5e77e074adec6e9fd481",
+      "sourcePath": "acceptance/jp_cc_timing.s",
+      "sourceSha256": "35ef6ce6d82561f9924369e1ec393d30ccd4ed647f3ad40d3d2b1786eb58ba7a",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "jp_timing",
+      "path": "acceptance/jp_timing.gb",
+      "sha256": "514ba4b96355f5074b63feb159a06af85f4fbea412a2d49599c19ea3781712e0",
+      "sourcePath": "acceptance/jp_timing.s",
+      "sourceSha256": "d7fb08e2cad1e921337212346e272031cdaec215d873b7faa26e375e0ad3cf8a",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ld_hl_sp_e_timing",
+      "path": "acceptance/ld_hl_sp_e_timing.gb",
+      "sha256": "fe22571b9aee1681b81b31055b3773574ba11eb838550fd86e0e773cb0f4240e",
+      "sourcePath": "acceptance/ld_hl_sp_e_timing.s",
+      "sourceSha256": "15f42e6e5223ca5dcd0e7f05eba79b4f6757e8187e23eb2d29efee09a45efa5f",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "pop_timing",
+      "path": "acceptance/pop_timing.gb",
+      "sha256": "4b658ab238b46319f24fa890faf9f337f03ce8769c05be6540742c9aaaf5773a",
+      "sourcePath": "acceptance/pop_timing.s",
+      "sourceSha256": "1254d0935f7e4302f2cfdc63504cbb3187a12292acc03bd19c23fea0282215ea",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "push_timing",
+      "path": "acceptance/push_timing.gb",
+      "sha256": "f764ee5053f4d1f84896ec3ff8761e30beded493d204566e3e5b20af736179f9",
+      "sourcePath": "acceptance/push_timing.s",
+      "sourceSha256": "5e705cd71c388e9d7968f934e397da9815bd7ceb24389f2adcf3bffcbb61ff29",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ret_cc_timing",
+      "path": "acceptance/ret_cc_timing.gb",
+      "sha256": "eb95fe488131f625c656631b0188484f3126d80944584128dc514aaf95111fb6",
+      "sourcePath": "acceptance/ret_cc_timing.s",
+      "sourceSha256": "5daec5e96b34c0df0530acb52bf624af94aa5c014622633f44db76a800788a49",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "ret_timing",
+      "path": "acceptance/ret_timing.gb",
+      "sha256": "cfb13c7aa11ff299402530c021fe93bd6f51769433757fd32e46985eb1296206",
+      "sourcePath": "acceptance/ret_timing.s",
+      "sourceSha256": "6e7ac81f4314a627f4c78b414d9e59c131f00d2963fce8ea49d709073f25cb60",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "reti_timing",
+      "path": "acceptance/reti_timing.gb",
+      "sha256": "bb90e11fdb8e40f8d69c94aff300c65ea28e74fd212316a477edbb2325a61eb0",
+      "sourcePath": "acceptance/reti_timing.s",
+      "sourceSha256": "ae37dac1a36a70833b5f2a7c190b4f7609b2f885beb33fee49723e698afb7a05",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "rst_timing",
+      "path": "acceptance/rst_timing.gb",
+      "sha256": "8ba26360bad21b451f36551863e60831f98e3de1308ae6bf2aee7a73973c99c2",
+      "sourcePath": "acceptance/rst_timing.s",
+      "sourceSha256": "3942ec8aedb63f25af8c4bdb027bcf745fa94a2dcd50a07f3178653261aeb7db",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/bits_bank1",
+      "path": "emulator-only/mbc1/bits_bank1.gb",
+      "sha256": "77c698cb537d22ab00bef3907499853b415d6f03f2572c1e8f199dee9936f74b",
+      "sourcePath": "emulator-only/mbc1/bits_bank1.s",
+      "sourceSha256": "b2ffc9700db5aa9fb0cf08f90b1ef0b578084d7fcb573d21079ea5b7d898cf51",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/bits_bank2",
+      "path": "emulator-only/mbc1/bits_bank2.gb",
+      "sha256": "52cde75b4ec3c597ad112af1e24bc686e8354c9ed63f3df2cb571afa49f7ff38",
+      "sourcePath": "emulator-only/mbc1/bits_bank2.s",
+      "sourceSha256": "b9ea3f3c70bb518ba1f79dd14e0c1c2fd96351f2fad4a8da776a0ea05b529fd1",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/bits_mode",
+      "path": "emulator-only/mbc1/bits_mode.gb",
+      "sha256": "68417ce068e9b94ab14b2dfbd3953d57c3110bc9c9e50dac69f3bdda665b68be",
+      "sourcePath": "emulator-only/mbc1/bits_mode.s",
+      "sourceSha256": "69c2e3022c2319ded39b3eea64dcad1fd91224095463b8fe8dde5e0fa8a0f2e7",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/bits_ramg",
+      "path": "emulator-only/mbc1/bits_ramg.gb",
+      "sha256": "14815d18d1ddb23c6a1e46c70ab3bbf273bf1c3aec580036362e576de0783675",
+      "sourcePath": "emulator-only/mbc1/bits_ramg.s",
+      "sourceSha256": "ef44b50df2287acf639142f13f186011de31771f1c81da1aba680dfff3a6bce0",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/ram_256kb",
+      "path": "emulator-only/mbc1/ram_256kb.gb",
+      "sha256": "c6fdd46418adb4b23356740a8e2bc849c65e4a19605d290f07c49e73048a8037",
+      "sourcePath": "emulator-only/mbc1/ram_256kb.s",
+      "sourceSha256": "a07c4796d45545aa1fc3eee44338732643e657e8085cc118aba702db5618da9f",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/ram_64kb",
+      "path": "emulator-only/mbc1/ram_64kb.gb",
+      "sha256": "df747907b4639a91cf4b61a3d342f0c7728b6e618e66ea569c6311d312f86e36",
+      "sourcePath": "emulator-only/mbc1/ram_64kb.s",
+      "sourceSha256": "6fac39b4cea41dd9a52757833b94df50f09903a43f4b69be95c639fe9c5c649c",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/rom_16Mb",
+      "path": "emulator-only/mbc1/rom_16Mb.gb",
+      "sha256": "1e6caad540828cf79a9928ed49b8709a56ba4d7436f7fded6fcf005dbfd71a2a",
+      "sourcePath": "emulator-only/mbc1/rom_16Mb.s",
+      "sourceSha256": "c8381022e184471eadfe5bae6015aabb087224af0e7172a14d5cb98fcbf264b2",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/rom_1Mb",
+      "path": "emulator-only/mbc1/rom_1Mb.gb",
+      "sha256": "22e19e9222b7c531480ab0b569c0a3d9c478cd4128d5a4dc579d39a7cc2d7384",
+      "sourcePath": "emulator-only/mbc1/rom_1Mb.s",
+      "sourceSha256": "5c5b5bf75a5206d7fb6f5ca5c377eed4e9420f50e74b09659f62df2c7c7285fc",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/rom_2Mb",
+      "path": "emulator-only/mbc1/rom_2Mb.gb",
+      "sha256": "1bebe8536ed6179854230239d0b1f67c7d8e5d7aa59877487465bc0154ced5c6",
+      "sourcePath": "emulator-only/mbc1/rom_2Mb.s",
+      "sourceSha256": "331fa4306bb04635fb2c3aafcd5f6fa3ef1f170e817dd6fb42a017a7327841f6",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/rom_4Mb",
+      "path": "emulator-only/mbc1/rom_4Mb.gb",
+      "sha256": "6ba3f62b876becde96dfd130ba050962d7ac5b526d0beb3add738693d1c3526b",
+      "sourcePath": "emulator-only/mbc1/rom_4Mb.s",
+      "sourceSha256": "e3f14da2b1ca3c84772f576fbdfb29981569e5dd67a5316b1520588cc9031f0c",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/rom_512kb",
+      "path": "emulator-only/mbc1/rom_512kb.gb",
+      "sha256": "9848621544e7acfade18694bbf430b713a552ce95dd1d59d04c0c49852b78d4b",
+      "sourcePath": "emulator-only/mbc1/rom_512kb.s",
+      "sourceSha256": "b3b14011775578f7df64e06c169c598582111c8cf6ffa42adebee284613cfd80",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/rom_8Mb",
+      "path": "emulator-only/mbc1/rom_8Mb.gb",
+      "sha256": "318a9849f2c1a135fa6dbfd8916dda671c58d65fc305d101a5a15e3227fe61cf",
+      "sourcePath": "emulator-only/mbc1/rom_8Mb.s",
+      "sourceSha256": "c9d4e740bc6e799fd50fbebdecaa066a9d721257529e10edf542120a1966ba9a",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc1/multicart_rom_8Mb",
+      "path": "emulator-only/mbc1/multicart_rom_8Mb.gb",
+      "sha256": "71147f75818877994cca6a0c4c3f9fedacdd50466e1134b743e9d79844995192",
+      "sourcePath": "emulator-only/mbc1/multicart_rom_8Mb.s",
+      "sourceSha256": "f28e05ae5e9e0aac1e7c542bf19d48756d6b3b0b711a149219fb2409c93134e4",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc2/bits_ramg",
+      "path": "emulator-only/mbc2/bits_ramg.gb",
+      "sha256": "6b112253bf92c83da4fedc7dc29ee6457ea88ee9ed15de71fddc9714440129c9",
+      "sourcePath": "emulator-only/mbc2/bits_ramg.s",
+      "sourceSha256": "80c3c7f679b91762e6be82fd529248f0bdbe968374ab29df587274b302dfe002",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc2/bits_romb",
+      "path": "emulator-only/mbc2/bits_romb.gb",
+      "sha256": "7d7684f05ce489be7485dfe0b2e789f8c85b317e981637afb2813047002b8e7c",
+      "sourcePath": "emulator-only/mbc2/bits_romb.s",
+      "sourceSha256": "2cec04e4483727ee06f4ff78fc6083ee95a3991807af5f1e4e7e196fc73323a1",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc2/bits_unused",
+      "path": "emulator-only/mbc2/bits_unused.gb",
+      "sha256": "14813cb3305e52ecfd84887797ed606b6b804db68196397bb6a7cd0d824d57b3",
+      "sourcePath": "emulator-only/mbc2/bits_unused.s",
+      "sourceSha256": "12b058b58c1f884f2c0211dece4a75ec9e23792a36596801550dcbe350fa4abd",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc2/ram",
+      "path": "emulator-only/mbc2/ram.gb",
+      "sha256": "dc039f0796c35bc749d564610aee7cace339560555298256e4824e915a38c141",
+      "sourcePath": "emulator-only/mbc2/ram.s",
+      "sourceSha256": "c15e4fb6dfc75886fbe1d8344fcd693e76e2b327488271707522c7eca2c1a01c",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc2/rom_1Mb",
+      "path": "emulator-only/mbc2/rom_1Mb.gb",
+      "sha256": "d1f772ae92234265bc54a023924ac98d4efcb1b59b3c8c2f388afbaca19969d7",
+      "sourcePath": "emulator-only/mbc2/rom_1Mb.s",
+      "sourceSha256": "f69828ccd5dc2984ccb826a4a819e77b463ad5f2a174d50501831a9e1b37780b",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc2/rom_2Mb",
+      "path": "emulator-only/mbc2/rom_2Mb.gb",
+      "sha256": "0463c1a364b717d10680e58b2e95854dadcacbdfabe9f7d39f17eb826ef42e69",
+      "sourcePath": "emulator-only/mbc2/rom_2Mb.s",
+      "sourceSha256": "082e57a26ce80ad48f07a34ae7135ab6915af71741f43243a593132b715bb127",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc2/rom_512kb",
+      "path": "emulator-only/mbc2/rom_512kb.gb",
+      "sha256": "4748aeda444bee6520e1bd2268870b53c080a61adc4039c8f32eb101a03df635",
+      "sourcePath": "emulator-only/mbc2/rom_512kb.s",
+      "sourceSha256": "954e42d5dd48690198a3a531fdb69b6458759f5bd7798b3bcedddcb2c54e6377",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_16Mb",
+      "path": "emulator-only/mbc5/rom_16Mb.gb",
+      "sha256": "315ac9d9d7a3adda80f5fa8dee5826912bd99961e9539bd39ca8b440464ae794",
+      "sourcePath": "emulator-only/mbc5/rom_16Mb.s",
+      "sourceSha256": "2be73a4d150cdeb0dce01318d35fb032595396c3210d2e2e986fad144a15afc9",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_1Mb",
+      "path": "emulator-only/mbc5/rom_1Mb.gb",
+      "sha256": "5170771b8183f7e5e10c2f40d7b3e18d170657b5906305caf111776e2277b425",
+      "sourcePath": "emulator-only/mbc5/rom_1Mb.s",
+      "sourceSha256": "b59f38c54f46766591e0cabd7ee8eb09c92e072aa76d687c26100291daeeab77",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_2Mb",
+      "path": "emulator-only/mbc5/rom_2Mb.gb",
+      "sha256": "e93c53a71292b0066cba749a46fde2119b8733580b403189d3987e922588f0ca",
+      "sourcePath": "emulator-only/mbc5/rom_2Mb.s",
+      "sourceSha256": "ab926a4b8eb9da855640c1979c3d53eaa113a908a22a0f9aeeecf54158e45331",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_32Mb",
+      "path": "emulator-only/mbc5/rom_32Mb.gb",
+      "sha256": "665b18d5e876f527e2c05579f7166641539fe895522711906c468f75bd00ec90",
+      "sourcePath": "emulator-only/mbc5/rom_32Mb.s",
+      "sourceSha256": "e684188255cdd20492182d509bc2b99523e314dc311563ee0a27542a71135640",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_4Mb",
+      "path": "emulator-only/mbc5/rom_4Mb.gb",
+      "sha256": "188410388f84a5569c2a9f9d6c6e9e269f40d831ea4b718c0ae251d518ecf8c3",
+      "sourcePath": "emulator-only/mbc5/rom_4Mb.s",
+      "sourceSha256": "e0f34c602685cdccbac2f32f92eca787316802ea486ce45a0352c093036add4f",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_512kb",
+      "path": "emulator-only/mbc5/rom_512kb.gb",
+      "sha256": "6aad3b6b80f5b7308e79ef1acda4a045febe1eddf5021cecc3873d63c3e734ff",
+      "sourcePath": "emulator-only/mbc5/rom_512kb.s",
+      "sourceSha256": "eaf907cad330291ab655753a587d0d70f6904c462d86b02122099f95372f2940",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_64Mb",
+      "path": "emulator-only/mbc5/rom_64Mb.gb",
+      "sha256": "e02ff0175932f76e01421a11b202a3840eb4dad70d735819b7dca45aedefe3c5",
+      "sourcePath": "emulator-only/mbc5/rom_64Mb.s",
+      "sourceSha256": "5938816804f073434ad273de63d72dcf307637035605edc1bfce0fd6bfd13477",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    },
+    {
+      "name": "mbc5/rom_8Mb",
+      "path": "emulator-only/mbc5/rom_8Mb.gb",
+      "sha256": "81e32dc0cfe3940f3be759b1206ac5c46ca42acc64b7848e7de586ec1aa1973e",
+      "sourcePath": "emulator-only/mbc5/rom_8Mb.s",
+      "sourceSha256": "435b59553781e5f8a8c8dcfd77e9e7598e807b6b72fd837c8e5d22e4ea31b846",
+      "maxTCycles": 50000000,
+      "timeoutSeconds": 10,
+      "expected": "PASS"
+    }
+  ]
+}

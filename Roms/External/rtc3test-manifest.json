@@ -1,0 +1,147 @@
+{
+  "suite": "rtc3test",
+  "version": "v004",
+  "sourceCommit": "80ae792bf1b3c3387929b912e6df001af3511e24",
+  "binaryUrl": "https://github.com/aaaaaa123456789/rtc3test/releases/download/v004/rtc3test.gb",
+  "binarySha256": "a271013fb37ea1d927b854798401320b220d57abb3ca77f3d318ceb8a9def30d",
+  "symbolsUrl": "https://github.com/aaaaaa123456789/rtc3test/releases/download/v004/rtc3test.sym",
+  "symbolsSha256": "8e203cc964b458e82863c31ac4ace6877113033d47fb0b9cbdec034ed1d31f74",
+  "sourceUrl": "https://codeload.github.com/aaaaaa123456789/rtc3test/zip/80ae792bf1b3c3387929b912e6df001af3511e24",
+  "sourceSha256": "ba52a1e692d8543571d0d342990cc646345d031464e688bdbacc7fe8a9e5613d",
+  "sourceRoot": "rtc3test-80ae792bf1b3c3387929b912e6df001af3511e24",
+  "license": "Unlicense",
+  "licenseSha256": "88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd",
+  "success": "Each menu is run in turn (A, then Down and A for the next one). Every result the ROM prints is drawn in its pass colour (tile number OR 0x40), none in the fail colour (OR 0x80) or as N/A, and the labels match the lists below.",
+  "maxTCycles": 251658240,
+  "timeoutSeconds": 120,
+  "menus": [
+    {
+      "name": "Basic tests",
+      "tests": [
+        "RTC on",
+        "Tick",
+        "RTC off",
+        "Register writes",
+        "Seconds increment",
+        "Rollovers",
+        "Overflow",
+        "Overflow stickiness"
+      ]
+    },
+    {
+      "name": "Range tests",
+      "tests": [
+        "All bits clear",
+        "All bits set",
+        "Valid bits",
+        "Invalid value tick",
+        "Invalid rollovers",
+        "High minutes",
+        "High hours"
+      ]
+    },
+    {
+      "name": "Sub-second writes",
+      "tests": [
+        "RTCS/500",
+        "RTCS/900",
+        "RTCM/50",
+        "RTCM/600",
+        "RTCH/200",
+        "RTCDL/800",
+        "RTCDH/300",
+        "RTC off/400"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd"
+    },
+    {
+      "path": "README.md",
+      "sha256": "39a1f4fb70c052123a171134fbf68664511a8e8b36f982f6dfb30b2d1e9eea89"
+    },
+    {
+      "path": "tests.md",
+      "sha256": "1937b614b49cff4e2e9b3e36aaa888e754ece6eb141ce46406a28f8f005d4172"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "a150c4e6d6aa2b2641f9d690bd0fb3f5138ead3ba6266a0803e6e10b0ade4425"
+    },
+    {
+      "path": "src/basic.asm",
+      "sha256": "a3215ee0c9d941359aff0f81bbd4cdec98b41763306bfed510c58dbe99b4f797"
+    },
+    {
+      "path": "src/charmap.asm",
+      "sha256": "6349865f5e516856f96db5313f7544a0938c9a2d7a3af07bc77e0e138930810b"
+    },
+    {
+      "path": "src/font.asm",
+      "sha256": "516b019537243937a4dae91419dffe5bdd5796af8bbbaa50e577518ce03aa6a5"
+    },
+    {
+      "path": "src/hardware.asm",
+      "sha256": "774832dace2faac635f047c7c28605b24b34f1e1d5f5c9205711e2b979e3e2d2"
+    },
+    {
+      "path": "src/header.asm",
+      "sha256": "2110e9a7612d06507ab90419988672aae32df485efb72e3a2de08949ccb82e59"
+    },
+    {
+      "path": "src/joypad.asm",
+      "sha256": "e6f741d0c9743db9c2141ed925a872bc2a2f6926033417c7ff027a02091b5369"
+    },
+    {
+      "path": "src/macros.asm",
+      "sha256": "6b76549baf815cfd7da17ad137a595da4d3fbc16db163ad172f06b09d5a06638"
+    },
+    {
+      "path": "src/main.asm",
+      "sha256": "576e2b48b4d03b315198ef2d1b8904a11a07a08dbfe60904df01e6350741762a"
+    },
+    {
+      "path": "src/math.asm",
+      "sha256": "7ed948d4a4533954f251d567b79aea8206a6f7f8bfedd6a4e95bb347f6bd40c6"
+    },
+    {
+      "path": "src/range.asm",
+      "sha256": "b1e89d2f83deae6683442c7cadd2f6b8e16d5ac188f11e837dae1f8d004560c5"
+    },
+    {
+      "path": "src/rom.asm",
+      "sha256": "5f441ca824a97d87e153e7601afd71701b51276f6cb099c2b99668eb94690024"
+    },
+    {
+      "path": "src/rtc.asm",
+      "sha256": "f2df4c248c7492c8ca2215ea937376fd8b977ae340354b86caaa347e968bba70"
+    },
+    {
+      "path": "src/subsec.asm",
+      "sha256": "b059ec31a4a808d2cee382eb0193a33b61c3c9ac50b2858a752829b950f323a3"
+    },
+    {
+      "path": "src/tests.asm",
+      "sha256": "a078191989e3d9b4646cf687f1239f42d27c4d18bbbf3c2fc8a87b83cf1057e6"
+    },
+    {
+      "path": "src/text.asm",
+      "sha256": "b49841610d904bada51f90588049062f66b6a68fad94543369955c86a33c80f3"
+    },
+    {
+      "path": "src/timing.asm",
+      "sha256": "c31530d431b1f37a9ce10ca4dd149c4ce84be158b437471d0cce188b659702ef"
+    },
+    {
+      "path": "src/tmacros.asm",
+      "sha256": "a48227ecbeec08d171470eda7fec999b6dd759e011c92d77a22a29cfec110799"
+    },
+    {
+      "path": "src/wait.asm",
+      "sha256": "09486cde9a30a9d26c247cb3482d193a1c674f7827d2be87c36278583f7c4bb8"
+    }
+  ]
+}

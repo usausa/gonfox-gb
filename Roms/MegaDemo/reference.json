@@ -1,0 +1,324 @@
+{
+  "rom": {
+    "file": "megademo.gb",
+    "sha256": "d1c2a4987088f97c051ecd8fe7bb008ebf9bb2c180556ee7e267a2809beea41f"
+  },
+  "renderer": {
+    "name": "binjgb",
+    "version": "v0.1.11",
+    "license": "MIT",
+    "url": "https://github.com/binji/binjgb/releases/download/v0.1.11/binjgb-windows.tar.gz",
+    "archiveSha256": "86ebb0f68d760b30c8162f788bda472ba856b9ac7dd7ee89c69ad751456f3e66",
+    "testerSha256": "e43c0eeec94738f051cf705ef017fe5d2689b8dde8938d560a4819cbda5e32e6",
+    "licenseUrl": "https://github.com/binji/binjgb/blob/v0.1.11/LICENSE",
+    "licenseSha256": "89807acf2309bd285f033404ee78581602f3cd9b819a16ac2f0e5f60ff4a473e",
+    "command": "binjgb-tester -j input.joyp -f <frame> -o frame.ppm megademo-logo.gb",
+    "romCopy": "megademo.gb with the boot logo and both checksums written by rgbfix -f lhg (0104-0133, 014D-014F)"
+  },
+  "frameTicks": 70224,
+  "selection": "The image is the first frame completed at or after frame * frameTicks T-cycles from power-on (binjgb-tester -f).",
+  "pixels": "reference/*.png: 160x144 two-bit grayscale; level 3 - DMG shade. pixelSha256 hashes the 23040 levels.",
+  "inputs": [
+    {
+      "tick": 0,
+      "buttons": []
+    },
+    {
+      "tick": 2844072,
+      "buttons": [
+        "Right"
+      ]
+    },
+    {
+      "tick": 2914296,
+      "buttons": []
+    },
+    {
+      "tick": 3546312,
+      "buttons": [
+        "Up"
+      ]
+    },
+    {
+      "tick": 6355272,
+      "buttons": []
+    },
+    {
+      "tick": 7057512,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 7127736,
+      "buttons": []
+    },
+    {
+      "tick": 7759752,
+      "buttons": [
+        "B"
+      ]
+    },
+    {
+      "tick": 7829976,
+      "buttons": []
+    },
+    {
+      "tick": 9164232,
+      "buttons": [
+        "Select"
+      ]
+    },
+    {
+      "tick": 9234456,
+      "buttons": []
+    },
+    {
+      "tick": 14079912,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 14150136,
+      "buttons": []
+    },
+    {
+      "tick": 16186632,
+      "buttons": [
+        "Left"
+      ]
+    },
+    {
+      "tick": 20400072,
+      "buttons": []
+    },
+    {
+      "tick": 21102312,
+      "buttons": [
+        "Select"
+      ]
+    },
+    {
+      "tick": 21172536,
+      "buttons": []
+    },
+    {
+      "tick": 23209032,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 23279256,
+      "buttons": []
+    },
+    {
+      "tick": 23911272,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 23981496,
+      "buttons": []
+    },
+    {
+      "tick": 26720232,
+      "buttons": [
+        "Start"
+      ]
+    },
+    {
+      "tick": 26790456,
+      "buttons": []
+    },
+    {
+      "tick": 28124712,
+      "buttons": [
+        "Down"
+      ]
+    },
+    {
+      "tick": 33040392,
+      "buttons": []
+    },
+    {
+      "tick": 33742632,
+      "buttons": [
+        "Start"
+      ]
+    },
+    {
+      "tick": 33812856,
+      "buttons": []
+    },
+    {
+      "tick": 34444872,
+      "buttons": [
+        "Select"
+      ]
+    },
+    {
+      "tick": 34515096,
+      "buttons": []
+    },
+    {
+      "tick": 36551592,
+      "buttons": [
+        "Left",
+        "Down"
+      ]
+    },
+    {
+      "tick": 38517864,
+      "buttons": []
+    },
+    {
+      "tick": 39009432,
+      "buttons": [
+        "Select",
+        "Down"
+      ]
+    },
+    {
+      "tick": 39079656,
+      "buttons": []
+    }
+  ],
+  "frames": [
+    {
+      "frame": 30,
+      "file": "reference/frame-0030.png",
+      "description": "wave, power-on parameters",
+      "pngSha256": "ee30064a76332c1a63ed659e80801aaf842f6ca01798858a2c73e84bf1406a58",
+      "pixelSha256": "14b8e72fcbe1f5ea828a962dfd0604c5f268d4acb05e71b2ed5d588a47994547"
+    },
+    {
+      "frame": 60,
+      "file": "reference/frame-0060.png",
+      "description": "wave, speed 4 after Right, amplitude rising",
+      "pngSha256": "b8106bd9adbf6e1cb944fb95218a91d4d619fcdec0f453c96c3bb9b0136edf27",
+      "pixelSha256": "c9ac06cbc6247f89a345a3465f5ba97eb3dae16c2c366771d1dd7267011ed4a4"
+    },
+    {
+      "frame": 95,
+      "file": "reference/frame-0095.png",
+      "description": "wave, amplitude 7 (maximum) after held Up",
+      "pngSha256": "b363b97c344bc70b4f834c3ce6995bc30368870730023af16c7567bfbbfc37e4",
+      "pixelSha256": "d98203155289d8972d94cafdbf969551745818bd057e6c0da246ea92aa591607"
+    },
+    {
+      "frame": 105,
+      "file": "reference/frame-0105.png",
+      "description": "wave, palette 1 after A",
+      "pngSha256": "9108cc3c2b2094eaa4bc34b5cb90c85eeea2edad564e6e0439d0b2f1c2c1c3b0",
+      "pixelSha256": "5ae89745acf36a0384b3a1b25593f6e49d12c3391e390560e4a808cc6fa071f3"
+    },
+    {
+      "frame": 125,
+      "file": "reference/frame-0125.png",
+      "description": "wave, reversed after B",
+      "pngSha256": "b27af7ee91ba2043114a1fb1de45976543145d6b4c1ee7f7290cdf3a9747b937",
+      "pixelSha256": "6208b2a61f535d3f60afe0616cc2e5f55f843973593ed5f5e86220ef6fc1b590"
+    },
+    {
+      "frame": 160,
+      "file": "reference/frame-0160.png",
+      "description": "plasma, power-on parameters",
+      "pngSha256": "7966ecb9a7d63065fefcb42f7543e7955618a657b5222c898a69fc631f3d4815",
+      "pixelSha256": "3e17b04c57cee8fbb0da659b69be529605b6965200767d7a2afdc914bfa0b0fd"
+    },
+    {
+      "frame": 203,
+      "file": "reference/frame-0203.png",
+      "description": "plasma, texture 1 halfway through its four 64-byte uploads",
+      "pngSha256": "eede5caf4c26f350d3256465b9936717f6e25f37b10f70e60d6c77523fd22300",
+      "pixelSha256": "e3c829d0b969c9d70d6e3a411bb8270cab341b53519128236ea2cc8687285e9b"
+    },
+    {
+      "frame": 215,
+      "file": "reference/frame-0215.png",
+      "description": "plasma, texture 1 complete",
+      "pngSha256": "06a94e83f4d23f40153a404c328edff7ef1441bafc0b577ace36a7415d1a20c5",
+      "pixelSha256": "ab8bdb4814548da9754505d82581b68ca01b1e0995f1199d471eece776d0a689"
+    },
+    {
+      "frame": 260,
+      "file": "reference/frame-0260.png",
+      "description": "plasma, speed 0 (minimum) after held Left",
+      "pngSha256": "294ed9879efbf8ed0924ec784b008dfd0f3e30ed08ec8475e5e633ba16437961",
+      "pixelSha256": "c163f0e2214b1c86ae0cf25a3efb85b660e0df3489d52bced3f71c0a5f434dd3"
+    },
+    {
+      "frame": 320,
+      "file": "reference/frame-0320.png",
+      "description": "orbit, power-on parameters",
+      "pngSha256": "9af32af2d8427fa655b59defab0fb5ef693a17b285da640c17eea4983aac3168",
+      "pixelSha256": "5c5856c46594eac81f352e136841d31375e571ad70f14a3e07a5700c12a19597"
+    },
+    {
+      "frame": 335,
+      "file": "reference/frame-0335.png",
+      "description": "orbit, pattern 1 (X flips) after A",
+      "pngSha256": "9847d809e576103f11f61a81c27b7a7cbb8591b31d40b5df9b87fe7f0b504b71",
+      "pixelSha256": "cc3b52c3f27e5d0e5e356cf7b43977986a4eb058b7d551e9305bc04d9720dc57"
+    },
+    {
+      "frame": 350,
+      "file": "reference/frame-0350.png",
+      "description": "orbit, pattern 2 (Y flips) after A",
+      "pngSha256": "eebbf903bf7b0564505130b406f3845192cbc53bc2f67c4c9d0dde2c682cfc4e",
+      "pixelSha256": "0f9a9531b2cc43c49dff2d00bdca547bf61569c444d51cbd698e0b99e56e3c9f"
+    },
+    {
+      "frame": 395,
+      "file": "reference/frame-0395.png",
+      "description": "orbit, stopped by Start",
+      "pngSha256": "e3559a4d3a57bf14be716644e9833869b765c10554b9af5c548ce3881fccb7bd",
+      "pixelSha256": "2bc4794eeb4369a420303266b2f025a8ee31f741bbcff9211d2f0cc5369105f0"
+    },
+    {
+      "frame": 410,
+      "file": "reference/frame-0410.png",
+      "description": "orbit, stopped, spread lowered by Down",
+      "pngSha256": "b3ed0befedc1aedd9f40c79d61ba3837ec056d60a7b69866552cbbca8cedde48",
+      "pixelSha256": "e854f65e40f8f8fd2347ec9d50dd2caecfc368302630f0e95be440a9dbca37a3"
+    },
+    {
+      "frame": 460,
+      "file": "reference/frame-0460.png",
+      "description": "orbit, spread 0: 40 objects on the same lines, 10 shown",
+      "pngSha256": "cb744f283464eca33a774337b42d997d138bfcea9393805de0ebac0603d910bc",
+      "pixelSha256": "2d378e4f7fc2af6dfb915872475e4b9ee8fe929d840884ac13088ebb877667dd"
+    },
+    {
+      "frame": 486,
+      "file": "reference/frame-0486.png",
+      "description": "orbit, running again after Start",
+      "pngSha256": "d88f9af6e3a230085fdaebd3566fcf701efbc088e14366aaeaee2e02e30d15ea",
+      "pixelSha256": "e18f09f6b6738fbf5714fba5a9883478059156d9a15217ad983388f2b2885925"
+    },
+    {
+      "frame": 500,
+      "file": "reference/frame-0500.png",
+      "description": "wave again, its parameters restored",
+      "pngSha256": "2ebcbdd30bb0a2351834d08243cd1ae083ef64e52ac291d049c04ccf43c10307",
+      "pixelSha256": "03bda108398bff37fc7f8705edb62232a1a1039e06b44fd082a24cd5c57468e5"
+    },
+    {
+      "frame": 545,
+      "file": "reference/frame-0545.png",
+      "description": "wave, Left and Down held together both repeat",
+      "pngSha256": "783a17b4335025c9c79f49dbbc0edd253446b76ae49d404ec8a3739e70edf99e",
+      "pixelSha256": "48c07a49752c9c7e662a0ff321b217b0e5c4363cf9a8859d17fc5dc65e757aa4"
+    },
+    {
+      "frame": 570,
+      "file": "reference/frame-0570.png",
+      "description": "plasma, Select and Down in one frame lower the new scene's strength",
+      "pngSha256": "9b4e646eebddf9d5f7e42fe9f66faef2ef042d1c570fb23458489bf26f672e62",
+      "pixelSha256": "a3e7dd6dea79767d0c8072247d2ae9e00ef5d92a73b55237446c80812ca6c7ed"
+    }
+  ]
+}

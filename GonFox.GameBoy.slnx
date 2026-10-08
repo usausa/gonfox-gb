@@ -1,4 +1,17 @@
 <Solution>
+  <Folder Name="/Benchmark/">
+    <Project Path="Benchmark/Benchmark.csproj" />
+  </Folder>
+  <Folder Name="/Example/">
+    <Project Path="Example.GameBoy.MauiHost/Example.GameBoy.MauiHost.csproj" />
+    <Project Path="Example.GameBoy.WpfHost/Example.GameBoy.WpfHost.csproj" DefaultStartup="true" />
+  </Folder>
+  <Folder Name="/Library/">
+    <Project Path="GonFox.GameBoy.Core/GonFox.GameBoy.Core.csproj" />
+    <Project Path="GonFox.GameBoy.Platform.Android/GonFox.GameBoy.Platform.Android.csproj" />
+    <Project Path="GonFox.GameBoy.Platform.Shared/GonFox.GameBoy.Platform.Shared.csproj" />
+    <Project Path="GonFox.GameBoy.Platform.Windows/GonFox.GameBoy.Platform.Windows.csproj" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
     <File Path=".gitattributes" />
@@ -11,5 +24,10 @@
     <File Path="GonFox.GameBoy.sln.DotSettings" />
     <File Path="LICENSE" />
     <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Test/">
+    <Project Path="Example.GameBoy.WpfHost.Tests/Example.GameBoy.WpfHost.Tests.csproj" />
+    <Project Path="GonFox.GameBoy.Core.Tests/GonFox.GameBoy.Core.Tests.csproj" />
+    <Project Path="GonFox.GameBoy.Platform.Tests/GonFox.GameBoy.Platform.Tests.csproj" />
   </Folder>
 </Solution>

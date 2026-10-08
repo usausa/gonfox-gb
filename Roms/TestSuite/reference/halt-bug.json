@@ -1,0 +1,176 @@
+{
+  "rom": "halt-bug.gb",
+  "sha256": "6c896d77a368d68d7830da4d272fb93cb0489c492521352ff551b3665b35f7f9",
+  "reference": "sameboy",
+  "frames": 600,
+  "maxTCycles": 200000000,
+  "cases": [
+    {
+      "name": "HALT bug, 1-byte INC A after HALT: A",
+      "offset": 0,
+      "length": 1
+    },
+    {
+      "name": "HALT bug, 2-byte LD A,n after HALT: A",
+      "offset": 1,
+      "length": 1
+    },
+    {
+      "name": "HALT bug, 3-byte LD BC,nn after HALT: B, C",
+      "offset": 2,
+      "length": 2
+    },
+    {
+      "name": "HALT bug, RST $28 after HALT: RST count, return offsets",
+      "offset": 4,
+      "length": 3
+    },
+    {
+      "name": "HALT bug repeated by a misread HALT: B",
+      "offset": 7,
+      "length": 1
+    },
+    {
+      "name": "IE written right before HALT with the request pending: INC B count",
+      "offset": 8,
+      "length": 1
+    },
+    {
+      "name": "IF written right before HALT with the request enabled: INC B count",
+      "offset": 9,
+      "length": 1
+    },
+    {
+      "name": "EI, HALT with a request pending: entries, return offsets",
+      "offset": 10,
+      "length": 3
+    },
+    {
+      "name": "EI, HALT, RST with a request pending: timer entries, return offsets",
+      "offset": 13,
+      "length": 3
+    },
+    {
+      "name": "EI, HALT, RST with a request pending: RST entries, return offset",
+      "offset": 16,
+      "length": 2
+    },
+    {
+      "name": "EI, HALT with no request pending: entries, return offset",
+      "offset": 18,
+      "length": 2
+    },
+    {
+      "name": "Timer wake, IME off, HALT 0 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 20,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 1 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 25,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 2 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 30,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 3 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 35,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 4 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 40,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 5 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 45,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 6 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 50,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 7 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 55,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 8 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 60,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME off, HALT 9 M-cycles later: INC B count, TIMA at read delays 0-3",
+      "offset": 65,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 0 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 70,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 1 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 75,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 2 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 80,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 3 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 85,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 4 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 90,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 5 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 95,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 6 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 100,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 7 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 105,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 8 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 110,
+      "length": 5
+    },
+    {
+      "name": "Timer wake, IME on, HALT 9 M-cycles later: return offset, TIMA at read delays 0-3",
+      "offset": 115,
+      "length": 5
+    },
+    {
+      "name": "Request not enabled in IE pending at HALT: INC B count, TIMA, IF",
+      "offset": 120,
+      "length": 3
+    },
+    {
+      "name": "HALT right after waking from HALT with IME off: A",
+      "offset": 123,
+      "length": 1
+    }
+  ],
+  "sameboy": "023f040202010208020202000102000101020101010101010201010101020101010102010101010201010101020101010102020101010202010102020201020202020202020201030303040103030304010303030401030303040103030304010303030400030303030003030303ff03030303fe030303030101ec02",
+  "binjgb": "023f04020201020802020101d80101c201020101010101010101010101010101010101010101010101010101010101010101010101010102010101020201010202020102020201030303040103030304010303030401030303040103030304010303030401030303040003030303ff03030303fe030303030101ec02"
+}

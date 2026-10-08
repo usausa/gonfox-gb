@@ -1,0 +1,509 @@
+{
+  "rom": {
+    "file": "rpgdemo.gb",
+    "sha256": "f4273fef8d77505bf0d6ad81ad3dac0083e94a7e034331452c9274c6eea74644"
+  },
+  "renderer": {
+    "name": "binjgb",
+    "version": "v0.1.11",
+    "license": "MIT",
+    "url": "https://github.com/binji/binjgb/releases/download/v0.1.11/binjgb-windows.tar.gz",
+    "archiveSha256": "86ebb0f68d760b30c8162f788bda472ba856b9ac7dd7ee89c69ad751456f3e66",
+    "testerSha256": "e43c0eeec94738f051cf705ef017fe5d2689b8dde8938d560a4819cbda5e32e6",
+    "licenseUrl": "https://github.com/binji/binjgb/blob/v0.1.11/LICENSE",
+    "licenseSha256": "89807acf2309bd285f033404ee78581602f3cd9b819a16ac2f0e5f60ff4a473e",
+    "command": "binjgb-tester -j input.joyp -f <frame> -o frame.ppm rpgdemo-logo.gb",
+    "romCopy": "rpgdemo.gb with the boot logo and both checksums written by rgbfix -f lhg (0104-0133, 014D-014F)"
+  },
+  "frameTicks": 70224,
+  "selection": "The image is the first frame completed at or after frame * frameTicks T-cycles from power-on (binjgb-tester -f).",
+  "pixels": "reference/*.png: 160x144 two-bit grayscale; level 3 - DMG shade. pixelSha256 hashes the 23040 levels.",
+  "inputs": [
+    {
+      "tick": 0,
+      "buttons": []
+    },
+    {
+      "tick": 23911272,
+      "buttons": [
+        "Start"
+      ]
+    },
+    {
+      "tick": 24051720,
+      "buttons": []
+    },
+    {
+      "tick": 25315752,
+      "buttons": [
+        "Down"
+      ]
+    },
+    {
+      "tick": 25456200,
+      "buttons": []
+    },
+    {
+      "tick": 26720232,
+      "buttons": [
+        "Up"
+      ]
+    },
+    {
+      "tick": 26860680,
+      "buttons": []
+    },
+    {
+      "tick": 27422472,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 27562920,
+      "buttons": []
+    },
+    {
+      "tick": 31635912,
+      "buttons": [
+        "Right"
+      ]
+    },
+    {
+      "tick": 31776360,
+      "buttons": []
+    },
+    {
+      "tick": 34444872,
+      "buttons": [
+        "Down"
+      ]
+    },
+    {
+      "tick": 34585320,
+      "buttons": []
+    },
+    {
+      "tick": 37956072,
+      "buttons": [
+        "Up"
+      ]
+    },
+    {
+      "tick": 38096520,
+      "buttons": []
+    },
+    {
+      "tick": 41467272,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 41607720,
+      "buttons": []
+    },
+    {
+      "tick": 47787432,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 47927880,
+      "buttons": []
+    },
+    {
+      "tick": 52703112,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 52843560,
+      "buttons": []
+    },
+    {
+      "tick": 61832232,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 61972680,
+      "buttons": []
+    },
+    {
+      "tick": 68854632,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 68995080,
+      "buttons": []
+    },
+    {
+      "tick": 69907992,
+      "buttons": [
+        "Right"
+      ]
+    },
+    {
+      "tick": 70048440,
+      "buttons": []
+    },
+    {
+      "tick": 70610232,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 70750680,
+      "buttons": []
+    },
+    {
+      "tick": 78685992,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 78826440,
+      "buttons": []
+    },
+    {
+      "tick": 85708392,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 85848840,
+      "buttons": []
+    },
+    {
+      "tick": 87112872,
+      "buttons": [
+        "Start"
+      ]
+    },
+    {
+      "tick": 87253320,
+      "buttons": []
+    },
+    {
+      "tick": 88517352,
+      "buttons": [
+        "Start"
+      ]
+    },
+    {
+      "tick": 88657800,
+      "buttons": []
+    },
+    {
+      "tick": 89921832,
+      "buttons": [
+        "Select"
+      ]
+    },
+    {
+      "tick": 90062280,
+      "buttons": []
+    },
+    {
+      "tick": 103264392,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 103404840,
+      "buttons": []
+    },
+    {
+      "tick": 104668872,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 104809320,
+      "buttons": []
+    },
+    {
+      "tick": 112393512,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 112533960,
+      "buttons": []
+    },
+    {
+      "tick": 119415912,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 119556360,
+      "buttons": []
+    },
+    {
+      "tick": 126438312,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 126578760,
+      "buttons": []
+    },
+    {
+      "tick": 128545032,
+      "buttons": [
+        "Start"
+      ]
+    },
+    {
+      "tick": 128685480,
+      "buttons": []
+    },
+    {
+      "tick": 132056232,
+      "buttons": [
+        "Start"
+      ]
+    },
+    {
+      "tick": 132196680,
+      "buttons": []
+    },
+    {
+      "tick": 132758472,
+      "buttons": [
+        "Down"
+      ]
+    },
+    {
+      "tick": 132898920,
+      "buttons": []
+    },
+    {
+      "tick": 133460712,
+      "buttons": [
+        "A"
+      ]
+    },
+    {
+      "tick": 133601160,
+      "buttons": []
+    },
+    {
+      "tick": 136971912,
+      "buttons": [
+        "Up",
+        "A"
+      ]
+    },
+    {
+      "tick": 137674152,
+      "buttons": []
+    },
+    {
+      "tick": 138025272,
+      "buttons": [
+        "Left",
+        "B",
+        "Select"
+      ]
+    },
+    {
+      "tick": 138727512,
+      "buttons": []
+    },
+    {
+      "tick": 139078632,
+      "buttons": [
+        "Down",
+        "Right",
+        "Start"
+      ]
+    },
+    {
+      "tick": 139780872,
+      "buttons": []
+    },
+    {
+      "tick": 141185352,
+      "buttons": [
+        "Start",
+        "Select"
+      ]
+    },
+    {
+      "tick": 142589832,
+      "buttons": []
+    }
+  ],
+  "frames": [
+    {
+      "frame": 60,
+      "file": "reference/frame-0060.png",
+      "description": "title, the pan from the night sky",
+      "pngSha256": "e790785b66e55a8b8ffa548dfb1ea6c55c4e5df44224ae34b0b51e3742f0bd50",
+      "pixelSha256": "baf207eebc3cb1356cf861939d3b089a02f8251e6ce534bd60f0a6d8457b7a55"
+    },
+    {
+      "frame": 200,
+      "file": "reference/frame-0200.png",
+      "description": "title, logo letters dropping",
+      "pngSha256": "0be119ca5f1b1c34e809858bba02dca8e3368898cee635524a77daffc802c8ba",
+      "pixelSha256": "2525f8d978c133f6e11cfebb12bef3ee4f766735e37f8f26b9f33a2c0998f8ec"
+    },
+    {
+      "frame": 336,
+      "file": "reference/frame-0336.png",
+      "description": "title, logo, walkers, PUSH START",
+      "pngSha256": "6c6a73b7f33f9862aefe1112fa81525d357a592187e7552a95b7c6a193351541",
+      "pixelSha256": "c8aae259f219289d2d5c59f11ccf377699ce1c190776f62988e73191f7418e00"
+    },
+    {
+      "frame": 352,
+      "file": "reference/frame-0352.png",
+      "description": "title menu, GAME START",
+      "pngSha256": "0c06d2aa144f5eb0792bc3b4ef89330c27929034a2e672e84869d9ff2bbfab6d",
+      "pixelSha256": "76e4ea707cd5770cc28e9207e5dbcb25b0105eb01c9f71e0bf72c3f24f17644b"
+    },
+    {
+      "frame": 370,
+      "file": "reference/frame-0370.png",
+      "description": "title menu, KEY TEST",
+      "pngSha256": "970223377e27ce6d40757806c78b24e5a214e23d61b90290e4c87806adc574a8",
+      "pixelSha256": "34e278b86d00491c790a9f9012c0f7ea881f18addc734b4ebab2fd7f9675bf74"
+    },
+    {
+      "frame": 440,
+      "file": "reference/frame-0440.png",
+      "description": "select, SERA and EASY",
+      "pngSha256": "9c48af567cbfbe7280c96879952e61599b9bd541596628f7a863dac72a1521ee",
+      "pixelSha256": "26f3de85736b35f457063d067a9fc4c0afe44fb35663542a57afc0e36b79b975"
+    },
+    {
+      "frame": 480,
+      "file": "reference/frame-0480.png",
+      "description": "select, PINA",
+      "pngSha256": "59e11d1fb42dabb3497bcc60b1e0bfc081190d3364f6334001134b9bb839e187",
+      "pixelSha256": "2c74fdea4ec8e57121ad37254d1ec66688ea9e64d20ee8e9cdf2f911e2eaf15d"
+    },
+    {
+      "frame": 530,
+      "file": "reference/frame-0530.png",
+      "description": "select, NORMAL: the king cat",
+      "pngSha256": "0f75b2dcd030b7737f41adf63d34579a276a0268ed513593af92fba3c303f2a4",
+      "pixelSha256": "724f493e0b02aa2d8728b1824abc9d66b3edc5c24f03dbf3fb080e421865846a"
+    },
+    {
+      "frame": 670,
+      "file": "reference/frame-0670.png",
+      "description": "battle, a wild SLIME CAT appeared",
+      "pngSha256": "6aeabb91096560149ad34f01145950b707f9f138bd2b9f7e18e116bf7e00feca",
+      "pixelSha256": "c381d26fca87c7b2da01d28de8475ec7ae0527c03fd9f63acbea53a145cfe13c"
+    },
+    {
+      "frame": 740,
+      "file": "reference/frame-0740.png",
+      "description": "battle, the command box",
+      "pngSha256": "e343b7d36eeda724609ba53b08dd775301164057c6f6494858c8a651cd02773a",
+      "pixelSha256": "3e17f1dd19f11a2f6c12e7eb014121326d1e59583275dc22d7d590f49fdfbb59"
+    },
+    {
+      "frame": 761,
+      "file": "reference/frame-0761.png",
+      "description": "battle, FIGHT: the burst on the enemy",
+      "pngSha256": "04c5a76d8bbd2c0bb90194f3d350c7fd899e7ccf4e1e309c11aa4c337bd157fe",
+      "pixelSha256": "3e42ad9968584e49c867bb899583efcbcbfb332f9f50f5ab3843c44d4ff90507"
+    },
+    {
+      "frame": 845,
+      "file": "reference/frame-0845.png",
+      "description": "battle, the damage message",
+      "pngSha256": "68c0e8ce53949c0cd7ea6e7a4f23381067e6e243f84bc0ed88ac55fde27e6bc8",
+      "pixelSha256": "339f88873af4d5e96b55e4b8b254306b525116b6b7dbc6e149da6351d8f9a741"
+    },
+    {
+      "frame": 886,
+      "file": "reference/frame-0886.png",
+      "description": "battle, the enemy attacks: the screen shakes",
+      "pngSha256": "e2da91135e65b0e3af9c789cb5d867871ad9df001d8cac57a315797941ff981f",
+      "pixelSha256": "f47a3d8937375cf9fbd150f9cd586bf50cf60d24e63aae3ba06d9d5520fc06e5"
+    },
+    {
+      "frame": 1027,
+      "file": "reference/frame-1027.png",
+      "description": "battle, MAGIC stars",
+      "pngSha256": "849ffe9c9eaaa474f117430ed51926822d3c9d9b6a4793906d9b20d91cd621e9",
+      "pixelSha256": "51faa3e5f262be9e97bddd7edf6bc7e5d6165737ce0b8696b3ab2fb701002524"
+    },
+    {
+      "frame": 1250,
+      "file": "reference/frame-1250.png",
+      "description": "battle, paused",
+      "pngSha256": "0b4d2017fad151875aa3b8e5867b5bbb548bea48decf0050c822ef956f6571cd",
+      "pixelSha256": "36a2ce347c971f891ba3dc761d16d0c43a153a3961d288aad25ab64506c34360"
+    },
+    {
+      "frame": 1360,
+      "file": "reference/frame-1360.png",
+      "description": "battle, SHIRO sent out",
+      "pngSha256": "1229ed18e43c3714001da313ad7ff649248756783274573f8afc8dce138bf9ab",
+      "pixelSha256": "bb0d1ba28e89d8830d0cd89fd89ba3108f7c752df03e47d37dfe445f4ce4033d"
+    },
+    {
+      "frame": 1616,
+      "file": "reference/frame-1616.png",
+      "description": "battle, the enemy sinks",
+      "pngSha256": "ccaf38f5453ebc47e36dface2e966bc0e21fa2fd963ede9dff1e94095d1898db",
+      "pixelSha256": "310027fd1935b1a2e5b02e0159ef17f3802c22f67d56e02283d5f19a3512c103"
+    },
+    {
+      "frame": 1690,
+      "file": "reference/frame-1690.png",
+      "description": "battle, won",
+      "pngSha256": "0f0ead1061d72823b59d594491925d504e540882dc6a54036e3a0dbb3753ff74",
+      "pixelSha256": "add3a6e58496b8d146a57910aeab8bb0f810b3710428ef73c1da2a4f609ad136"
+    },
+    {
+      "frame": 1956,
+      "file": "reference/frame-1956.png",
+      "description": "key test, Up and A held",
+      "pngSha256": "959595a426ba07fc40190056e55d9b2d72c0754eeff0c50cdd85ef4123b871e5",
+      "pixelSha256": "a44fa6fe114a02baedf97af142e4031f1018c86a6b0d92b35b5dba0a76072bfa"
+    },
+    {
+      "frame": 1971,
+      "file": "reference/frame-1971.png",
+      "description": "key test, Left, B and Select held",
+      "pngSha256": "ee449599389a0e534a20b0f54a84dcdc9487b6517b82973346be4d5ab0609c10",
+      "pixelSha256": "6b7e39fa4b6ab16067b303a40c16f738bb928123bf8a61eabd52ae491d8d1e8e"
+    },
+    {
+      "frame": 1986,
+      "file": "reference/frame-1986.png",
+      "description": "key test, Down, Right and Start held",
+      "pngSha256": "9be3a7b094594ecf3f9f620c173b5d4c557515fa73b2a6463b1671154c06ec1f",
+      "pixelSha256": "b0d5920711f76f4bd25ca1ffc4bc3c0d44662ac332e09655057064e8e00022a0"
+    },
+    {
+      "frame": 2000,
+      "file": "reference/frame-2000.png",
+      "description": "key test, released, eight presses counted",
+      "pngSha256": "b38cb4b462c7f8cb090725826ab4cf17a7510ab53535fd663e8c02a4394b0554",
+      "pixelSha256": "28ddd77f20a77815aa1a99ed3047e230912b4fcb36fbc606fa5bcabd748bdafb"
+    }
+  ]
+}

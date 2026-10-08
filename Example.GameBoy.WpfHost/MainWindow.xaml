@@ -1,0 +1,309 @@
+<Window x:Class="Example.GameBoy.WpfHost.MainWindow" x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:devices="clr-namespace:GonFox.GameBoy.Core.Devices;assembly=GonFox.GameBoy.Core"
+        Title="GonFox GameBoy" Height="860" Width="1060" MinWidth="820" MinHeight="700"
+        Background="#2E3138" UseLayoutRounding="True"
+        PreviewKeyDown="HandleKeyDown" PreviewKeyUp="HandleKeyUp" Deactivated="HandleDeactivated">
+    <!-- The handheld on the left and, on the right, the side area for everything else. -->
+    <Window.Resources>
+        <SolidColorBrush x:Key="Body" Color="#C9CBC4" />
+        <SolidColorBrush x:Key="BodyLine" Color="#AEB1A9" />
+        <SolidColorBrush x:Key="Ink" Color="#2B2E73" />
+        <SolidColorBrush x:Key="Bezel" Color="#5C606E" />
+        <SolidColorBrush x:Key="Side" Color="#23262C" />
+        <SolidColorBrush x:Key="SideText" Color="#E5E7EB" />
+        <SolidColorBrush x:Key="SideMuted" Color="#A9AEB8" />
+        <!-- The buttons of the side area. -->
+        <Style x:Key="ToolbarButton" TargetType="ButtonBase">
+            <Setter Property="Padding" Value="9,4" />
+            <Setter Property="Margin" Value="0,0,5,5" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource SideText}" />
+            <Setter Property="Background" Value="#3A3E47" />
+            <Setter Property="BorderBrush" Value="#4C515C" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ButtonBase">
+                        <Border x:Name="Face" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Face" Property="Background" Value="#4A4F5A" /></Trigger>
+                            <Trigger Property="IsPressed" Value="True"><Setter TargetName="Face" Property="Background" Value="#2E3139" /></Trigger>
+                            <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.4" /></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Heading" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{StaticResource SideMuted}" />
+            <Setter Property="Margin" Value="0,12,0,5" />
+        </Style>
+        <Style x:Key="Small" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="Foreground" Value="{StaticResource SideMuted}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style x:Key="Mono" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="Foreground" Value="{StaticResource SideText}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Margin" Value="0,3,0,0" />
+        </Style>
+        <!-- The pad: one base style for the input handlers, a shape for each kind of button. -->
+        <Style x:Key="PadButton" TargetType="Button">
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="Cursor" Value="Hand" />
+            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="PadMouseDown" />
+            <EventSetter Event="PreviewMouseLeftButtonUp" Handler="PadMouseUp" />
+            <EventSetter Event="LostMouseCapture" Handler="PadMouseLost" />
+            <EventSetter Event="PreviewTouchDown" Handler="PadTouchDown" />
+            <EventSetter Event="PreviewTouchUp" Handler="PadTouchUp" />
+            <EventSetter Event="LostTouchCapture" Handler="PadTouchLost" />
+            <EventSetter Event="Click" Handler="PadClick" />
+        </Style>
+        <Style x:Key="DirectionButton" TargetType="Button" BasedOn="{StaticResource PadButton}">
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Background" Value="#2A2B2E" />
+            <Setter Property="Foreground" Value="#55575C" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FaceButton" TargetType="Button" BasedOn="{StaticResource PadButton}">
+            <Setter Property="Width" Value="56" />
+            <Setter Property="Height" Value="56" />
+            <Setter Property="Background" Value="#9C1F55" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="#7A1742" Margin="0,3,0,0" />
+                            <Ellipse Fill="{TemplateBinding Background}" Margin="0,0,0,3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="PillButton" TargetType="Button" BasedOn="{StaticResource PadButton}">
+            <Setter Property="Width" Value="52" />
+            <Setter Property="Height" Value="15" />
+            <Setter Property="Background" Value="#80838A" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="7.5" BorderBrush="#6A6D73" BorderThickness="1" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Label" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="360" /></Grid.ColumnDefinitions>
+        <!-- The handheld: the screen in its bezel, the name, the pad. -->
+        <Border Margin="14,14,7,14" Background="{StaticResource Body}" CornerRadius="12,12,72,12" BorderBrush="{StaticResource BodyLine}" BorderThickness="1">
+            <Grid Margin="22,18,22,22">
+                <Grid.RowDefinitions><RowDefinition Height="*" /><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+                <!-- The screen in its bezel, with the power lamp lit while the program runs. -->
+                <Border Background="{StaticResource Bezel}" CornerRadius="10,10,44,10" Padding="18,12,18,22">
+                    <Grid>
+                        <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="44" /><ColumnDefinition Width="*" /><ColumnDefinition Width="44" /></Grid.ColumnDefinitions>
+                        <Grid Grid.ColumnSpan="3" Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center">
+                                <Rectangle Height="2" Fill="#8B2D58" Margin="0,0,8,2" />
+                                <Rectangle Height="2" Fill="#2D3473" Margin="0,0,8,0" />
+                            </StackPanel>
+                            <TextBlock Grid.Column="1" Text="GONFOX · DMG" FontSize="10" FontWeight="SemiBold" FontStyle="Italic" Foreground="#C7C9CF" />
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                <Rectangle Height="2" Fill="#8B2D58" Margin="8,0,0,2" />
+                                <Rectangle Height="2" Fill="#2D3473" Margin="8,0,0,0" />
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Ellipse x:Name="PowerLamp" Width="9" Height="9" Fill="#3B2326" HorizontalAlignment="Center" AutomationProperties.Name="Power lamp" />
+                            <TextBlock Text="POWER" FontSize="7" Foreground="#C7C9CF" Margin="0,3,0,0" HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <!-- The screen, sized by FitScreen; the code puts the chosen display in it. -->
+                        <Grid x:Name="ScreenArea" Grid.Row="1" Grid.Column="1" MinHeight="150" SizeChanged="FitScreen">
+                            <Border x:Name="ScreenEdge" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#33363F" BorderThickness="3">
+                                <Border x:Name="DisplayHost" Width="320" Height="288" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <TextBlock Grid.Row="1" Text="GonFox GameBoy" FontSize="22" FontWeight="Black" FontStyle="Italic" Foreground="{StaticResource Ink}" Margin="2,10,0,8" />
+                <!-- The pad: the cross on the left, SELECT and START in the middle, B and A on the right. -->
+                <Grid Grid.Row="2" Height="168">
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="*" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                    <Grid Width="120" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,4,0,0">
+                        <Grid.RowDefinitions><RowDefinition /><RowDefinition /><RowDefinition /></Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition /><ColumnDefinition /></Grid.ColumnDefinitions>
+                        <Rectangle Grid.Row="1" Grid.Column="1" Fill="#2A2B2E" Margin="-1" />
+                        <Ellipse Grid.Row="1" Grid.Column="1" Width="16" Height="16" Fill="#222326" />
+                        <Button x:Name="UpButton" Grid.Row="0" Grid.Column="1" Tag="{x:Static devices:JoypadButton.Up}" Style="{StaticResource DirectionButton}" AutomationProperties.Name="Up">
+                            <Path Data="M 0,8 L 6,0 L 12,8 Z" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+                        </Button>
+                        <Button x:Name="LeftButton" Grid.Row="1" Grid.Column="0" Tag="{x:Static devices:JoypadButton.Left}" Style="{StaticResource DirectionButton}" AutomationProperties.Name="Left">
+                            <Path Data="M 8,0 L 0,6 L 8,12 Z" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+                        </Button>
+                        <Button x:Name="DownButton" Grid.Row="2" Grid.Column="1" Tag="{x:Static devices:JoypadButton.Down}" Style="{StaticResource DirectionButton}" AutomationProperties.Name="Down">
+                            <Path Data="M 0,0 L 6,8 L 12,0 Z" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+                        </Button>
+                        <Button x:Name="RightButton" Grid.Row="1" Grid.Column="2" Tag="{x:Static devices:JoypadButton.Right}" Style="{StaticResource DirectionButton}" AutomationProperties.Name="Right">
+                            <Path Data="M 0,0 L 8,6 L 0,12 Z" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,8">
+                        <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition /></Grid.ColumnDefinitions>
+                        <StackPanel Margin="0,0,10,0">
+                            <Button x:Name="SelectButton" Tag="{x:Static devices:JoypadButton.Select}" Style="{StaticResource PillButton}" AutomationProperties.Name="Select">
+                                <Button.RenderTransform><RotateTransform Angle="-25" CenterX="26" CenterY="7.5" /></Button.RenderTransform>
+                            </Button>
+                            <TextBlock Text="SELECT" Style="{StaticResource Label}" FontSize="9" Margin="0,6,0,0" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Button x:Name="StartButton" Tag="{x:Static devices:JoypadButton.Start}" Style="{StaticResource PillButton}" AutomationProperties.Name="Start">
+                                <Button.RenderTransform><RotateTransform Angle="-25" CenterX="26" CenterY="7.5" /></Button.RenderTransform>
+                            </Button>
+                            <TextBlock Text="START" Style="{StaticResource Label}" FontSize="9" Margin="0,6,0,0" />
+                        </StackPanel>
+                    </Grid>
+                    <Canvas Grid.Column="2" Width="144" Height="110" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,0,0">
+                        <StackPanel Canvas.Left="4" Canvas.Top="38">
+                            <Button x:Name="BButton" Tag="{x:Static devices:JoypadButton.B}" Style="{StaticResource FaceButton}" AutomationProperties.Name="B" />
+                            <TextBlock Text="B" Style="{StaticResource Label}" Margin="0,4,0,0" />
+                        </StackPanel>
+                        <StackPanel Canvas.Left="80" Canvas.Top="8">
+                            <Button x:Name="AButton" Tag="{x:Static devices:JoypadButton.A}" Style="{StaticResource FaceButton}" AutomationProperties.Name="A" />
+                            <TextBlock Text="A" Style="{StaticResource Label}" Margin="0,4,0,0" />
+                        </StackPanel>
+                    </Canvas>
+                    <!-- The speaker grille. -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,6,0">
+                        <StackPanel.LayoutTransform><RotateTransform Angle="-30" /></StackPanel.LayoutTransform>
+                        <Rectangle Width="5" Height="36" RadiusX="2.5" RadiusY="2.5" Fill="#A4A79F" Margin="4,0" />
+                        <Rectangle Width="5" Height="36" RadiusX="2.5" RadiusY="2.5" Fill="#A4A79F" Margin="4,0" />
+                        <Rectangle Width="5" Height="36" RadiusX="2.5" RadiusY="2.5" Fill="#A4A79F" Margin="4,0" />
+                        <Rectangle Width="5" Height="36" RadiusX="2.5" RadiusY="2.5" Fill="#A4A79F" Margin="4,0" />
+                        <Rectangle Width="5" Height="36" RadiusX="2.5" RadiusY="2.5" Fill="#A4A79F" Margin="4,0" />
+                        <Rectangle Width="5" Height="36" RadiusX="2.5" RadiusY="2.5" Fill="#A4A79F" Margin="4,0" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <!-- The side area: what the handheld has no place for. -->
+        <Border Grid.Column="1" Margin="7,14,14,14" Background="{StaticResource Side}" CornerRadius="8" Padding="14,12,10,12">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="0,0,4,0">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="8,0,0,0">
+                            <TextBlock x:Name="FpsText" Text="FPS 0.0" FontSize="13" FontWeight="SemiBold" Foreground="{StaticResource SideText}" HorizontalAlignment="Right" />
+                            <TextBlock x:Name="StateText" Text="No ROM" FontSize="11" Foreground="{StaticResource SideMuted}" HorizontalAlignment="Right" />
+                        </StackPanel>
+                        <TextBlock x:Name="RomTitle" Text="No ROM" FontSize="13" FontWeight="SemiBold"
+                                   Foreground="{StaticResource SideText}" TextWrapping="Wrap" />
+                    </DockPanel>
+                    <TextBlock Text="ROM" Style="{StaticResource Heading}" />
+                    <WrapPanel>
+                        <Button x:Name="OpenButton" Content="Open ROM" Click="OpenRom" Style="{StaticResource ToolbarButton}" />
+                        <ComboBox x:Name="DemoChoice" Width="128" Margin="0,0,3,5" FontSize="12" VerticalContentAlignment="Center" Focusable="False"
+                                  AutomationProperties.Name="Demo" />
+                        <Button x:Name="DemoButton" Content="Run demo" Click="OpenDemo" Style="{StaticResource ToolbarButton}" />
+                    </WrapPanel>
+                    <!-- How a ROM starts: from the post-boot state, or from power-on with a boot ROM file. -->
+                    <WrapPanel>
+                        <Button x:Name="BootRomButton" Content="Choose boot ROM" Click="ChooseBootRom" Style="{StaticResource ToolbarButton}" />
+                        <Button x:Name="BootBypassButton" Content="No boot ROM" Click="UseBootBypass" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                    </WrapPanel>
+                    <TextBlock x:Name="BootRomText" Style="{StaticResource Small}" Text="Boot ROM: none" />
+                    <TextBlock Text="Run" Style="{StaticResource Heading}" />
+                    <WrapPanel>
+                        <Button x:Name="ResumeButton" Content="Resume" Click="Resume" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                        <Button x:Name="PauseButton" Content="Pause" Click="Pause" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                        <Button x:Name="ResetButton" Content="Reset" Click="Reset" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                        <Button x:Name="RewindButton" Content="Rewind" Click="Rewind" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                    </WrapPanel>
+                    <TextBlock Text="Save" Style="{StaticResource Heading}" />
+                    <WrapPanel>
+                        <Button x:Name="SaveButton" Content="Save RAM" Click="SaveRam" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                        <Button x:Name="CaptureStateButton" Content="Save state" Click="CaptureState" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                        <Button x:Name="RestoreStateButton" Content="Load state" Click="RestoreState" IsEnabled="False" Style="{StaticResource ToolbarButton}" />
+                        <ComboBox x:Name="SlotChoice" FontSize="12" Width="58" Margin="0,0,6,5" Focusable="False" VerticalContentAlignment="Center"
+                                  SelectionChanged="SlotChanged" AutomationProperties.Name="State slot" />
+                    </WrapPanel>
+                    <TextBlock x:Name="SlotText" Style="{StaticResource Small}" />
+                    <TextBlock x:Name="SaveText" Style="{StaticResource Small}" Margin="0,2,0,0" />
+                    <TextBlock Text="Sound" Style="{StaticResource Heading}" />
+                    <WrapPanel>
+                        <CheckBox x:Name="MuteCheckBox" Content="Mute" FontSize="12" Foreground="{StaticResource SideText}" VerticalAlignment="Center"
+                                  Margin="0,0,10,0" Focusable="False" Checked="ApplyAudioSettings" Unchecked="ApplyAudioSettings" />
+                        <Slider x:Name="VolumeSlider" Width="110" Minimum="0" Maximum="100" Value="70" SmallChange="5" LargeChange="10"
+                                IsMoveToPointEnabled="True" Focusable="False" VerticalAlignment="Center" ValueChanged="ApplyAudioSettings"
+                                AutomationProperties.Name="Volume" />
+                        <TextBlock x:Name="VolumeText" Text="70%" FontSize="12" Foreground="{StaticResource SideText}" Width="38" Margin="6,0,4,0" VerticalAlignment="Center" />
+                        <Button x:Name="AudioRetryButton" Content="Retry audio" Click="RetryAudio" IsEnabled="False" Style="{StaticResource ToolbarButton}" Margin="0" />
+                    </WrapPanel>
+                    <TextBlock x:Name="AudioErrorText" Style="{StaticResource Small}" Foreground="#F2A0A8" Margin="0,5,0,0" Visibility="Collapsed" />
+                    <TextBlock Text="Display" Style="{StaticResource Heading}" />
+                    <WrapPanel>
+                        <TextBlock Text="Renderer" FontSize="12" Foreground="{StaticResource SideText}" VerticalAlignment="Center" Margin="0,0,8,5" />
+                        <ComboBox x:Name="RendererChoice" Width="210" Margin="0,0,0,5" FontSize="12" VerticalContentAlignment="Center" Focusable="False"
+                                  SelectionChanged="RendererChanged" AutomationProperties.Name="Renderer" />
+                    </WrapPanel>
+                    <TextBlock Text="Message" Style="{StaticResource Heading}" />
+                    <TextBlock x:Name="MessageText" Style="{StaticResource Small}" Foreground="#E8D7A8" />
+                    <TextBlock Text="Arrows · A: Z / J · B: X / K · SELECT: Back / Shift · START: Enter" Style="{StaticResource Small}" Margin="0,6,0,0" />
+                    <!-- Debugging (closed by default; its rows are formatted only while it is open). -->
+                    <Expander x:Name="DebugExpander" Header="Debug" Foreground="{StaticResource SideText}" Margin="0,14,0,0"
+                              Expanded="DebugExpanderChanged" Collapsed="DebugExpanderChanged" AutomationProperties.Name="Debug">
+                        <StackPanel Margin="0,6,0,0">
+                            <Button x:Name="StepButton" Content="Step" Click="Step" IsEnabled="False" Style="{StaticResource ToolbarButton}" HorizontalAlignment="Left" />
+                            <TextBlock x:Name="RegistersText" Style="{StaticResource Mono}" />
+                            <TextBlock x:Name="VideoStatusText" Style="{StaticResource Mono}" />
+                            <TextBlock x:Name="DeviceStatusText" Style="{StaticResource Mono}" />
+                            <TextBlock x:Name="SnapshotText" Text="T=0" Style="{StaticResource Mono}" />
+                            <TextBlock x:Name="AudioText" Text="Audio: stopped" Style="{StaticResource Small}" Margin="0,4,0,0" />
+                            <Expander x:Name="MemoryExpander" Header="Memory" Foreground="{StaticResource SideText}" Margin="0,8,0,0" Expanded="MemoryExpanded">
+                                <StackPanel>
+                                    <WrapPanel Margin="0,5,0,4">
+                                        <TextBlock Text="Start (hex)" Foreground="{StaticResource SideText}" VerticalAlignment="Center" />
+                                        <TextBox x:Name="MemoryAddress" Text="C000" Width="56" Margin="6,0,10,0" GotKeyboardFocus="MemoryFocused" AutomationProperties.Name="Memory start" />
+                                        <TextBlock Text="Length" Foreground="{StaticResource SideText}" VerticalAlignment="Center" />
+                                        <TextBox x:Name="MemoryLength" Text="256" Width="40" Margin="6,0,10,0" GotKeyboardFocus="MemoryFocused" AutomationProperties.Name="Memory length" />
+                                        <Button x:Name="MemoryReadButton" Content="Read" Click="ReadMemory" IsEnabled="False" Style="{StaticResource ToolbarButton}" Margin="0" />
+                                    </WrapPanel>
+                                    <TextBlock x:Name="MemoryTimeText" Style="{StaticResource Small}" />
+                                    <TextBox x:Name="MemoryText" IsReadOnly="True" FontFamily="Consolas" FontSize="11" Height="150" Margin="0,4,0,0"
+                                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" GotKeyboardFocus="MemoryFocused" AutomationProperties.Name="Memory contents" />
+                                </StackPanel>
+                            </Expander>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,2506 @@
+{
+  "rom": "cpu-instrs.gb",
+  "sha256": "2086d1a61bb86e69431abfe8b96573cf718ea3264a2365d2aa6c01d852d35b86",
+  "reference": "sameboy",
+  "frames": 600,
+  "maxTCycles": 200000000,
+  "cases": [
+    {
+      "name": "NOP",
+      "offset": 0,
+      "length": 2
+    },
+    {
+      "name": "LD BC,n16",
+      "offset": 2,
+      "length": 2
+    },
+    {
+      "name": "LD (BC),A",
+      "offset": 4,
+      "length": 2
+    },
+    {
+      "name": "INC BC",
+      "offset": 6,
+      "length": 2
+    },
+    {
+      "name": "INC B",
+      "offset": 8,
+      "length": 2
+    },
+    {
+      "name": "DEC B",
+      "offset": 10,
+      "length": 2
+    },
+    {
+      "name": "LD B,n8",
+      "offset": 12,
+      "length": 2
+    },
+    {
+      "name": "RLCA",
+      "offset": 14,
+      "length": 2
+    },
+    {
+      "name": "LD (a16),SP",
+      "offset": 16,
+      "length": 2
+    },
+    {
+      "name": "ADD HL,BC",
+      "offset": 18,
+      "length": 2
+    },
+    {
+      "name": "LD A,(BC)",
+      "offset": 20,
+      "length": 2
+    },
+    {
+      "name": "DEC BC",
+      "offset": 22,
+      "length": 2
+    },
+    {
+      "name": "INC C",
+      "offset": 24,
+      "length": 2
+    },
+    {
+      "name": "DEC C",
+      "offset": 26,
+      "length": 2
+    },
+    {
+      "name": "LD C,n8",
+      "offset": 28,
+      "length": 2
+    },
+    {
+      "name": "RRCA",
+      "offset": 30,
+      "length": 2
+    },
+    {
+      "name": "LD DE,n16",
+      "offset": 32,
+      "length": 2
+    },
+    {
+      "name": "LD (DE),A",
+      "offset": 34,
+      "length": 2
+    },
+    {
+      "name": "INC DE",
+      "offset": 36,
+      "length": 2
+    },
+    {
+      "name": "INC D",
+      "offset": 38,
+      "length": 2
+    },
+    {
+      "name": "DEC D",
+      "offset": 40,
+      "length": 2
+    },
+    {
+      "name": "LD D,n8",
+      "offset": 42,
+      "length": 2
+    },
+    {
+      "name": "RLA",
+      "offset": 44,
+      "length": 2
+    },
+    {
+      "name": "JR e8",
+      "offset": 46,
+      "length": 2
+    },
+    {
+      "name": "ADD HL,DE",
+      "offset": 48,
+      "length": 2
+    },
+    {
+      "name": "LD A,(DE)",
+      "offset": 50,
+      "length": 2
+    },
+    {
+      "name": "DEC DE",
+      "offset": 52,
+      "length": 2
+    },
+    {
+      "name": "INC E",
+      "offset": 54,
+      "length": 2
+    },
+    {
+      "name": "DEC E",
+      "offset": 56,
+      "length": 2
+    },
+    {
+      "name": "LD E,n8",
+      "offset": 58,
+      "length": 2
+    },
+    {
+      "name": "RRA",
+      "offset": 60,
+      "length": 2
+    },
+    {
+      "name": "JR NZ,e8",
+      "offset": 62,
+      "length": 2
+    },
+    {
+      "name": "LD HL,n16",
+      "offset": 64,
+      "length": 2
+    },
+    {
+      "name": "LD (HL+),A",
+      "offset": 66,
+      "length": 2
+    },
+    {
+      "name": "INC HL",
+      "offset": 68,
+      "length": 2
+    },
+    {
+      "name": "INC H",
+      "offset": 70,
+      "length": 2
+    },
+    {
+      "name": "DEC H",
+      "offset": 72,
+      "length": 2
+    },
+    {
+      "name": "LD H,n8",
+      "offset": 74,
+      "length": 2
+    },
+    {
+      "name": "DAA",
+      "offset": 76,
+      "length": 2
+    },
+    {
+      "name": "JR Z,e8",
+      "offset": 78,
+      "length": 2
+    },
+    {
+      "name": "ADD HL,HL",
+      "offset": 80,
+      "length": 2
+    },
+    {
+      "name": "LD A,(HL+)",
+      "offset": 82,
+      "length": 2
+    },
+    {
+      "name": "DEC HL",
+      "offset": 84,
+      "length": 2
+    },
+    {
+      "name": "INC L",
+      "offset": 86,
+      "length": 2
+    },
+    {
+      "name": "DEC L",
+      "offset": 88,
+      "length": 2
+    },
+    {
+      "name": "LD L,n8",
+      "offset": 90,
+      "length": 2
+    },
+    {
+      "name": "CPL",
+      "offset": 92,
+      "length": 2
+    },
+    {
+      "name": "JR NC,e8",
+      "offset": 94,
+      "length": 2
+    },
+    {
+      "name": "LD SP,n16",
+      "offset": 96,
+      "length": 2
+    },
+    {
+      "name": "LD (HL-),A",
+      "offset": 98,
+      "length": 2
+    },
+    {
+      "name": "INC SP",
+      "offset": 100,
+      "length": 2
+    },
+    {
+      "name": "INC (HL)",
+      "offset": 102,
+      "length": 2
+    },
+    {
+      "name": "DEC (HL)",
+      "offset": 104,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),n8",
+      "offset": 106,
+      "length": 2
+    },
+    {
+      "name": "SCF",
+      "offset": 108,
+      "length": 2
+    },
+    {
+      "name": "JR C,e8",
+      "offset": 110,
+      "length": 2
+    },
+    {
+      "name": "ADD HL,SP",
+      "offset": 112,
+      "length": 2
+    },
+    {
+      "name": "LD A,(HL-)",
+      "offset": 114,
+      "length": 2
+    },
+    {
+      "name": "DEC SP",
+      "offset": 116,
+      "length": 2
+    },
+    {
+      "name": "INC A",
+      "offset": 118,
+      "length": 2
+    },
+    {
+      "name": "DEC A",
+      "offset": 120,
+      "length": 2
+    },
+    {
+      "name": "LD A,n8",
+      "offset": 122,
+      "length": 2
+    },
+    {
+      "name": "CCF",
+      "offset": 124,
+      "length": 2
+    },
+    {
+      "name": "LD B,B",
+      "offset": 126,
+      "length": 2
+    },
+    {
+      "name": "LD B,C",
+      "offset": 128,
+      "length": 2
+    },
+    {
+      "name": "LD B,D",
+      "offset": 130,
+      "length": 2
+    },
+    {
+      "name": "LD B,E",
+      "offset": 132,
+      "length": 2
+    },
+    {
+      "name": "LD B,H",
+      "offset": 134,
+      "length": 2
+    },
+    {
+      "name": "LD B,L",
+      "offset": 136,
+      "length": 2
+    },
+    {
+      "name": "LD B,(HL)",
+      "offset": 138,
+      "length": 2
+    },
+    {
+      "name": "LD B,A",
+      "offset": 140,
+      "length": 2
+    },
+    {
+      "name": "LD C,B",
+      "offset": 142,
+      "length": 2
+    },
+    {
+      "name": "LD C,C",
+      "offset": 144,
+      "length": 2
+    },
+    {
+      "name": "LD C,D",
+      "offset": 146,
+      "length": 2
+    },
+    {
+      "name": "LD C,E",
+      "offset": 148,
+      "length": 2
+    },
+    {
+      "name": "LD C,H",
+      "offset": 150,
+      "length": 2
+    },
+    {
+      "name": "LD C,L",
+      "offset": 152,
+      "length": 2
+    },
+    {
+      "name": "LD C,(HL)",
+      "offset": 154,
+      "length": 2
+    },
+    {
+      "name": "LD C,A",
+      "offset": 156,
+      "length": 2
+    },
+    {
+      "name": "LD D,B",
+      "offset": 158,
+      "length": 2
+    },
+    {
+      "name": "LD D,C",
+      "offset": 160,
+      "length": 2
+    },
+    {
+      "name": "LD D,D",
+      "offset": 162,
+      "length": 2
+    },
+    {
+      "name": "LD D,E",
+      "offset": 164,
+      "length": 2
+    },
+    {
+      "name": "LD D,H",
+      "offset": 166,
+      "length": 2
+    },
+    {
+      "name": "LD D,L",
+      "offset": 168,
+      "length": 2
+    },
+    {
+      "name": "LD D,(HL)",
+      "offset": 170,
+      "length": 2
+    },
+    {
+      "name": "LD D,A",
+      "offset": 172,
+      "length": 2
+    },
+    {
+      "name": "LD E,B",
+      "offset": 174,
+      "length": 2
+    },
+    {
+      "name": "LD E,C",
+      "offset": 176,
+      "length": 2
+    },
+    {
+      "name": "LD E,D",
+      "offset": 178,
+      "length": 2
+    },
+    {
+      "name": "LD E,E",
+      "offset": 180,
+      "length": 2
+    },
+    {
+      "name": "LD E,H",
+      "offset": 182,
+      "length": 2
+    },
+    {
+      "name": "LD E,L",
+      "offset": 184,
+      "length": 2
+    },
+    {
+      "name": "LD E,(HL)",
+      "offset": 186,
+      "length": 2
+    },
+    {
+      "name": "LD E,A",
+      "offset": 188,
+      "length": 2
+    },
+    {
+      "name": "LD H,B",
+      "offset": 190,
+      "length": 2
+    },
+    {
+      "name": "LD H,C",
+      "offset": 192,
+      "length": 2
+    },
+    {
+      "name": "LD H,D",
+      "offset": 194,
+      "length": 2
+    },
+    {
+      "name": "LD H,E",
+      "offset": 196,
+      "length": 2
+    },
+    {
+      "name": "LD H,H",
+      "offset": 198,
+      "length": 2
+    },
+    {
+      "name": "LD H,L",
+      "offset": 200,
+      "length": 2
+    },
+    {
+      "name": "LD H,(HL)",
+      "offset": 202,
+      "length": 2
+    },
+    {
+      "name": "LD H,A",
+      "offset": 204,
+      "length": 2
+    },
+    {
+      "name": "LD L,B",
+      "offset": 206,
+      "length": 2
+    },
+    {
+      "name": "LD L,C",
+      "offset": 208,
+      "length": 2
+    },
+    {
+      "name": "LD L,D",
+      "offset": 210,
+      "length": 2
+    },
+    {
+      "name": "LD L,E",
+      "offset": 212,
+      "length": 2
+    },
+    {
+      "name": "LD L,H",
+      "offset": 214,
+      "length": 2
+    },
+    {
+      "name": "LD L,L",
+      "offset": 216,
+      "length": 2
+    },
+    {
+      "name": "LD L,(HL)",
+      "offset": 218,
+      "length": 2
+    },
+    {
+      "name": "LD L,A",
+      "offset": 220,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),B",
+      "offset": 222,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),C",
+      "offset": 224,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),D",
+      "offset": 226,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),E",
+      "offset": 228,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),H",
+      "offset": 230,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),L",
+      "offset": 232,
+      "length": 2
+    },
+    {
+      "name": "LD (HL),A",
+      "offset": 234,
+      "length": 2
+    },
+    {
+      "name": "LD A,B",
+      "offset": 236,
+      "length": 2
+    },
+    {
+      "name": "LD A,C",
+      "offset": 238,
+      "length": 2
+    },
+    {
+      "name": "LD A,D",
+      "offset": 240,
+      "length": 2
+    },
+    {
+      "name": "LD A,E",
+      "offset": 242,
+      "length": 2
+    },
+    {
+      "name": "LD A,H",
+      "offset": 244,
+      "length": 2
+    },
+    {
+      "name": "LD A,L",
+      "offset": 246,
+      "length": 2
+    },
+    {
+      "name": "LD A,(HL)",
+      "offset": 248,
+      "length": 2
+    },
+    {
+      "name": "LD A,A",
+      "offset": 250,
+      "length": 2
+    },
+    {
+      "name": "ADD A,B",
+      "offset": 252,
+      "length": 2
+    },
+    {
+      "name": "ADD A,C",
+      "offset": 254,
+      "length": 2
+    },
+    {
+      "name": "ADD A,D",
+      "offset": 256,
+      "length": 2
+    },
+    {
+      "name": "ADD A,E",
+      "offset": 258,
+      "length": 2
+    },
+    {
+      "name": "ADD A,H",
+      "offset": 260,
+      "length": 2
+    },
+    {
+      "name": "ADD A,L",
+      "offset": 262,
+      "length": 2
+    },
+    {
+      "name": "ADD A,(HL)",
+      "offset": 264,
+      "length": 2
+    },
+    {
+      "name": "ADD A,A",
+      "offset": 266,
+      "length": 2
+    },
+    {
+      "name": "ADC A,B",
+      "offset": 268,
+      "length": 2
+    },
+    {
+      "name": "ADC A,C",
+      "offset": 270,
+      "length": 2
+    },
+    {
+      "name": "ADC A,D",
+      "offset": 272,
+      "length": 2
+    },
+    {
+      "name": "ADC A,E",
+      "offset": 274,
+      "length": 2
+    },
+    {
+      "name": "ADC A,H",
+      "offset": 276,
+      "length": 2
+    },
+    {
+      "name": "ADC A,L",
+      "offset": 278,
+      "length": 2
+    },
+    {
+      "name": "ADC A,(HL)",
+      "offset": 280,
+      "length": 2
+    },
+    {
+      "name": "ADC A,A",
+      "offset": 282,
+      "length": 2
+    },
+    {
+      "name": "SUB B",
+      "offset": 284,
+      "length": 2
+    },
+    {
+      "name": "SUB C",
+      "offset": 286,
+      "length": 2
+    },
+    {
+      "name": "SUB D",
+      "offset": 288,
+      "length": 2
+    },
+    {
+      "name": "SUB E",
+      "offset": 290,
+      "length": 2
+    },
+    {
+      "name": "SUB H",
+      "offset": 292,
+      "length": 2
+    },
+    {
+      "name": "SUB L",
+      "offset": 294,
+      "length": 2
+    },
+    {
+      "name": "SUB (HL)",
+      "offset": 296,
+      "length": 2
+    },
+    {
+      "name": "SUB A",
+      "offset": 298,
+      "length": 2
+    },
+    {
+      "name": "SBC A,B",
+      "offset": 300,
+      "length": 2
+    },
+    {
+      "name": "SBC A,C",
+      "offset": 302,
+      "length": 2
+    },
+    {
+      "name": "SBC A,D",
+      "offset": 304,
+      "length": 2
+    },
+    {
+      "name": "SBC A,E",
+      "offset": 306,
+      "length": 2
+    },
+    {
+      "name": "SBC A,H",
+      "offset": 308,
+      "length": 2
+    },
+    {
+      "name": "SBC A,L",
+      "offset": 310,
+      "length": 2
+    },
+    {
+      "name": "SBC A,(HL)",
+      "offset": 312,
+      "length": 2
+    },
+    {
+      "name": "SBC A,A",
+      "offset": 314,
+      "length": 2
+    },
+    {
+      "name": "AND B",
+      "offset": 316,
+      "length": 2
+    },
+    {
+      "name": "AND C",
+      "offset": 318,
+      "length": 2
+    },
+    {
+      "name": "AND D",
+      "offset": 320,
+      "length": 2
+    },
+    {
+      "name": "AND E",
+      "offset": 322,
+      "length": 2
+    },
+    {
+      "name": "AND H",
+      "offset": 324,
+      "length": 2
+    },
+    {
+      "name": "AND L",
+      "offset": 326,
+      "length": 2
+    },
+    {
+      "name": "AND (HL)",
+      "offset": 328,
+      "length": 2
+    },
+    {
+      "name": "AND A",
+      "offset": 330,
+      "length": 2
+    },
+    {
+      "name": "XOR B",
+      "offset": 332,
+      "length": 2
+    },
+    {
+      "name": "XOR C",
+      "offset": 334,
+      "length": 2
+    },
+    {
+      "name": "XOR D",
+      "offset": 336,
+      "length": 2
+    },
+    {
+      "name": "XOR E",
+      "offset": 338,
+      "length": 2
+    },
+    {
+      "name": "XOR H",
+      "offset": 340,
+      "length": 2
+    },
+    {
+      "name": "XOR L",
+      "offset": 342,
+      "length": 2
+    },
+    {
+      "name": "XOR (HL)",
+      "offset": 344,
+      "length": 2
+    },
+    {
+      "name": "XOR A",
+      "offset": 346,
+      "length": 2
+    },
+    {
+      "name": "OR B",
+      "offset": 348,
+      "length": 2
+    },
+    {
+      "name": "OR C",
+      "offset": 350,
+      "length": 2
+    },
+    {
+      "name": "OR D",
+      "offset": 352,
+      "length": 2
+    },
+    {
+      "name": "OR E",
+      "offset": 354,
+      "length": 2
+    },
+    {
+      "name": "OR H",
+      "offset": 356,
+      "length": 2
+    },
+    {
+      "name": "OR L",
+      "offset": 358,
+      "length": 2
+    },
+    {
+      "name": "OR (HL)",
+      "offset": 360,
+      "length": 2
+    },
+    {
+      "name": "OR A",
+      "offset": 362,
+      "length": 2
+    },
+    {
+      "name": "CP B",
+      "offset": 364,
+      "length": 2
+    },
+    {
+      "name": "CP C",
+      "offset": 366,
+      "length": 2
+    },
+    {
+      "name": "CP D",
+      "offset": 368,
+      "length": 2
+    },
+    {
+      "name": "CP E",
+      "offset": 370,
+      "length": 2
+    },
+    {
+      "name": "CP H",
+      "offset": 372,
+      "length": 2
+    },
+    {
+      "name": "CP L",
+      "offset": 374,
+      "length": 2
+    },
+    {
+      "name": "CP (HL)",
+      "offset": 376,
+      "length": 2
+    },
+    {
+      "name": "CP A",
+      "offset": 378,
+      "length": 2
+    },
+    {
+      "name": "RET NZ",
+      "offset": 380,
+      "length": 2
+    },
+    {
+      "name": "POP BC",
+      "offset": 382,
+      "length": 2
+    },
+    {
+      "name": "JP NZ,a16",
+      "offset": 384,
+      "length": 2
+    },
+    {
+      "name": "JP a16",
+      "offset": 386,
+      "length": 2
+    },
+    {
+      "name": "CALL NZ,a16",
+      "offset": 388,
+      "length": 2
+    },
+    {
+      "name": "PUSH BC",
+      "offset": 390,
+      "length": 2
+    },
+    {
+      "name": "ADD A,n8",
+      "offset": 392,
+      "length": 2
+    },
+    {
+      "name": "RST $00",
+      "offset": 394,
+      "length": 2
+    },
+    {
+      "name": "RET Z",
+      "offset": 396,
+      "length": 2
+    },
+    {
+      "name": "RET",
+      "offset": 398,
+      "length": 2
+    },
+    {
+      "name": "JP Z,a16",
+      "offset": 400,
+      "length": 2
+    },
+    {
+      "name": "CALL Z,a16",
+      "offset": 402,
+      "length": 2
+    },
+    {
+      "name": "CALL a16",
+      "offset": 404,
+      "length": 2
+    },
+    {
+      "name": "ADC A,n8",
+      "offset": 406,
+      "length": 2
+    },
+    {
+      "name": "RST $08",
+      "offset": 408,
+      "length": 2
+    },
+    {
+      "name": "RET NC",
+      "offset": 410,
+      "length": 2
+    },
+    {
+      "name": "POP DE",
+      "offset": 412,
+      "length": 2
+    },
+    {
+      "name": "JP NC,a16",
+      "offset": 414,
+      "length": 2
+    },
+    {
+      "name": "CALL NC,a16",
+      "offset": 416,
+      "length": 2
+    },
+    {
+      "name": "PUSH DE",
+      "offset": 418,
+      "length": 2
+    },
+    {
+      "name": "SUB n8",
+      "offset": 420,
+      "length": 2
+    },
+    {
+      "name": "RST $10",
+      "offset": 422,
+      "length": 2
+    },
+    {
+      "name": "RET C",
+      "offset": 424,
+      "length": 2
+    },
+    {
+      "name": "RETI",
+      "offset": 426,
+      "length": 2
+    },
+    {
+      "name": "JP C,a16",
+      "offset": 428,
+      "length": 2
+    },
+    {
+      "name": "CALL C,a16",
+      "offset": 430,
+      "length": 2
+    },
+    {
+      "name": "SBC A,n8",
+      "offset": 432,
+      "length": 2
+    },
+    {
+      "name": "RST $18",
+      "offset": 434,
+      "length": 2
+    },
+    {
+      "name": "LDH (a8),A",
+      "offset": 436,
+      "length": 2
+    },
+    {
+      "name": "POP HL",
+      "offset": 438,
+      "length": 2
+    },
+    {
+      "name": "LD (C),A",
+      "offset": 440,
+      "length": 2
+    },
+    {
+      "name": "PUSH HL",
+      "offset": 442,
+      "length": 2
+    },
+    {
+      "name": "AND n8",
+      "offset": 444,
+      "length": 2
+    },
+    {
+      "name": "RST $20",
+      "offset": 446,
+      "length": 2
+    },
+    {
+      "name": "ADD SP,e8",
+      "offset": 448,
+      "length": 2
+    },
+    {
+      "name": "JP HL",
+      "offset": 450,
+      "length": 2
+    },
+    {
+      "name": "LD (a16),A",
+      "offset": 452,
+      "length": 2
+    },
+    {
+      "name": "XOR n8",
+      "offset": 454,
+      "length": 2
+    },
+    {
+      "name": "RST $28",
+      "offset": 456,
+      "length": 2
+    },
+    {
+      "name": "LDH A,(a8)",
+      "offset": 458,
+      "length": 2
+    },
+    {
+      "name": "POP AF",
+      "offset": 460,
+      "length": 2
+    },
+    {
+      "name": "LD A,(C)",
+      "offset": 462,
+      "length": 2
+    },
+    {
+      "name": "DI",
+      "offset": 464,
+      "length": 2
+    },
+    {
+      "name": "PUSH AF",
+      "offset": 466,
+      "length": 2
+    },
+    {
+      "name": "OR n8",
+      "offset": 468,
+      "length": 2
+    },
+    {
+      "name": "RST $30",
+      "offset": 470,
+      "length": 2
+    },
+    {
+      "name": "LD HL,SP+e8",
+      "offset": 472,
+      "length": 2
+    },
+    {
+      "name": "LD SP,HL",
+      "offset": 474,
+      "length": 2
+    },
+    {
+      "name": "LD A,(a16)",
+      "offset": 476,
+      "length": 2
+    },
+    {
+      "name": "EI",
+      "offset": 478,
+      "length": 2
+    },
+    {
+      "name": "CP n8",
+      "offset": 480,
+      "length": 2
+    },
+    {
+      "name": "RST $38",
+      "offset": 482,
+      "length": 2
+    },
+    {
+      "name": "RLC B",
+      "offset": 484,
+      "length": 2
+    },
+    {
+      "name": "RLC C",
+      "offset": 486,
+      "length": 2
+    },
+    {
+      "name": "RLC D",
+      "offset": 488,
+      "length": 2
+    },
+    {
+      "name": "RLC E",
+      "offset": 490,
+      "length": 2
+    },
+    {
+      "name": "RLC H",
+      "offset": 492,
+      "length": 2
+    },
+    {
+      "name": "RLC L",
+      "offset": 494,
+      "length": 2
+    },
+    {
+      "name": "RLC (HL)",
+      "offset": 496,
+      "length": 2
+    },
+    {
+      "name": "RLC A",
+      "offset": 498,
+      "length": 2
+    },
+    {
+      "name": "RRC B",
+      "offset": 500,
+      "length": 2
+    },
+    {
+      "name": "RRC C",
+      "offset": 502,
+      "length": 2
+    },
+    {
+      "name": "RRC D",
+      "offset": 504,
+      "length": 2
+    },
+    {
+      "name": "RRC E",
+      "offset": 506,
+      "length": 2
+    },
+    {
+      "name": "RRC H",
+      "offset": 508,
+      "length": 2
+    },
+    {
+      "name": "RRC L",
+      "offset": 510,
+      "length": 2
+    },
+    {
+      "name": "RRC (HL)",
+      "offset": 512,
+      "length": 2
+    },
+    {
+      "name": "RRC A",
+      "offset": 514,
+      "length": 2
+    },
+    {
+      "name": "RL B",
+      "offset": 516,
+      "length": 2
+    },
+    {
+      "name": "RL C",
+      "offset": 518,
+      "length": 2
+    },
+    {
+      "name": "RL D",
+      "offset": 520,
+      "length": 2
+    },
+    {
+      "name": "RL E",
+      "offset": 522,
+      "length": 2
+    },
+    {
+      "name": "RL H",
+      "offset": 524,
+      "length": 2
+    },
+    {
+      "name": "RL L",
+      "offset": 526,
+      "length": 2
+    },
+    {
+      "name": "RL (HL)",
+      "offset": 528,
+      "length": 2
+    },
+    {
+      "name": "RL A",
+      "offset": 530,
+      "length": 2
+    },
+    {
+      "name": "RR B",
+      "offset": 532,
+      "length": 2
+    },
+    {
+      "name": "RR C",
+      "offset": 534,
+      "length": 2
+    },
+    {
+      "name": "RR D",
+      "offset": 536,
+      "length": 2
+    },
+    {
+      "name": "RR E",
+      "offset": 538,
+      "length": 2
+    },
+    {
+      "name": "RR H",
+      "offset": 540,
+      "length": 2
+    },
+    {
+      "name": "RR L",
+      "offset": 542,
+      "length": 2
+    },
+    {
+      "name": "RR (HL)",
+      "offset": 544,
+      "length": 2
+    },
+    {
+      "name": "RR A",
+      "offset": 546,
+      "length": 2
+    },
+    {
+      "name": "SLA B",
+      "offset": 548,
+      "length": 2
+    },
+    {
+      "name": "SLA C",
+      "offset": 550,
+      "length": 2
+    },
+    {
+      "name": "SLA D",
+      "offset": 552,
+      "length": 2
+    },
+    {
+      "name": "SLA E",
+      "offset": 554,
+      "length": 2
+    },
+    {
+      "name": "SLA H",
+      "offset": 556,
+      "length": 2
+    },
+    {
+      "name": "SLA L",
+      "offset": 558,
+      "length": 2
+    },
+    {
+      "name": "SLA (HL)",
+      "offset": 560,
+      "length": 2
+    },
+    {
+      "name": "SLA A",
+      "offset": 562,
+      "length": 2
+    },
+    {
+      "name": "SRA B",
+      "offset": 564,
+      "length": 2
+    },
+    {
+      "name": "SRA C",
+      "offset": 566,
+      "length": 2
+    },
+    {
+      "name": "SRA D",
+      "offset": 568,
+      "length": 2
+    },
+    {
+      "name": "SRA E",
+      "offset": 570,
+      "length": 2
+    },
+    {
+      "name": "SRA H",
+      "offset": 572,
+      "length": 2
+    },
+    {
+      "name": "SRA L",
+      "offset": 574,
+      "length": 2
+    },
+    {
+      "name": "SRA (HL)",
+      "offset": 576,
+      "length": 2
+    },
+    {
+      "name": "SRA A",
+      "offset": 578,
+      "length": 2
+    },
+    {
+      "name": "SWAP B",
+      "offset": 580,
+      "length": 2
+    },
+    {
+      "name": "SWAP C",
+      "offset": 582,
+      "length": 2
+    },
+    {
+      "name": "SWAP D",
+      "offset": 584,
+      "length": 2
+    },
+    {
+      "name": "SWAP E",
+      "offset": 586,
+      "length": 2
+    },
+    {
+      "name": "SWAP H",
+      "offset": 588,
+      "length": 2
+    },
+    {
+      "name": "SWAP L",
+      "offset": 590,
+      "length": 2
+    },
+    {
+      "name": "SWAP (HL)",
+      "offset": 592,
+      "length": 2
+    },
+    {
+      "name": "SWAP A",
+      "offset": 594,
+      "length": 2
+    },
+    {
+      "name": "SRL B",
+      "offset": 596,
+      "length": 2
+    },
+    {
+      "name": "SRL C",
+      "offset": 598,
+      "length": 2
+    },
+    {
+      "name": "SRL D",
+      "offset": 600,
+      "length": 2
+    },
+    {
+      "name": "SRL E",
+      "offset": 602,
+      "length": 2
+    },
+    {
+      "name": "SRL H",
+      "offset": 604,
+      "length": 2
+    },
+    {
+      "name": "SRL L",
+      "offset": 606,
+      "length": 2
+    },
+    {
+      "name": "SRL (HL)",
+      "offset": 608,
+      "length": 2
+    },
+    {
+      "name": "SRL A",
+      "offset": 610,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,B",
+      "offset": 612,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,C",
+      "offset": 614,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,D",
+      "offset": 616,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,E",
+      "offset": 618,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,H",
+      "offset": 620,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,L",
+      "offset": 622,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,(HL)",
+      "offset": 624,
+      "length": 2
+    },
+    {
+      "name": "BIT 0,A",
+      "offset": 626,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,B",
+      "offset": 628,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,C",
+      "offset": 630,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,D",
+      "offset": 632,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,E",
+      "offset": 634,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,H",
+      "offset": 636,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,L",
+      "offset": 638,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,(HL)",
+      "offset": 640,
+      "length": 2
+    },
+    {
+      "name": "BIT 1,A",
+      "offset": 642,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,B",
+      "offset": 644,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,C",
+      "offset": 646,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,D",
+      "offset": 648,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,E",
+      "offset": 650,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,H",
+      "offset": 652,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,L",
+      "offset": 654,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,(HL)",
+      "offset": 656,
+      "length": 2
+    },
+    {
+      "name": "BIT 2,A",
+      "offset": 658,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,B",
+      "offset": 660,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,C",
+      "offset": 662,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,D",
+      "offset": 664,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,E",
+      "offset": 666,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,H",
+      "offset": 668,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,L",
+      "offset": 670,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,(HL)",
+      "offset": 672,
+      "length": 2
+    },
+    {
+      "name": "BIT 3,A",
+      "offset": 674,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,B",
+      "offset": 676,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,C",
+      "offset": 678,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,D",
+      "offset": 680,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,E",
+      "offset": 682,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,H",
+      "offset": 684,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,L",
+      "offset": 686,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,(HL)",
+      "offset": 688,
+      "length": 2
+    },
+    {
+      "name": "BIT 4,A",
+      "offset": 690,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,B",
+      "offset": 692,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,C",
+      "offset": 694,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,D",
+      "offset": 696,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,E",
+      "offset": 698,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,H",
+      "offset": 700,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,L",
+      "offset": 702,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,(HL)",
+      "offset": 704,
+      "length": 2
+    },
+    {
+      "name": "BIT 5,A",
+      "offset": 706,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,B",
+      "offset": 708,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,C",
+      "offset": 710,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,D",
+      "offset": 712,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,E",
+      "offset": 714,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,H",
+      "offset": 716,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,L",
+      "offset": 718,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,(HL)",
+      "offset": 720,
+      "length": 2
+    },
+    {
+      "name": "BIT 6,A",
+      "offset": 722,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,B",
+      "offset": 724,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,C",
+      "offset": 726,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,D",
+      "offset": 728,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,E",
+      "offset": 730,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,H",
+      "offset": 732,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,L",
+      "offset": 734,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,(HL)",
+      "offset": 736,
+      "length": 2
+    },
+    {
+      "name": "BIT 7,A",
+      "offset": 738,
+      "length": 2
+    },
+    {
+      "name": "RES 0,B",
+      "offset": 740,
+      "length": 2
+    },
+    {
+      "name": "RES 0,C",
+      "offset": 742,
+      "length": 2
+    },
+    {
+      "name": "RES 0,D",
+      "offset": 744,
+      "length": 2
+    },
+    {
+      "name": "RES 0,E",
+      "offset": 746,
+      "length": 2
+    },
+    {
+      "name": "RES 0,H",
+      "offset": 748,
+      "length": 2
+    },
+    {
+      "name": "RES 0,L",
+      "offset": 750,
+      "length": 2
+    },
+    {
+      "name": "RES 0,(HL)",
+      "offset": 752,
+      "length": 2
+    },
+    {
+      "name": "RES 0,A",
+      "offset": 754,
+      "length": 2
+    },
+    {
+      "name": "RES 1,B",
+      "offset": 756,
+      "length": 2
+    },
+    {
+      "name": "RES 1,C",
+      "offset": 758,
+      "length": 2
+    },
+    {
+      "name": "RES 1,D",
+      "offset": 760,
+      "length": 2
+    },
+    {
+      "name": "RES 1,E",
+      "offset": 762,
+      "length": 2
+    },
+    {
+      "name": "RES 1,H",
+      "offset": 764,
+      "length": 2
+    },
+    {
+      "name": "RES 1,L",
+      "offset": 766,
+      "length": 2
+    },
+    {
+      "name": "RES 1,(HL)",
+      "offset": 768,
+      "length": 2
+    },
+    {
+      "name": "RES 1,A",
+      "offset": 770,
+      "length": 2
+    },
+    {
+      "name": "RES 2,B",
+      "offset": 772,
+      "length": 2
+    },
+    {
+      "name": "RES 2,C",
+      "offset": 774,
+      "length": 2
+    },
+    {
+      "name": "RES 2,D",
+      "offset": 776,
+      "length": 2
+    },
+    {
+      "name": "RES 2,E",
+      "offset": 778,
+      "length": 2
+    },
+    {
+      "name": "RES 2,H",
+      "offset": 780,
+      "length": 2
+    },
+    {
+      "name": "RES 2,L",
+      "offset": 782,
+      "length": 2
+    },
+    {
+      "name": "RES 2,(HL)",
+      "offset": 784,
+      "length": 2
+    },
+    {
+      "name": "RES 2,A",
+      "offset": 786,
+      "length": 2
+    },
+    {
+      "name": "RES 3,B",
+      "offset": 788,
+      "length": 2
+    },
+    {
+      "name": "RES 3,C",
+      "offset": 790,
+      "length": 2
+    },
+    {
+      "name": "RES 3,D",
+      "offset": 792,
+      "length": 2
+    },
+    {
+      "name": "RES 3,E",
+      "offset": 794,
+      "length": 2
+    },
+    {
+      "name": "RES 3,H",
+      "offset": 796,
+      "length": 2
+    },
+    {
+      "name": "RES 3,L",
+      "offset": 798,
+      "length": 2
+    },
+    {
+      "name": "RES 3,(HL)",
+      "offset": 800,
+      "length": 2
+    },
+    {
+      "name": "RES 3,A",
+      "offset": 802,
+      "length": 2
+    },
+    {
+      "name": "RES 4,B",
+      "offset": 804,
+      "length": 2
+    },
+    {
+      "name": "RES 4,C",
+      "offset": 806,
+      "length": 2
+    },
+    {
+      "name": "RES 4,D",
+      "offset": 808,
+      "length": 2
+    },
+    {
+      "name": "RES 4,E",
+      "offset": 810,
+      "length": 2
+    },
+    {
+      "name": "RES 4,H",
+      "offset": 812,
+      "length": 2
+    },
+    {
+      "name": "RES 4,L",
+      "offset": 814,
+      "length": 2
+    },
+    {
+      "name": "RES 4,(HL)",
+      "offset": 816,
+      "length": 2
+    },
+    {
+      "name": "RES 4,A",
+      "offset": 818,
+      "length": 2
+    },
+    {
+      "name": "RES 5,B",
+      "offset": 820,
+      "length": 2
+    },
+    {
+      "name": "RES 5,C",
+      "offset": 822,
+      "length": 2
+    },
+    {
+      "name": "RES 5,D",
+      "offset": 824,
+      "length": 2
+    },
+    {
+      "name": "RES 5,E",
+      "offset": 826,
+      "length": 2
+    },
+    {
+      "name": "RES 5,H",
+      "offset": 828,
+      "length": 2
+    },
+    {
+      "name": "RES 5,L",
+      "offset": 830,
+      "length": 2
+    },
+    {
+      "name": "RES 5,(HL)",
+      "offset": 832,
+      "length": 2
+    },
+    {
+      "name": "RES 5,A",
+      "offset": 834,
+      "length": 2
+    },
+    {
+      "name": "RES 6,B",
+      "offset": 836,
+      "length": 2
+    },
+    {
+      "name": "RES 6,C",
+      "offset": 838,
+      "length": 2
+    },
+    {
+      "name": "RES 6,D",
+      "offset": 840,
+      "length": 2
+    },
+    {
+      "name": "RES 6,E",
+      "offset": 842,
+      "length": 2
+    },
+    {
+      "name": "RES 6,H",
+      "offset": 844,
+      "length": 2
+    },
+    {
+      "name": "RES 6,L",
+      "offset": 846,
+      "length": 2
+    },
+    {
+      "name": "RES 6,(HL)",
+      "offset": 848,
+      "length": 2
+    },
+    {
+      "name": "RES 6,A",
+      "offset": 850,
+      "length": 2
+    },
+    {
+      "name": "RES 7,B",
+      "offset": 852,
+      "length": 2
+    },
+    {
+      "name": "RES 7,C",
+      "offset": 854,
+      "length": 2
+    },
+    {
+      "name": "RES 7,D",
+      "offset": 856,
+      "length": 2
+    },
+    {
+      "name": "RES 7,E",
+      "offset": 858,
+      "length": 2
+    },
+    {
+      "name": "RES 7,H",
+      "offset": 860,
+      "length": 2
+    },
+    {
+      "name": "RES 7,L",
+      "offset": 862,
+      "length": 2
+    },
+    {
+      "name": "RES 7,(HL)",
+      "offset": 864,
+      "length": 2
+    },
+    {
+      "name": "RES 7,A",
+      "offset": 866,
+      "length": 2
+    },
+    {
+      "name": "SET 0,B",
+      "offset": 868,
+      "length": 2
+    },
+    {
+      "name": "SET 0,C",
+      "offset": 870,
+      "length": 2
+    },
+    {
+      "name": "SET 0,D",
+      "offset": 872,
+      "length": 2
+    },
+    {
+      "name": "SET 0,E",
+      "offset": 874,
+      "length": 2
+    },
+    {
+      "name": "SET 0,H",
+      "offset": 876,
+      "length": 2
+    },
+    {
+      "name": "SET 0,L",
+      "offset": 878,
+      "length": 2
+    },
+    {
+      "name": "SET 0,(HL)",
+      "offset": 880,
+      "length": 2
+    },
+    {
+      "name": "SET 0,A",
+      "offset": 882,
+      "length": 2
+    },
+    {
+      "name": "SET 1,B",
+      "offset": 884,
+      "length": 2
+    },
+    {
+      "name": "SET 1,C",
+      "offset": 886,
+      "length": 2
+    },
+    {
+      "name": "SET 1,D",
+      "offset": 888,
+      "length": 2
+    },
+    {
+      "name": "SET 1,E",
+      "offset": 890,
+      "length": 2
+    },
+    {
+      "name": "SET 1,H",
+      "offset": 892,
+      "length": 2
+    },
+    {
+      "name": "SET 1,L",
+      "offset": 894,
+      "length": 2
+    },
+    {
+      "name": "SET 1,(HL)",
+      "offset": 896,
+      "length": 2
+    },
+    {
+      "name": "SET 1,A",
+      "offset": 898,
+      "length": 2
+    },
+    {
+      "name": "SET 2,B",
+      "offset": 900,
+      "length": 2
+    },
+    {
+      "name": "SET 2,C",
+      "offset": 902,
+      "length": 2
+    },
+    {
+      "name": "SET 2,D",
+      "offset": 904,
+      "length": 2
+    },
+    {
+      "name": "SET 2,E",
+      "offset": 906,
+      "length": 2
+    },
+    {
+      "name": "SET 2,H",
+      "offset": 908,
+      "length": 2
+    },
+    {
+      "name": "SET 2,L",
+      "offset": 910,
+      "length": 2
+    },
+    {
+      "name": "SET 2,(HL)",
+      "offset": 912,
+      "length": 2
+    },
+    {
+      "name": "SET 2,A",
+      "offset": 914,
+      "length": 2
+    },
+    {
+      "name": "SET 3,B",
+      "offset": 916,
+      "length": 2
+    },
+    {
+      "name": "SET 3,C",
+      "offset": 918,
+      "length": 2
+    },
+    {
+      "name": "SET 3,D",
+      "offset": 920,
+      "length": 2
+    },
+    {
+      "name": "SET 3,E",
+      "offset": 922,
+      "length": 2
+    },
+    {
+      "name": "SET 3,H",
+      "offset": 924,
+      "length": 2
+    },
+    {
+      "name": "SET 3,L",
+      "offset": 926,
+      "length": 2
+    },
+    {
+      "name": "SET 3,(HL)",
+      "offset": 928,
+      "length": 2
+    },
+    {
+      "name": "SET 3,A",
+      "offset": 930,
+      "length": 2
+    },
+    {
+      "name": "SET 4,B",
+      "offset": 932,
+      "length": 2
+    },
+    {
+      "name": "SET 4,C",
+      "offset": 934,
+      "length": 2
+    },
+    {
+      "name": "SET 4,D",
+      "offset": 936,
+      "length": 2
+    },
+    {
+      "name": "SET 4,E",
+      "offset": 938,
+      "length": 2
+    },
+    {
+      "name": "SET 4,H",
+      "offset": 940,
+      "length": 2
+    },
+    {
+      "name": "SET 4,L",
+      "offset": 942,
+      "length": 2
+    },
+    {
+      "name": "SET 4,(HL)",
+      "offset": 944,
+      "length": 2
+    },
+    {
+      "name": "SET 4,A",
+      "offset": 946,
+      "length": 2
+    },
+    {
+      "name": "SET 5,B",
+      "offset": 948,
+      "length": 2
+    },
+    {
+      "name": "SET 5,C",
+      "offset": 950,
+      "length": 2
+    },
+    {
+      "name": "SET 5,D",
+      "offset": 952,
+      "length": 2
+    },
+    {
+      "name": "SET 5,E",
+      "offset": 954,
+      "length": 2
+    },
+    {
+      "name": "SET 5,H",
+      "offset": 956,
+      "length": 2
+    },
+    {
+      "name": "SET 5,L",
+      "offset": 958,
+      "length": 2
+    },
+    {
+      "name": "SET 5,(HL)",
+      "offset": 960,
+      "length": 2
+    },
+    {
+      "name": "SET 5,A",
+      "offset": 962,
+      "length": 2
+    },
+    {
+      "name": "SET 6,B",
+      "offset": 964,
+      "length": 2
+    },
+    {
+      "name": "SET 6,C",
+      "offset": 966,
+      "length": 2
+    },
+    {
+      "name": "SET 6,D",
+      "offset": 968,
+      "length": 2
+    },
+    {
+      "name": "SET 6,E",
+      "offset": 970,
+      "length": 2
+    },
+    {
+      "name": "SET 6,H",
+      "offset": 972,
+      "length": 2
+    },
+    {
+      "name": "SET 6,L",
+      "offset": 974,
+      "length": 2
+    },
+    {
+      "name": "SET 6,(HL)",
+      "offset": 976,
+      "length": 2
+    },
+    {
+      "name": "SET 6,A",
+      "offset": 978,
+      "length": 2
+    },
+    {
+      "name": "SET 7,B",
+      "offset": 980,
+      "length": 2
+    },
+    {
+      "name": "SET 7,C",
+      "offset": 982,
+      "length": 2
+    },
+    {
+      "name": "SET 7,D",
+      "offset": 984,
+      "length": 2
+    },
+    {
+      "name": "SET 7,E",
+      "offset": 986,
+      "length": 2
+    },
+    {
+      "name": "SET 7,H",
+      "offset": 988,
+      "length": 2
+    },
+    {
+      "name": "SET 7,L",
+      "offset": 990,
+      "length": 2
+    },
+    {
+      "name": "SET 7,(HL)",
+      "offset": 992,
+      "length": 2
+    },
+    {
+      "name": "SET 7,A",
+      "offset": 994,
+      "length": 2
+    },
+    {
+      "name": "DAA all A and flag inputs",
+      "offset": 996,
+      "length": 2
+    }
+  ],
+  "sameboy": "c6bacec3dc1d5856f68fdee0c243cce68d8da538242fa163e4c750451c8ccecc977d853a2b6230ba730fabc2e88cdfb4538f7d081a8492d23da57b33199a37f565047120621eb5538f0aa5219d1d2efb6eca891277456a86d86456a51dcbd12f42d63fa1ddb06fe98bf86c8da7edc8218a30c7931527b337229120d6a8e7c6ba8582f48dace91024eab4f4dbbfa52ff9c6ba93fb33f8107bf94a42fb814a3ec9b2fdc6ba0aaef6072ff9a040a8823718cb6adc1ec6ba2071e870839327077efbe8b6de34d285c6bacbbed98d6466b663dbf26cd9a14ba796c6bab19e97659e746958a8f6d63c0f754fc5d6603a80b2a210cfc2b716c0b8bc2e52c6ba4e46860af5fe3e7a4b8efa7ea5e7c0e8fda6bbdc481118e87b16b41e58da5f3710db8fe24cca9a228756124fe98e972250e46eb73d22fc39656bbbc62eae6714fe3f48a2c5b98e07a304e3dcb23afefd1bb806da7d3f76cf795e0cc49a2a347d34cdf0c737921d362f5c892cef25109bde1b3dcaab98ecabe859e4d9b3ee7c00672492a88e6dfbb729a86e91e08501dabe611fffb3608a9f658ddc12b2f99d53434f42dc0bf32f2a22068ff444161fff7fd1a8c4d5afc8e33a85b6d623783ea299edf5ee6e8f89003a855073aea4c2b7e3f8db4ac6ba2d50e44193a9e9e60352c2b7c6ba3638d4bee0eaa3ed7cec8fe9c74ca99a832cd2380583daa5c516445b8333e7b02c908d79f5ed9898b5e0861abb6c7714ec8f5bfac16696542a1bc8ddfdb1cab98a396f91655ffb0d55745500cfb7f89e5129143f74c83c92829e1eba37e812c7a460401f5075c313f3d9fba5d77c71ceadebd70e88e2ffe2736dca95d9988aefb27417281df6ecaba2683a3abf8fe11442690b456ff3adefd6572d0c228803db89e9cc5184247111ba7f4124fe76e80c068ea661b8cf7ce6816a26347be26388dc7cf435474de405c798704a4cc77f451a3d4d65a90502ec17facc0076d07ada809d9b7242d2de127bd2a028aa2e910d0ffa395c82bc90fdf67feb40bdef30f89cea4916a6c53ec8b3a4dce65e518c988debb8789cd727636a559ea8f22039af0b024b432ea5f9a90bc7cc77d7caf494c751e4eac5500e8a26c1663c47417f58282b528122356c77c966dd1e403eca748b9f4538aefbc0e85d8314a3cb0474c00ae1fa2cae2925511b726e4966e7ff2d7543a75d3fec00b6323517e92db65bee1a6a94f1dfb041ed502e749c37f4c1add7eef4fd6e3dd929bc2fce5d017aa3c5bf08f259da1f3443964d4d8d0000c041af4496df3d4a84303dc445d9f9bb079df801b6ebe37f5912ce138bbb1ddb1bee1ab5bc921d119b5d621699f950dec69a28b41816e9ecb22b753774fc71429b980096525790762e43eebf33ec1393b294d1d04f9be3c2",
+  "binjgb": "c6bacec3dc1d5856f68fdee0c243cce68d8da538242fa163e4c750451c8ccecc977d853a2b6230ba730fabc2e88cdfb4538f7d081a8492d23da57b33199a37f565047120621eb5538f0aa5219d1d2efb6eca891277456a86d86456a51dcbd12f42d63fa1ddb06fe98bf86c8da7edc8218a30c7931527b337229120d6a8e7c6ba8582f48dace91024eab4f4dbbfa52ff9c6ba93fb33f8107bf94a42fb814a3ec9b2fdc6ba0aaef6072ff9a040a8823718cb6adc1ec6ba2071e870839327077efbe8b6de34d285c6bacbbed98d6466b663dbf26cd9a14ba796c6bab19e97659e746958a8f6d63c0f754fc5d6603a80b2a210cfc2b716c0b8bc2e52c6ba4e46860af5fe3e7a4b8efa7ea5e7c0e8fda6bbdc481118e87b16b41e58da5f3710db8fe24cca9a228756124fe98e972250e46eb73d22fc39656bbbc62eae6714fe3f48a2c5b98e07a304e3dcb23afefd1bb806da7d3f76cf795e0cc49a2a347d34cdf0c737921d362f5c892cef25109bde1b3dcaab98ecabe859e4d9b3ee7c00672492a88e6dfbb729a86e91e08501dabe611fffb3608a9f658ddc12b2f99d53434f42dc0bf32f2a22068ff444161fff7fd1a8c4d5afc8e33a85b6d623783ea299edf5ee6e8f89003a855073aea4c2b7e3f8db4ac6ba2d50e44193a9e9e60352c2b7c6ba3638d4bee0eaa3ed7cec8fe9c74ca99a832cd2380583daa5c516445b8333e7b02c908d79f5ed9898b5e0861abb6c7714ec8f5bfac16696542a1bc8ddfdb1cab98a396f91655ffb0d55745500cfb7f89e5129143f74c83c92829e1eba37e812c7a460401f5075c313f3d9fba5d77c71ceadebd70e88e2ffe2736dca95d9988aefb27417281df6ecaba2683a3abf8fe11442690b456ff3adefd6572d0c228803db89e9cc5184247111ba7f4124fe76e80c068ea661b8cf7ce6816a26347be26388dc7cf435474de405c798704a4cc77f451a3d4d65a90502ec17facc0076d07ada809d9b7242d2de127bd2a028aa2e910d0ffa395c82bc90fdf67feb40bdef30f89cea4916a6c53ec8b3a4dce65e518c988debb8789cd727636a559ea8f22039af0b024b432ea5f9a90bc7cc77d7caf494c751e4eac5500e8a26c1663c47417f58282b528122356c77c966dd1e403eca748b9f4538aefbc0e85d8314a3cb0474c00ae1fa2cae2925511b726e4966e7ff2d7543a75d3fec00b6323517e92db65bee1a6a94f1dfb041ed502e749c37f4c1add7eef4fd6e3dd929bc2fce5d017aa3c5bf08f259da1f3443964d4d8d0000c041af4496df3d4a84303dc445d9f9bb079df801b6ebe37f5912ce138bbb1ddb1bee1ab5bc921d119b5d621699f950dec69a28b41816e9ecb22b753774fc71429b980096525790762e43eebf33ec1393b294d1d04f9be3c2"
+}

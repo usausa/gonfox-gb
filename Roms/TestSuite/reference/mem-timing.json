@@ -1,0 +1,776 @@
+{
+  "rom": "mem-timing.gb",
+  "sha256": "759c9326c9a3daa6aa309de455df353f9a34c903f80c5861b0ebe87de784b5f6",
+  "reference": "sameboy",
+  "frames": 300,
+  "maxTCycles": 200000000,
+  "cases": [
+    {
+      "name": "02 LD (BC),A write",
+      "offset": 0,
+      "length": 1
+    },
+    {
+      "name": "08 LD (a16),SP write low byte",
+      "offset": 1,
+      "length": 1
+    },
+    {
+      "name": "08 LD (a16),SP write high byte",
+      "offset": 2,
+      "length": 1
+    },
+    {
+      "name": "0A LD A,(BC) read",
+      "offset": 3,
+      "length": 1
+    },
+    {
+      "name": "12 LD (DE),A write",
+      "offset": 4,
+      "length": 1
+    },
+    {
+      "name": "1A LD A,(DE) read",
+      "offset": 5,
+      "length": 1
+    },
+    {
+      "name": "22 LD (HL+),A write",
+      "offset": 6,
+      "length": 1
+    },
+    {
+      "name": "2A LD A,(HL+) read",
+      "offset": 7,
+      "length": 1
+    },
+    {
+      "name": "32 LD (HL-),A write",
+      "offset": 8,
+      "length": 1
+    },
+    {
+      "name": "34 INC (HL) read",
+      "offset": 9,
+      "length": 1
+    },
+    {
+      "name": "34 INC (HL) write",
+      "offset": 10,
+      "length": 1
+    },
+    {
+      "name": "35 DEC (HL) read",
+      "offset": 11,
+      "length": 1
+    },
+    {
+      "name": "35 DEC (HL) write",
+      "offset": 12,
+      "length": 1
+    },
+    {
+      "name": "36 LD (HL),d8 write",
+      "offset": 13,
+      "length": 1
+    },
+    {
+      "name": "3A LD A,(HL-) read",
+      "offset": 14,
+      "length": 1
+    },
+    {
+      "name": "46 LD B,(HL) read",
+      "offset": 15,
+      "length": 1
+    },
+    {
+      "name": "4E LD C,(HL) read",
+      "offset": 16,
+      "length": 1
+    },
+    {
+      "name": "56 LD D,(HL) read",
+      "offset": 17,
+      "length": 1
+    },
+    {
+      "name": "5E LD E,(HL) read",
+      "offset": 18,
+      "length": 1
+    },
+    {
+      "name": "66 LD H,(HL) read",
+      "offset": 19,
+      "length": 1
+    },
+    {
+      "name": "6E LD L,(HL) read",
+      "offset": 20,
+      "length": 1
+    },
+    {
+      "name": "70 LD (HL),B write",
+      "offset": 21,
+      "length": 1
+    },
+    {
+      "name": "71 LD (HL),C write",
+      "offset": 22,
+      "length": 1
+    },
+    {
+      "name": "72 LD (HL),D write",
+      "offset": 23,
+      "length": 1
+    },
+    {
+      "name": "73 LD (HL),E write",
+      "offset": 24,
+      "length": 1
+    },
+    {
+      "name": "74 LD (HL),H write",
+      "offset": 25,
+      "length": 1
+    },
+    {
+      "name": "75 LD (HL),L write",
+      "offset": 26,
+      "length": 1
+    },
+    {
+      "name": "77 LD (HL),A write (anchor)",
+      "offset": 27,
+      "length": 1
+    },
+    {
+      "name": "7E LD A,(HL) read (anchor)",
+      "offset": 28,
+      "length": 1
+    },
+    {
+      "name": "86 ADD A,(HL) read",
+      "offset": 29,
+      "length": 1
+    },
+    {
+      "name": "8E ADC A,(HL) read",
+      "offset": 30,
+      "length": 1
+    },
+    {
+      "name": "96 SUB A,(HL) read",
+      "offset": 31,
+      "length": 1
+    },
+    {
+      "name": "9E SBC A,(HL) read",
+      "offset": 32,
+      "length": 1
+    },
+    {
+      "name": "A6 AND A,(HL) read",
+      "offset": 33,
+      "length": 1
+    },
+    {
+      "name": "AE XOR A,(HL) read",
+      "offset": 34,
+      "length": 1
+    },
+    {
+      "name": "B6 OR A,(HL) read",
+      "offset": 35,
+      "length": 1
+    },
+    {
+      "name": "BE CP A,(HL) read",
+      "offset": 36,
+      "length": 1
+    },
+    {
+      "name": "C0 RET NZ taken read low byte",
+      "offset": 37,
+      "length": 1
+    },
+    {
+      "name": "C0 RET NZ taken read high byte",
+      "offset": 38,
+      "length": 1
+    },
+    {
+      "name": "C1 POP BC read low byte",
+      "offset": 39,
+      "length": 1
+    },
+    {
+      "name": "C1 POP BC read high byte",
+      "offset": 40,
+      "length": 1
+    },
+    {
+      "name": "C4 CALL NZ,a16 taken write high byte",
+      "offset": 41,
+      "length": 1
+    },
+    {
+      "name": "C4 CALL NZ,a16 taken write low byte",
+      "offset": 42,
+      "length": 1
+    },
+    {
+      "name": "C5 PUSH BC write high byte",
+      "offset": 43,
+      "length": 1
+    },
+    {
+      "name": "C5 PUSH BC write low byte",
+      "offset": 44,
+      "length": 1
+    },
+    {
+      "name": "C7 RST 00h write high byte",
+      "offset": 45,
+      "length": 1
+    },
+    {
+      "name": "C7 RST 00h write low byte",
+      "offset": 46,
+      "length": 1
+    },
+    {
+      "name": "C8 RET Z taken read low byte",
+      "offset": 47,
+      "length": 1
+    },
+    {
+      "name": "C8 RET Z taken read high byte",
+      "offset": 48,
+      "length": 1
+    },
+    {
+      "name": "C9 RET read low byte",
+      "offset": 49,
+      "length": 1
+    },
+    {
+      "name": "C9 RET read high byte",
+      "offset": 50,
+      "length": 1
+    },
+    {
+      "name": "CC CALL Z,a16 taken write high byte",
+      "offset": 51,
+      "length": 1
+    },
+    {
+      "name": "CC CALL Z,a16 taken write low byte",
+      "offset": 52,
+      "length": 1
+    },
+    {
+      "name": "CD CALL a16 write high byte",
+      "offset": 53,
+      "length": 1
+    },
+    {
+      "name": "CD CALL a16 write low byte",
+      "offset": 54,
+      "length": 1
+    },
+    {
+      "name": "CF RST 08h write high byte",
+      "offset": 55,
+      "length": 1
+    },
+    {
+      "name": "CF RST 08h write low byte",
+      "offset": 56,
+      "length": 1
+    },
+    {
+      "name": "D0 RET NC taken read low byte",
+      "offset": 57,
+      "length": 1
+    },
+    {
+      "name": "D0 RET NC taken read high byte",
+      "offset": 58,
+      "length": 1
+    },
+    {
+      "name": "D1 POP DE read low byte",
+      "offset": 59,
+      "length": 1
+    },
+    {
+      "name": "D1 POP DE read high byte",
+      "offset": 60,
+      "length": 1
+    },
+    {
+      "name": "D4 CALL NC,a16 taken write high byte",
+      "offset": 61,
+      "length": 1
+    },
+    {
+      "name": "D4 CALL NC,a16 taken write low byte",
+      "offset": 62,
+      "length": 1
+    },
+    {
+      "name": "D5 PUSH DE write high byte",
+      "offset": 63,
+      "length": 1
+    },
+    {
+      "name": "D5 PUSH DE write low byte",
+      "offset": 64,
+      "length": 1
+    },
+    {
+      "name": "D7 RST 10h write high byte",
+      "offset": 65,
+      "length": 1
+    },
+    {
+      "name": "D7 RST 10h write low byte",
+      "offset": 66,
+      "length": 1
+    },
+    {
+      "name": "D8 RET C taken read low byte",
+      "offset": 67,
+      "length": 1
+    },
+    {
+      "name": "D8 RET C taken read high byte",
+      "offset": 68,
+      "length": 1
+    },
+    {
+      "name": "D9 RETI read low byte",
+      "offset": 69,
+      "length": 1
+    },
+    {
+      "name": "D9 RETI read high byte",
+      "offset": 70,
+      "length": 1
+    },
+    {
+      "name": "DC CALL C,a16 taken write high byte",
+      "offset": 71,
+      "length": 1
+    },
+    {
+      "name": "DC CALL C,a16 taken write low byte",
+      "offset": 72,
+      "length": 1
+    },
+    {
+      "name": "DF RST 18h write high byte",
+      "offset": 73,
+      "length": 1
+    },
+    {
+      "name": "DF RST 18h write low byte",
+      "offset": 74,
+      "length": 1
+    },
+    {
+      "name": "E0 LDH (a8),A write",
+      "offset": 75,
+      "length": 1
+    },
+    {
+      "name": "E1 POP HL read low byte",
+      "offset": 76,
+      "length": 1
+    },
+    {
+      "name": "E1 POP HL read high byte",
+      "offset": 77,
+      "length": 1
+    },
+    {
+      "name": "E2 LD (C),A write",
+      "offset": 78,
+      "length": 1
+    },
+    {
+      "name": "E5 PUSH HL write high byte",
+      "offset": 79,
+      "length": 1
+    },
+    {
+      "name": "E5 PUSH HL write low byte",
+      "offset": 80,
+      "length": 1
+    },
+    {
+      "name": "E7 RST 20h write high byte",
+      "offset": 81,
+      "length": 1
+    },
+    {
+      "name": "E7 RST 20h write low byte",
+      "offset": 82,
+      "length": 1
+    },
+    {
+      "name": "EA LD (a16),A write",
+      "offset": 83,
+      "length": 1
+    },
+    {
+      "name": "EF RST 28h write high byte",
+      "offset": 84,
+      "length": 1
+    },
+    {
+      "name": "EF RST 28h write low byte",
+      "offset": 85,
+      "length": 1
+    },
+    {
+      "name": "F0 LDH A,(a8) read",
+      "offset": 86,
+      "length": 1
+    },
+    {
+      "name": "F1 POP AF read low byte",
+      "offset": 87,
+      "length": 1
+    },
+    {
+      "name": "F1 POP AF read high byte",
+      "offset": 88,
+      "length": 1
+    },
+    {
+      "name": "F2 LD A,(C) read",
+      "offset": 89,
+      "length": 1
+    },
+    {
+      "name": "F5 PUSH AF write high byte",
+      "offset": 90,
+      "length": 1
+    },
+    {
+      "name": "F5 PUSH AF write low byte",
+      "offset": 91,
+      "length": 1
+    },
+    {
+      "name": "F7 RST 30h write high byte",
+      "offset": 92,
+      "length": 1
+    },
+    {
+      "name": "F7 RST 30h write low byte",
+      "offset": 93,
+      "length": 1
+    },
+    {
+      "name": "FA LD A,(a16) read",
+      "offset": 94,
+      "length": 1
+    },
+    {
+      "name": "FF RST 38h write high byte",
+      "offset": 95,
+      "length": 1
+    },
+    {
+      "name": "FF RST 38h write low byte",
+      "offset": 96,
+      "length": 1
+    },
+    {
+      "name": "CB 06 RLC (HL) read",
+      "offset": 97,
+      "length": 1
+    },
+    {
+      "name": "CB 06 RLC (HL) write",
+      "offset": 98,
+      "length": 1
+    },
+    {
+      "name": "CB 0E RRC (HL) read",
+      "offset": 99,
+      "length": 1
+    },
+    {
+      "name": "CB 0E RRC (HL) write",
+      "offset": 100,
+      "length": 1
+    },
+    {
+      "name": "CB 16 RL (HL) read",
+      "offset": 101,
+      "length": 1
+    },
+    {
+      "name": "CB 16 RL (HL) write",
+      "offset": 102,
+      "length": 1
+    },
+    {
+      "name": "CB 1E RR (HL) read",
+      "offset": 103,
+      "length": 1
+    },
+    {
+      "name": "CB 1E RR (HL) write",
+      "offset": 104,
+      "length": 1
+    },
+    {
+      "name": "CB 26 SLA (HL) read",
+      "offset": 105,
+      "length": 1
+    },
+    {
+      "name": "CB 26 SLA (HL) write",
+      "offset": 106,
+      "length": 1
+    },
+    {
+      "name": "CB 2E SRA (HL) read",
+      "offset": 107,
+      "length": 1
+    },
+    {
+      "name": "CB 2E SRA (HL) write",
+      "offset": 108,
+      "length": 1
+    },
+    {
+      "name": "CB 36 SWAP (HL) read",
+      "offset": 109,
+      "length": 1
+    },
+    {
+      "name": "CB 36 SWAP (HL) write",
+      "offset": 110,
+      "length": 1
+    },
+    {
+      "name": "CB 3E SRL (HL) read",
+      "offset": 111,
+      "length": 1
+    },
+    {
+      "name": "CB 3E SRL (HL) write",
+      "offset": 112,
+      "length": 1
+    },
+    {
+      "name": "CB 46 BIT 0,(HL) read",
+      "offset": 113,
+      "length": 1
+    },
+    {
+      "name": "CB 4E BIT 1,(HL) read",
+      "offset": 114,
+      "length": 1
+    },
+    {
+      "name": "CB 56 BIT 2,(HL) read",
+      "offset": 115,
+      "length": 1
+    },
+    {
+      "name": "CB 5E BIT 3,(HL) read",
+      "offset": 116,
+      "length": 1
+    },
+    {
+      "name": "CB 66 BIT 4,(HL) read",
+      "offset": 117,
+      "length": 1
+    },
+    {
+      "name": "CB 6E BIT 5,(HL) read",
+      "offset": 118,
+      "length": 1
+    },
+    {
+      "name": "CB 76 BIT 6,(HL) read",
+      "offset": 119,
+      "length": 1
+    },
+    {
+      "name": "CB 7E BIT 7,(HL) read",
+      "offset": 120,
+      "length": 1
+    },
+    {
+      "name": "CB 86 RES 0,(HL) read",
+      "offset": 121,
+      "length": 1
+    },
+    {
+      "name": "CB 86 RES 0,(HL) write",
+      "offset": 122,
+      "length": 1
+    },
+    {
+      "name": "CB 8E RES 1,(HL) read",
+      "offset": 123,
+      "length": 1
+    },
+    {
+      "name": "CB 8E RES 1,(HL) write",
+      "offset": 124,
+      "length": 1
+    },
+    {
+      "name": "CB 96 RES 2,(HL) read",
+      "offset": 125,
+      "length": 1
+    },
+    {
+      "name": "CB 96 RES 2,(HL) write",
+      "offset": 126,
+      "length": 1
+    },
+    {
+      "name": "CB 9E RES 3,(HL) read",
+      "offset": 127,
+      "length": 1
+    },
+    {
+      "name": "CB 9E RES 3,(HL) write",
+      "offset": 128,
+      "length": 1
+    },
+    {
+      "name": "CB A6 RES 4,(HL) read",
+      "offset": 129,
+      "length": 1
+    },
+    {
+      "name": "CB A6 RES 4,(HL) write",
+      "offset": 130,
+      "length": 1
+    },
+    {
+      "name": "CB AE RES 5,(HL) read",
+      "offset": 131,
+      "length": 1
+    },
+    {
+      "name": "CB AE RES 5,(HL) write",
+      "offset": 132,
+      "length": 1
+    },
+    {
+      "name": "CB B6 RES 6,(HL) read",
+      "offset": 133,
+      "length": 1
+    },
+    {
+      "name": "CB B6 RES 6,(HL) write",
+      "offset": 134,
+      "length": 1
+    },
+    {
+      "name": "CB BE RES 7,(HL) read",
+      "offset": 135,
+      "length": 1
+    },
+    {
+      "name": "CB BE RES 7,(HL) write",
+      "offset": 136,
+      "length": 1
+    },
+    {
+      "name": "CB C6 SET 0,(HL) read",
+      "offset": 137,
+      "length": 1
+    },
+    {
+      "name": "CB C6 SET 0,(HL) write",
+      "offset": 138,
+      "length": 1
+    },
+    {
+      "name": "CB CE SET 1,(HL) read",
+      "offset": 139,
+      "length": 1
+    },
+    {
+      "name": "CB CE SET 1,(HL) write",
+      "offset": 140,
+      "length": 1
+    },
+    {
+      "name": "CB D6 SET 2,(HL) read",
+      "offset": 141,
+      "length": 1
+    },
+    {
+      "name": "CB D6 SET 2,(HL) write",
+      "offset": 142,
+      "length": 1
+    },
+    {
+      "name": "CB DE SET 3,(HL) read",
+      "offset": 143,
+      "length": 1
+    },
+    {
+      "name": "CB DE SET 3,(HL) write",
+      "offset": 144,
+      "length": 1
+    },
+    {
+      "name": "CB E6 SET 4,(HL) read",
+      "offset": 145,
+      "length": 1
+    },
+    {
+      "name": "CB E6 SET 4,(HL) write",
+      "offset": 146,
+      "length": 1
+    },
+    {
+      "name": "CB EE SET 5,(HL) read",
+      "offset": 147,
+      "length": 1
+    },
+    {
+      "name": "CB EE SET 5,(HL) write",
+      "offset": 148,
+      "length": 1
+    },
+    {
+      "name": "CB F6 SET 6,(HL) read",
+      "offset": 149,
+      "length": 1
+    },
+    {
+      "name": "CB F6 SET 6,(HL) write",
+      "offset": 150,
+      "length": 1
+    },
+    {
+      "name": "CB FE SET 7,(HL) read",
+      "offset": 151,
+      "length": 1
+    },
+    {
+      "name": "CB FE SET 7,(HL) write",
+      "offset": 152,
+      "length": 1
+    }
+  ],
+  "sameboy": "020405020202020202020302030302020202020202020202020202020202020202020202020304020305060304030403040203050605060304030402030506030403040304020305060304030203020304030404030403020302030403040403040304030403040304030403040304030403030303030303030304030403040304030403040304030403040304030403040304030403040304",
+  "binjgb": "020504020202020202020302030302020202020202020202020202020202020202020202020304020305060304030403040203050605060304030402030506030403040304020305060304030203020304030404030403020302030403040403040304030403040304030403040304030403030303030303030304030403040304030403040304030403040304030403040304030403040304"
+}

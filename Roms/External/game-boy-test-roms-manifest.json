@@ -1,0 +1,153 @@
+{
+  "suite": "game-boy-test-roms",
+  "version": "v7.0",
+  "commit": "8e1f6d7f3a1d8683f11fdf23008d1b1b26e51b52",
+  "url": "https://github.com/c-sp/game-boy-test-roms/releases/download/v7.0/game-boy-test-roms-v7.0.zip",
+  "note": "The AGE, little-things-gb firstwhite and SameSuite files of the collection, taken out of its archive with their archive paths. Its Gambatte (GPL-2.0) and blargg (no license) tests are not included.",
+  "licenses": [
+    {
+      "path": "GameBoyTestRoms-LICENSE.txt",
+      "covers": "the collection, c-sp/game-boy-test-roms v7.0",
+      "license": "MIT",
+      "sha256": "18a1cfd526cbb82554407b3912aea8f155a5ccfb3366fcfca6f15f813cbcadac"
+    },
+    {
+      "path": "AgeTestRoms-LICENSE.txt",
+      "covers": "age-test-roms cd3f654d13",
+      "license": "MIT",
+      "sha256": "f369002da7f08e78ebfc2d9febbfb0316c78f535569e63b84cca8804a234fcef"
+    },
+    {
+      "path": "Firstwhite-LICENSE.txt",
+      "covers": "little-things-gb firstwhite 9d168486e1",
+      "license": "Zlib",
+      "sha256": "7bd353e765c8d32a7a048929d008e9bb17fa28d7ee4b619f80b67538e9bb82ff"
+    },
+    {
+      "path": "SameSuite-LICENSE.txt",
+      "covers": "SameSuite f71b4b3c37",
+      "license": "MIT",
+      "sha256": "f1025d958dbcb938a977b9d5198df379db143cf102df11078ebf032d4de8194c"
+    }
+  ],
+  "timeoutSeconds": 10,
+  "files": [
+    {
+      "path": "age-test-roms/halt/ei-halt-dmgC-cgbBCE.gb",
+      "sha256": "5501692dc81bbe33ba55bb204ed453de864d280a5daa43b1209794fca651f6dd"
+    },
+    {
+      "path": "age-test-roms/halt/halt-m0-interrupt-dmgC-cgbBCE.gb",
+      "sha256": "89dbc351352be50ab1e099561decb643d0b6aae5785f6623414240ce7bab8413"
+    },
+    {
+      "path": "age-test-roms/halt/halt-prefetch-dmgC-cgbBCE.gb",
+      "sha256": "57a3e5d533857621e0d57b3eaccf2a4c2158ff6f121025e9b8d149a8f3a47153"
+    },
+    {
+      "path": "age-test-roms/ly/ly-dmgC-cgbBC.gb",
+      "sha256": "f090f28fa8e632ad3661b953bccfa4e05bcff8c37186a613d2e68546cfc31480"
+    },
+    {
+      "path": "age-test-roms/m3-bg-bgp/m3-bg-bgp.gb",
+      "sha256": "8e4c9b69843d3277e6815b994769893949e61d076a3fbd814d7c3ebec3e316ec"
+    },
+    {
+      "path": "age-test-roms/m3-bg-bgp/m3-bg-bgp-dmgC.png",
+      "sha256": "92922e3bad63f5062807fe507cfdc91e22130e42df7cd9d88ba14bec84e77eda"
+    },
+    {
+      "path": "age-test-roms/m3-bg-lcdc/m3-bg-lcdc.gb",
+      "sha256": "b809826cbe370675d8fb173dc56c81db134668b3b844ac15c66033b0b3acb7eb"
+    },
+    {
+      "path": "age-test-roms/m3-bg-lcdc/m3-bg-lcdc-dmgC.png",
+      "sha256": "0ea5464a75aa674ade5942cee2c57b4ff7b506916a62986a1545531f0f200588"
+    },
+    {
+      "path": "age-test-roms/m3-bg-scx/m3-bg-scx.gb",
+      "sha256": "3eb6302ed9c850550504b03c56dd9105dd03c89f2bad1eeeb2fae0a859bf1de5"
+    },
+    {
+      "path": "age-test-roms/m3-bg-scx/m3-bg-scx-dmgC.png",
+      "sha256": "7a501a6a49340a422e8346cd49e9804dd880a8735093f38fba0855c42cd4ba34"
+    },
+    {
+      "path": "age-test-roms/oam/oam-read-dmgC-cgbBC.gb",
+      "sha256": "62010c08c09cb677789e1f8f61c538c790269d29796e0783ad45c5c1977ae234"
+    },
+    {
+      "path": "age-test-roms/stat-interrupt/stat-int-dmgC-cgbBCE.gb",
+      "sha256": "f567a5b6d5855ebecf667b8439f8caf0288829d90b8a3db323f50e1a5469491a"
+    },
+    {
+      "path": "age-test-roms/stat-mode-sprites/stat-mode-sprites-dmgC-cgbBCE.gb",
+      "sha256": "173ff267a4ecbd2e5bb3bd209f7b08c971900d54382bd6281969c7a3a98507c1"
+    },
+    {
+      "path": "age-test-roms/stat-mode-window/stat-mode-window-dmgC.gb",
+      "sha256": "b54c7680990263bfa0f22fa4390c9c190ad12fc35c9f8c2a0c0ab7a9832b2b73"
+    },
+    {
+      "path": "age-test-roms/stat-mode/stat-mode-dmgC-cgbBC.gb",
+      "sha256": "9343972976dd4555cbd8cbcd6752c7256715de28b2114fe2a6c0fb18bd39bd9b"
+    },
+    {
+      "path": "age-test-roms/vram/vram-read-dmgC.gb",
+      "sha256": "25b8fe51ed436b037d56742317614aa565d4f6ce5f04e319ea3a4d8e11ea6b6c"
+    },
+    {
+      "path": "little-things-gb/firstwhite.gb",
+      "sha256": "ac0e653d61802cdb2560275caef71872e0a442a27aee9bec492f46aa92785d09"
+    },
+    {
+      "path": "little-things-gb/firstwhite-dmg-cgb.png",
+      "sha256": "033f6638ad60f6b338965c722b6edc581c7d18b5f42b3273da8f79de74992d31"
+    },
+    {
+      "path": "same-suite/apu/div_write_trigger.gb",
+      "sha256": "437ed80ab7fdbcd6713b3b0633096ac4ba0181b2e1c099944cbfbb5f7dab8e84"
+    },
+    {
+      "path": "same-suite/apu/div_write_trigger_10.gb",
+      "sha256": "4294c71882a375d8395c9aa7c1c20127bd285ffa3961521703a1ac69a80a373c"
+    }
+  ],
+  "age": {
+    "verified": "Named for DMG-CPU C (dmgC); the author checked them on DMG-CPU-08.",
+    "success": "Run until LD B,B (opcode 40) executes. Register tests pass with B=3, C=5, D=8, E=13, H=21, L=34; screenshot tests (<name>-dmgC.png) compare the latest completed frame.",
+    "maxTCycles": 125829120,
+    "selected": [
+      "age-test-roms/halt/ei-halt-dmgC-cgbBCE.gb",
+      "age-test-roms/halt/halt-m0-interrupt-dmgC-cgbBCE.gb",
+      "age-test-roms/halt/halt-prefetch-dmgC-cgbBCE.gb",
+      "age-test-roms/ly/ly-dmgC-cgbBC.gb",
+      "age-test-roms/m3-bg-bgp/m3-bg-bgp.gb",
+      "age-test-roms/m3-bg-lcdc/m3-bg-lcdc.gb",
+      "age-test-roms/m3-bg-scx/m3-bg-scx.gb",
+      "age-test-roms/oam/oam-read-dmgC-cgbBC.gb",
+      "age-test-roms/stat-interrupt/stat-int-dmgC-cgbBCE.gb",
+      "age-test-roms/stat-mode-sprites/stat-mode-sprites-dmgC-cgbBCE.gb",
+      "age-test-roms/stat-mode-window/stat-mode-window-dmgC.gb",
+      "age-test-roms/stat-mode/stat-mode-dmgC-cgbBC.gb",
+      "age-test-roms/vram/vram-read-dmgC.gb"
+    ]
+  },
+  "firstwhite": {
+    "verified": "The readme records a white screen on Game Boy and Game Boy Pocket.",
+    "success": "Every image completed in the first 2,097,152 T-cycles (half an emulated second) matches firstwhite-dmg-cgb.png.",
+    "rom": "little-things-gb/firstwhite.gb",
+    "expected": "little-things-gb/firstwhite-dmg-cgb.png",
+    "tCycles": 2097152
+  },
+  "sameSuite": {
+    "source": "LIJI32/SameSuite f71b4b3c3773b771f94955f5081dd2b36aabe54d (2022-04-10)",
+    "verified": "apu/README.md: pre-CGB devices pass div_write_trigger and div_write_trigger_10 (tested: DMG-B, blob); the other APU tests need the CGB PCM registers.",
+    "success": "Run until LD B,B (opcode 40) executes; B/C/D/E/H/L = 3/5/8/13/21/34.",
+    "selected": [
+      "same-suite/apu/div_write_trigger.gb",
+      "same-suite/apu/div_write_trigger_10.gb"
+    ],
+    "maxTCycles": 125829120
+  }
+}

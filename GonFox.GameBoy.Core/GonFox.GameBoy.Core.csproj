@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <IsAotCompatible>true</IsAotCompatible>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>GonFox.GameBoy.Core</PackageId>
+    <Title>GonFox.GameBoy.Core</Title>
+    <Description>Game Boy (DMG) emulator core</Description>
+    <PackageTags>gameboy dmg emulator</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="Android" />
+    <SupportedPlatform Include="iOS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="GonFox.GameBoy.Core.Tests" />
+    <InternalsVisibleTo Include="Benchmark" />
+  </ItemGroup>
+
+</Project>

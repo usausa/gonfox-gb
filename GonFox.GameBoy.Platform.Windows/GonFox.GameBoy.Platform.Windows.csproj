@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0-windows10.0.19041.0</TargetFrameworks>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>GonFox.GameBoy.Platform.Windows</PackageId>
+    <Title>GonFox.GameBoy.Platform.Windows</Title>
+    <Description>Windows host support for GonFox.GameBoy (WASAPI audio output, storage, settings)</Description>
+    <PackageTags>gameboy dmg emulator windows</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio.Wasapi" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GonFox.GameBoy.Platform.Shared\GonFox.GameBoy.Platform.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="GonFox.GameBoy.Platform.Tests" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Example.GameBoy.WpfHost</RootNamespace>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" Version="18.11.2" />
+    <PackageReference Include="xunit.v3" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Example.GameBoy.WpfHost\Example.GameBoy.WpfHost.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Roms\BackgroundDemo\background-demo.gb" Link="background-demo.gb" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\SoundCheck\sound-check.gb" Link="sound-check.gb" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\MegaDemo\megademo.gb" Link="megademo.gb" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\RpgDemo\rpgdemo.gb" Link="rpgdemo.gb" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

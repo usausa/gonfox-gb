@@ -1,0 +1,302 @@
+{
+  "suite": "mealybug-tearoom-tests",
+  "version": "70e88fb90b59d19dfbb9c3ac36c64105202bb1f4",
+  "baseUrl": "https://raw.githubusercontent.com/mattcurrie/mealybug-tearoom-tests/70e88fb90b59d19dfbb9c3ac36c64105202bb1f4/",
+  "archive": "mealybug-tearoom-tests.zip",
+  "archiveSha256": "e2fa6ca96ad48bd64d7297fda042db04c15117a730da3bbd590f139e89b150bd",
+  "archiveNote": "ROMs built on 2019-10-24 (commit bc3430a7c1); the sources moved to src/ppu in 2020 without being rebuilt.",
+  "license": "MIT",
+  "licenseSha256": "8f9ea251eb9eaa3560be46ce5adb7e190bbc890cff6e5eb532df0ccacefa0fa4",
+  "success": "Run until LD B,B (opcode 40) executes, then compare the latest completed frame with the expected PNG pixel for pixel. Shades 0-3 are the grey levels FF, AA, 55 and 00. Where DMG-blob and DMG-CPU B images differ, the DMG-CPU B one is expected.",
+  "setup": "The images assume the DMG boot ROM's VRAM: the header logo (0104-0133) in tiles 1-24, each nibble doubled into the low bitplane of two rows; (R) in tile 25 (3C 42 B9 A5 B9 A5 42 3C); map 9904-990F = 1-12, 9910 = 25, 9924-992F = 13-24. The test writes this into the state before the first instruction.",
+  "maxTCycles": 4000000,
+  "timeoutSeconds": 10,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "8f9ea251eb9eaa3560be46ce5adb7e190bbc890cff6e5eb532df0ccacefa0fa4"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f3623a9aee03b54ed5f1922494e8ba9f093a88a3f9e2b25265b81ceec6dcf75a"
+    },
+    {
+      "path": "inc/hardware.inc",
+      "sha256": "2c3ad046eaa546331c0f5e3a82e3ea592b247ac562c7a4ad855d0d2816e22bd6"
+    },
+    {
+      "path": "inc/utils.asm",
+      "sha256": "66dcc3e05bc14a0f575f2b55b35a91a327e8bc43df33d5c1024eb204c3a368a3"
+    },
+    {
+      "path": "inc/lcdc_stat_int_base.asm",
+      "sha256": "66d2881cf09a71ae1a4155477d915f8d25b552e1fecf717b601560767bcc117f"
+    }
+  ],
+  "tests": [
+    {
+      "name": "m2_win_en_toggle",
+      "rom": "m2_win_en_toggle.gb",
+      "romSha256": "5ab52823dc9e25184e884d73a19bfe0b048a9d2526ca779a0925ca891a9ba7f5",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m2_win_en_toggle.png",
+      "expectedSha256": "b3125f1cfedaa0dd0ff8f02b9b44acf2343af9154d05dfd8788b98a0fc153935",
+      "sourcePath": "src/ppu/m2_win_en_toggle.asm",
+      "sourceSha256": "1867982241883e981f283756c3a16831e23c9288a9c8b9771ef3edf5bc001921",
+      "photos": "none"
+    },
+    {
+      "name": "m3_bgp_change",
+      "rom": "m3_bgp_change.gb",
+      "romSha256": "52151476d16b04654123e64bd2c22702571c529761d9c9bc2f485ca2538fc035",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_bgp_change.png",
+      "expectedSha256": "c46133683a51f6eed3c79deb99cb0aa516f147918276c73f335c2b7d5d821f98",
+      "sourcePath": "src/ppu/m3_bgp_change.asm",
+      "sourceSha256": "bb2a204824bc89f55d42997593d8bac53e24804ac9ef88d7b20e978ce06cb35e",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_bgp_change_sprites",
+      "rom": "m3_bgp_change_sprites.gb",
+      "romSha256": "41de816a11690c86c6d1b03c1fb9f2ec367dcd288f1cf8f2b52560a3e2b9a917",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_bgp_change_sprites.png",
+      "expectedSha256": "7ad05d59b3d03a27ee4efa6a3ad614f00d2a2652f7dd188a6ecde2cfcbd0b4e0",
+      "sourcePath": "src/ppu/m3_bgp_change_sprites.asm",
+      "sourceSha256": "9b34c71ba2d539e52dc2f8991219de3f06a2b7728c5bffd9f935b8ae84781614",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_bg_en_change",
+      "rom": "m3_lcdc_bg_en_change.gb",
+      "romSha256": "4bb4ea8076950c1ecaeb8c704ca0568e05bc09d35e114f0cbe77b3b173e3d13b",
+      "model": "DMG-CPU B",
+      "expected": "expected/DMG-CPU B/m3_lcdc_bg_en_change.png",
+      "expectedSha256": "c53832ef4e15107a51a162ea7bbbb2a772b42c7ae615096360c31f12af346283",
+      "sourcePath": "src/ppu/m3_lcdc_bg_en_change.asm",
+      "sourceSha256": "4e5014f98b1432a5799127b7224329c834d50fddaa52f2ec80d7ef69b7cf78e2",
+      "photos": "DMG-blob, DMG-CPU B"
+    },
+    {
+      "name": "m3_lcdc_bg_map_change",
+      "rom": "m3_lcdc_bg_map_change.gb",
+      "romSha256": "dcb8d7e2c750453d76f47bae25092c9eb79ace1f8c0c3e8e1959ebb8d177d716",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_bg_map_change.png",
+      "expectedSha256": "50f379acec62f7f9cb77a8c9501804405066b51cba8a1fb3b0c716c35d0eab61",
+      "sourcePath": "src/ppu/m3_lcdc_bg_map_change.asm",
+      "sourceSha256": "d6fb2b3c244d2cbe58dbf2499d96d0c8d2172c5f0de4ddd10a1f0ed1f5c2148d",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_obj_en_change",
+      "rom": "m3_lcdc_obj_en_change.gb",
+      "romSha256": "943be0ef4a104bc71139f21de2321ad4510e32dc756739be0d97fc56ff59e18c",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_obj_en_change.png",
+      "expectedSha256": "fe1ef8c9d8f88fa5c1e0a259a356fb457931ded8a89743a25947f866bb88e405",
+      "sourcePath": "src/ppu/m3_lcdc_obj_en_change.asm",
+      "sourceSha256": "586e54db80e02e605ebc11f21cd3ecfba13c944bb24500c65e9e696ca8e836be",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_obj_en_change_variant",
+      "rom": "m3_lcdc_obj_en_change_variant.gb",
+      "romSha256": "5beb278323b75201150aadc5abc00d6f12817759f2a4e7206cdd2cd2504a77f3",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_obj_en_change_variant.png",
+      "expectedSha256": "2ebd7776d32f331057e97676cd9e660541c436a1dfdfc12e01eadd9c43e0259f",
+      "sourcePath": "src/ppu/m3_lcdc_obj_en_change_variant.asm",
+      "sourceSha256": "d1ad5ee550323ca17393f89378aff6844619a4fa2a5f34c7c910369a8337d2da",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_obj_size_change",
+      "rom": "m3_lcdc_obj_size_change.gb",
+      "romSha256": "1060fbf592ccf28b19c5e8af310f4441c74ca2310faf7f6b024a62a1888d6d2e",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_obj_size_change.png",
+      "expectedSha256": "3baa299b931912bd5b7869d83eba02de8d1c996e6fa76793c66fa787748384f9",
+      "sourcePath": "src/ppu/m3_lcdc_obj_size_change.asm",
+      "sourceSha256": "b4145050736dbd3f21dc726e52cb805a3a36cf3e37dc056ae36e33943d49319d",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_obj_size_change_scx",
+      "rom": "m3_lcdc_obj_size_change_scx.gb",
+      "romSha256": "f0ae9a6c51d1ae490a3b492e732ba4080ad92def08a806b4e3953277aaa7291a",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_obj_size_change_scx.png",
+      "expectedSha256": "a32dcd889e89623fc6225f1044043bddec22be533626517ad0d2cb2f3447f11a",
+      "sourcePath": "src/ppu/m3_lcdc_obj_size_change_scx.asm",
+      "sourceSha256": "bbe9f266a6c6a139e63e00a4b6ad84b95fc69470d27bd7af9531006a661f4389",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_tile_sel_change",
+      "rom": "m3_lcdc_tile_sel_change.gb",
+      "romSha256": "aef34202485974960b01b80bd5c57686d09e436fb90efb9b7e19686b910998b4",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_tile_sel_change.png",
+      "expectedSha256": "89a93cff7409b0b884a4549c4eceb2b246a68e10e0f70a3429842001b9577dd9",
+      "sourcePath": "src/ppu/m3_lcdc_tile_sel_change.asm",
+      "sourceSha256": "df3083aca796b6e7e8a7521994992aba6d600c253c1066b267c0d1d23aaa4d49",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_tile_sel_win_change",
+      "rom": "m3_lcdc_tile_sel_win_change.gb",
+      "romSha256": "5d442f4cfcd8f9415697ce748b2f2daf587db3f205831ed2849ad3f80f925f21",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_tile_sel_win_change.png",
+      "expectedSha256": "4a153db0fbec785a92f0f96a8773e6b55e19ece839e2e45ce0bba081cf0d8a81",
+      "sourcePath": "src/ppu/m3_lcdc_tile_sel_win_change.asm",
+      "sourceSha256": "a5f466bf08ae9586ea55289c3e2688c591b3e8b8fe8938d6dfa9aea926db8494",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_win_en_change_multiple",
+      "rom": "m3_lcdc_win_en_change_multiple.gb",
+      "romSha256": "6d759374790c6a4b98682e438d2f25e0481533828e2c2a50fda88fdde3256870",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_win_en_change_multiple.png",
+      "expectedSha256": "319c45421dd1264933a48e43bc4181994683a81d4d8a5013af9890e2e8d08428",
+      "sourcePath": "src/ppu/m3_lcdc_win_en_change_multiple.asm",
+      "sourceSha256": "6bdf0a1267c4137e35987b618088b0d3baec93ab3ff84633eddcbda9cbb8ec0f",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_lcdc_win_en_change_multiple_wx",
+      "rom": "m3_lcdc_win_en_change_multiple_wx.gb",
+      "romSha256": "0fed492b76695157a794b05cda1217be6cbe81ef4769102c4c5508d89a6fbb23",
+      "model": "DMG-CPU B",
+      "expected": "expected/DMG-CPU B/m3_lcdc_win_en_change_multiple_wx.png",
+      "expectedSha256": "710e26839ba70c1b8dab284c26c128b1ea7c9bddb0d89af87c5f116d14509423",
+      "sourcePath": "src/ppu/m3_lcdc_win_en_change_multiple_wx.asm",
+      "sourceSha256": "90bde1e1831874bcd39fa0424f4f27651d22a67bf7415734c3df1520d17201a7",
+      "photos": "DMG-blob, DMG-CPU B"
+    },
+    {
+      "name": "m3_lcdc_win_map_change",
+      "rom": "m3_lcdc_win_map_change.gb",
+      "romSha256": "a4d4a28cb665b55faa256163110ea3f6729d33112aa0a05dfd876eae8f446c05",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_lcdc_win_map_change.png",
+      "expectedSha256": "ce22248c5d9e7b519cd8493564a7cbdf874385f8711072029e05e927659821cd",
+      "sourcePath": "src/ppu/m3_lcdc_win_map_change.asm",
+      "sourceSha256": "05dac46b6f2d7732f2962326d96c8669dcdeaa199a7ad3eb5c16cc071467ec29",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_obp0_change",
+      "rom": "m3_obp0_change.gb",
+      "romSha256": "2160b69123091f9b997debef8b314b4277f4a9027eb25a1b8418ea06f87ba6af",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_obp0_change.png",
+      "expectedSha256": "5f548ccd0a0e1e979911f00184575f64742e66a601a5f2f9fd814757c62b738a",
+      "sourcePath": "src/ppu/m3_obp0_change.asm",
+      "sourceSha256": "c38a33c9f4b63a361409b3985df3410480f3f52d7485d0be322521c7823b8b89",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_scx_high_5_bits",
+      "rom": "m3_scx_high_5_bits.gb",
+      "romSha256": "423db91af0f87547ae46690044ef760481f7005033ffc61bd69875b7df96139b",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_scx_high_5_bits.png",
+      "expectedSha256": "21750dfddb16dbbc084032f5361a82782685441eaca93bf67249049bb14b3a1b",
+      "sourcePath": "src/ppu/m3_scx_high_5_bits.asm",
+      "sourceSha256": "0e0c95850a5a7c3add6a5870c49f20a8f8a65ddfb4991a19accda9a6abef514a",
+      "photos": "none"
+    },
+    {
+      "name": "m3_scx_low_3_bits",
+      "rom": "m3_scx_low_3_bits.gb",
+      "romSha256": "433e59a9eb9a27c962cd613c24c2f8d728ac9e498233667959eb07995f0fef5f",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_scx_low_3_bits.png",
+      "expectedSha256": "a05cd516b63ee547f6a8fa373bdecf46308baa5806be7f55f3eba207c3c03d21",
+      "sourcePath": "src/ppu/m3_scx_low_3_bits.asm",
+      "sourceSha256": "a026569ba3c7db126a42a89e8818ee8207d92b5b2ca238b33027a5f685c7d711",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_scy_change",
+      "rom": "m3_scy_change.gb",
+      "romSha256": "0fedb0c33fd400d5f88a35704177e437b7d88f18c81bd5b30c3165b633734c8a",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_scy_change.png",
+      "expectedSha256": "ee06038412da1d8a28dc0913d98c6b7185b13fcebdaabeca7d7f1ff67224aacb",
+      "sourcePath": "src/ppu/m3_scy_change.asm",
+      "sourceSha256": "849f7d86407cccab92af7b732b28c77d7be45e0222e7f4de6fc53c872d4cc1f7",
+      "photos": "none"
+    },
+    {
+      "name": "m3_window_timing",
+      "rom": "m3_window_timing.gb",
+      "romSha256": "c8c8b26d5c9659f30e037a1a9f8d8f9d8f57db0a97730bbab536fb95e11da9df",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_window_timing.png",
+      "expectedSha256": "1a6a63d4978492258bcaaadba2820a4805980ae785a59b1888f088caa163b171",
+      "sourcePath": "src/ppu/m3_window_timing.asm",
+      "sourceSha256": "a111724f75c50b80e040a3f24a839cbc937a53007f980193404d07b626c920de",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_window_timing_wx_0",
+      "rom": "m3_window_timing_wx_0.gb",
+      "romSha256": "984496c486032606aede6428e1087c6038403b27d7bcfed844188742123b91a4",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_window_timing_wx_0.png",
+      "expectedSha256": "12d9d8d6124ec45524b8d0e5b5745c5f5481feea9080d557c9a182132538c869",
+      "sourcePath": "src/ppu/m3_window_timing_wx_0.asm",
+      "sourceSha256": "802d3778dc594d21fdf815c4f3374f851f3da99f258072d045b9f03f2c08ae2d",
+      "photos": "DMG-blob, DMG-CPU B"
+    },
+    {
+      "name": "m3_wx_4_change",
+      "rom": "m3_wx_4_change.gb",
+      "romSha256": "eadfe4369b85994b4401e7e5119272626c6339ecec282848013decf0cb5ea81c",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_wx_4_change.png",
+      "expectedSha256": "dc777d9d941414cdf572c4bf765e055b55602a2968969fdd9cc28e706bb67ad5",
+      "sourcePath": "src/ppu/m3_wx_4_change.asm",
+      "sourceSha256": "fd99f5405ad7ca233b516be1ec67b472d85558f0ed2405affa51a13853e516e0",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_wx_4_change_sprites",
+      "rom": "m3_wx_4_change_sprites.gb",
+      "romSha256": "da10819cb8af5fb8fb31f6f50729e9afe221161a7b5743351a54ca05e9c94fec",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_wx_4_change_sprites.png",
+      "expectedSha256": "3f1e14d890041162df8b8f30c74f6a9423fc3f8d01aec3d5bb7527a9082f910c",
+      "sourcePath": "src/ppu/m3_wx_4_change_sprites.asm",
+      "sourceSha256": "08a00b675b45d6a3ec6e975a1e13d669e23bc816906decc136738d701b8dd82f",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_wx_5_change",
+      "rom": "m3_wx_5_change.gb",
+      "romSha256": "53a0c14c896cdef68b92ea90e952fe053dcf1d2155251e2e4ed8b48ef22a6d62",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_wx_5_change.png",
+      "expectedSha256": "52e0cc029618912c1f6bb6eb11ea18283c5877d4a4f3adc0b11f926fd34fe4f6",
+      "sourcePath": "src/ppu/m3_wx_5_change.asm",
+      "sourceSha256": "d8f73ad1bce34dbab8144f48034e5cdf9d9bd536b540a710bbc70a110fdc245a",
+      "photos": "DMG-blob"
+    },
+    {
+      "name": "m3_wx_6_change",
+      "rom": "m3_wx_6_change.gb",
+      "romSha256": "efa65cf7a570add7cfcb6d25d7c314359f2a0e6eadcde2e44d53f81d6ba44b0d",
+      "model": "DMG-blob",
+      "expected": "expected/DMG-blob/m3_wx_6_change.png",
+      "expectedSha256": "fb81b02805dd00dbc3bcdc8f568680d1785d38472a6156336b050103adecf19a",
+      "sourcePath": "src/ppu/m3_wx_6_change.asm",
+      "sourceSha256": "ec431c818ab13f5f6401075feea0656ce70dc71466876ad469eeea77b9978401",
+      "photos": "DMG-blob"
+    }
+  ]
+}

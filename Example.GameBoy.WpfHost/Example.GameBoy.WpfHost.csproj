@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <IsPackable>false</IsPackable>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" Version="4.153.1" />
+    <PackageReference Include="SkiaSharp.Views.WPF" Version="4.153.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GonFox.GameBoy.Core\GonFox.GameBoy.Core.csproj" />
+    <ProjectReference Include="..\GonFox.GameBoy.Platform.Shared\GonFox.GameBoy.Platform.Shared.csproj" />
+    <ProjectReference Include="..\GonFox.GameBoy.Platform.Windows\GonFox.GameBoy.Platform.Windows.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="GonFox.GameBoy.Platform" />
+    <Using Include="GonFox.GameBoy.Platform.Audio" />
+    <Using Include="GonFox.GameBoy.Platform.Windows" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Roms\BackgroundDemo\background-demo.gb" LogicalName="BackgroundDemo.gb" />
+    <EmbeddedResource Include="..\Roms\MegaDemo\megademo.gb" LogicalName="MegaDemo.gb" />
+    <EmbeddedResource Include="..\Roms\SoundCheck\sound-check.gb" LogicalName="SoundCheck.gb" />
+    <EmbeddedResource Include="..\Roms\RpgDemo\rpgdemo.gb" LogicalName="RpgDemo.gb" />
+    <None Include="..\Roms\BackgroundDemo\LICENSE" Link="BackgroundDemo-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\MegaDemo\LICENSE" Link="MegaDemo-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\SoundCheck\LICENSE" Link="SoundCheck-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Roms\RpgDemo\LICENSE" Link="RpgDemo-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Example.GameBoy.WpfHost.Tests" />
+  </ItemGroup>
+
+</Project>

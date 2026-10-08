@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <IsAotCompatible>true</IsAotCompatible>
+    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
+    <RootNamespace>GonFox.GameBoy.Platform</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>GonFox.GameBoy.Platform.Shared</PackageId>
+    <Title>GonFox.GameBoy.Platform.Shared</Title>
+    <Description>Platform-neutral host support for GonFox.GameBoy (run thread, session, frames, audio queue, saves, state slots)</Description>
+    <PackageTags>gameboy dmg emulator</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="Android" />
+    <SupportedPlatform Include="iOS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GonFox.GameBoy.Core\GonFox.GameBoy.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="GonFox.GameBoy.Platform.Tests" />
+  </ItemGroup>
+
+</Project>

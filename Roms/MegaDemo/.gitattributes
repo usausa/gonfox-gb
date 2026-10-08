@@ -1,0 +1,4 @@
+# Build.ps1 -Verify and Reference.ps1 -Verify compare these files byte for byte.
+*.gb binary
+*.png binary
+*.sym -text

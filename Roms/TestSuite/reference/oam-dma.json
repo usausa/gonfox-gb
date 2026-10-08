@@ -1,0 +1,541 @@
+{
+  "rom": "oam-dma.gb",
+  "sha256": "436536e34ca4cb7bb927c4cdeb6d15ba15e90ffc525873b15cede33fdea6d7e5",
+  "reference": "sameboy",
+  "frames": 120,
+  "maxTCycles": 200000000,
+  "cases": [
+    {
+      "name": "source C000 (reporter state): OAM sum, XOR, [0], [1], [159]",
+      "offset": 0,
+      "length": 5
+    },
+    {
+      "name": "source 3F00 (ROM): OAM sum, XOR, [0], [1], [159]",
+      "offset": 5,
+      "length": 5
+    },
+    {
+      "name": "source 7F00 (ROM): OAM sum, XOR, [0], [1], [159]",
+      "offset": 10,
+      "length": 5
+    },
+    {
+      "name": "source 8000 (VRAM): OAM sum, XOR, [0], [1], [159]",
+      "offset": 15,
+      "length": 5
+    },
+    {
+      "name": "source 9F00 (VRAM): OAM sum, XOR, [0], [1], [159]",
+      "offset": 20,
+      "length": 5
+    },
+    {
+      "name": "source D100 (WRAM): OAM sum, XOR, [0], [1], [159]",
+      "offset": 25,
+      "length": 5
+    },
+    {
+      "name": "source F100 (echo of D1): OAM sum, XOR, [0], [1], [159]",
+      "offset": 30,
+      "length": 5
+    },
+    {
+      "name": "source FD00 (echo of DD): OAM sum, XOR, [0], [1], [159]",
+      "offset": 35,
+      "length": 5
+    },
+    {
+      "name": "source FE00 (WRAM DE): OAM sum, XOR, [0], [1], [159]",
+      "offset": 40,
+      "length": 5
+    },
+    {
+      "name": "source FF00 (WRAM DF): OAM sum, XOR, [0], [1], [159]",
+      "offset": 45,
+      "length": 5
+    },
+    {
+      "name": "source 3F00: read ROM0 3D00 on W+12",
+      "offset": 50,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read ROMX 5000 on W+12",
+      "offset": 51,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read VRAM 8800 on W+12",
+      "offset": 52,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read WRAM D200 on W+12",
+      "offset": 53,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read echo F200 on W+12",
+      "offset": 54,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read HRAM FFF0 on W+12",
+      "offset": 55,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read TMA FF06 on W+12",
+      "offset": 56,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read OAM FE10 on W+12",
+      "offset": 57,
+      "length": 1
+    },
+    {
+      "name": "source 3F00: read FEA0 on W+12",
+      "offset": 58,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read ROM0 3D00 on W+12",
+      "offset": 59,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read ROMX 5000 on W+12",
+      "offset": 60,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read VRAM 8800 on W+12",
+      "offset": 61,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read WRAM D200 on W+12",
+      "offset": 62,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read echo F200 on W+12",
+      "offset": 63,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read HRAM FFF0 on W+12",
+      "offset": 64,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read TMA FF06 on W+12",
+      "offset": 65,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read OAM FE10 on W+12",
+      "offset": 66,
+      "length": 1
+    },
+    {
+      "name": "source 7F00: read FEA0 on W+12",
+      "offset": 67,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read ROM0 3D00 on W+12",
+      "offset": 68,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read ROMX 5000 on W+12",
+      "offset": 69,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read VRAM 8800 on W+12",
+      "offset": 70,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read WRAM D200 on W+12",
+      "offset": 71,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read echo F200 on W+12",
+      "offset": 72,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read HRAM FFF0 on W+12",
+      "offset": 73,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read TMA FF06 on W+12",
+      "offset": 74,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read OAM FE10 on W+12",
+      "offset": 75,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read FEA0 on W+12",
+      "offset": 76,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read ROM0 3D00 on W+12",
+      "offset": 77,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read ROMX 5000 on W+12",
+      "offset": 78,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read VRAM 8800 on W+12",
+      "offset": 79,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read WRAM D200 on W+12",
+      "offset": 80,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read echo F200 on W+12",
+      "offset": 81,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read HRAM FFF0 on W+12",
+      "offset": 82,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read TMA FF06 on W+12",
+      "offset": 83,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read OAM FE10 on W+12",
+      "offset": 84,
+      "length": 1
+    },
+    {
+      "name": "source 9F00: read FEA0 on W+12",
+      "offset": 85,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROM0 3D00 on W+12",
+      "offset": 86,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROMX 5000 on W+12",
+      "offset": 87,
+      "length": 1
+    },
+    {
+      "name": "source D100: read VRAM 8800 on W+12",
+      "offset": 88,
+      "length": 1
+    },
+    {
+      "name": "source D100: read WRAM D200 on W+12",
+      "offset": 89,
+      "length": 1
+    },
+    {
+      "name": "source D100: read echo F200 on W+12",
+      "offset": 90,
+      "length": 1
+    },
+    {
+      "name": "source D100: read HRAM FFF0 on W+12",
+      "offset": 91,
+      "length": 1
+    },
+    {
+      "name": "source D100: read TMA FF06 on W+12",
+      "offset": 92,
+      "length": 1
+    },
+    {
+      "name": "source D100: read OAM FE10 on W+12",
+      "offset": 93,
+      "length": 1
+    },
+    {
+      "name": "source D100: read FEA0 on W+12",
+      "offset": 94,
+      "length": 1
+    },
+    {
+      "name": "source F100: read ROM0 3D00 on W+12",
+      "offset": 95,
+      "length": 1
+    },
+    {
+      "name": "source F100: read ROMX 5000 on W+12",
+      "offset": 96,
+      "length": 1
+    },
+    {
+      "name": "source F100: read VRAM 8800 on W+12",
+      "offset": 97,
+      "length": 1
+    },
+    {
+      "name": "source F100: read WRAM D200 on W+12",
+      "offset": 98,
+      "length": 1
+    },
+    {
+      "name": "source F100: read echo F200 on W+12",
+      "offset": 99,
+      "length": 1
+    },
+    {
+      "name": "source F100: read HRAM FFF0 on W+12",
+      "offset": 100,
+      "length": 1
+    },
+    {
+      "name": "source F100: read TMA FF06 on W+12",
+      "offset": 101,
+      "length": 1
+    },
+    {
+      "name": "source F100: read OAM FE10 on W+12",
+      "offset": 102,
+      "length": 1
+    },
+    {
+      "name": "source F100: read FEA0 on W+12",
+      "offset": 103,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read OAM FE00 on W+2",
+      "offset": 104,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read OAM FE00 on W+3",
+      "offset": 105,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read OAM FE00 on W+160",
+      "offset": 106,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read OAM FE00 on W+161",
+      "offset": 107,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read OAM FE00 on W+162",
+      "offset": 108,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read OAM FE00 on W+163",
+      "offset": 109,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROM0 3D00 on W+2",
+      "offset": 110,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROM0 3D00 on W+3",
+      "offset": 111,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROM0 3D00 on W+160",
+      "offset": 112,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROM0 3D00 on W+161",
+      "offset": 113,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROM0 3D00 on W+162",
+      "offset": 114,
+      "length": 1
+    },
+    {
+      "name": "source D100: read ROM0 3D00 on W+163",
+      "offset": 115,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read VRAM 8800 on W+2",
+      "offset": 116,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read VRAM 8800 on W+3",
+      "offset": 117,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read VRAM 8800 on W+160",
+      "offset": 118,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read VRAM 8800 on W+161",
+      "offset": 119,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read VRAM 8800 on W+162",
+      "offset": 120,
+      "length": 1
+    },
+    {
+      "name": "source 8000: read VRAM 8800 on W+163",
+      "offset": 121,
+      "length": 1
+    },
+    {
+      "name": "fetches from ROM during source 3E00 (INC C page): INC C count",
+      "offset": 122,
+      "length": 1
+    },
+    {
+      "name": "fetches from ROM during source D300 (INC C page): INC C count",
+      "offset": 123,
+      "length": 1
+    },
+    {
+      "name": "fetches from ROM during source 8D00 (INC C page): INC C count",
+      "offset": 124,
+      "length": 1
+    },
+    {
+      "name": "fetches from WRAM during source 3E00 (INC C page): INC C count",
+      "offset": 125,
+      "length": 1
+    },
+    {
+      "name": "fetches from WRAM during source 8D00 (INC C page): INC C count",
+      "offset": 126,
+      "length": 1
+    },
+    {
+      "name": "fetches from VRAM during source 8D00 (INC C page): INC C count",
+      "offset": 127,
+      "length": 1
+    },
+    {
+      "name": "fetches from VRAM during source 3E00 (INC C page): INC C count",
+      "offset": 128,
+      "length": 1
+    },
+    {
+      "name": "restart 8000 to 9F00 at W+44: read OAM FE00 on R+2",
+      "offset": 129,
+      "length": 1
+    },
+    {
+      "name": "restart 8000 to 9F00 at W+44: read OAM FE00 on R+160",
+      "offset": 130,
+      "length": 1
+    },
+    {
+      "name": "restart 8000 to 9F00 at W+44: read OAM FE00 on R+161",
+      "offset": 131,
+      "length": 1
+    },
+    {
+      "name": "restart 8000 to 9F00 at W+44: read OAM FE00 on R+162",
+      "offset": 132,
+      "length": 1
+    },
+    {
+      "name": "restart 8000 to 9F00 at W+44: OAM sum, XOR, [0], [1], [159]",
+      "offset": 133,
+      "length": 5
+    },
+    {
+      "name": "restart D100 to 3F00 at W+44: read ROM0 3D00 on R+2",
+      "offset": 138,
+      "length": 1
+    },
+    {
+      "name": "restart D100 to 3F00 at W+44: read ROM0 3D00 on R+3",
+      "offset": 139,
+      "length": 1
+    },
+    {
+      "name": "OAM write FE10 on W+50 (source 8000): OAM[10] afterwards",
+      "offset": 140,
+      "length": 1
+    },
+    {
+      "name": "OAM write FE20 on W+161 (source 8000): OAM[20] afterwards",
+      "offset": 141,
+      "length": 1
+    },
+    {
+      "name": "OAM write FE20 on W+162 (source 8000): OAM[20] afterwards",
+      "offset": 142,
+      "length": 1
+    },
+    {
+      "name": "WRAM write D200 on W+12 (source 8000): D200 afterwards",
+      "offset": 143,
+      "length": 1
+    },
+    {
+      "name": "VRAM write 8800 on W+12 (source 3F00): 8800 afterwards",
+      "offset": 144,
+      "length": 1
+    },
+    {
+      "name": "HRAM write FFF8 on W+12 (source 3F00): FFF8 afterwards",
+      "offset": 145,
+      "length": 1
+    },
+    {
+      "name": "TMA write on W+12 (source 3F00): TMA afterwards",
+      "offset": 146,
+      "length": 1
+    },
+    {
+      "name": "DMA register after the last transfer",
+      "offset": 147,
+      "length": 1
+    },
+    {
+      "name": "FEA0 outside a transfer",
+      "offset": 148,
+      "length": 1
+    },
+    {
+      "name": "FEFF outside a transfer",
+      "offset": 149,
+      "length": 1
+    }
+  ],
+  "sameboy": "d0d000100070403f421c70c07f825c10a080835d70409fa27cb000d1d4aeb000d1d4ae3000dde0bad0a0dee1bb70c0dfe2bc5d5d335d5d5566ffff9d9d339d9d5566ffff11229e44445566ffff1122bd44445566ffffefef33efef5566ffffefef33efef5566ffffffffffff8080d1d4abae111180835a5d3333a0a000a000a000ffffff9f70409fa27c3f42b0e05a77885ac33f0000",
+  "binjgb": "d0d000100070403f421c70c07f825c10a080835d70409fa27cb000d1d4aeb000d1d4ae3000dde0ba6000e7e7e7c78bcf000011223344445566ffff11223344445566ffff11223344445566ffff11223344445566ffff11223344445566ffff11223344445566ffffffffffff808011111111111133333333333300000000000000ffffff9f70409fa27c1111b0e05a77885ac3ffffff"
+}
