@@ -15,7 +15,7 @@ public sealed class GameBoyTestRomsTests
 {
     private static readonly string DataRoot = Path.Combine(AppContext.BaseDirectory, "TestData");
     private static readonly Lazy<JsonElement> Manifest = new(() =>
-        JsonDocument.Parse(File.ReadAllText(Path.Combine(DataRoot, "game-boy-test-roms-manifest.json"))).RootElement);
+        JsonElement.Parse(File.ReadAllText(Path.Combine(DataRoot, "game-boy-test-roms-manifest.json"))));
     private static readonly Lazy<Dictionary<string, string>> Hashes = new(() => Manifest.Value.GetProperty("files").EnumerateArray()
         .ToDictionary(file => file.GetProperty("path").GetString()!, file => file.GetProperty("sha256").GetString()!));
 
