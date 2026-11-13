@@ -112,7 +112,9 @@ public sealed class DmgAcid2Tests(ITestOutputHelper output)
                 depth = data[8];
                 Assert.Contains(depth, PngBitDepths);
                 // ReSharper disable once UseUtf8StringLiteral
+#pragma warning disable IDE0230
                 Assert.Equal(new byte[] { 0, 0, 0, 0 }, data[9..].ToArray()); // Grayscale, deflate, adaptive filters, no interlace.
+#pragma warning restore IDE0230
             }
             else if (type.SequenceEqual("IDAT"u8))
             {
