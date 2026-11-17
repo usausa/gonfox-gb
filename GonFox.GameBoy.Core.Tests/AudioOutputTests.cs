@@ -219,8 +219,11 @@ public sealed class AudioOutputTests
         internal static (int Left, int Right, bool Dacs) Observe(PeripheralTestMachine m)
         {
             int nr50 = m.Bus.ReadByte(0xFF24), nr51 = m.Bus.ReadByte(0xFF25), left = 0, right = 0;
-            bool[] dacs = [(m.Bus.ReadByte(0xFF12) & 0xF8) != 0, (m.Bus.ReadByte(0xFF17) & 0xF8) != 0,
-                (m.Bus.ReadByte(0xFF1A) & 0x80) != 0, (m.Bus.ReadByte(0xFF21) & 0xF8) != 0];
+            bool[] dacs =
+            [
+                (m.Bus.ReadByte(0xFF12) & 0xF8) != 0, (m.Bus.ReadByte(0xFF17) & 0xF8) != 0,
+                (m.Bus.ReadByte(0xFF1A) & 0x80) != 0, (m.Bus.ReadByte(0xFF21) & 0xF8) != 0
+            ];
             for (var c = 0; c < 4; c++)
             {
                 if (!dacs[c])

@@ -90,9 +90,12 @@ public sealed partial class RpgDemoTests(ITestOutputHelper output)
         Assert.Equal(global, (ushort)((rom[0x14E] << 8) | rom[0x14F]));
         var load = CartridgeLoader.Load(rom);
         Assert.IsType<RomOnlyCartridge>(load.Cartridge);
-        string[] observed = ["wScene", "wPhase", "wFrame", "wHero", "wMode", "wCursor", "wEnemyHp", "wEnemyMaxHp",
+        string[] observed =
+        [
+            "wScene", "wPhase", "wFrame", "wHero", "wMode", "wCursor", "wEnemyHp", "wEnemyMaxHp",
             "wHeroHp", "wHeroHp", "wHeroHp", "wHeroHp", "wHeroHp", "wHeroHp", "wHeroHp", "wHeroHp",
-            "wHeroMp", "wTurn", "wNumber", "wGuard", "wResult", "wPresses", "wPresses", "wKeyHeld", "wSongId", "wNextScene"];
+            "wHeroMp", "wTurn", "wNumber", "wGuard", "wResult", "wPresses", "wPresses", "wKeyHeld", "wSongId", "wNextScene"
+        ];
         for (var i = 0; i < observed.Length; i++)
         {
             if (i == 0 || observed[i] != observed[i - 1])
@@ -451,7 +454,8 @@ public sealed partial class RpgDemoTests(ITestOutputHelper output)
         ulong target = system.Video.CompletedFrameCount + (ulong)count, limit = system.TotalTCycles + ((ulong)(count + 20) * 70_224);
         while (system.Video.CompletedFrameCount < target)
         {
-            var result = system.Video.CompletedFrameCount + 1 < target ? system.RunForTCycles(4096)
+            var result = system.Video.CompletedFrameCount + 1 < target
+                ? system.RunForTCycles(4096)
                 : system.GetDebugSnapshot().Ly < 140 ? system.RunForTCycles(228) : system.StepInstruction();
             Assert.True(result.ExecutedTCycles > 0 && system.TotalTCycles < limit, $"No frame by T={system.TotalTCycles}");
         }

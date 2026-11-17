@@ -1,6 +1,6 @@
 # ベンチマーク
 
-`Benchmark`は、GonFox.GameBoy.Coreの速度・管理確保・生成コードをBenchmarkDotNetで測る開発用のコンソール（net10.0、BenchmarkDotNet 0.15.8）である。参照するのはCoreだけで、内部の`Ppu`・`MemoryBus`などはCoreの`InternalsVisibleTo`で使う。ホスト（GonFox.GameBoy.Platform.*・Example.GameBoy.*）は測らない。性能は推測で決めず、この計測と等価性の検証で判断する。エミュレーターの仕様は[現行仕様](Specification.md)、テストROMとの一致は[互換性と検証](Compatibility.md)、ビルドとテストの実行は[README](../README.md)にある。
+`Benchmark`は、GonFox.GameBoy.Coreの速度・管理確保・生成コードをBenchmarkDotNetで測る開発用のコンソール（net11.0、BenchmarkDotNet 0.16.0-preview.2）である。参照するのはCoreだけで、内部の`Ppu`・`MemoryBus`などはCoreの`InternalsVisibleTo`で使う。ホスト（GonFox.GameBoy.Platform.*・Example.GameBoy.*）は測らない。性能は推測で決めず、この計測と等価性の検証で判断する。エミュレーターの仕様は[現行仕様](Specification.md)、テストROMとの一致は[互換性と検証](Compatibility.md)、ビルドとテストの実行は[README](../README.md)にある。
 
 ## 実行方法
 
@@ -32,7 +32,7 @@ dotnet run --project Benchmark -c Release -- --filter '*ExecutionBenchmarks*' --
 
 | 項目 | 設定 |
 | --- | --- |
-| ジョブ | `Job.Default`にID `Default`を付け、.NET 10（`CoreRuntime.Core10_0`）のJITで動かす |
+| ジョブ | `Job.Default`にID `Default`を付け、.NET 11（`CoreRuntime.Core11_0`）のJITで動かす |
 | 回数 | 独立した2プロセス（LaunchCount 2）。各プロセスでウォームアップ5回・計測10回 |
 | 呼び出し | UnrollFactor 1。ExecutionとPPUは`[InvocationCount(1)]`で1 Iterationに1回だけ呼び、その前に`[IterationSetup]`で準備した状態へ戻す（計測外）。BusとStateの呼び出し回数はBenchmarkDotNetが決める |
 | 診断 | `MemoryDiagnoser`（1回あたりの管理確保）、`DisassemblyDiagnoser`（探索の深さ2、ソース付き） |
@@ -74,7 +74,7 @@ JSONには、Executionの各ケースのROMのSHA-256、入力（終了時のジ
 
 ## 参考値
 
-最後に計測した値。記録を取った機械（Ryzen 9 5900X、Windows 11、高パフォーマンス電源）で、上のジョブ（.NET 10のJIT）を使った。外乱は時間を増やす向きにしか働かないため、同じコードを複数回測った中で最も速い回の値を載せる。別の時間帯の値には環境の揺れが含まれるので、変更の判断にはこの表を使わず、同じ時間帯に交互に測った値で比べる。
+最後に計測した値。記録を取った機械（Ryzen 9 5900X、Windows 11、高パフォーマンス電源）で、上のジョブを.NET 10のJIT（`CoreRuntime.Core10_0`、BenchmarkDotNet 0.15.8）で動かした。外乱は時間を増やす向きにしか働かないため、同じコードを複数回測った中で最も速い回の値を載せる。別の時間帯の値には環境の揺れが含まれるので、変更の判断にはこの表を使わず、同じ時間帯に交互に測った値で比べる。
 
 | ベンチマーク | ケース | 時間 |
 | --- | --- | ---: |
@@ -113,11 +113,11 @@ Executionの実時間に対する倍率は、4,000 msをこの値で割ったも
 
 ### 生成コードとJIT
 
-- `Clock`などの具象型を保つ。.NET 10のPGOはinterfaceの呼び出しを最適化でき、関数ポインターがかえって遅い例もあるため、`ICartridge`の削除や関数ポインター化を先に決めない。
+- `Clock`などの具象型を保つ。.NETのPGOはinterfaceの呼び出しを最適化でき、関数ポインターがかえって遅い例もあるため、`ICartridge`の削除や関数ポインター化を先に決めない。
 - 小さなCPU・PPUのヘルパーは生成コードを見て個別に判断し、属性を一括で足さない。
 - 走査線やPCMのループはSpanを局所に取り、既存の配列を再利用する。ループの構文を大量に置き換えるより、配列の参照・長さ・計算を局所に置く効果を測る。
 - `unsafe`・手動の`Unsafe.Add`・SIMD・プール・NativeAOTは、採用の条件を測って示せたときの候補で、標準の方針ではない。タイルのキャッシュとBGPの対応付けのSIMDは、描画に占める割合が小さく見送った。
-- 速さはJIT（.NET 10）で測る。Example.GameBoy.MauiHostのAndroidのRelease版は、LLVMで全メソッドを事前コンパイルする（既定のprofiled AOTとJITより実行スレッドの負荷が約半分。APKが大きくなり、ビルドが長くなる）。
+- 速さはJIT（.NET 11）で測る。Example.GameBoy.MauiHostのAndroidのRelease版も、既定の設定のCoreCLRで動く。
 
 ### ホスト
 

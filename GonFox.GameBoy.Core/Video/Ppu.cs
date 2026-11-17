@@ -96,9 +96,11 @@ internal sealed partial class Ppu(Interrupts interrupts, VideoOutput video)
             p.Fetcher <= 6 && p.BgCount <= 8 && p.ObjCount <= 8 && p.LcdX is >= 0 and <= VideoOutput.Width &&
             p.WindowTileX < 32 && p.TileAddress < 0x2000 && p.DataAddress < 0x2000 &&
             (!state.LcdOnLine || (enabled && savedLine == 0 && state.SpriteCount == 0)) &&
-            (p.Step == StepDone ? p.Position == -16 : p.Step < StepDone && drawingLine && p.Dot >= start &&
-                p.Dot <= dot + 2 && p.Position is >= -16 and < 160 && p.LcdX <= Math.Max(p.Position, 0) &&
-                p.NextObject >= 0 && p.NextObject <= state.SpriteCount && (p.LastPixelDot == 0 || p.Position == 159)) &&
+            (p.Step == StepDone
+                ? p.Position == -16
+                : p.Step < StepDone && drawingLine && p.Dot >= start &&
+                    p.Dot <= dot + 2 && p.Position is >= -16 and < 160 && p.LcdX <= Math.Max(p.Position, 0) &&
+                    p.NextObject >= 0 && p.NextObject <= state.SpriteCount && (p.LastPixelDot == 0 || p.Position == 159)) &&
             (p.LastPixelDot == 0 || (p.LastPixelDot >= start && p.LastPixelDot <= p.Dot)) &&
             (!p.LateWindowStart || (enabled && savedLine < 144 && dot >= 84)), "PPU pipeline");
 
@@ -114,12 +116,16 @@ internal sealed partial class Ppu(Interrupts interrupts, VideoOutput video)
         }
 
         // Expected mode: line start 0, OAM scan 2, drawing 3, HBlank 0; VBlank 1 from Dot 2 of line 144.
-        var mode = !enabled ? 0 : savedLine >= 144 ? (savedLine == 144 && dot < 2 ? 0 : 1)
-            : dot < 2 ? 0 : dot < 84 ? 2 : dot < expectedMode3End ? 3 : 0;
+        var mode = !enabled
+            ? 0
+            : savedLine >= 144
+                ? (savedLine == 144 && dot < 2 ? 0 : 1)
+                : dot < 2 ? 0 : dot < 84 ? 2 : dot < expectedMode3End ? 3 : 0;
         var firstLine = state.LcdOnLine && dot is >= 4 and < 84 && state.Mode == 0; // No OAM scan after LCD on.
         StateValidation.Require((state.Mode == mode || firstLine) && (!drawingLine || expectedMode3End <= LastDot) &&
-            (enabled ? state.LycFlag == (compare == state.Lyc) && (compare < 0 || state.LycSignal == state.LycFlag) &&
-                state.StatLine == StatLevel(state.Stat, state.LycSignal, savedLine, dot, state.Mode, expectedHblankDot)
+            (enabled
+                ? state.LycFlag == (compare == state.Lyc) && (compare < 0 || state.LycSignal == state.LycFlag) &&
+                    state.StatLine == StatLevel(state.Stat, state.LycSignal, savedLine, dot, state.Mode, expectedHblankDot)
                 : state.StatLine == ((state.Stat & 0x40) != 0 && state.LycSignal)), "PPU phase"); // LCD off: the LYC source alone.
     }
 
@@ -474,7 +480,8 @@ internal sealed partial class Ppu(Interrupts interrupts, VideoOutput video)
     }
 
     internal byte PeekMemory(ushort address) => address < 0xA000
-        ? vram[address - 0x8000] : oam[address - 0xFE00];
+        ? vram[address - 0x8000]
+        : oam[address - 0xFE00];
 
     internal void WriteMemory(ushort address, byte value)
     {

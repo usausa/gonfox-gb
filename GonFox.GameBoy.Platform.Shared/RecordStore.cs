@@ -28,7 +28,8 @@ internal static class RecordName
 {
     internal static string Check(string name) =>
         name is { Length: > 0 and <= 160 } && name[0] != '.' && name.All(c => char.IsAsciiLetterOrDigit(c) || c is '.' or '-' or '_')
-            ? name : throw new ArgumentException($"Invalid record name: {name}", nameof(name));
+            ? name
+            : throw new ArgumentException($"Invalid record name: {name}", nameof(name));
 
     internal static string InUse(string location) => $"In use by another window or application: {location}";
 }

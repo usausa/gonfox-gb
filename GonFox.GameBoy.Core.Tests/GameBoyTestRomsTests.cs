@@ -46,7 +46,7 @@ public sealed class GameBoyTestRomsTests
     {
         var system = Start(Read(name));
         RunToBreakpoint(system, Manifest.Value.GetProperty("age").GetProperty("maxTCycles").GetUInt64(), name);
-        var png = name[..name.LastIndexOf('.')] + "-dmgC.png";
+        var png = name[..name.LastIndexOf('.', StringComparison.Ordinal)] + "-dmgC.png";
         if (!Hashes.Value.ContainsKey(png))
         {
             var registers = system.GetDebugSnapshot();

@@ -4,7 +4,7 @@
 
 ## WPF版（Windows）
 
-Windowsと.NET 10 SDKで動きます。
+Windowsと.NET 11 SDKで動きます。
 
 ```powershell
 dotnet run --project Example.GameBoy.WpfHost -c Release
@@ -51,15 +51,15 @@ MBC3の時計付きのROMは、時計の値と保存時刻をRAMの後に記録�
 
 ## Android版（MAUI）
 
-`Example.GameBoy.MauiHost`はAndroid 8.0（API 26）以上のスマートフォン向けのサンプルです（縦向き）。CoreとGonFox.GameBoy.Platform.Sharedは変えずに使い、Android向けの部分（AudioTrackの音、アプリの置き場所、触覚と振動）は`GonFox.GameBoy.Platform.Android`にあります。.NET MAUI 10.0.20（`maui-android`のワークロード）、JDK、Android SDK（API 36）が必要です。このプロジェクトもGonFox.GameBoy.slnxに入っているため、ソリューション全体のビルドにはこのワークロードが要ります。
+`Example.GameBoy.MauiHost`はAndroid 8.0（API 26）以上のスマートフォン向けのサンプルです（縦向き）。CoreとGonFox.GameBoy.Platform.Sharedは変えずに使い、Android向けの部分（AudioTrackの音、アプリの置き場所、触覚と振動）は`GonFox.GameBoy.Platform.Android`にあります。.NET MAUI 11.0.0（`maui-android`のワークロード）、JDK、Android SDK（API 37）が必要です。このプロジェクトもGonFox.GameBoy.slnxに入っているため、ソリューション全体のビルドにはこのワークロードが要ります。
 
 ```powershell
 dotnet workload install maui-android
 dotnet build Example.GameBoy.MauiHost -c Release
-adb install -r Example.GameBoy.MauiHost/bin/Release/net10.0-android/com.gonfox.gameboy-Signed.apk
+adb install -r Example.GameBoy.MauiHost/bin/Release/net11.0-android/com.gonfox.gameboy-Signed.apk
 ```
 
-JDKとAndroid SDKが既定の場所にないときは、`-p:JavaSdkDirectory=<JDK>`と`-p:AndroidSdkDirectory=<SDK>`を付けます。Release版は全メソッドをLLVMで事前コンパイルするため、ビルドに数分かかります（実行スレッドの負荷が既定の方式の約半分になります。Debugは既定のままです）。APKは開発用の鍵で署名されます（配布用の署名は扱いません）。
+JDKとAndroid SDKが既定の場所にないときは、`-p:JavaSdkDirectory=<JDK>`と`-p:AndroidSdkDirectory=<SDK>`を付けます。APKは開発用の鍵で署名されます（配布用の署名は扱いません）。
 
 画面の上から、ROMの名前と状態、画面、コマンド（ROM・Demo・Pause・Reset・State・Settings）、メッセージ、画面のボタンが並びます。ボタンは複数の指で同時に押せ（十字キーの斜めは2方向）、押している間だけ有効です。押すと端末の「タップの振動」の設定に従って小さく振動します。「ROM」はAndroidのファイルの選択で開き（8 MiBまで）、「Demo」は4つの組み込みデモから選びます。「State」は枠1への保存（Save）・復元（Load）と巻き戻し（Rewind）、「Settings」はボタンの代わりに、Mute・Volume（初期70%）・Button haptics・Rumble（振動カートリッジで端末を振動させるか）・Choose boot ROM / Remove boot ROMを出します。端末の音量ボタンでも音量が変わります。
 

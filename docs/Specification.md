@@ -6,16 +6,16 @@
 
 | プロジェクト | ターゲット・責務 |
 | --- | --- |
-| GonFox.GameBoy.Core | net10.0。CPU・Bus・Clock・周辺回路・カートリッジ・ビットマップ。外部パッケージなし。トリミング・AOTの解析を有効にし（`IsAotCompatible`）、警告0 |
-| GonFox.GameBoy.Core.Tests | net10.0。Coreのみを参照する検証（xunit.v3。Microsoft.Testing.Platformの実行ファイル） |
-| GonFox.GameBoy.Platform.Shared | net10.0。プラットフォームに依存しない共通の実装（WPFのサンプルも、MAUI Androidのサンプルも使う）：実行スレッド（`EmulationRunner`）・セッション・フレームの受け渡し（`FrameExchange`）・画像の配置（`FrameLayout`）・描画の頻度の判定・音声のバッファーと再生の制御（`IAudioDevice`の手前まで）・電池セーブ・状態の枠・保存の抽象（`IRecordStore`とファイル版の`FileRecordStore`。置き場所はホストが渡す）・入力の合成。画面に出す文言は持たず、実行の状態（`EmulationStatus`。CPUの停止は`Fault`）・電池セーブの結果（`EmulationSession.Notice`の`SessionNotice`）・音声の出力（`AudioStreamInfo`）を値で返し、ホストが言葉にする。例外のメッセージは英語。環境変数・既定のパス・ウィンドウ・Win32の呼び出しを持たない。AndroidとiOSも対象にした互換性の解析（CA1416）と、トリミング・AOTの解析（`IsAotCompatible`）で警告0 |
-| GonFox.GameBoy.Platform.Windows | net10.0-windows10.0.19041.0。Windows向けの共通の実装：WASAPIの音声出力（`WasapiAudioDevice`、NAudio.Wasapi）、設定ファイル（音量・ミュート・ウィンドウの位置・描画方式。`HostSettingsStore`）、既定の置き場所（`%LOCALAPPDATA%/GonFox.GameBoy`と、確認のために置き場所を替える環境変数。`WindowsStorage`）、実行スレッドの説明（`SetThreadDescription`。`WindowsThread`）。UIの枠組みに依存せず、WPF以外のWindowsのホスト（WinForms・WinUI・MAUIのWindows版）も使える |
-| Example.GameBoy.WpfHost | net10.0-windows10.0.19041.0。WPFのホストのサンプル：画面（XAML）・ファイルダイアログ・画像の表示（`IFrameDisplay`。SkiaSharpとWriteableBitmapを実行中に切り替える）・ウィンドウの配置・組み込みデモ |
-| GonFox.GameBoy.Platform.Tests | net10.0-windows10.0.19041.0。Platform.SharedとPlatform.Windowsの検証：実行スレッド・時間・入力・電池セーブ・状態の枠・保存の抽象・フレームの受け渡し・状態表示の文字・設定と置き場所・音声のバッファーと再生制御 |
+| GonFox.GameBoy.Core | net11.0・net10.0。CPU・Bus・Clock・周辺回路・カートリッジ・ビットマップ。外部パッケージなし。トリミング・AOTの解析を有効にし（`IsAotCompatible`）、警告0 |
+| GonFox.GameBoy.Core.Tests | net11.0。Coreのみを参照する検証（xunit.v3。Microsoft.Testing.Platformの実行ファイル） |
+| GonFox.GameBoy.Platform.Shared | net11.0・net10.0。プラットフォームに依存しない共通の実装（WPFのサンプルも、MAUI Androidのサンプルも使う）：実行スレッド（`EmulationRunner`）・セッション・フレームの受け渡し（`FrameExchange`）・画像の配置（`FrameLayout`）・描画の頻度の判定・音声のバッファーと再生の制御（`IAudioDevice`の手前まで）・電池セーブ・状態の枠・保存の抽象（`IRecordStore`とファイル版の`FileRecordStore`。置き場所はホストが渡す）・入力の合成。画面に出す文言は持たず、実行の状態（`EmulationStatus`。CPUの停止は`Fault`）・電池セーブの結果（`EmulationSession.Notice`の`SessionNotice`）・音声の出力（`AudioStreamInfo`）を値で返し、ホストが言葉にする。例外のメッセージは英語。環境変数・既定のパス・ウィンドウ・Win32の呼び出しを持たない。AndroidとiOSも対象にした互換性の解析（CA1416）と、トリミング・AOTの解析（`IsAotCompatible`）で警告0 |
+| GonFox.GameBoy.Platform.Windows | net11.0-windows10.0.19041.0・net10.0-windows10.0.19041.0。Windows向けの共通の実装：WASAPIの音声出力（`WasapiAudioDevice`、NAudio.Wasapi）、設定ファイル（音量・ミュート・ウィンドウの位置・描画方式。`HostSettingsStore`）、既定の置き場所（`%LOCALAPPDATA%/GonFox.GameBoy`と、確認のために置き場所を替える環境変数。`WindowsStorage`）、実行スレッドの説明（`SetThreadDescription`。`WindowsThread`）。UIの枠組みに依存せず、WPF以外のWindowsのホスト（WinForms・WinUI・MAUIのWindows版）も使える |
+| Example.GameBoy.WpfHost | net11.0-windows10.0.19041.0。WPFのホストのサンプル：画面（XAML）・ファイルダイアログ・画像の表示（`IFrameDisplay`。SkiaSharpとWriteableBitmapを実行中に切り替える）・ウィンドウの配置・組み込みデモ |
+| GonFox.GameBoy.Platform.Tests | net11.0-windows10.0.19041.0。Platform.SharedとPlatform.Windowsの検証：実行スレッド・時間・入力・電池セーブ・状態の枠・保存の抽象・フレームの受け渡し・状態表示の文字・設定と置き場所・音声のバッファーと再生制御 |
 | Example.GameBoy.WpfHost.Tests | 同Windowsターゲット。WPFのサンプルの検証：Skia転送・WriteableBitmapの表示・画像の配置・組み込みデモ・ウィンドウの設定 |
-| GonFox.GameBoy.Platform.Android | net10.0-android（Android 8.0、API 26以上）。Android向けの共通の実装：AudioTrackの音声出力（`AudioTrackDevice`）、アプリの置き場所（`AndroidStorage`）、画面のボタンの触覚（`ButtonHaptics`）、振動カートリッジのモーターを端末の振動へ（`RumbleMotor`）。UIの枠組みに依存せず、MAUI以外のAndroidのホストも使える。トリミングの解析（`IsTrimmable`）で警告0 |
-| Example.GameBoy.MauiHost | net10.0-android。MAUIのAndroidのホストのサンプル（縦向き）：画面と画面のボタン（SkiaSharp.Views.Maui.Controls 4.153.1の`SKCanvasView`）、コマンド・メッセージ・設定（MAUIのコントロール）、ファイルの選択（`FilePicker`）、設定の保存（`Preferences`）、起動の値（intentのextra）・組み込みデモ。ビルドには.NET MAUIのAndroidのワークロードが要る。Release版はMonoのランタイムで全メソッドをLLVMで事前コンパイルする（既定の、起動時のメソッドだけの事前コンパイルとJITより実行スレッドの負荷が約半分） |
-| Benchmark | net10.0。BenchmarkDotNetによるCoreの測定（[ベンチマーク](Benchmark.md)） |
+| GonFox.GameBoy.Platform.Android | net11.0-android・net10.0-android（Android 8.0、API 26以上）。Android向けの共通の実装：AudioTrackの音声出力（`AudioTrackDevice`）、アプリの置き場所（`AndroidStorage`）、画面のボタンの触覚（`ButtonHaptics`）、振動カートリッジのモーターを端末の振動へ（`RumbleMotor`）。UIの枠組みに依存せず、MAUI以外のAndroidのホストも使える。トリミングの解析（`IsTrimmable`）で警告0 |
+| Example.GameBoy.MauiHost | net11.0-android。MAUIのAndroidのホストのサンプル（縦向き）：画面と画面のボタン（SkiaSharp.Views.Maui.Controls 4.156.1の`SKCanvasView`）、コマンド・メッセージ・設定（MAUIのコントロール）、ファイルの選択（`FilePicker`）、設定の保存（`Preferences`）、起動の値（intentのextra）・組み込みデモ。ビルドには.NET MAUIのAndroidのワークロードが要る。ランタイムは既定の設定のCoreCLR |
+| Benchmark | net11.0。BenchmarkDotNetによるCoreの測定（[ベンチマーク](Benchmark.md)） |
 
 GonFox.GameBoy.Core・GonFox.GameBoy.Platform.Shared・GonFox.GameBoy.Platform.Windows・GonFox.GameBoy.Platform.AndroidはNuGetパッケージとして公開する（パッケージ名はプロジェクト名と同じ）。サンプルとテスト・ベンチマークは公開しない。
 

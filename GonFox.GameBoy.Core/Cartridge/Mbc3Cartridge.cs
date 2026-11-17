@@ -12,8 +12,11 @@ internal class Mbc3Cartridge : ICartridge, IStatefulCartridge, IBankedCartridge
     private byte select;
 
     public string RomSha256 { get; }
-    public byte TypeCode => Rtc is not null ? (Ram.Length == 0 ? (byte)0x0F : (byte)0x10)
-        : this is IBatteryBackedCartridge ? (byte)0x13 : Ram.Length == 0 ? (byte)0x11 : (byte)0x12;
+    public byte TypeCode => Rtc is not null
+        ? (Ram.Length == 0 ? (byte)0x0F : (byte)0x10)
+        : this is IBatteryBackedCartridge
+            ? (byte)0x13
+            : Ram.Length == 0 ? (byte)0x11 : (byte)0x12;
     public int LowerRomBank => 0;
     public int UpperRomBank => (romBank == 0 ? 1 : romBank) & field;
     public int RamBank => (select & 8) != 0 ? select : select & ramMask; // 08-0F: a clock register.

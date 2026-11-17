@@ -61,8 +61,11 @@ public sealed partial class MegaDemoTests(ITestOutputHelper output)
         Assert.Equal(global, (ushort)((rom[0x14E] << 8) | rom[0x14F]));
         var load = CartridgeLoader.Load(rom);
         Assert.IsType<RomOnlyCartridge>(load.Cartridge);
-        string[] observed = ["wScene", "wSpeed", "wAmount", "wPattern", "wDirection", "wAuto", "wPhase", "wPhase", "wFrame", "wFrame",
-            "wHeld", "wPressed", "wSteps", "wLagFrames", "wUpload", "wShownAngle"];
+        string[] observed =
+        [
+            "wScene", "wSpeed", "wAmount", "wPattern", "wDirection", "wAuto", "wPhase", "wPhase", "wFrame", "wFrame",
+            "wHeld", "wPressed", "wSteps", "wLagFrames", "wUpload", "wShownAngle"
+        ];
         for (var i = 0; i < observed.Length; i++)
         {
             if (i == 0 || observed[i] != observed[i - 1])
@@ -73,8 +76,11 @@ public sealed partial class MegaDemoTests(ITestOutputHelper output)
 
         Assert.Equal(0xC010, Symbols.Value["wSceneParams"]);
         Assert.Equal(0xC028, Symbols.Value["wStatusText"]);
-        string[] music = ["wSongStep", "wTempoAcc", "wMusicOn", "wEffectFrames", "wInstrument", "wMelodyNote", "wHarmonyNote", "wBassNote",
-            "wMelodyEnvelope", "wHarmonyDuty", "wHarmonyEnvelope", "wBassLevel"]; // Read by the music tests at C050.
+        string[] music =
+        [
+            "wSongStep", "wTempoAcc", "wMusicOn", "wEffectFrames", "wInstrument", "wMelodyNote", "wHarmonyNote", "wBassNote",
+            "wMelodyEnvelope", "wHarmonyDuty", "wHarmonyEnvelope", "wBassLevel"
+        ]; // Read by the music tests at C050.
         for (var i = 0; i < music.Length; i++)
         {
             Assert.Equal(0xC050 + i, Symbols.Value[music[i]]);
@@ -555,7 +561,8 @@ public sealed partial class MegaDemoTests(ITestOutputHelper output)
         ulong target = system.Video.CompletedFrameCount + (ulong)count, limit = system.TotalTCycles + ((ulong)count * 2 * 70_224);
         while (system.Video.CompletedFrameCount < target)
         {
-            var result = system.Video.CompletedFrameCount + 1 < target ? system.RunForTCycles(4096)
+            var result = system.Video.CompletedFrameCount + 1 < target
+                ? system.RunForTCycles(4096)
                 : system.GetDebugSnapshot().Ly < 140 ? system.RunForTCycles(228) : system.StepInstruction();
             Assert.True(result.ExecutedTCycles > 0 && system.TotalTCycles < limit, $"No frame by T={system.TotalTCycles}");
         }
@@ -647,8 +654,11 @@ public sealed partial class MegaDemoTests(ITestOutputHelper output)
             {
                 int index = ((ring * 8) + k) * 4, level = Spec.RingLevel(spread, ring), a = (((ring + 1) * angle) + (32 * k)) & 255;
                 var flip = (k & 1) == 0 ? 0 : ((pattern & 1) != 0 ? 0x20 : 0) | ((pattern & 2) != 0 ? 0x40 : 0);
-                byte[] expected = [(byte)(76 + Spec.Isin(a, 8 * level)), (byte)(84 + Spec.Isin((a + 64) & 255, 8 * level)),
-                    (byte)(128 + ((ring + pattern) & 3)), (byte)(((ring & 1) != 0 ? 0x10 : 0) | ((ring == 2 ? 0x80 : 0) ^ flip))];
+                byte[] expected =
+                [
+                    (byte)(76 + Spec.Isin(a, 8 * level)), (byte)(84 + Spec.Isin((a + 64) & 255, 8 * level)),
+                    (byte)(128 + ((ring + pattern) & 3)), (byte)(((ring & 1) != 0 ? 0x10 : 0) | ((ring == 2 ? 0x80 : 0) ^ flip))
+                ];
                 Assert.Equal(expected, oam[index..(index + 4)]);
             }
         }
@@ -819,8 +829,11 @@ public sealed partial class MegaDemoTests(ITestOutputHelper output)
         internal static string[] StatusRows(int scene, int speed, int amount, int pattern, int direction, bool running)
         {
             string[] names = ["WAVE", "PLASMA", "ORBIT"], amounts = ["AMP", "STR", "SPR"], patterns = ["PAL", "PAT", "PAT"];
-            return [$"{scene + 1}:{names[scene]}".PadRight(15) + (running ? "RUN " : "STOP") + " ",
-                $"SPD{speed} {amounts[scene]}{amount} {patterns[scene]}{pattern} DIR{(direction == 0 ? '+' : '-')} "];
+            return
+            [
+                $"{scene + 1}:{names[scene]}".PadRight(15) + (running ? "RUN " : "STOP") + " ",
+                $"SPD{speed} {amounts[scene]}{amount} {patterns[scene]}{pattern} DIR{(direction == 0 ? '+' : '-')} "
+            ];
         }
 
         // Window lines 0-15: white text (color 3) on a black bar through palette $1B.

@@ -249,7 +249,8 @@ public sealed class ApuPulseTests
     public void WritingNrx2WhilePlayingAddsOneOnlyAfterARunningPeriod0Envelope()
     {
         static int Volume(PeripheralTestMachine machine, int channel) => channel == 2
-            ? machine.Apu.CaptureState().Pulse2.Envelope.Volume : machine.Apu.CaptureState().Noise.Envelope.Volume;
+            ? machine.Apu.CaptureState().Pulse2.Envelope.Volume
+            : machine.Apu.CaptureState().Noise.Envelope.Volume;
         var m = Powered();
         Start(m, 2, 2, 0xA0, 0x7FF); // Volume 10, period 0.
         m.Bus.WriteByte(0xFF17, 0xA8);

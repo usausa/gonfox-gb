@@ -309,8 +309,9 @@ internal sealed partial class MainWindow : IDisposable
     private void SaveSettings()
     {
         var normal = WindowState == WindowState.Normal ? new Rect(Left, Top, Width, Height) : RestoreBounds;
-        WindowBounds? window = normal.IsEmpty ? null : new WindowBounds(normal.Left, normal.Top, normal.Width, normal.Height,
-            WindowState == WindowState.Maximized);
+        WindowBounds? window = normal.IsEmpty
+            ? null
+            : new WindowBounds(normal.Left, normal.Top, normal.Width, normal.Height, WindowState == WindowState.Maximized);
         settings.Save(new HostSettings((int)Math.Round(VolumeSlider.Value), MuteCheckBox.IsChecked == true, window, renderer.ToString(),
             bootRomPath));
     }
@@ -816,8 +817,8 @@ internal sealed partial class MainWindow : IDisposable
             if (!closed)
             {
                 MessageText.Text = back is { } cycles
-                ? $"Rewound {cycles / (double)GameBoySystem.CyclesPerSecond:F1} s"
-                : "Nothing to rewind";
+                    ? $"Rewound {cycles / (double)GameBoySystem.CyclesPerSecond:F1} s"
+                    : "Nothing to rewind";
             }
 
             await RefreshMemoryAsync();

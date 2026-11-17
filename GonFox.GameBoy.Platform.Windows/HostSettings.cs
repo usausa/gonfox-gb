@@ -44,7 +44,8 @@ public sealed class HostSettingsStore(string path)
             var volume = file.Volume is >= 0 and <= 100 ? file.Volume : HostSettings.DefaultVolume;
             WindowBounds? window = file.Window is { } w && double.IsFinite(w.Left) && double.IsFinite(w.Top) &&
                 double.IsFinite(w.Width) && double.IsFinite(w.Height) && w.Width > 0 && w.Height > 0
-                ? new WindowBounds(w.Left, w.Top, w.Width, w.Height, w.Maximized) : null;
+                    ? new WindowBounds(w.Left, w.Top, w.Width, w.Height, w.Maximized)
+                    : null;
             var renderer = file.Renderer is { Length: > 0 and <= HostSettings.MaxRendererLength } name ? name : null;
             return new HostSettings(volume, file.Muted, window, renderer, HostSettings.ValidBootRom(file.BootRom));
         }

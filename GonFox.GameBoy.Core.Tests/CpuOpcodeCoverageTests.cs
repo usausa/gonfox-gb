@@ -78,9 +78,12 @@ public sealed class CpuOpcodeCoverageTests
                 for (var register = 0; register < 8; register++)
                 {
                     var flags = register == 4 && group == 1 && operation == 6 ? (byte)0x30 : Flags81[group][operation];
-                    yield return [(byte)((group * 64) + (operation * 8) + register), register,
-                (register == 4 ? ResultsC1 : Results81)[group][operation], flags,
-                register == 6 ? (group == 1 ? 12 : 16) : 8];
+                    yield return
+                    [
+                        (byte)((group * 64) + (operation * 8) + register), register,
+                        (register == 4 ? ResultsC1 : Results81)[group][operation], flags,
+                        register == 6 ? (group == 1 ? 12 : 16) : 8
+                    ];
                 }
             }
         }

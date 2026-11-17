@@ -88,18 +88,22 @@ public static class CartridgeLoader
         }
 
         var romSize = 0x8000 << romCode;
-        var ramSize = mbc2 ? Mbc2Cartridge.RamSize : ramCode switch
-        {
-            0 => 0,
-            2 => 0x2000,
-            3 => 0x8000,
-            4 when (mbc5 && !rumble) || mmm01 || camera => 0x20000,
-            5 when mbc5 || mbc3 || mmm01 || camera => 0x10000,
-            _ => throw new CartridgeLoadException(rumble ? "Supported RAM sizes with the rumble motor are 0, 8, 32 and 64 KiB."
-                : mbc5 ? "Supported MBC5 RAM sizes are 0, 8, 32, 64 and 128 KiB."
-                : mmm01 ? "Supported MMM01 RAM sizes are 0, 8, 32, 64 and 128 KiB."
-                : mbc3 ? "Supported MBC3 RAM sizes are 0, 8 and 32 KiB (MBC30: 64 KiB)." : "Supported RAM sizes are 0, 8 KiB and 32 KiB.")
-        };
+        var ramSize = mbc2
+            ? Mbc2Cartridge.RamSize
+            : ramCode switch
+            {
+                0 => 0,
+                2 => 0x2000,
+                3 => 0x8000,
+                4 when (mbc5 && !rumble) || mmm01 || camera => 0x20000,
+                5 when mbc5 || mbc3 || mmm01 || camera => 0x10000,
+                _ => throw new CartridgeLoadException(
+                    rumble ? "Supported RAM sizes with the rumble motor are 0, 8, 32 and 64 KiB." :
+                    mbc5 ? "Supported MBC5 RAM sizes are 0, 8, 32, 64 and 128 KiB." :
+                    mmm01 ? "Supported MMM01 RAM sizes are 0, 8, 32, 64 and 128 KiB." :
+                    mbc3 ? "Supported MBC3 RAM sizes are 0, 8 and 32 KiB (MBC30: 64 KiB)." :
+                    "Supported RAM sizes are 0, 8 KiB and 32 KiB.")
+            };
         if (typeCode == 0 && (romCode != 0 || ramCode != 0))
         {
             throw new CartridgeLoadException("ROM Only requires ROM size code 0x00 (32 KiB) and RAM size code 0x00 (no RAM).");

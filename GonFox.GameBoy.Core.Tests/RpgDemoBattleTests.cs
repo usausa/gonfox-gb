@@ -52,8 +52,11 @@ public sealed partial class RpgDemoTests
     [Fact]
     public void NormalBattleSpendsMpRefusesMagicWithoutItGuardsSwitchesAndRunsOnAnEvenDraw()
     {
-        Command[] plan = [Command.Magic, Command.Magic, Command.Magic, Command.Magic, Command.Guard, Command.Switch,
-            .. Enumerable.Repeat(Command.Run, 8)];
+        Command[] plan =
+        [
+            Command.Magic, Command.Magic, Command.Magic, Command.Magic, Command.Guard, Command.Switch,
+            .. Enumerable.Repeat(Command.Run, 8)
+        ];
         var outcome = PlayBattle(1, 1, plan, out var end);
         Assert.Equal((1, 1, 1), (outcome.Refused, outcome.Halved, outcome.Switches)); // The fourth MAGIC finds no MP.
         Assert.Equal((RanAway, 0, 2), (outcome.Result, end[OMp], end[OHero])); // PINA's MP is gone; SHIRO got away.
@@ -124,8 +127,11 @@ public sealed partial class RpgDemoTests
     // Steps the program, recording events and pressing the buttons a player would, one mask per frame.
     private sealed class Player(GameBoySystem system)
     {
-        private static readonly string[] Labels = ["RandomBelow", "CommandMenu", "DoFight", "DoMagic", "DoGuard", "DoRun",
-            "DoSwitch", "SendOut", "EnemyTurn", "Victory", "Defeat"];
+        private static readonly string[] Labels =
+        [
+            "RandomBelow", "CommandMenu", "DoFight", "DoMagic", "DoGuard", "DoRun",
+            "DoSwitch", "SendOut", "EnemyTurn", "Victory", "Defeat"
+        ];
         private readonly Dictionary<ushort, string> hooks = Labels.ToDictionary(label => Symbols.Value[label]);
         private readonly ushort waitButton = Symbols.Value["WaitButton"];
         private readonly Queue<byte> buttons = new();

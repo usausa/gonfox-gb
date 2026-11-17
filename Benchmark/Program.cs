@@ -15,7 +15,7 @@ if (args is ["--verify"])
     Console.WriteLine(JsonSerializer.Serialize(BenchmarkVerification.Run(), new JsonSerializerOptions { WriteIndented = true }));
     return 0;
 }
-var config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core10_0)
+var config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core11_0)
     .WithLaunchCount(2).WithWarmupCount(5).WithIterationCount(10).WithUnrollFactor(1).WithId("Default"))
     .AddDiagnoser(MemoryDiagnoser.Default, new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig(maxDepth: 2, printSource: true)))
     .AddExporter(JsonExporter.Full, CsvMeasurementsExporter.Default);

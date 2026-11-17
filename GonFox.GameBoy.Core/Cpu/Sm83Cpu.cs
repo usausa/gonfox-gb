@@ -36,8 +36,9 @@ internal sealed partial class Sm83Cpu(MemoryBus bus, Clock clock, Interrupts? in
 
     internal static void ValidateState(State? state) => StateValidation.Require(state is not null &&
         (state.AF & 15) == 0 && !(state.Halted && state.Stopped) && (state.Halted || !state.JustHalted) &&
-        (state.FaultAddress is null ? state.FaultOpcode == 0 : state.FaultOpcode is
-            0xD3 or 0xDB or 0xDD or 0xE3 or 0xE4 or 0xEB or 0xEC or 0xED or 0xF4 or 0xFC or 0xFD), "CPU");
+        (state.FaultAddress is null
+            ? state.FaultOpcode == 0
+            : state.FaultOpcode is 0xD3 or 0xDB or 0xDD or 0xE3 or 0xE4 or 0xEB or 0xEC or 0xED or 0xF4 or 0xFC or 0xFD), "CPU");
 
     internal void RestoreState(State state)
     {

@@ -305,7 +305,8 @@ internal sealed partial class Ppu
                 }
                 var window = p.WindowActive;
                 var map = (lcdc & (window ? 0x40 : 0x08)) != 0 ? 0x1C00 : 0x1800;
-                var x = window ? p.WindowTileX
+                var x = window
+                    ? p.WindowTileX
                     : p.Position is >= -16 and <= -9 ? scx >> 3 : ((scx + p.Position + 8) >> 3) & 31;
                 p.TileAddress = (ushort)(map + x + ((FetcherY(p) >> 3) * 32));
                 p.Fetcher = 1;

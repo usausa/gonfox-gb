@@ -5,7 +5,7 @@
 [![NuGet](https://img.shields.io/nuget/v/GonFox.GameBoy.Platform.Windows.svg?label=GonFox.GameBoy.Platform.Windows)](https://www.nuget.org/packages/GonFox.GameBoy.Platform.Windows)
 [![NuGet](https://img.shields.io/nuget/v/GonFox.GameBoy.Platform.Android.svg?label=GonFox.GameBoy.Platform.Android)](https://www.nuget.org/packages/GonFox.GameBoy.Platform.Android)
 
-A Game Boy (DMG) emulator for .NET 10: an environment-neutral emulator core, shared building blocks for hosts, and the platform parts for Windows and Android, with a WPF example and a .NET MAUI Android example.
+A Game Boy (DMG) emulator for .NET 11 and .NET 10: an environment-neutral emulator core, shared building blocks for hosts, and the platform parts for Windows and Android, with a WPF example and a .NET MAUI Android example.
 
 - SM83 CPU with every instruction (undefined opcodes lock the CPU as on hardware), timer, interrupts, HALT and STOP
 - PPU with the DMG pixel FIFO (variable mode 3, writes during drawing, window quirks), OAM DMA bus conflicts and the OAM corruption bug
@@ -20,10 +20,10 @@ CGB (Game Boy Color) and SGB (Super Game Boy) are out of scope.
 
 | Package | Target | Contents |
 | --- | --- | --- |
-| GonFox.GameBoy.Core | net10.0 | The emulator. No threads, real clocks, files or devices; the caller owns the system and serializes calls. |
-| GonFox.GameBoy.Platform.Shared | net10.0 | Building blocks for any host: the run thread (`EmulationRunner`), sessions with battery saves and state slots (`EmulationSession`), the frame exchange, the audio buffer and playback control, input merging. No wording: states, save results and the audio device come as values for the host to word, and exception messages are in English. |
-| GonFox.GameBoy.Platform.Windows | net10.0-windows10.0.19041.0 | WASAPI audio output, settings and storage locations for Windows hosts. |
-| GonFox.GameBoy.Platform.Android | net10.0-android | AudioTrack audio output, storage, button haptics and rumble for Android hosts. |
+| GonFox.GameBoy.Core | net11.0, net10.0 | The emulator. No threads, real clocks, files or devices; the caller owns the system and serializes calls. |
+| GonFox.GameBoy.Platform.Shared | net11.0, net10.0 | Building blocks for any host: the run thread (`EmulationRunner`), sessions with battery saves and state slots (`EmulationSession`), the frame exchange, the audio buffer and playback control, input merging. No wording: states, save results and the audio device come as values for the host to word, and exception messages are in English. |
+| GonFox.GameBoy.Platform.Windows | net11.0-windows10.0.19041.0, net10.0-windows10.0.19041.0 | WASAPI audio output, settings and storage locations for Windows hosts. |
+| GonFox.GameBoy.Platform.Android | net11.0-android, net10.0-android | AudioTrack audio output, storage, button haptics and rumble for Android hosts. |
 
 ## Usage
 
@@ -92,7 +92,7 @@ Both examples include the demo ROMs below. See [docs/Examples.md](docs/Examples.
 
 ## Build and test
 
-The solution needs the .NET 10 SDK and, for the Android projects, the `maui-android` workload.
+The solution needs the .NET 11 SDK and, for the Android projects, the `maui-android` workload.
 
 ```powershell
 dotnet build GonFox.GameBoy.slnx -c Release

@@ -12,7 +12,8 @@ public sealed class DeterministicReplayTests(ITestOutputHelper output)
     private static byte[] ReadRom(bool mbc1)
     {
         var image = File.ReadAllBytes(Path.Combine(AppContext.BaseDirectory, "TestData", mbc1 ? "mbc1-demo.gb" : "background-demo.gb"));
-        Assert.Equal(mbc1 ? "2bdc7882666d81731b8a9936670049e8a4e1b8feee07f1f73ffa27f12bb8c812"
+        Assert.Equal(mbc1
+            ? "2bdc7882666d81731b8a9936670049e8a4e1b8feee07f1f73ffa27f12bb8c812"
             : "9053de305c39aed9780a74057e1fc44e99d9cc8ac3a62b5eb7d4ccdd82e9c0f8", Convert.ToHexStringLower(SHA256.HashData(image)));
         return image;
     }

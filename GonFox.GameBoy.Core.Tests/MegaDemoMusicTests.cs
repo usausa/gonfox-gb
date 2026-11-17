@@ -82,8 +82,11 @@ public sealed partial class MegaDemoTests
         int played = 0, drums = 0;
 
         // Speed 3, then up to 7, then down to 0.
-        byte[] inputs = [.. Enumerable.Repeat((byte)0, 120), .. Enumerable.Repeat(Right, 60), .. Enumerable.Repeat((byte)0, 120),
-            .. Enumerable.Repeat(Left, 80), .. Enumerable.Repeat((byte)0, 200)];
+        byte[] inputs =
+        [
+            .. Enumerable.Repeat((byte)0, 120), .. Enumerable.Repeat(Right, 60), .. Enumerable.Repeat((byte)0, 120),
+            .. Enumerable.Repeat(Left, 80), .. Enumerable.Repeat((byte)0, 200)
+        ];
         foreach (var input in inputs)
         {
             var o = Frame(system, input);

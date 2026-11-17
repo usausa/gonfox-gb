@@ -145,5 +145,6 @@ public sealed class StateSlotStore(IRecordStore records)
 
     // The canonical (lower-case) form of a SHA-256 ROM identifier.
     private static string Id(string romId) => romId.Length == 64 && romId.All(char.IsAsciiHexDigit)
-        ? Convert.ToHexStringLower(Convert.FromHexString(romId)) : throw new ArgumentException("Expected a SHA-256 ROM identifier.", nameof(romId));
+        ? Convert.ToHexStringLower(Convert.FromHexString(romId))
+        : throw new ArgumentException("Expected a SHA-256 ROM identifier.", nameof(romId));
 }
