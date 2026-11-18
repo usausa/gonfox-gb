@@ -6,7 +6,6 @@
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
     <IsPackable>false</IsPackable>
-    <CodeAnalysisRuleSet>..\Analyzers.ruleset</CodeAnalysisRuleSet>
     <ApplicationTitle>GonFox GameBoy</ApplicationTitle>
     <ApplicationId>com.gonfox.gameboy</ApplicationId>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
